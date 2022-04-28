@@ -1,0 +1,123 @@
+# Microsoft Developer Studio Generated Dependency File, included by rrusers.mak
+
+.\CRYPTO.CPP : \
+	"..\h\stdafx.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+.\RRUSERS.RC : \
+	"..\h\_users.h"\
+	".\RRUSERS.ICO"\
+	{$(INCLUDE)}"users.h"\
+	
+
+\rrw7\SETUP\WRRDAT.CPP : \
+	"..\h\_filter.h"\
+	"..\h\_libio.h"\
+	"..\h\_mfdata.h"\
+	"..\h\_mfedit.h"\
+	"..\h\_mffield.h"\
+	"..\h\_repio.h"\
+	"..\h\_sort.h"\
+	"..\h\align.h"\
+	"..\h\cfcomp.h"\
+	"..\h\cfmisc.h"\
+	"..\h\chartdat.h"\
+	"..\h\cntritem.h"\
+	"..\h\crstabif.h"\
+	"..\h\dbexport.h"\
+	"..\h\dfile.h"\
+	"..\h\dinsfld.h"\
+	"..\h\edittext.h"\
+	"..\h\globals.h"\
+	"..\h\gsw.h"\
+	"..\h\index.h"\
+	"..\h\libio.h"\
+	"..\h\memo.h"\
+	"..\h\mfdata.h"\
+	"..\h\mfedit.h"\
+	"..\h\mffield.h"\
+	"..\h\mffile.h"\
+	"..\h\mfxfld.h"\
+	"..\h\pd.h"\
+	"..\h\pic.h"\
+	"..\h\print_.h"\
+	"..\h\product.h"\
+	"..\h\prtinit.h"\
+	"..\h\qeval.h"\
+	"..\h\repio.h"\
+	"..\h\resource.h"\
+	"..\h\rrassert.h"\
+	"..\h\rrchart.h"\
+	"..\h\rrcompos.h"\
+	"..\h\rrdoc.h"\
+	"..\h\rrrepio.h"\
+	"..\h\rrxfld.h"\
+	"..\h\sort.h"\
+	"..\h\stdafx.h"\
+	"..\h\vfpdbc.h"\
+	"..\h\wband.h"\
+	"..\h\wdialog.h"\
+	"..\h\wfield.h"\
+	"..\h\wmain.h"\
+	"..\h\wreport.h"\
+	"..\h\wutil.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	{$(INCLUDE)}"users.h"\
+	
+
+.\WUSERS.CPP : \
+	"..\h\_filter.h"\
+	"..\h\_libio.h"\
+	"..\h\_mfdata.h"\
+	"..\h\_mfedit.h"\
+	"..\h\_mffield.h"\
+	"..\h\_repio.h"\
+	"..\h\_sort.h"\
+	"..\h\_users.h"\
+	"..\h\align.h"\
+	"..\h\cfcomp.h"\
+	"..\h\cfmisc.h"\
+	"..\h\chartdat.h"\
+	"..\h\cntritem.h"\
+	"..\h\crstabif.h"\
+	"..\h\dbexport.h"\
+	"..\h\dfile.h"\
+	"..\h\dinsfld.h"\
+	"..\h\edittext.h"\
+	"..\h\globals.h"\
+	"..\h\gsw.h"\
+	"..\h\index.h"\
+	"..\h\libio.h"\
+	"..\h\memo.h"\
+	"..\h\mfdata.h"\
+	"..\h\mfedit.h"\
+	"..\h\mffield.h"\
+	"..\h\mffile.h"\
+	"..\h\mfxfld.h"\
+	"..\h\pd.h"\
+	"..\h\pic.h"\
+	"..\h\print_.h"\
+	"..\h\product.h"\
+	"..\h\prtinit.h"\
+	"..\h\qeval.h"\
+	"..\h\repio.h"\
+	"..\h\resource.h"\
+	"..\h\rrassert.h"\
+	"..\h\rrchart.h"\
+	"..\h\rrcompos.h"\
+	"..\h\rrdoc.h"\
+	"..\h\rrrepio.h"\
+	"..\h\rrxfld.h"\
+	"..\h\sort.h"\
+	"..\h\stdafx.h"\
+	"..\h\vfpdbc.h"\
+	"..\h\wband.h"\
+	"..\h\wdialog.h"\
+	"..\h\wfield.h"\
+	"..\h\wmain.h"\
+	"..\h\wreport.h"\
+	"..\h\wutil.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	{$(INCLUDE)}"users.h"\
+	

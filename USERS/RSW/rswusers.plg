@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: rswusers - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"WinRel/rrusers.res" /i "\rr\resource" /i "\rr\h" /i "\RR\USERS" /d "NDEBUG" /d "RSW" "K:\RR\USERS\rrusers.RC"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP3D.tmp" with contents
+[
+/nologo /Zp1 /ML /W3 /Gm /GX /Zi /Ot /Og /Ob1 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "INTERACTIVE" /D "_MBCS" /D "RSW" /Fp"WinRel/rswusers.pch" /YX /Fo"WinRel/" /Fd"WinRel/" /J /FD /c 
+"K:\RR\USERS\crypto.cpp"
+"K:\rr\SETUP\WRRDAT.CPP"
+"K:\RR\USERS\wusers.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP3D.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP3E.tmp" with contents
+[
+oldnames.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /stack:0x10240 /subsystem:windows /incremental:no /pdb:"WinRel/rswusers.pdb" /machine:IX86 /def:".\rswusers.DEF" /out:"WinRel/rswusers.exe" 
+.\WinRel\crypto.obj
+.\WinRel\WRRDAT.OBJ
+.\WinRel\wusers.obj
+.\WinRel\rrusers.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP3E.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+crypto.cpp
+WRRDAT.CPP
+wusers.cpp
+Linking...
+   Creating library WinRel/rswusers.lib and object WinRel/rswusers.exp
+
+
+
+<h3>Results</h3>
+rswusers.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

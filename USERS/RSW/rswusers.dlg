@@ -1,0 +1,36 @@
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "H:\\RRDBI\\H\\WUSERS.H\0"
+END
+
+DLG_MAIN DIALOG 73, 45, 216, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "R&R User Management"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Serial Number", -1, 8, 7, 50, 8
+    LTEXT           "User ID", -1, 60, 7, 43, 8
+    LISTBOX         ID_LIST, 8, 18, 143, 68, LBS_USETABSTOPS | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "&Unlock", IDOK, 160, 18, 48, 14
+    PUSHBUTTON      "&Add", ID_ADD, 160, 38, 48, 14
+    PUSHBUTTON      "&Delete", ID_DELETE, 160, 58, 48, 14
+    PUSHBUTTON      "E&xit", IDCANCEL, 160, 78, 48, 14
+    LTEXT           "Total users: ", -1, 8, 90, 41, 8
+    LTEXT           "1", ID_TOTAL, 50, 90, 18, 8
+    LTEXT           "In use:", -1, 84, 90, 25, 8
+    LTEXT           "0", ID_INUSE, 111, 90, 20, 8
+END
+
+DLG_DISK DIALOG 6, 18, 210, 48
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Serial Number"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Select the drive letter of R&&R for Windows Disk #1", 
+                    -1, 5, 10, 167, 8
+    LISTBOX         ID_DISK, 177, 10, 25, 35, LBS_SORT | LBS_USETABSTOPS | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 64, 26, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 113, 26, 40, 14
+END

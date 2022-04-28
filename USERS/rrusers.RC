@@ -1,0 +1,196 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "_users.h"
+#include "version.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 12,6,1,3
+ PRODUCTVERSION 12,6,1,3
+ FILEFLAGSMASK 0x3L
+#ifdef _DEBUG
+ FILEFLAGS 0x3L
+#else
+ FILEFLAGS 0x2L
+#endif
+ FILEOS 0x10001L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Liveware Publishing Inc.\0"
+            VALUE "FileDescription", "R&R SQL Serial Key Management Program\0"
+            VALUE "FileVersion", "12.6\0"
+            VALUE "InternalName", "RRWUSERS\0"
+            VALUE "LegalCopyright", " © 2015 Liveware Publishing Inc.\0"
+            VALUE "LegalTrademarks", "R&R Report Writer and ReportWorks is a trademark of Liveware Publishing Inc.\0"
+            VALUE "OriginalFilename", "\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "R&R ReportWorks for Windows\0"
+            VALUE "ProductVersion", "12.6\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+RRUSERS                 ICON    DISCARDABLE     "rrusers.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DLG_MAIN DIALOG DISCARDABLE  73, 45, 230, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "R&R Serial Key Management 12.6.003"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Serial Number",-1,6,7,50,8
+    LTEXT           "User ID",-1,56,7,43,8
+    LISTBOX         ID_LIST,6,18,160,68,LBS_USETABSTOPS | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "&Unlock",IDOK,176,6,48,14
+    PUSHBUTTON      "&Add",ID_ADD,176,23,48,14
+    PUSHBUTTON      "&Delete",ID_DELETE,176,40,48,14
+    PUSHBUTTON      "E&xit",IDCANCEL,176,57,48,14
+    LTEXT           "Total users: ",-1,8,90,41,8
+    LTEXT           "1",ID_TOTAL,50,90,18,8
+    LTEXT           "In use:",-1,84,90,25,8
+    LTEXT           "0",ID_INUSE,111,90,20,8
+    DEFPUSHBUTTON   "U&nlock ALL",IDOK2,176,79,48,14
+END
+
+DLG_SERIALNUMBER DIALOG DISCARDABLE  0, 0, 144, 114
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        ID_SERIALNUMBER,23,55,96,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,17,91,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,74,91,50,14
+    CTEXT           "Please enter your 16 digit Serial Number (eg.1234-5678-9012-1234)",
+                    IDC_STATIC,20,8,101,27
+    GROUPBOX        "&Serial Number ",IDC_STATIC,13,41,114,36
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""_users.h""\r\n"
+    "#include ""version.h""\r\n"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "\r\n"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INACTIVE             "Inactive"
+    ID_READERR              "Cannot read user file %s"
+    ID_WRITEERR             "Cannot write user file"
+    ID_DELERR               "Cannot find serial number in user file"
+    ID_GOTUSER              "User(s) starting with %s already exist"
+    ID_ADDSERNO             "Add Serial Number"
+    ID_DELSERNO             "Delete Serial Number"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INVALIDSERNO         "Invalid Serial Number.  Please check the number and try again."
+    ID_ADDWINTITLE          "Add - Enter Serial Number"
+    ID_DELWINTITLE          "Delete - Enter Serial Number"
+    ID_NOTFOUND             "RRW.LIC license file not found in %s"
+    ID_BADXREV              "%s is not an R&R Xbase serial number file"
+    ID_BADVER               "Serial number file %s is the wrong version"
+    ID_NOMEM                "Not enough memory available for this application"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NOTEXP               "%s is a compressed file"
+    ID_BADSREV              "%s is not an R&R SQL serial number file"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

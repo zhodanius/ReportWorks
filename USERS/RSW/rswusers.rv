@@ -1,0 +1,45 @@
+/* Version Information.
+
+For each pre-release, change the values of FILEVERSION and PRODUCTVERSION,
+as well as their string forms in the "StringFileInfo" block.
+
+For real product releases, change FILEFLAGSMASK and FILEFLAGS to 0.
+
+smh 1/7/93  This file began life as rrwusers.rv, revision 1.13
+	    I am modifying it for RSW1 and will put it in that branch.
+*/	
+
+#include <ver.h>
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,0,3,0
+PRODUCTVERSION  1,0,3,0
+FILEFLAGSMASK   VS_FF_DEBUG | VS_FF_PRERELEASE
+FILEFLAGS       VS_FF_PRERELEASE
+FILEOS          VOS_DOS_WINDOWS16
+
+FILETYPE        VFT_DLL
+FILESUBTYPE     VFT2_UNKNOWN
+
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904E4"
+    BEGIN
+      VALUE "CompanyName", "Concentric Data Systems, Inc.\0"
+      VALUE "FileDescription", "RSW User Management Program\0"
+      VALUE "FileVersion", "1.0.3\0"
+      VALUE "InternalName", "RSWUSERS\0"
+      VALUE "LegalCopyright", "Copyright \261 Concentric Data Systems, Inc. 1991\0"
+      VALUE "LegalTrademarks", "R&&R Report Writer is a registered trademark of Concentric Data Systems, Inc." 
+      VALUE "ProductName", "R&&R Report Writer for Windows\0"
+      VALUE "ProductVersion", "1.0.3\0"
+    END
+
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN 
+    VALUE "Translation", 0x409, 1262
+  END
+END
