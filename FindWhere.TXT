@@ -1,0 +1,26 @@
+H\qelib.h:        Searchable      Short     - How the type can be used in a WHERE
+H\qelib.h:#define qeTYPE_SEARCHABLE_COL   12      /* If type can appear in WHERE clause*/
+H\qelib.h:/* Tells whether the column may be used in a WHERE clause to search for
+H\qelib.h:#define qeCOL_UNSEARCHABLE      0       /* Column may not appear in a WHERE
+H\qelib.h:#define qeCOL_LIKE_ONLY         1       /* Column may only appear in a WHERE
+H\qelib.h:#define qeCOL_ALL_EXCEPT_LIKE   2       /* Column may appear in a WHERE
+H\qelib.h:#define qeCOL_SEARCHABLE        3       /* Column may appear in a WHERE
+H\qelib.h:   of the old hstmt into the WHERE clause of the old statement. This
+H\qelib.h:#define qeCLAUSE_WHERE		1	/* Return WHERE clause*/
+H\qelib.h:#define qeQRY_WHERE             6       /* Where By dialog box*/
+H\qryobj.h:	CString WHERE() ;
+H\qryobj.h:	CString EXPORT_API WHERE() ;
+H\sglobal.h: = "RI_WHERE"
+H\vbx.h:#define IPROP_RRW_WHERE					58
+H\wdwin95.h:#define LVHT_NOWHERE        0x0001
+H\wdwin95.h:#define TVHT_NOWHERE        0x0001
+H\_runtime.h:#define JF_WHERE	0x0C
+RR\aceunpub.h:#define AOF_CURSOR_TYPE    2  /* cursor AOF that represents WHERE clause of SQL */
+RR\aceunpub.h:// SELECT {NOJOINORDEROPT} * FROM demo1000 a, demo10 b WHERE a.empid = b.empid AND b.empid = 5;
+RR\aceunpub.h://    WHERE Left( lastname, 1 ) IN ( SELECT Left( lastname, 1 ) FROM Demo10 )
+RR\rrw32\aceunpub.h:#define AOF_CURSOR_TYPE    2  /* cursor AOF that represents WHERE clause of SQL */
+RR\rrw32\aceunpub.h:// SELECT {NOJOINORDEROPT} * FROM demo1000 a, demo10 b WHERE a.empid = b.empid AND b.empid = 5;
+RR\rrw32\aceunpub.h://    WHERE Left( lastname, 1 ) IN ( SELECT Left( lastname, 1 ) FROM Demo10 )
+rrocx\resource.h:#define IDC_WHERE                       257
+rrrpt32\resource.h:#define IDS_SEL_WHEREFALSE	11113
+rrrpt32\resource.h:#define IDS_RI_WHERE		11154

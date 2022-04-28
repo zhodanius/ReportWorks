@@ -1,0 +1,36 @@
+H\global.h:	IDS_5607,RGB(244, 164, 96),
+H\L_FOX.H:#DEFINE EFX_EFFECT_WIPE4_R_B_T_R                              (EFX_EFFECT_WIPE_CLASS+164)
+H\L_FOX.H:#DEFINE EFX_EFFECT_PUSH4_T_R_B_L                              (EFX_EFFECT_PUSH_CLASS+164)
+H\L_FOX.H:#DEFINE EFX_EFFECT_SLIDE4_T_R_R_T                             (EFX_EFFECT_SLIDE_CLASS+164)
+H\L_FOX.H:#DEFINE EFX_EFFECT_ROLL4_T_R_B_L                              (EFX_EFFECT_ROLL_CLASS+164)
+H\L_FOX.H:#DEFINE EFX_EFFECT_ROTATE4_T_T_L_L                            (EFX_EFFECT_ROTATE_CLASS+164)
+H\L_FOX.H:#DEFINE FILE_J2K                 164
+H\L_FOX.H:#DEFINE ERROR_ISIS_NOT_READY 20164
+H\L_FOX.H:#DEFINE ANNAUTOTEXT_RULER_FEET  164
+H\L_FOX.H:#DEFINE CMNT_SZRELATEDSOUNDFILE 164
+H\L_OCX40.H:      FILE_J2K = 164,
+H\L_OCX40.H:       CMNT_SZRELATEDSOUNDFILE = 164,
+H\L_OCX40.H:#define EFX_EFFECT_WIPE4_R_B_T_R                              (EFX_EFFECT_WIPE_CLASS+164)
+H\L_OCX40.H:#define EFX_EFFECT_PUSH4_T_R_B_L                              (EFX_EFFECT_PUSH_CLASS+164)
+H\L_OCX40.H:#define EFX_EFFECT_SLIDE4_T_R_R_T                             (EFX_EFFECT_SLIDE_CLASS+164)
+H\L_OCX40.H:#define EFX_EFFECT_ROLL4_T_R_B_L                              (EFX_EFFECT_ROLL_CLASS+164)
+H\L_OCX40.H:#define EFX_EFFECT_ROTATE4_T_T_L_L                            (EFX_EFFECT_ROTATE_CLASS+164)
+H\L_OcxErr.h:   #define ERROR_ISIS_NOT_READY 20164
+H\resource.h:#define IDS_0164                        164
+H\resource.h:#define IDS_1164                        1164
+H\resource.h:#define T8DefSt2                        2164
+H\rrdoc.h://    Rev 1.164   16 Nov 1995 15:24:24   sjo
+H\wmain.h:#define WH_VIEW_RULER		1164	// View Rulers
+H\_dbexp.h:		147,		//    164 Low opening double quotes
+H\_dbexp.h:		164,		//    168 General currency sign
+RR\ace.h:#define AE_INVALID_ENCRYPTION_VERSION   5164
+RR\aceunpub.h: * Revision 1.164  2003/02/12 10:12:03  JeremyM
+RR\rrw32\ace.h:#define AE_INVALID_ENCRYPTION_VERSION   5164
+RR\rrw32\aceunpub.h: * Revision 1.164  2003/02/12 10:12:03  JeremyM
+RRATL\irrcontrol.h:/* File created by MIDL compiler version 5.01.0164 */
+RRATL\RRWATL.h:/* File created by MIDL compiler version 5.01.0164 */
+RRATL\RSWATL.h:/* File created by MIDL compiler version 5.01.0164 */
+rrrpt32\resource.h:#define IDS_RI_NOESC		11164
+SETUP\gosubdir\resource.h:#define IDS_0164                        164
+SETUP\gosubdir\resource.h:#define IDS_1164                        1164
+SETUP\gosubdir\resource.h:#define T8DefSt2                        2164

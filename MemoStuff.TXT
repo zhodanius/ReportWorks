@@ -1,0 +1,2590 @@
+ENG\RSW\iengflds.cpp:// Works around bug in MS dBASE driver where driver converts memo data from
+ENG\RSW\iengflds.cpp://  causing memos to contain sprinklings of  characters along with returns.
+ENG\RSW\iengflds.cpp:// Fix LongChar and Memo Limit problems
+ENG\RSW\iengflds.cpp:// use LongChar and Memo stuff from [Database] section of RSW.INI
+ENG\RSW\iengflds.cpp:// Works around bug in MS dBASE driver where driver converts memo data from
+ENG\RSW\iengflds.cpp://  causing memos to contain sprinklings of  characters along with returns.
+ENG\RSW\iengflds.cpp:					  1,DChar, 2,DCharX, 3,NDumeric, 7,DNumericX, 100,DMemo,
+ENG\RSW\iengflds.cpp:				if (DBImemoType(i))
+ENG\RSW\iengflds.cpp:				{ // memo is a wrapper
+ENG\RSW\iengflds.cpp:					m_pDoc->setCharFldWidth(fld,MFMemoLimit,!MFMemoWrap);	// set width / metric info
+ENG\RSW\iengflds.cpp:					if (MFMemoWrap)
+ENG\RSW\iengflds.cpp:						{	// dBASE memo editor soft return
+ENG\RSW\iengflds.cpp:					fld->dFlags &= ~(zfDATE|zfDATETIME|zfTIME|zfLOGICAL|zfNUMERIC|zfMEMO);
+ENG\RSW\iengflds.cpp:					if (fld->dFlags&(zfDATE|zfDATETIME|zfTIME|zfLOGICAL|zfNUMERIC|zfMEMO))
+ENG\RSW\iengflds.cpp:	if (fld->dFlags&(zfDUPFLD|zfNOTinREC|zfMEMO))	// main db fields only
+ENG\RSW\dbi.cpp:#include <memory.h>		// for _fmemset
+ENG\RSW\dbi.cpp:			m_pDoc->wacktive1 (getString (SqlX55,0)); // "Insufficient memory for database error message"
+ENG\RSW\dbi.cpp:		m_pDoc->wacktive1 (getString (SqlX55,0)); // "Insufficient memory for database error message"
+ENG\RSW\dbi.cpp:		m_pDoc->wacktive1 (getString (SqlX55,0)); // "Insufficient memory for database error message"
+ENG\RSW\dbi.cpp:int CRrComposite::DBImemoType(int iColNum)
+ENG\RSW\dbi.cpp:	return (dbColType==100 ||	// various platforms "memo" type
+ENG\RSW\dbi.cpp:		m_pDoc->wacktive1 (getString (IDS_0619,0)); // "Insufficient memory"
+ENG\RSW\dbi.cpp:		m_pDoc->wacktive1 (getString (IDS_0619,0)); // "Insufficient memory"
+ENG\RSW\dbi.cpp:	// First, check to see if we have this DataSource already in memory.
+ENG\RSW\dbi.cpp:			m_pDoc->wacktive1 (getString (IDS_0619,0)); // "Insufficient memory"
+ENG\RSW\dbi.cpp:					m_pDoc->wacktive1 (getString (IDS_0619,0)); // "Insufficient memory"
+ENG\RSW\dbi.cpp:		// purge in-memory lists
+ENG\RSW\iengmenu.cpp://		SqlXE2 "Insufficient memory for menu display"
+ENG\RSW\iengmenu.cpp:						ZeroMemory( &si, sizeof(si) );
+ENG\RSW\iengmenu.cpp:						ZeroMemory( &si, sizeof(si) );
+ENG\RSW\iengmenu.cpp:		else // global memory was discarded - just start over
+ENG\RSW\iengmenu.cpp:				// memory, and it shows error messages.
+ENG\RSW\iengmenu.cpp:		else // global memory was discarded - just start over
+ENG\RSW\iengmenu.cpp:		// memory, and it shows error messages.
+ENG\RSW\iengmenu.cpp:// If list is not in memory:
+ENG\RSW\iengmenu.cpp://  fully into dialog listbox. Save entire list in memory if possible.
+ENG\RSW\iengmenu.cpp:// Else blast list from memory into list box.
+ENG\RSW\iengmenu.cpp:		else // global memory was discarded - just start over
+ENG\RSW\iengmenu.cpp:					// memory, and it shows error messages.
+ENG\RSW\iengparm.cpp:		m_pDoc->zack2 (getString(T38MFSql,1), getString(IDS_0619,0)); // insufficient memory
+ENG\RSW\iengparm.cpp:			m_pDoc->zack2 (getString(T38MFSql,1), getString(IDS_0619,0)); // insufficient memory
+FILTER\sxparse.cpp:			|| (*(right-1) == KMEMO)	  /* if a memo field */
+FILTER\sxparse.cpp:		case KMEMO:
+FILTER\sxparse.cpp:	OUTITEM outMemory[FREE_MAX];
+FILTER\sxparse.cpp:	OUTITEM *osMemory[STACK_MAX];
+FILTER\sxparse.cpp:	TEMPITEM tsMemory[STACK_MAX];
+FILTER\sxparse.cpp:	_SX_outFree = outMemory;
+FILTER\sxparse.cpp:	_SX_outStack = osMemory;
+FILTER\sxparse.cpp:	_SX_tempStack = tsMemory;
+FILTER\sxreject.cpp://  was that queries on memos didn't work if the pattern included spaces
+FILTER\sxreject.cpp:				if (field->dFlags & zfMEMO)
+FILTER\sxreject.cpp:					found = lsxmmatch(cfstr1,field);			/* memo field */
+FILTER\sxreject.cpp:			if (field->dFlags & zfMEMO) 	/* memo field */
+FILTER\sxreject.cpp:	   If the first field is a MEMO and the second is a CHAR field, the only
+FILTER\sxreject.cpp:	   when first is MEMO except for equality tests */
+FILTER\sxreject.cpp:		else if ((field->dFlags & zfMEMO)		/* if memo field */
+FILTER\sxreject.cpp:			comp = !lsxmmatch(fld2->dFldP,field);	/* do a memo match */
+FILTER\RRW\sxeprep.cpp://  avoid memory leaks.
+FILTER\RRW\sxeeval.cpp://  was that memo matches didn't work if the pattern included spaces, because
+FILTER\RRW\sxeeval.cpp:			if (field->dFlags & zfMEMO)
+FILTER\RRW\sxeeval.cpp:					found = lsxmmatch(cfstr1,field);			/* memo field */
+FILTER\RRW\sxeeval.cpp:		if (field->dFlags & zfMEMO)		// memo field
+FILTER\RRW\sxeeval.cpp:	   If the first field is a MEMO and the second is a CHAR field, the only
+FILTER\RRW\sxeeval.cpp:	   when first is MEMO except for equality tests */
+FILTER\RRW\sxeeval.cpp:		else if ((field->dFlags & zfMEMO)		// if memo field
+FILTER\RRW\sxeeval.cpp:			comp = !lsxmmatch(fld2->dFldP,field);	// do a memo match
+FILTER\pksx.cpp:#define TYPES (zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfTIME|zfDATETIME)
+FILTER\pksx.cpp:					case KMEMO:
+FILTER\pksx.cpp:					case KMEMO:
+FILTER\pksx.cpp:				if (type!=0 && type!=zfMEMO)	/* only for string or memo */
+FILTER\pksx.cpp:#if 0	/* DOS ver allows query on memo=fld */
+FILTER\pksx.cpp:			if (type==zfMEMO)
+FILTER\pksx.cpp:				*errcode = sxerr_memocomp;
+FILTER\pksx.cpp:				if (type==zfMEMO)
+FILTER\pksx.cpp:						break;	/* memo and char only */
+FILTER\pksx.cpp:		case zfMEMO:
+FILTER\pksx.cpp:			*p++ = KMEMO;
+FILTER\pksx.cpp:			len = lstrlen(p)+2; /* terminator and KMEMO */
+FILTER\pksx.cpp:		case zfMEMO:
+FILTER\pksx.cpp:			len = strlen("")+2; /* terminator and KMEMO */
+FILTER\pksx.cpp:						/* count KMEMO/KCHAR code and the string and null */
+FILTER\pksx.cpp:							if ((lfld->dFlags&TYPES)==zfMEMO) *p++ = KMEMO;
+FILTER\sxshow.cpp:	{ // got a query, so get some memory for it
+FILTER\sxshow.cpp:	{ // got a query, so get some memory for it
+FILTER\RSW\sxselect.cpp:#define CANTDO(x)	(FLAGS(1+x) & (zfDUPFLD | zfFROMTOT | zfMEMO))
+FILTER\RSW\sxselect.cpp:	case KMEMO:
+FILTER\RSW\sxselect.cpp: LPSTR con, 	// pointer to KCHAR, KDATE, KNUMBER, KLOG, KMEMO
+FILTER\RSW\sxselect.cpp:	else							// KCHAR, KMEMO, KNUMBER, KDATE
+FILTER\sxmisc.cpp:#define NONOS (/*zfFROMTOT |*/ zfPAGENO | zfRECNO | zfDUPFLD /*| zfMEMO*/)
+FILTER\sxmisc.cpp:		case KMEMO:
+FILTER\sxmisc.cpp:		  || ( *pp == KMEMO ) )
+FILTER\sxmmatch.cpp:// Query pattern matcher for memo fields.
+FILTER\sxmmatch.cpp:	mfmeminit();	/* re-init memos */
+FILTER\sxmmatch.cpp:		return MFMO(fld->dFldP) == 0L;	/* no memo => match; else no match */
+FILTER\sxmmatch.cpp:	if (mfgetmch(fld,s,255,FALSE))			/* fill memo field buffer */
+FILTER\sxmmatch.cpp:			mfmeminit();			/* re-init memos */
+CFCOMP\peval.cpp:	switch (cf_rf->dFlags&(zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME))
+CFCOMP\peval.cpp:	case zfMEMO:
+CFCOMP\peval.cpp:			switch (resfld->dFlags&(zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO))
+CFCOMP\peval.cpp:		case a_mtmemo:
+CFCOMP\cfcomp.cpp:// fix compilation of "push empty memo"
+CFCOMP\cfcomp.cpp:	case t_memo:
+CFCOMP\cfcomp.cpp:	if (prev==t_memo && ((*(pSyntaxStack-1))&TNULLSTR))
+CFCOMP\cfcomp.cpp:		*(pSyntaxStack-1) = t_memo; /* for reference in rule2/rule3 */
+CFCOMP\cfcomp.cpp:		*cf_lastcp = a_mtmemo; /* change "push null string" to push */
+CFCOMP\cfcomp.cpp:		// we've replaced the "push string" opcode with a "push empty memo" opcode
+CFCOMP\cfcomp.cpp:		pCompileBuf -= (sizeof(int) + sizeof(char));			/* empty memo */
+CFCOMP\cfcomp.cpp:			(((t=(*(pSyntaxStack-1))&TOKMASK)==t_num) || (t==t_memo) || (t==t_str) || (t==t_date) || 
+CFCOMP\cfcomp.cpp:			if ((cnt==1 || cnt%2==0) && t==t_memo)
+CFCOMP\cfcomp.cpp:						((cnt<=cycle && (t==t_memo || t==t_fld || t==t_file)) ||
+CFCOMP\cfcomp.cpp:					(atype==sv_any && (t==t_memo||t==t_fld||t==t_file)) ||
+CFCOMP\cfcomp.cpp:					 (atype==sv_char && t!=t_str && t!=t_memo) ||
+CFCOMP\cfcomp.cpp:						((cnt<=cycle && (t==t_memo || t==t_fld || t==t_file)) ||
+CFCOMP\cfcomp.cpp:						(atype==sv_any && (t==t_memo||t==t_fld||t==t_file))||
+CFCOMP\cfcomp.cpp:						 (atype==sv_char && t!=t_str && t!=t_memo) ||
+CFCOMP\cfcomp.cpp:				(t1==t_str) && (t2==t_memo))
+CFCOMP\cfcomp.cpp:			else if (t1==t_str && t2==t_memo)
+CFCOMP\cfcomp.cpp:					break; /* memo search */
+CFCOMP\cfcomp.cpp:		  case t_memo:
+CFCOMP\cfcomp.cpp:			return ee_memo;
+CFCOMP\cfcomp.cpp:				fld->dFlags&zfTEXT ? t_memo :
+CFCOMP\compile.cpp:#define FLAGS (zfDATE|zfNUMERIC|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME)
+CFCOMP\compile.cpp:	   	0, zfNUMERIC, zfDATE, zfLOGICAL, zfMEMO, zfDATETIME, zfTIME
+CFCOMP\compile.cpp:			sv_str, sv_dbl, sv_date, sv_dbl|LOGICAL, sv_memo, sv_datetime, sv_time
+CFCOMP\explt.cpp:			case a_mtmemo:
+CFCOMP\explt.cpp:					(zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME);
+CFCOMP\explt.cpp:							case t_memo: svtype=sv_memo;
+CFCOMP\explt.cpp:							svtype==sv_memo ? zfMEMO :
+CFCOMP\explt.cpp:						type = resfld->dFlags&(zfDATE|zfNUMERIC|zfLOGICAL|zfMEMO|zfTIME|zfDATETIME);
+CFCOMP\explt.cpp:						type = resfld->dFlags&(zfDATE|zfNUMERIC|zfLOGICAL|zfMEMO|zfTIME|zfDATETIME);						}
+CFCOMP\toktests.cpp:			if (MFAName && !lstrcmpi(filpart,MFAAlias)) fnum = fnMEMO;
+CFCOMP\toktests.cpp:			if (MFAName && !lstrcmpi(filpart,MFAAlias)) fnum = fnMEMO;
+CFCOMP\RSW\xeval.cpp:				  NULL,NULL,		// push empty memo
+CFCOMP\RSW\xeval.cpp:{ // clean up eval stack string memory
+CFCOMP\RSW\xeval.cpp://			zwarn1("Insufficient memory for formula translation strings");
+CFCOMP\RSW\xeval.cpp:			else if ((fld->dRFlags&rfTOTALFLD) || (fld->dFlags&zfMEMO))
+CFCOMP\RSW\xeval.cpp:		case a_mtmemo:		// push empty memo
+CFCOMP\formargs.cpp:				case 'M': type = zfMEMO;
+CFCOMP\formargs.cpp:				(flags&zfMEMO) ? sv_memo :
+rrocx\property.cpp:BSTR CRrocxCtrl::GetMemoFileName()
+rrocx\property.cpp:	return m_strMemoFileName.AllocSysString() ;
+rrocx\property.cpp:void CRrocxCtrl::SetMemoFileName(LPCTSTR lpszNewValue)
+rrocx\property.cpp:	m_strMemoFileName = lpszNewValue ;
+rrocx\report.cpp:	// Memo Filename
+rrocx\report.cpp:	strcpy ( szTemp, m_strMemoFileName ) ;
+rrocx\report.cpp:	if ( !setMemoName(nReportHandle, szTemp) )
+rrocx\report.cpp:		'D',6,  // Diagnostic error (e.g. out of memory)
+rrocx\report.cpp:	// MemoFileName
+rrocx\report.cpp:	getMemoName ( nReportHandle, strTemp.GetBuffer(WINPATHLEN), WINPATHLEN ) ;
+rrocx\report.cpp:	SetMemoFileName ( strTemp ) ;
+rrocx\vbutil.cpp:		case dispidMemoFileName:
+rrocx\vbutil.cpp:			strValue = m_strMemoFileName    ;
+rrocx\vbutil.cpp:		case dispidMemoFileName:
+rrocx\vbutil.cpp:			// editing of the MemoFileName.
+rrocx\printtop.cpp:	CString strMemoFileFilter        ;
+rrocx\printtop.cpp:	strMemoFileFilter = _T("All Files (*.*)|*.*|") ;
+rrocx\printtop.cpp:	if ( CommonFileDialog(m_strPrintFileName, strStartDirectory, strMemoFileFilter, 
+rrocx\printtop.cpp:		SetControlStatus ( IDC_MEMOFILE, TRUE ) ;
+rrocx\rsw\rsdbppg.cpp:	ON_BN_CLICKED(IDC_MEMOFILE_BUTTON, OnMemofileButton)
+rrocx\rsw\rsdbppg.cpp:	m_strMemoFileName = _T("");
+rrocx\rsw\rsdbppg.cpp:	DDP_Text(pDX, IDC_MEMOFILE, m_strMemoFileName, _T("MemoFileName") );
+rrocx\rsw\rsdbppg.cpp:	DDX_Text(pDX, IDC_MEMOFILE, m_strMemoFileName);
+rrocx\rsw\rsdbppg.cpp:	DDV_MaxChars(pDX, m_strMemoFileName, 260);
+rrocx\rsw\rsdbppg.cpp:void CArpDatabasePropPage::OnMemofileButton() 
+rrocx\rsw\rsdbppg.cpp:	CString strMemoFileFilter        ;
+rrocx\rsw\rsdbppg.cpp:	strMemoFileFilter = _T("All Files (*.*)|*.*|") ;
+rrocx\rsw\rsdbppg.cpp:	strDialogTitle    = _T("Select Memo File") ;
+rrocx\rsw\rsdbppg.cpp:	if ( CommonFileDialog(m_strMemoFileName, strStartDirectory, strMemoFileFilter, 
+rrocx\rsw\rsdbppg.cpp:		m_strMemoFileName = strUserSelectedDirectory + strUserSelectedFile ;
+rrocx\rsw\rsdbppg.cpp:		SetControlStatus ( IDC_MEMOFILE, TRUE ) ;
+rrocx\rsw\rsdbppg.cpp:		CWnd* pwndEditControl = GetDlgItem ( IDC_MEMOFILE ) ;
+rrocx\rsw\rsdbppg.cpp:		pwndEditControl->SetWindowText ( m_strMemoFileName ) ;
+rrocx\rsw\rsdbppg.cpp:	IgnoreApply ( IDC_MEMOFILE_BUTTON    ) ;
+rrocx\rsw\rswctl.cpp:	DISP_PROPERTY_EX(CRrocxCtrl, "MemoFileName",        GetMemoFileName,        SetMemoFileName,         VT_BSTR )
+rrocx\rsw\rswctl.cpp:	PX_String(pPX, _T("MemoFileName"      ), m_strMemoFileName                 ) ;
+rrocx\rsw\rswctl.cpp:	m_strMemoFileName       = _T("") ;
+rrocx\rsw\rswctl.cpp:	m_strMemoFileName       = _T("") ;
+rrocx\rsw\rsdefaul.cpp:	CString strDataFilters      = _T("Text Memo Files (*.Txt)|*.Txt|All Files (*.*)|*.*") ; 
+rrocx\rrw\rrwctl.cpp:	DISP_PROPERTY_EX(CRrocxCtrl, "MemoFileName",        GetMemoFileName,        SetMemoFileName,         VT_BSTR )
+rrocx\rrw\rrwctl.cpp:	PX_String(pPX, _T("MemoFileName"      ), m_strMemoFileName                 ) ;
+rrocx\rrw\rrwctl.cpp:	m_strMemoFileName       = _T("") ;
+rrocx\rrw\rrwctl.cpp:	m_strMemoFileName       = _T("") ;
+rrocx\ocxfile.cpp:			// allocate memory for directory and file buffers
+rrocx\dbaseppg.cpp:	ON_BN_CLICKED(IDC_MEMOFILE_BUTTON,    OnMemofileButton   )
+rrocx\dbaseppg.cpp:	m_strMemoFileName = _T("")   ;
+rrocx\dbaseppg.cpp:	IgnoreApply ( IDC_MEMOFILE_BUTTON    ) ;
+rrocx\dbaseppg.cpp:	DDP_Text (pDX, IDC_MEMOFILE,       m_strMemoFileName, _T("MemoFileName") ) ;
+rrocx\dbaseppg.cpp:	DDX_Text (pDX, IDC_MEMOFILE,       m_strMemoFileName) ;
+rrocx\dbaseppg.cpp:void CDbasePropPage::OnMemofileButton() 
+rrocx\dbaseppg.cpp:	CString strMemoFileFilter        ;
+rrocx\dbaseppg.cpp:	strMemoFileFilter = _T("All Files (*.*)|*.*|") ;
+rrocx\dbaseppg.cpp:	strDialogTitle    = _T("Select Memo File") ;
+rrocx\dbaseppg.cpp:	if ( CommonFileDialog(m_strMemoFileName, strStartDirectory, strMemoFileFilter, strDialogTitle, strUserSelectedFile, strUserSelectedDirectory) )
+rrocx\dbaseppg.cpp:		m_strMemoFileName = strUserSelectedDirectory + strUserSelectedFile ;
+rrocx\dbaseppg.cpp:		SetControlStatus ( IDC_MEMOFILE, TRUE ) ;
+rrocx\dbaseppg.cpp:		CWnd* pwndEditControl = GetDlgItem ( IDC_MEMOFILE ) ;
+rrocx\dbaseppg.cpp:		pwndEditControl->SetWindowText ( m_strMemoFileName ) ;
+RR\rrw32\adsfile.cpp:*  Description  :  Open a table, index, or memo file
+RR\rrw32\adsfile.cpp:      // from memory.
+RR\cntritem.cpp:// retrieved from the metafile and set in the memory device context.
+RR\cntritem.cpp:	ZeroMemory ( &emh, sizeof(ENHMETAHEADER) ) ;
+RR\cntritem.cpp:	ZeroMemory ( &emh, sizeof(ENHMETAHEADER) ) ;
+RR\cntritem.cpp:	CDC dcMemory ;
+RR\cntritem.cpp:	VERIFY( dcMemory.CreateCompatibleDC ( &dcScreen ) );
+RR\cntritem.cpp:	CBitmap* pbitmapOld = (CBitmap*) dcMemory.SelectObject ( &bitmapItem ) ;
+RR\cntritem.cpp:	dcMemory.FillRect ( rectPicture, CBrush::FromHandle((HBRUSH)::GetStockObject(WHITE_BRUSH)) ) ;
+RR\cntritem.cpp:	dcMemory.SelectPalette ( &paletteMetafile, FALSE ) ;
+RR\cntritem.cpp:	dcMemory.RealizePalette() ;
+RR\cntritem.cpp:	//PlayEnhMetaFileAtOriginalSize ( dcMemory, hEnhMetafile ) ;
+RR\cntritem.cpp:	dcMemory.PlayMetaFile ( hEnhMetafile, rectPicture ) ;
+RR\cntritem.cpp:	//dcMemory.BitBlt ( 0, 0, nPictureWidth, nPictureHeight, &dcScreen, 0, 0, SRCCOPY ) ;
+RR\cntritem.cpp:	//dcScreen.BitBlt ( 0, 0, nPictureWidth, nPictureHeight, &dcMemory, 0, 0, SRCCOPY ) ;
+RR\cntritem.cpp:	dcMemory.SelectObject ( pbitmapOld ) ;
+RR\cntritem.cpp:	dcMemory.DeleteDC() ;
+RR\cntritem.cpp:	// is actually drawn to the memory device. 
+RR\mainfrm.cpp: we can't access the bExiting memory variable.  As the comment below says, this
+RR\mainfrm.cpp:	::DragFinish ( hDropInfo ) ;  // release memory
+RR\mainfrm.cpp:		// Start with drives used in MFFiles and any ascii memo
+RR\rrcompos.cpp:// Fix memory leak with oldftb.
+RR\rrcompos.cpp://  related to early application of query.  This fixes a memory leak that
+RR\rrcompos.cpp:	MFDbaseEd = TRUE;		//TRUE if using dBASE III editor's memos
+RR\rrcompos.cpp:	MFMemoLimit = 0;		// what to init dLength to for memo fields
+RR\rrcompos.cpp:	MFMemoWrap = FALSE;				// TRUE=> default wordwrap memo fields
+RR\rrcompos.cpp:	MEMOOff = 0L;			// was static in mfgetmch.cpp
+RR\rrcompos.cpp:	memset( &memo_pkt, 0, sizeof( memo_pkt ));		// was static in mfgetmch.cpp
+RR\rrcompos.cpp:	memobuff_chain_hdr_ptr = NULL;
+RR\rrcompos.cpp:	memobuff_chain_tail_ptr = (LMEMOBUFF_CHAIN_HDR)NULL;// from memo.cpp, included in mfgetmch.cpp - sort of static?
+RR\rrcompos.cpp:	MFANamedMemos = 0;				// FALSE=> ascii file has no named memos; TRUE=>named memos
+RR\rrcompos.cpp:	// mjs 11/22/95  Fix memory leak.
+RR\rrdoc.cpp:      ZeroMemory( &si, sizeof(si) );
+RR\rrdoc.cpp://    ZeroMemory( &pi, sizeof(pi) );
+RR\rrdoc.cpp://    ZeroMemory( &m_RRBrowse, sizeof(m_RRBrowse) );
+RR\rrdoc.cpp:   ZeroMemory( &si, sizeof(si) );
+RR\rr.cpp:// Added initializers for new memory variables relating to memory-mapped
+RR\rr.cpp:	memoblksz = 0;
+RR\rr.cpp:	memocurpos = 0L;
+RR\rr.cpp:	memobegpos = 0L;
+RR\rr.cpp:	memocurblkoff = 0L;
+RR\rr.cpp:	memocurendoff = 0L;
+RR\rr.cpp:	memonxtblkoff = 0L;
+RR\rr.cpp:	memos = FALSE;
+RR\rrview.cpp:		homeMove();
+RR\render.cpp:// CReportWriterFormat::GetMemoryNeeded
+RR\render.cpp:CReportWriterFormat::GetMemoryNeeded
+RR\render.cpp:		cbMemLen = GetMemoryNeeded();
+RR\render.cpp:				if ( WriteToMemory(pMem) )
+RR\render.cpp:// CReportWriterFormat::WriteToMemory
+RR\render.cpp:CReportWriterFormat::WriteToMemory
+RR\render.cpp:	cbMemLen = GetMemoryNeeded();	
+RR\render.cpp:		ZeroMemory(pCurrent, cbMemLen);
+RR\render.cpp:		CopyMemory(pCurrent, "NAME=", 5);
+RR\render.cpp:		CopyMemory(pCurrent, m_strQueryName, m_strQueryName.GetLength());
+RR\render.cpp:		CopyMemory(pCurrent, "\0", 1);
+RR\render.cpp:		CopyMemory(pCurrent, "DATA_SOURCE=", 12);
+RR\render.cpp:		CopyMemory(pCurrent, m_strDSN, m_strDSN.GetLength());
+RR\render.cpp:		CopyMemory(pCurrent, "\0", 1);
+RR\render.cpp:		CopyMemory(pCurrent, "CONNECT=", 8);
+RR\render.cpp:		CopyMemory(pCurrent, m_strConnect, m_strConnect.GetLength());
+RR\render.cpp:		CopyMemory(pCurrent, "\0", 1);
+RR\render.cpp:		CopyMemory(pCurrent, "QUERY=", 6);
+RR\render.cpp:		CopyMemory(pCurrent, m_strQuery, m_strQuery.GetLength());
+RR\render.cpp:		CopyMemory(pCurrent, "\0", 1);
+RR\render.cpp:		CopyMemory(pCurrent, "\0", 1);
+RR\render.cpp:		CryptMemory(pMem, cbMemLen);
+RR\render.cpp:			ZeroMemory(pMem, iLen);
+RR\render.cpp:				if ( ReadFromMemory(pMem, iLen) )
+RR\render.cpp:// CReportWriterFormat::ReadFromMemory
+RR\render.cpp:CReportWriterFormat::ReadFromMemory
+RR\render.cpp:		CryptMemory(pMem, cbMemLen);
+RR\render.cpp:// CReportWriterFormat::CryptMemory
+RR\render.cpp:CReportWriterFormat::CryptMemory
+RR\rrdrag.cpp:			AfxThrowMemoryException();  // any exception will do
+RR\rrdrag.cpp:				AfxThrowMemoryException();  // any exception will do
+RR\rrdrag.cpp:			AfxThrowMemoryException();      // any exception will do
+RR\adsfile.cpp:*  Description  :  Open a table, index, or memo file
+RR\adsfile.cpp:      // from memory.
+RR\rrole.cpp:			AfxThrowMemoryException();  // any exception will do
+RR\rrole.cpp:				AfxThrowMemoryException();  // any exception will do
+RR\rrole.cpp:			AfxThrowMemoryException();  // any exception will do
+RR\rrole.cpp:			AfxThrowMemoryException();  // any exception will do
+MFMISC\mfinit.cpp:// fix a memory leak
+MFMISC\RRW\mfmemdbc.cpp:// Routine to map the klipper package (index reading code) memory error
+MFMISC\mfrewind.cpp:// don't call the memo.cpp cache buffer allocator here - mfgetbuf.cpp
+MFMISC\mfrewind.cpp:// mfrewind to initialize memo control, for the memo performance enhancements.
+MFMISC\mfrewind.cpp:#include "memo.h"		// sjo - included this so we can init memo buffers
+MFMISC\mfrewind.cpp://MF_MEMO_HDLR_PKT	memo_pkt;	// memo_pkt used to init buffers.
+MFMISC\mfrewind.cpp:	// sjo - initialize the memo buffers.  This needs to be done before
+MFMISC\mfrewind.cpp:	if (mf_error=mf_memo_hdlr(INIT_BUFFERS, &memo_pkt))
+MFMISC\mfreset.cpp:// fix a memory leak
+UTIL\zmemory.cpp:// compute available usable memory
+UTIL\zmemory.cpp:// $Log:   H:/vcsmfc/util/zmemory.cpv  $
+UTIL\zmemory.cpp:#define _ZMEMORY_C_
+UTIL\zmemory.cpp:unsigned CRrApp::zmemory(unsigned minsz)
+UTIL\zmemory.cpp:// unsigned minsz; 	   /* minimum-size chunk of memory of interest (in paragraphs) */
+UTIL\zfcmp.cpp:   If everything is OK, set status = 1 (and thus memorize that
+UTIL\znv.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+UTIL\znv.cpp:		return ZNVError=ZNVMEM;	/* ran out of memory */
+UTIL\znv.cpp:		return ZNVError=ZNVMEM; 	/* ran out of memory */
+UTIL\znv.cpp:			ZNVError = ZNVMEM;		/* out of memory */
+UTIL\znvrt.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+RRWCNVRT\vfpdata.cpp:#define BUFSIZE 512 	/* rdflds() field buffer size (512 for memo read) */
+RRWCNVRT\vfpdata.cpp:const MEMOBLKLEN = 6;				// memo block size is kept on offsets 6-7
+RRWCNVRT\vfpdata.cpp:const MEMO_NAME_OFF = 23;				// memo block offset for name
+RRWCNVRT\vfpdata.cpp:const MEMOBUFLEN = 2048;			// max memo buffer length (can be changed)
+RRWCNVRT\vfpdata.cpp:UTWO iMemoSize;
+RRWCNVRT\vfpdata.cpp:{ // read DCT (memo) file to get paths of DBFs
+RRWCNVRT\vfpdata.cpp:	int iOffset = iBlkNo * iMemoSize;	// compute memo offset
+RRWCNVRT\vfpdata.cpp:	int ix = MEMO_NAME_OFF;				// pathname text offset in memo
+RRWCNVRT\vfpdata.cpp:	char memoBlk[MEMOBUFLEN];			// should be big enough
+RRWCNVRT\vfpdata.cpp:	if (RDCT (&memoBlk, iMemoSize))	// read memo block
+RRWCNVRT\vfpdata.cpp:	// process memo block: toss all non-printing characters
+RRWCNVRT\vfpdata.cpp:	// make sure it's a text memo
+RRWCNVRT\vfpdata.cpp:	if (memoBlk[3] != 1)
+RRWCNVRT\vfpdata.cpp:		return FALSE;				// not a text memo
+RRWCNVRT\vfpdata.cpp:	memcpy (lpszName, &memoBlk[ix], strlen(&memoBlk[ix]) + 1); // put in table record
+RRWCNVRT\vfpdata.cpp:				return TRUE;	// couldn't get memory
+RRWCNVRT\vfpdata.cpp:					return TRUE;	// couldn't get memory
+RRWCNVRT\vfpdata.cpp:	// get the memo block size from the DCT
+RRWCNVRT\vfpdata.cpp:	char cMemoSz[2];
+RRWCNVRT\vfpdata.cpp:	if ( (DCTFile.Seek (MEMOBLKLEN, CFile::begin ) != MEMOBLKLEN)
+RRWCNVRT\vfpdata.cpp:		|| (RDCT (cMemoSz, 2)) )
+RRWCNVRT\vfpdata.cpp:	// if bigger than MEMOBUFLEN, we have an error!!!
+RRWCNVRT\vfpdata.cpp:	iMemoSize = cMemoSz[0]*256+cMemoSz[1]; // convert
+RRWCNVRT\vfpdata.cpp:	if ( (iMemoSize > MEMOBUFLEN) || (RDBC (&hdr, sizeof(FP_HDR))) ||
+RRWCNVRT\pass1.cpp:					nOff = strlen(&buf.yxRec[0]) + 1;	// skipping ASCII memo filename, don't need
+RRWCNVRT\pass1.cpp:				addToFileList(cfn = fnMEMO, filename, alias);
+RRWCNVRT\pass1.cpp:				cfn = 0;  // end of ascii memo fields, on to master
+RRWCNVRT\pass1.cpp:					cfn==fnMEMO ? tASCII : tDB, 0);
+RRWCNVRT\pass1.cpp:					cfn==fnMEMO ? tASCII : tDB, 0);
+RRWCNVRT\report.cpp:		fatal(IDS_ERR_MEMORY, NULL) ;
+RRWCNVRT\report.cpp:		fatal(IDS_ERR_MEMORY, NULL) ;
+RRWCNVRT\rp6_rp5.cpp:			case KMEMO:
+RRWCNVRT\convert.cpp:		fatal(IDS_ERR_MEMORY, NULL) ;
+RRWCNVRT\rp4_rp6.cpp:// Retain ASCII memos.
+RRWCNVRT\rp4_rp6.cpp:// RSW 1444: remove zfMEMO flag from fields.
+RRWCNVRT\rp4_rp6.cpp:	BOOL bASCIIMemoFlds = FALSE;
+RRWCNVRT\rp4_rp6.cpp:				bASCIIMemoFlds = TRUE;
+RRWCNVRT\rp4_rp6.cpp:				bASCIIMemoFlds = FALSE;
+RRWCNVRT\rp4_rp6.cpp:				// remove memo flag from non-ASCII memo fields
+RRWCNVRT\rp4_rp6.cpp:				if (!(bASCIIMemoFlds))
+RRWCNVRT\rp4_rp6.cpp:					TWOBYTE(buf.yxRec[2]) &= ~zfMEMO;
+RRWCNVRT\rp4_rp6.cpp:			case KMEMO:
+RRWCNVRT\rp4_rp6.cpp:	if (!((c == KMEMO) || (c == KCHAR)))
+RRWCNVRT\rp5_rp6.cpp:// Retain ASCII memos, but clear the memo bit from dBASE memo fields.
+RRWCNVRT\rp5_rp6.cpp:	BOOL bASCIIMemoFlds = FALSE;
+RRWCNVRT\rp5_rp6.cpp:			bASCIIMemoFlds = TRUE;
+RRWCNVRT\rp5_rp6.cpp:			bASCIIMemoFlds = FALSE;
+RRWCNVRT\rp5_rp6.cpp:			// remove memo flag from non-ASCII memo fields
+RRWCNVRT\rp5_rp6.cpp:			if (!(bASCIIMemoFlds))
+RRWCNVRT\rp5_rp6.cpp:				TWOBYTE(buf.yxRec[2]) &= ~zfMEMO;
+RRWCNVRT\rp5_rp6.cpp:	// give back the memory for the total chain ----------------------------
+RRWCNVRT\rp5_rp6.cpp:			case KMEMO:
+RRWCNVRT\rp5_rp6.cpp:	if (!((c == KMEMO) || (c == KCHAR)))
+RRWCNVRT\rrw_rsw.cpp:	BOOL bASCIIMemoFlds = FALSE;
+RRWCNVRT\rrw_rsw.cpp:			bASCIIMemoFlds = TRUE;
+RRWCNVRT\rrw_rsw.cpp:			bASCIIMemoFlds = FALSE;
+RRWCNVRT\rrw_rsw.cpp:			// remove memo flag from non-ASCII memo fields
+RRWCNVRT\rrw_rsw.cpp:			if (!(bASCIIMemoFlds))
+RRWCNVRT\rrw_rsw.cpp:				FOURBYTE(buf.yxRec[4]) &= ~zfMEMO;
+RRWCNVRT\rrw_rsw.cpp:	// give back the memory for the total chain ----------------------------
+RRWCNVRT\rrw_rsw.cpp:			case KMEMO:
+RRWCNVRT\rrw_rsw.cpp:	if (!((c == KMEMO) || (c == KCHAR)))
+RRWCNVRT\fixrecs.cpp:		case KMEMO:
+RRWCNVRT\rp5_rp1.cpp:		case KMEMO:
+RRWCNVRT\vfputil.cpp:#define BUFSIZE 512 	/* rdflds() field buffer size (512 for memo read) */
+RRWCNVRT\vfputil.cpp:const MEMOBLKLEN = 6;				// memo block size is kept on offsets 6-7
+RRWCNVRT\vfputil.cpp:const MEMO_NAME_OFF = 23;				// memo block offset for name
+RRWCNVRT\vfputil.cpp:const MEMOBUFLEN = 2048;			// max memo buffer length (can be changed)
+RRWCNVRT\vfputil.cpp:UTWO iMemoSize;
+RRWCNVRT\vfputil.cpp:{ // read DCT (memo) file to get paths of DBFs
+RRWCNVRT\vfputil.cpp:	int iOffset = iBlkNo * iMemoSize;	// compute memo offset
+RRWCNVRT\vfputil.cpp:	int ix = MEMO_NAME_OFF;				// pathname text offset in memo
+RRWCNVRT\vfputil.cpp:	char memoBlk[MEMOBUFLEN];			// should be big enough
+RRWCNVRT\vfputil.cpp:	if (RDCT (&memoBlk, iMemoSize))	// read memo block
+RRWCNVRT\vfputil.cpp:	// process memo block: toss all non-printing characters
+RRWCNVRT\vfputil.cpp:	// make sure it's a text memo
+RRWCNVRT\vfputil.cpp:	if (memoBlk[3] != 1)
+RRWCNVRT\vfputil.cpp:		return FALSE;				// not a text memo
+RRWCNVRT\vfputil.cpp:	memcpy (lpszName, &memoBlk[ix], strlen(&memoBlk[ix]) + 1); // put in table record
+RRWCNVRT\vfputil.cpp:				return TRUE;	// couldn't get memory
+RRWCNVRT\vfputil.cpp:					return TRUE;	// couldn't get memory
+RRWCNVRT\vfputil.cpp:	// get the memo block size from the DCT
+RRWCNVRT\vfputil.cpp:	char cMemoSz[2];
+RRWCNVRT\vfputil.cpp:	if ( (DCTFile.Seek (MEMOBLKLEN, CFile::begin ) != MEMOBLKLEN)
+RRWCNVRT\vfputil.cpp:		|| (RDCT (cMemoSz, 2)) )
+RRWCNVRT\vfputil.cpp:	// if bigger than MEMOBUFLEN, we have an error!!!
+RRWCNVRT\vfputil.cpp:	iMemoSize = cMemoSz[0]*256+cMemoSz[1]; // convert
+RRWCNVRT\vfputil.cpp:	if ( (iMemoSize > MEMOBUFLEN) || (RDBC (&hdr, sizeof(FP_HDR))) ||
+RRWCNVRT\RSW_RRW.CPP:			case KMEMO:
+MFFIELD\mfeord.cpp:		else filen = f->dFileNo;	/* must be memo? */
+MFFIELD\mfeord.cpp:					(((level==-2 && (filen==fnCOMPOSITE || filen==fnMEMO)) ||
+MFFIELD\mfeord.cpp:				fld->dFileNo = (filno==fnNONE || filno==fnMEMO) ?
+MFFIELD\mfeord.cpp:				fld->dFileNo = (filno==fnNONE || filno==fnMEMO) ?
+MFFIELD\mfeord.cpp:		 || ((fld->dFileNo==fnMEMO)				/* or ASCII memo that's */
+MFFIELD\mfeord.cpp:		{ /* set ready for all in-rec non-dup memo fields */
+MFFIELD\mfxfld.cpp:#define myZfNOTCHAR (zfMEMO|zfNUMERIC|zfLOGICAL|zfDATE|zfDATETIME|zfTIME)
+MFFIELD\mfxfld.cpp:// Returns NULL if it couldn't get memory for the new item.
+MFFIELD\mfxfld.cpp:	// mfFlags uses !(zfMEMO|zfNUMERIC|zfLOGICAL|zfDATE) to 
+MFFIELD\mfxfld.cpp:	if (exStuff->lFieldOptions & RRFLD_MEMO)
+MFFIELD\mfxfld.cpp:		wFldFlags |= zfMEMO;
+MFFIELD\mfxfld.cpp:		return NULL;	  // no memory I guess...
+MFFIELD\mfxfld.cpp:				return; // XXX out of memory
+MFFIELD\mfrlsfld.cpp:// Added DATADICT conditional around release of ->comment memory.
+MFFIELD\mfrlsfld.cpp:		 (f->dRFlags&rfTOTALFLD) || (f->dFlags&zfMEMO))))
+MFFIELD\mfgetfld.cpp:		lmemset(nf,0,sizeof(MFFIELD)); /* null fill the memory */
+WLAYOUT\wmove.cpp:// Char or memo fields that were specified in inches or cm had the old
+WLAYOUT\wmove.cpp:// Fix bug in resizeData() where memo fields were much too long when stretched.
+WLAYOUT\wmove.cpp:		// mjs 4/12/96   ... or how many m's, if a memo field.
+WLAYOUT\wmove.cpp:		length = newLength / getCharWidth(mf->dFlags & zfMEMO ? 'm' : 'x', f->fldFont);
+WLAYOUT\wmove.cpp:void CRrView::homeMove(void) 		// move me home where I belong...
+WLAYOUT\wmove.cpp:				{ // if got memory, store for undo
+WLAYOUT\wfont.cpp:			{ // memory allocated
+WLAYOUT\wfont.cpp:	{ // there's some fonts in memory
+WLAYOUT\wfont.cpp:			return (0);   // global memory shortage
+CFEDIT\editcalc.cpp:#define TYPEFLAGS (zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME)
+CFEDIT\editcalc.cpp:#define LINKMASK (zfPAGENO|zfRECNO|zfMEMO)
+CFEDIT\editcalc.cpp:#define LINKMASK (zfPAGENO|zfRECNO|zfMEMO|zfLOGICAL)
+CFEDIT\editcalc.cpp:			else if (dflags&zfMEMO)
+CFEDIT\editcalc.cpp:			(fld->dFlags&(zfNUMERIC|zfDATE|zfMEMO|zfLOGICAL|zfDATETIME|zfTIME)))
+CFEDIT\editcalc.cpp:			else if (cf_flags&zfMEMO)
+CFEDIT\editcalc.cpp:			if ((!ecode) && (cf_flags&zfMEMO))
+CFEDIT\editcalc.cpp:			{ /* field is a calculated memo */
+CFEDIT\editcalc.cpp:							{ /* error this time is memory failure! */
+CFEDIT\editcalc.cpp:			  case zfMEMO:
+CFEDIT\editcalc.cpp:				if (!(cf_calcfld->dFlags&(zfNUMERIC|zfDATE|zfMEMO|zfLOGICAL|zfDATETIME|zfTIME)))
+CFEDIT\editcalc.cpp:							{ /* error this time is memory failure! */
+CFEDIT\editcalc.cpp:							{ /* error this time is memory failure! */
+DINSERT\listcontrol.cpp:		"Memo",
+DINSERT\listcontrol.cpp:		"Memo",
+DINSERT\listcontrol.cpp:	if (u->uFlags & zfMEMO)
+DINSERT\dtext.cpp:// handle spaces in ASCII memo attachment
+DINSERT\dinsfld.cpp:		{ // can't, no memory I guess
+ODBC\libodbc++-0.2.5\tests\scroll.cpp:#include <memory>
+ODBC\libodbc++-0.2.5\tests\oracle.cpp:#include <memory>
+ODBC\libodbc++-0.2.5\tests\dbmetadata.cpp:#include <memory>
+ODBC\libodbc++-0.2.5\tests\streams.cpp:#include <memory>
+ODBC\libodbc++-0.2.5\tests\mysql.cpp:#include <memory>
+ODBC\libodbc++-0.2.5\tests\dmtest.cpp:#include <memory>
+ODBC\libodbc++-0.2.5\qtsql++\mainwindow.cpp:#include <memory>
+ODBC\libodbc++-0.2.5\qtsql++\resultwindow.cpp:#include <memory>
+ODBC\libodbc++-0.2.5\src\datastream.cpp:    // avoid leaking memory
+ODBC\libodbc++-0.2.5\src\drivermanager.cpp:#include <memory>
+PD\wexpint.cpp:// printing a word-wrapped memo.  No position backwards in a line
+PD\wexpint.cpp:	// lBuf is memory locked by caller
+PD\genreport.cpp:void CGenerateReportHTML::freePDIMemory ()
+PD\memdlg.cpp:			MEM_SetLowMemoryOption (0);
+PD\memdlg.cpp:						MEM_SetLowMemoryOption (ID_RADIO_TERMINATE_PREVIEW);
+PD\memdlg.cpp:						MEM_SetLowMemoryOption (ID_RADIO_PAUSE_PRINT_PREVIEW);
+PD\memdlg.cpp:						MEM_SetLowMemoryOption (ID_RADIO_FREE_PAGES);
+PD\rtfxint.cpp:// Changed "MEM_" calls to regular Windows memory calls.
+PD\rtfxint.cpp:// lBuf is memory locked by caller
+PD\rtfxint.cpp:// add a print/preview font to memory cache
+PD\rtfxint.cpp:						MEMORYSTATUS ms ;
+PD\rtfxint.cpp:						GlobalMemoryStatus ( &ms ) ;
+PD\rtfxint.cpp:						if ( ms.dwMemoryLoad >= 98 )  // 100 equals full memory use. 
+PD\rtfxint.cpp:					MEMORYSTATUS ms ;
+PD\rtfxint.cpp:					GlobalMemoryStatus ( &ms ) ;
+PD\rtfxint.cpp:					if (!WEXPPS.preview && (ms.dwMemoryLoad >= 98) )
+PD\pwdriver.cpp:// has been changed to DWORD to fix RRW 2892 insufficient memory for print/
+PD\pwdriver.cpp:// Fix memory leaks
+PD\pwdriver.cpp:// Change Local memory functions to Global - again
+PD\pwdriver.cpp:	MEM_InitMem (ps);	// preview memory initialization
+PD\pwdriver.cpp:	{ // sorry, not enough memory...
+PD\pwdriver.cpp:	return TRUE;	// memory allocated
+PD\pxdriver.cpp:	{ // sorry, not enough memory...
+PD\pxdriver.cpp:	GlobalFree( hPagePos );	// free page index memory
+PD\pxdriver.cpp:				MoveMemory( pPageData + pPage->dwPageTextCount, pLine, nSize );
+PD\pxdriver.cpp:			MoveMemory( pImages + pPage->wPageImages, pNew, sizeof( PRT_IMG ));
+PD\pxdriver.cpp:			MoveMemory( pObject + pPage->wPageObjects, pNew, sizeof( PRT_OBJECT ));
+PD\pxdriver.cpp:			MoveMemory( pChart + pPage->wPageCharts, pchart, sizeof( PRT_CHART ));
+PD\rtfexp.cpp:// Fixed problem with word-wrapped memos where we wrapped after every
+PD\rtfexp.cpp:// clean up memory, fonts, etc.
+PD\genhtml.cpp:		CATCH( CMemoryException, e )
+PD\genhtml.cpp:	CATCH( CMemoryException, e )
+PD\dbfexp.cpp:				ALLOCERR	- couln't allocate memory for header or record buf
+PD\csvxint.cpp:// Fix bug where memo or char data may be bigger than record buffer.
+PD\csvxint.cpp:// Fix bug where memo or char data may be bigger than record buffer.
+PD\htmlint.cpp:// Memory leak, free memory
+PD\htmlint.cpp:// lBuf is memory locked by caller
+PD\htmlint.cpp:		// Don't free memory here, 
+PD\htmlint.cpp:		// We were losing track of memory so just free it after use it since
+PD\htmlint.cpp:		// don't use it elsewhere.  Used to call freeMemory() after this routine
+PD\htmlint.cpp:		// which will go thru list of tableentrys freeing memory and resetting data.
+PD\htmlint.cpp:		// Even if did free memory here, FreePDIString() is a better choice because
+PD\htmlint.cpp:			//This code free the memory that was allocated in getNextPDIField function using *pThePDI=pFoo
+PD\htmlint.cpp:		    //This unfreed memory caused a leak with every field that was generated. WO150994. WRR
+PD\htmlint.cpp:void freeMemory(LPPRT_STRUCT ps)
+PD\htmlint.cpp:	HEXPPS.pReportHTMLgenerator->freePDIMemory ();
+PD\htmlint.cpp:		freeMemory (ps);
+PD\htmlint.cpp:// add a print/preview font to memory cache
+PD\htmlint.cpp:					MEMORYSTATUS ms ;
+PD\htmlint.cpp:					GlobalMemoryStatus ( &ms ) ;
+PD\htmlint.cpp:					if ( ms.dwMemoryLoad >= 98 )
+PD\htmlint.cpp:					//	if (!HWEXPPS.preview && (ms.dwMemoryLoad >= 98) )
+PD\pwint.cpp:// Bug: fail to delete cpen object uses memory
+PD\pwint.cpp:// memory for print/preview problem. In PD.h pageByteCount has been changed to
+PD\pwint.cpp:// Fix memory leaks
+PD\pwint.cpp:// Change Local memory functions to Global - again
+PD\pwint.cpp:// add a print/preview font to memory cache
+PD\pwint.cpp:// free page memory for page "pg"
+PD\htmlexp.cpp:// Separate processes would get a separate memory space for the flag, so it 
+PD\htmlexp.cpp:// clean up memory, fonts, etc.
+PD\wksexp.cpp:				ALLOCERR	- couln't allocate memory for header or record buf
+PD\mem.cpp:// This is an insulating layer to the Windows memory API. This should be used
+PD\mem.cpp:// only by the printer driver code, since under low memory conditions, a message
+PD\mem.cpp:// pages of memory.
+PD\mem.cpp://					  to satisfy the memory request. By doing a GlobalCompact, there
+PD\mem.cpp:// 06/07/93 ERP 	- Removed extra memory checks to speed things up.
+PD\mem.cpp:// iLowMemoryOption is the action to take when a low memory condtion is found
+PD\mem.cpp:static int iLowMemoryOption 	= 0;
+PD\mem.cpp:	if ((iLowMemoryOption == ID_RADIO_PAUSE_PRINT_PREVIEW) &&
+PD\mem.cpp:		iLowMemoryOption = 0;
+PD\mem.cpp:	iLowMemoryOption = 0;
+PD\mem.cpp:	// Only set the low memory limit for the preview case.
+PD\mem.cpp:			WritePrivateProfileString ("Memory", "MinMem", "256", "RSW.INI");
+PD\mem.cpp:			WritePrivateProfileString ("Memory", "MinMem", "256", "RRW.INI");
+PD\mem.cpp:// These should simple map onto the Windows memory API calls.
+PD\mem.cpp:	switch (iLowMemoryOption)
+PD\mem.cpp:void DLLENTRY MEM_SetLowMemoryOption (int iLowMemOption)
+PD\mem.cpp:	iLowMemoryOption = iLowMemOption;
+PD\mem.cpp:} // end MEM_SetLowMemoryOption
+PD\pwprev.cpp:// Change Local memory functions to Global - again
+PD\pxint.cpp:// Add a print/preview font to memory cache
+PD\pxint.cpp:// Free page memory for page. Called from free freePageMem()
+PD\pxint.cpp:					MoveMemory( &boxTemp, &pBoxes[jj], sizeof( LINE_BOX ));
+PD\pxint.cpp:					MoveMemory( &pBoxes[jj], &pBoxes[jj + nGap], sizeof( LINE_BOX ));
+PD\pxint.cpp:					MoveMemory( &pBoxes[jj + nGap], &boxTemp, sizeof( LINE_BOX ));
+PD\pxint.cpp:		// attempt to get the handle to the global memory
+PD\pxint.cpp:	{ // free memory
+PD\dllmem.cpp:	Need to use GlobalAlloc to allocate memory in a DLL bacause _fmalloc
+PD\dllmem.cpp:	allocates memory as GMEM_SHARE.
+PD\dllmem.cpp:	I took the memory calls from revision 1.4 of wmem.c (vdir=win, vroot=vcs, 
+PD\dllmem.cpp:	I got my information from Dale Rogerson's article "Allocating Memory 
+PD\dllmem.cpp:	memory allocated from a DLL marked as GMEM_SHARE.
+PD\dllmem.cpp:	The GMEM_SHARE flag tells Windows that this memory is going to be shared 
+PD\dllmem.cpp:	in a DLL is that the memory will not be released until the DLL is 
+PD\dllmem.cpp:	unloaded from memory. The DLL is not always unloaded from memory when 
+PD\dllmem.cpp:	instances of an application are using a DLL, the DLL and its memory will 
+PD\dllmem.cpp:	The following are the possible times when memory is freed:
+PD\dllmem.cpp:	-	If an application allocates memory and does not free it, the memory is 
+PD\dllmem.cpp:	-	If an application calls a DLL that allocates memory without the 
+PD\dllmem.cpp:		GMEM_SHARE flag (via GlobalAlloc), the memory is owned by the 
+PD\dllmem.cpp:	-	If an application calls a DLL that allocates memory with the GMEM_SHARE 
+PD\dllmem.cpp:		flag, the memory will be owned by the DLL and not by the application. 
+PD\dllmem.cpp:		The memory will be released when the DLL is unloaded and not when the 
+PD\dllmem.cpp:	large pools of allocated but unneeded memory. It is usually best to use 
+PD\dllmem.cpp:	the GMEM_SHARE flag only when memory must be shared or must exist for the 
+PD\dllmem.cpp:	generate a call to GlobalFree. Even if the DLL is freeing memory before 
+PD\dllmem.cpp:	it returns to the application, memory can be wasted. Refer to the previous 
+PD\dllmem.cpp:	// call me w/ the GHND flag for moveable, zero init memory
+PD\tblentry.cpp:	// would unlock memory it didn't have, and then not free it anyway.
+PD\csvexp.cpp:				ALLOCERR	- couln't allocate memory for header or record buf
+PD\csvexp.cpp:	// 	mechanism if make this memory dynamic b/c can use record_buf
+PD\csvexp.cpp:				// else CHAR or MEMO, must disambiguate data first (look for quotes, separator)
+PD\csvexp.cpp:				case dbxMEMO:
+PD\csvexp.cpp:// CloseFile does the final data flush, closes the file, and frees alloced memory
+WREPORT\script.cpp:// Set memos to inches/centimeters mode
+WREPORT\script.cpp:	// set the width - in/cm if memo field...
+WREPORT\script.cpp:	m_pDoc->setCharFldWidth(f, f->dLength, (f->dFlags & zfMEMO) == 0);
+WREPORT\script.cpp:			{ // can't, no memory I guess
+WREPORT\wrepfix.cpp:// now check FIF memory table for each field
+WREPORT\mru.cpp://  INI file at startup, maintained in memory (in the Paths structure),
+WREPORT\mru.cpp:			iMRUCount++;		// bump to next slot in memory
+WREPORT\wiz.cpp:// Remove Windows INI calls - too slow.  Fix MEMO fields.  Fudge numeric data.
+WREPORT\wiz.cpp:#define TYPE_MEMO	4
+WREPORT\wiz.cpp://	4: Memo
+WREPORT\wiz.cpp:			switch (f->dFlags & (zfDATE | zfDATETIME | zfTIME | zfLOGICAL | zfMEMO))
+WREPORT\wiz.cpp:				case zfMEMO:
+WREPORT\wiz.cpp:					fldType = TYPE_MEMO;
+WREPORT\wiz.cpp:			if ((f->dFlags & zfMEMO) && m_pComposite->mfgetmch(f, f->dFldP, NCOL, FALSE))
+WREPORT\winst.cpp:// Replaced zack() call with zack1() call on memory error because there does not
+WREPORT\winst.cpp:// RRW #2475; RSW #1908 - set memos in inches
+WREPORT\winst.cpp:		if ((f->fhdr.hflags & DATAFLD) && (f->dFlags & zfMEMO))
+WREPORT\winst.cpp:		{ // if it's a memo field, let's set it to inches
+WREPORT\wreport.cpp://  INI file at startup, maintained in memory (in the Paths structure),
+WREPORT\wreport.cpp:	rlsAll();				// free up some memory maybe
+WREPORT\RRW\xwrepcpy.cpp:				// Added yxMEMOTYPE because it had the same type code as exportadd
+WREPORT\RRW\xwrepcpy.cpp:				//  for one beta period (version 6.0) and so, a memotype record
+WREPORT\RRW\xwrepcpy.cpp:				 type!=yxMEMOTYPE))
+WREPORT\RSW\swrepcpy.cpp:			// Added yxMEMOTYPE because it had the same type code as exportadd
+WREPORT\RSW\swrepcpy.cpp:			//  for one beta period (version 6.0) and so, a memotype record
+WREPORT\RSW\swrepcpy.cpp:			 type!=yxMEMOTYPE) && 
+WREPORT\RSW\swrepcpy.cpp:			case yxMEMOTYPE:
+WREPORT\RSW\swrepcpy.cpp:			// Added yxMEMOTYPE because it had the same type code as exportadd
+WREPORT\RSW\swrepcpy.cpp:			//  for one beta period (version 6.0) and so, a memotype record
+WREPORT\RSW\swrepcpy.cpp:			 type!=yxMEMOTYPE) && 
+WREPORT\RSW\swrepcpy.cpp:			case yxMEMOTYPE:
+rrsqlwiz\report.cpp:		fatal(IDS_ERR_MEMORY, NULL) ;
+rrsqlwiz\report.cpp://		fatal(IDS_ERR_MEMORY, NULL) ;
+rrsqlwiz\wizutil.cpp:	{ // got memory...
+rrsqlwiz\wizutil.cpp:	ZeroMemory( &lf, sizeof( LOGFONT ));
+rrsqlwiz\wizutil.cpp:	ZeroMemory( &di, sizeof( DOCINFO ));
+rrsqlwiz\wizutil.cpp:	ZeroMemory( &ofn, sizeof( ofn ));
+rrsqlwiz\wizutil.cpp:	ZeroMemory( &ofn, sizeof( ofn ));
+rrsqlwiz\convwiz.cpp:	ZeroMemory( &DrvInfo, sizeof( DRVINFO ));
+rrsqlwiz\convwiz.cpp:		catch ( CMemoryException )
+rrsqlwiz\convwiz.cpp:		{ // show memory error and flag error
+rrsqlwiz\statdlg.cpp:	ZeroMemory( &pd, sizeof( PRINTDLG ));
+rrsqlwiz\wrrw_rsw.cpp:					MoveMemory( pExp, pExp + 1, nCnt );
+rrsqlwiz\wrrw_rsw.cpp:	if (!(( cChar == KMEMO ) || ( cChar == KCHAR )))
+rrsqlwiz\wrrw_rsw.cpp:   			case KMEMO:
+rrsqlwiz\wrrw_rsw.cpp:	BOOL bASCIIMemoFlds = FALSE;
+rrsqlwiz\wrrw_rsw.cpp:					MoveMemory( szIndex, &buf.yxRec[3], buf.yxCount - 3 );
+rrsqlwiz\wrrw_rsw.cpp:				bASCIIMemoFlds = TRUE;
+rrsqlwiz\wrrw_rsw.cpp:				bASCIIMemoFlds = FALSE;
+rrsqlwiz\wrrw_rsw.cpp:				// remove memo flag from non-ASCII memo fields
+rrsqlwiz\wrrw_rsw.cpp:				if ( !bASCIIMemoFlds )
+rrsqlwiz\wrrw_rsw.cpp:					FOURBYTE( buf.yxRec[4] ) &= ~zfMEMO;
+rrsqlwiz\wrrw_rsw.cpp:	// give back the memory for the total chain
+rrsqlwiz\vfputil.cpp:#define BUFSIZE 512 	/* rdflds() field buffer size (512 for memo read) */
+rrsqlwiz\vfputil.cpp:const MEMOBLKLEN = 6;				// memo block size is kept on offsets 6-7
+rrsqlwiz\vfputil.cpp:const MEMO_NAME_OFF = 23;				// memo block offset for name
+rrsqlwiz\vfputil.cpp:const MEMOBUFLEN = 2048;			// max memo buffer length (can be changed)
+rrsqlwiz\vfputil.cpp:UTWO iMemoSize;
+rrsqlwiz\vfputil.cpp:{ // read DCT (memo) file to get paths of DBFs
+rrsqlwiz\vfputil.cpp:	int iOffset = iBlkNo * iMemoSize;	// compute memo offset
+rrsqlwiz\vfputil.cpp:	int ix = MEMO_NAME_OFF;				// pathname text offset in memo
+rrsqlwiz\vfputil.cpp:	char memoBlk[MEMOBUFLEN];			// should be big enough
+rrsqlwiz\vfputil.cpp:	if (RDCT (&memoBlk, iMemoSize))	// read memo block
+rrsqlwiz\vfputil.cpp:	// process memo block: toss all non-printing characters
+rrsqlwiz\vfputil.cpp:	// make sure it's a text memo
+rrsqlwiz\vfputil.cpp:	if (memoBlk[3] != 1)
+rrsqlwiz\vfputil.cpp:		return FALSE;				// not a text memo
+rrsqlwiz\vfputil.cpp:	memcpy (lpszName, &memoBlk[ix], strlen(&memoBlk[ix]) + 1); // put in table record
+rrsqlwiz\vfputil.cpp:				return TRUE;	// couldn't get memory
+rrsqlwiz\vfputil.cpp:					return TRUE;	// couldn't get memory
+rrsqlwiz\vfputil.cpp:	// get the memo block size from the DCT
+rrsqlwiz\vfputil.cpp:	char cMemoSz[2];
+rrsqlwiz\vfputil.cpp:	if ( (DCTFile.Seek (MEMOBLKLEN, CFile::begin ) != MEMOBLKLEN)
+rrsqlwiz\vfputil.cpp:		|| (RDCT (cMemoSz, 2)) )
+rrsqlwiz\vfputil.cpp:	// if bigger than MEMOBUFLEN, we have an error!!!
+rrsqlwiz\vfputil.cpp:	iMemoSize = cMemoSz[0]*256+cMemoSz[1]; // convert
+rrsqlwiz\vfputil.cpp:	if ( (iMemoSize > MEMOBUFLEN) || (RDBC (&hdr, sizeof(FP_HDR))) ||
+rrsqlwiz\wizsql.cpp:				ZeroMemory( DrvInfo.szDatabase, MAX_PATH );
+rrsqlwiz\wizsql.cpp:						ZeroMemory( DrvInfo.szDatabase, MAX_PATH );	// forget it
+CFMISC\compdata.cpp:// FIx memory leak (RSW only) with cfstr3.
+CFMISC\cfrepnm.cpp:		nm = (action==_CFFIELD) ? mfbyndx(FieldIndex)->dCNameP : FileIndex==fnMEMO ? MFAAlias :
+CFMISC\cfneeded.cpp:#define NPM (zfNEEDED|zfPREVARG|zfMEMO)
+CFMISC\cfneeded.cpp:void CRrComposite::cfpmemo()	/* see if any needed memos are prev args */
+CFMISC\cfneeded.cpp:		if ((fld->dFlags&(zfMEMO|zfNEEDED|zfDUPFLD))==(zfMEMO|zfNEEDED))
+CFMISC\cfneeded.cpp:	cfpmemo();
+CFMISC\ulibr.cpp:#define TYPES (zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME)
+MFEDIT\editasci.cpp:// memo file).	getascii() loads packet with current ASCII memo settings.
+MFEDIT\editasci.cpp:// memo settings.
+MFEDIT\editasci.cpp:		if (((tfld->dFileNo==fnMEMO) &&
+MFEDIT\editasci.cpp:				if ((!MFANamedMemos) && (!lstrcmpi(MFAName,asciip->name)))
+MFEDIT\editasci.cpp:				{	/* Only alias is changing, and memo file does not include names */
+MFEDIT\editasci.cpp:					/* In this case, the single memo field name will be changing with */
+MFEDIT\editasci.cpp:					mightmerge = gotmemo();
+MFEDIT\editasci.cpp:					{ /* hide the old memo fields */
+MFEDIT\editasci.cpp:						if ((fld->dFileNo==fnMEMO) &&
+MFEDIT\editasci.cpp:						{ /* found an old memo file field */
+MFEDIT\editasci.cpp:							{ /* no match for old memo */
+MFEDIT\editasci.cpp:		mightmerge = gotmemo();
+MFEDIT\editasci.cpp:			if ((fld->dFileNo==fnMEMO) &&
+MFEDIT\editasci.cpp:			if ((fld->dFileNo==fnMEMO) &&
+MFEDIT\editasci.cpp:		if (fld->dFileNo==fnLIMBO) fld->dFileNo = (char)fnMEMO;
+MFEDIT\editasci.cpp:				if (fld->dFileNo==fnMEMO && (!(fld->dFlags&zfCALCULATED)))
+MFEDIT\editasci.cpp:				{	/* this must be the main or a dup fld specifier for the memo field */
+MFEDIT\editasci.cpp:					lstrcpy(fld->dCNameP,asciip->alias);	/* new memo field name */
+MFEDIT\editasci.cpp:			lcfrepnm(_CFFILE,NOID,fnMEMO,savalias,asciip->alias);	/* fix aliases in formulas */
+MFEDIT\editasci.cpp:				{ /* found an old memo file field */
+MFEDIT\editasci.cpp:						fld->dFileNo = (char)fnMEMO;	/* save old */
+MFEDIT\editasci.cpp:				lcfrepnm(_CFFILE,NOID,fnMEMO,savalias,MFAAlias);
+MFEDIT\fileline.cpp:	if (!(lfld->dFlags&(zfNUMERIC|zfDATE|zfDATETIME|zfTIME|zfLOGICAL|zfMEMO)))
+MFEDIT\editrel.cpp:	if (!(lkfld->dFlags&(zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME)))
+MFEDIT\editrel.cpp:	if (!(lkfld->dFlags&(zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME)))
+MFEDIT\editrel.cpp:	mightmerge = gotmemo(); /* init for mfdelc2 */
+DDATA\RRW\vfpdata.cpp:#define BUFSIZE 512 	/* rdflds() field buffer size (512 for memo read) */
+DDATA\RRW\vfpdata.cpp:const MEMOBLKLEN = 6;				// memo block size is kept on offsets 6-7
+DDATA\RRW\vfpdata.cpp:const MEMO_NAME_OFF = 23;				// memo block offset for name
+DDATA\RRW\vfpdata.cpp:const MEMOBUFLEN = 2048;			// max memo buffer length (can be changed)
+DDATA\RRW\vfpdata.cpp:UTWO iMemoSize;
+DDATA\RRW\vfpdata.cpp:{ // read DCT (memo) file to get paths of DBFs
+DDATA\RRW\vfpdata.cpp:	int iOffset = iBlkNo * iMemoSize;	// compute memo offset
+DDATA\RRW\vfpdata.cpp:	int ix = MEMO_NAME_OFF;				// pathname text offset in memo
+DDATA\RRW\vfpdata.cpp:	char memoBlk[MEMOBUFLEN];			// should be big enough
+DDATA\RRW\vfpdata.cpp:	if (RDCT (&memoBlk, iMemoSize))	// read memo block
+DDATA\RRW\vfpdata.cpp:	// process memo block: toss all non-printing characters
+DDATA\RRW\vfpdata.cpp:	// make sure it's a text memo
+DDATA\RRW\vfpdata.cpp:	if (memoBlk[3] != 1)
+DDATA\RRW\vfpdata.cpp:		return FALSE;				// not a text memo
+DDATA\RRW\vfpdata.cpp:	memcpy (lpszName, &memoBlk[ix], strlen(&memoBlk[ix]) + 1); // put in table record
+DDATA\RRW\vfpdata.cpp:				return TRUE;	// couldn't get memory
+DDATA\RRW\vfpdata.cpp:					return TRUE;	// couldn't get memory
+DDATA\RRW\vfpdata.cpp:	// get the memo block size from the DCT
+DDATA\RRW\vfpdata.cpp:	char cMemoSz[2];
+DDATA\RRW\vfpdata.cpp:	if ( (DCTFile.Seek (MEMOBLKLEN, CFile::begin ) != MEMOBLKLEN)
+DDATA\RRW\vfpdata.cpp:		|| (RDCT (cMemoSz, 2)) )
+DDATA\RRW\vfpdata.cpp:	// if bigger than MEMOBUFLEN, we have an error!!!
+DDATA\RRW\vfpdata.cpp:	iMemoSize = cMemoSz[0]*256+cMemoSz[1]; // convert
+DDATA\RRW\vfpdata.cpp:	if ( (iMemoSize > MEMOBUFLEN) || (RDBC (&hdr, sizeof(FP_HDR))) ||
+DDATA\RRW\xdrelate.cpp://	return !(f->dFlags & (zfDUPFLD | zfMEMO | zfPAGENO | zfRECNO | zfLOGICAL | zfTEMP2 | zfTIME ))
+DDATA\RRW\xdrelate.cpp:	return !(f->dFlags & (zfDUPFLD | zfMEMO | zfPAGENO | zfRECNO | zfLOGICAL | zfTIME ))
+DDATA\RRW\xdrelate.cpp:		{ // numeric or date, no partials (logical,memo filtered)
+DDATA\RRW\xdrelate.cpp:		{ // numeric or date, no partials (logical,memo filtered)
+DDATA\RRW\xddata.cpp:				// give back memory...
+DDATA\RRW\xddata.cpp:			// give back memory...
+DDATA\dquery.cpp:#define FLD_TYPES	(zfMEMO | zfNUMERIC | zfDATE | zfLOGICAL | zfDATETIME | zfTIME)
+DDATA\dquery.cpp:// NOTE memo_conds and numdate_conds must be null-terminated.
+DDATA\dquery.cpp:static int  memo_cond_ids[]		= { IDS_0250,   IDS_0251,   IDS_0258,  IDS_0259,  IDS_0260,  IDS_0261 };
+DDATA\dquery.cpp:static int  memo_conds[]		= { SX_EQ,      SX_NE,      SX_LISTEQ, SX_LISTNE, SX_LIKE,   SX_NLIKE };
+DDATA\dquery.cpp:static int  memo_cond_ids[]    = { IDS_0250, IDS_0251, IDS_0258,  IDS_0259  };
+DDATA\dquery.cpp:static int  memo_conds[]       = { SX_EQ,    SX_NE,    SX_LISTEQ, SX_LISTNE };
+DDATA\dquery.cpp:const	int nMEMO_CONDS		= sizeof(memo_cond_ids) / sizeof(memo_cond_ids[0]) ;
+DDATA\dquery.cpp:		&& !(f->dFlags & (NONOS | zfMEMO))	// and not recno-related
+DDATA\dquery.cpp:											// and not a memo field
+DDATA\dquery.cpp:			//   or 1st is memo and 2nd is char and op is EQ or NE
+DDATA\dquery.cpp:		  || (((pDoc->leftFld->dFlags & zfMEMO) && !(f->dFlags & FLD_TYPES))
+DDATA\dquery.cpp:BOOL CRrDoc::lessTermMem(int terms) // allocate memory for another term
+DDATA\dquery.cpp:// allocate memory for another term
+DDATA\dquery.cpp:	else if (leftFld->dFlags & zfMEMO)
+DDATA\dquery.cpp:	{ // memo field...
+DDATA\dquery.cpp:		n = nMEMO_CONDS ;
+DDATA\dquery.cpp:		conds = memo_conds ;
+DDATA\dquery.cpp:		ids = memo_cond_ids ;
+DDATA\dquery.cpp:	// character or memo
+DDATA\dquery.cpp:	if (leftFld && (leftFld->dFlags & zfMEMO))
+DDATA\dquery.cpp:		condition = memo_conds[i];
+DDATA\dquery.cpp:	condition = (leftFld->dFlags & zfMEMO) ? memo_conds[i] : i+1;
+DDATA\dquery.cpp:	{ // got a query, so get some memory for it
+DDATA\dquery.cpp:	if (lf && (lf->dFlags & zfMEMO))
+DDATA\dquery.cpp:	{ // memo field's the problem...
+DDATA\RSW\sdrelate.cpp:	// ( (not a dup,memo... AND not a total) OR (a converted R&R calc) )
+DDATA\RSW\sdrelate.cpp:				(zfDUPFLD|zfMEMO|zfPAGENO|zfRECNO|zfTEMP2|zfCALCULATED))
+DDATA\RSW\sdrelate.cpp:	if ((f->dFlags & (zfDUPFLD|zfMEMO|zfPAGENO|zfRECNO|zfLOGICAL|zfCALCULATED))
+DDATA\RSW\sdrelate.cpp:	{ // "Insufficient memory"
+DDATA\RSW\sdrelate.cpp:		{ // "Insufficient memory"
+DDATA\RSW\sdrelate.cpp:		"Memo",
+MFDATA\mfrdfin.cpp:#define CFLD(f) (!(f->dFlags&(zfNUMERIC|zfDATE|zfDATETIME|zfTIME|zfLOGICAL|zfMEMO)))
+MFDATA\memo.cpp:											memo.c 
+MFDATA\memo.cpp:	This source file contains all routines related to reading in memo files.
+MFDATA\memo.cpp:	setup_buffer_chain() . . . Selects a buffer to use and reads in some memo
+MFDATA\memo.cpp:	memo_in_memory() . . . . . . Chks to see if a memopos is in memory.
+MFDATA\memo.cpp:	position_memobuff(). . . . calls memo_in_memory, if the memo char is not
+MFDATA\memo.cpp:										in memory, it calls setup_buffer_chain to read
+MFDATA\memo.cpp:	get_memo_char(). . . . . . returns the requested memopos character 
+MFDATA\memo.cpp:	setup_memobuff_chain() . . Selects and initializes a memobuff_chain_hdr
+MFDATA\memo.cpp:										for use on the current memo field.  Called when
+MFDATA\memo.cpp:										we know the current memo field does not have
+MFDATA\memo.cpp:										a memobuff_chain_hdr.
+MFDATA\memo.cpp:	find_memofield()  . . . . . . Chks to see if the current memo field (ident
+MFDATA\memo.cpp:										by some unique memo id) has a memobuff_chain_hdr
+MFDATA\memo.cpp:	mf_memo_hdld() . . . . . . this is the main memo request filler.  It gets
+MFDATA\memo.cpp:int CRrComposite::mf_read_memo(LMEMOBUFF_CHAIN_HDR a_chain_in,FOUR starting_pos,char far *buffer_ptr,int *num_bytes)
+MFDATA\memo.cpp:MEMO_ID far *memo_id;
+MFDATA\memo.cpp:	memo_id=&(a_chain_in->memo_id);
+MFDATA\memo.cpp:	if ((unsigned long)starting_pos > (unsigned long)memo_id->length)
+MFDATA\memo.cpp:		return(TRUE);	// beyond the end of the memo
+MFDATA\memo.cpp:	if ((a_chain_in->memo_id.mflags&MFDBASE4) &&
+MFDATA\memo.cpp:		!(a_chain_in->memo_id.mflags&MFFOXMEMO))
+MFDATA\memo.cpp:		actual_file_pos=memo_id->memo_offset+starting_pos+MFDB4HLen;
+MFDATA\memo.cpp:		actual_file_pos=memo_id->memo_offset+starting_pos;
+MFDATA\memo.cpp:	if ((a_chain_in->memo_id.mflags&MFDBASE4) &&
+MFDATA\memo.cpp:		!(a_chain_in->memo_id.mflags&MFFOXMEMO))
+MFDATA\memo.cpp:	    long_bytes_left = (unsigned long)memo_id->length - 
+MFDATA\memo.cpp:// The following DB4 memo code is conditionaled out of RSW. It would be
+MFDATA\memo.cpp:int CRrComposite::mf_forward_db4memo(LMEMOBUFF_CHAIN_HDR a_chain_in, FOUR memo_pos)
+MFDATA\memo.cpp:	while ((memo_pos >= current_start+current_size) && 
+MFDATA\memo.cpp:	if (memo_pos >= current_start+current_size)
+MFDATA\memo.cpp:int CRrComposite::mf_find_db4memo(LMEMOBUFF_CHAIN_HDR a_chain_in, FOUR memo_pos)
+MFDATA\memo.cpp:	// In order to find the correct db4memo block, we should read in
+MFDATA\memo.cpp:	// the first header and call mf_forward_db4memo.
+MFDATA\memo.cpp:	if (mf_read_memhdr(a_chain_in->memo_id.memo_offset,
+MFDATA\memo.cpp:	current_size=current_size-a_chain_in->memo_id.memo_offset;	                                               
+MFDATA\memo.cpp:	a_chain_in->current.beg_pos=a_chain_in->memo_id.memo_offset;
+MFDATA\memo.cpp:	if(mf_forward_db4memo(a_chain_in, memo_pos))
+MFDATA\memo.cpp:int CRrComposite::mf_backup_db4memo(LMEMOBUFF_CHAIN_HDR a_chain_in,FOUR memo_pos)
+MFDATA\memo.cpp:		if (!((memo_pos >= prev_start) && (memo_pos < (prev_start+prev_size))))
+MFDATA\memo.cpp:			// The memo_pos is before the previous block, start
+MFDATA\memo.cpp:			if (mf_find_db4memo(a_chain_in, memo_pos))
+MFDATA\memo.cpp:			// memo_pos is in the previous block
+MFDATA\memo.cpp:int	CRrComposite::setup_buffer_chain (FOUR memo_pos, LMEMOBUFF_CHAIN_HDR a_chain_in,
+MFDATA\memo.cpp:								  LMEMO_BUFF_HDR	*current_buffer_ptr)
+MFDATA\memo.cpp:LMEMO_BUFF_HDR	v, selected_buffer;
+MFDATA\memo.cpp:	// we get called when memo_pos is not located in any of the buffers
+MFDATA\memo.cpp:	if ((a_chain_in->memo_id.mflags&MFDBASE4) && 
+MFDATA\memo.cpp:		 !(a_chain_in->memo_id.mflags&MFFOXMEMO))
+MFDATA\memo.cpp:		// if this is a db4 memo, then we do things differently.  Check to
+MFDATA\memo.cpp:		// see if this memo_pos is in the current block.
+MFDATA\memo.cpp:			// DB4 memo.  Kind of a kludge, but we'll take it.  Ask for the
+MFDATA\memo.cpp:			// DB4 memo header.  We pass in the the starting file pos, and
+MFDATA\memo.cpp:			if (mf_find_db4memo(a_chain_in, memo_pos))
+MFDATA\memo.cpp:		if (!( (memo_pos >= a_chain_in->current.start) &&
+MFDATA\memo.cpp:			  (memo_pos < (a_chain_in->current.start+a_chain_in->current.size))))
+MFDATA\memo.cpp:		{  // If the memo_pos is not in the current block, then find what
+MFDATA\memo.cpp:			if (memo_pos < current_start)
+MFDATA\memo.cpp:				if (mf_backup_db4memo(a_chain_in, memo_pos))
+MFDATA\memo.cpp:				if (mf_forward_db4memo(a_chain_in, memo_pos))
+MFDATA\memo.cpp:		} // end if the memo_pos is not in the current block	
+MFDATA\memo.cpp:		// For now, just use the first memo buffer. It is difficult to buffer
+MFDATA\memo.cpp:		// these memos, because they could come from different memo blocks.
+MFDATA\memo.cpp:		selected_buffer=a_chain_in->memo_buff_hdr;
+MFDATA\memo.cpp:		// want to reuse for this memo_pos.  We loop thru the buffers:
+MFDATA\memo.cpp:		//   if the ABS(memo_pos-start_off) is > than that of the currently
+MFDATA\memo.cpp:		v=a_chain_in->memo_buff_hdr;
+MFDATA\memo.cpp:		while ((v->next_ptr) && (selected_buffer->start_offset != MEMO_IS_EMPTY))
+MFDATA\memo.cpp:			if (v->start_offset == MEMO_IS_EMPTY)
+MFDATA\memo.cpp:				var = abs((int)(v->start_offset - memo_pos));
+MFDATA\memo.cpp:				var1 = abs((int)(selected_buffer->start_offset - memo_pos));
+MFDATA\memo.cpp:	// even buff_size boundaries, rather than start reading at memo_pos).  
+MFDATA\memo.cpp:	// memo processing, so we might as well give ourselves a little leeway
+MFDATA\memo.cpp:	var= (int)(memo_pos / (selected_buffer->buff_size));
+MFDATA\memo.cpp:	if( (a_chain_in->memo_id.mflags&MFDBASE4) && 
+MFDATA\memo.cpp:		!(a_chain_in->memo_id.mflags&MFFOXMEMO))
+MFDATA\memo.cpp:	error_code = mf_read_memo (a_chain_in, starting_pos,
+MFDATA\memo.cpp:										selected_buffer->memo_buff_ptr,&bytes_read);
+MFDATA\memo.cpp:	if ((long)memo_pos >= (((long)selected_buffer->start_offset)+
+MFDATA\memo.cpp:									memo_in_memory()
+MFDATA\memo.cpp:find that memo_pos is already in memory, we return TRUE.  If it is not
+MFDATA\memo.cpp:in memory, we return FALSE.
+MFDATA\memo.cpp:int	CRrComposite::memo_in_memory(FOUR memo_pos, LMEMOBUFF_CHAIN_HDR a_chain_in,
+MFDATA\memo.cpp:						  LMEMO_BUFF_HDR *a_return_buff)
+MFDATA\memo.cpp:LMEMO_BUFF_HDR			v;
+MFDATA\memo.cpp:	// start at the beginning of the chain, looking to see if memo_pos
+MFDATA\memo.cpp:	for(v=a_chain_in->memo_buff_hdr;v;v=v->next_ptr)
+MFDATA\memo.cpp:		// loop thru the memo buffers and reinitialize the offset and
+MFDATA\memo.cpp:		// the number of bytes in the memo buffer.
+MFDATA\memo.cpp:		if ((memo_pos >= v->start_offset) && 
+MFDATA\memo.cpp:			 (memo_pos <= ((v->start_offset + v->num_bytes -1))))
+MFDATA\memo.cpp:	return(FALSE);	// memo_pos is not in memory
+MFDATA\memo.cpp:								position_memobuff()
+MFDATA\memo.cpp:	This routine will look at the current 'memo_position' and get the
+MFDATA\memo.cpp:buffer chain ready for processing the memo field.  At a minimum, we
+MFDATA\memo.cpp:check to see if 'memo_pos' is already in memory.  If so, we could return.
+MFDATA\memo.cpp:If not, we must read in a block of the memo field.  
+MFDATA\memo.cpp:NOTE:  The memobuff_chain_hdr contains the file structure and the 
+MFDATA\memo.cpp:memo_id, this allows us to read from the memo field.
+MFDATA\memo.cpp:int CRrComposite::position_memobuff (FOUR memo_pos, LMEMOBUFF_CHAIN_HDR a_chain_in,
+MFDATA\memo.cpp:							  LMEMO_BUFF_HDR	*current_buffer_ptr)
+MFDATA\memo.cpp: 	// a_chain_in points to the memo buffer chains for this memo.
+MFDATA\memo.cpp:	if (!memo_in_memory(memo_pos, a_chain_in, current_buffer_ptr))
+MFDATA\memo.cpp:		// Let's use one of the memo buffers to read in the byte we want.
+MFDATA\memo.cpp:		if (error_code = setup_buffer_chain (memo_pos, a_chain_in,
+MFDATA\memo.cpp:int CRrComposite::get_memo_char (FOUR memo_pos, char *char_out,
+MFDATA\memo.cpp:						 LMEMOBUFF_CHAIN_HDR a_chain_in)
+MFDATA\memo.cpp:LMEMO_BUFF_HDR	current_buffer_ptr;	// will contain the buffer hdr of memo
+MFDATA\memo.cpp:	// This routine will return the character at memo position memo_pos
+MFDATA\memo.cpp:	// It may be that we need to read in more of the memo.
+MFDATA\memo.cpp:	if (position_memobuff(memo_pos, a_chain_in, 
+MFDATA\memo.cpp:	// current_buffer_ptr is pointing at the MEMO_BUFF_HDR that has the
+MFDATA\memo.cpp:	char_off = (int)(memo_pos - current_buffer_ptr->start_offset);
+MFDATA\memo.cpp:	*char_out = *((current_buffer_ptr->memo_buff_ptr)+char_off);
+MFDATA\memo.cpp:								setup_memobuff_chain()
+MFDATA\memo.cpp:	This routine 'sets up' a memo buffer chain for the current memo field.
+MFDATA\memo.cpp:void CRrComposite::setup_memobuff_chain (MEMO_ID memo_id_in,
+MFDATA\memo.cpp:									LMEMOBUFF_CHAIN_HDR *a_return_chain)
+MFDATA\memo.cpp:LMEMOBUFF_CHAIN_HDR		u, prev;		// used to loop thru memo chain
+MFDATA\memo.cpp:LMEMO_BUFF_HDR				v;
+MFDATA\memo.cpp:	u=memobuff_chain_hdr_ptr;
+MFDATA\memo.cpp:	// u now contains the 'last' memo chain. 
+MFDATA\memo.cpp:	// Set the new memo id & Return it.
+MFDATA\memo.cpp:	u->memo_id.memo_offset=memo_id_in.memo_offset;
+MFDATA\memo.cpp:	u->memo_id.memo_file=memo_id_in.memo_file;
+MFDATA\memo.cpp:	u->memo_id.length=memo_id_in.length;				
+MFDATA\memo.cpp:	u->memo_id.mflags=memo_id_in.mflags;
+MFDATA\memo.cpp:	u->next_ptr=memobuff_chain_hdr_ptr;		
+MFDATA\memo.cpp:	memobuff_chain_hdr_ptr=u;
+MFDATA\memo.cpp:	for(v=u->memo_buff_hdr;v;v=v->next_ptr)
+MFDATA\memo.cpp:		// loop thru the memo buffers and reinitialize the offset and
+MFDATA\memo.cpp:		// the number of bytes in the memo buffer.
+MFDATA\memo.cpp:		v->start_offset=MEMO_IS_EMPTY;
+MFDATA\memo.cpp:int CRrComposite::find_memofield (MEMO_ID memo_id_in, LMEMOBUFF_CHAIN_HDR *a_return_chain)
+MFDATA\memo.cpp:LMEMOBUFF_CHAIN_HDR		u;
+MFDATA\memo.cpp:		for (u=memobuff_chain_hdr_ptr; u; u=u->next_ptr)
+MFDATA\memo.cpp:			// Loop thru the memo buff chains looking for the memo id
+MFDATA\memo.cpp:			if ((memo_id_in.memo_file == u->memo_id.memo_file) &&
+MFDATA\memo.cpp:				(memo_id_in.memo_offset == u->memo_id.memo_offset))
+MFDATA\memo.cpp:								mf_memo_hdlr()
+MFDATA\memo.cpp:	The following routine is the memo handler.  I added this routine to
+MFDATA\memo.cpp:increase the performance of memo fields.  We used to read 1 byte at a time.
+MFDATA\memo.cpp:Now we will have buffers of memo data that we can use.
+MFDATA\memo.cpp:		INIT_BUFFERS . . . . . . . . . This initializes the memo chains and
+MFDATA\memo.cpp:												position within the memo field (and
+MFDATA\memo.cpp:												memo file).
+MFDATA\memo.cpp:int	CRrComposite::mf_memo_hdlr (int action, MF_MEMO_HDLR_PKT *a_mf_memo_hdlr_pkt)
+MFDATA\memo.cpp:LMEMOBUFF_CHAIN_HDR	 chain_hdr_ptr,u;
+MFDATA\memo.cpp:LMEMOBUFF_CHAIN_HDR	 prev_chain_hdr_ptr;
+MFDATA\memo.cpp:LMEMOBUFF_CHAIN_HDR 	 current_buffer_chain;	// current buff chain hdr
+MFDATA\memo.cpp:LMEMO_BUFF_HDR	       current_buffer_ptr,v;
+MFDATA\memo.cpp:LMEMO_BUFF_HDR			 hdr_ptr, prev_hdr_ptr;
+MFDATA\memo.cpp:	  case INIT_BUFFERS:	// Initialize the memo handler's buffers
+MFDATA\memo.cpp:		if (memobuff_chain_hdr_ptr == NULL)
+MFDATA\memo.cpp:			for (j=1;j<=NUM_MEMO_CHAINS;j++)
+MFDATA\memo.cpp:				// allocate the memo chain hdr
+MFDATA\memo.cpp:				chain_hdr_ptr = (LMEMOBUFF_CHAIN_HDR) m_pDoc->globalAlloc(GMEM_MOVEABLE, 
+MFDATA\memo.cpp:																				  sizeof(MEMOBUFF_CHAIN_HDR));
+MFDATA\memo.cpp:					memobuff_chain_hdr_ptr = chain_hdr_ptr;
+MFDATA\memo.cpp:					hdr_ptr = (LMEMO_BUFF_HDR) m_pDoc->globalAlloc (GMEM_MOVEABLE, sizeof(MEMO_BUFF_HDR));
+MFDATA\memo.cpp:					hdr_ptr->memo_buff_ptr = buff_ptr;
+MFDATA\memo.cpp:						chain_hdr_ptr->memo_buff_hdr = hdr_ptr;
+MFDATA\memo.cpp:			memobuff_chain_tail_ptr=chain_hdr_ptr;
+MFDATA\memo.cpp:		} // end of if the memo_buff_hdr_ptr is null
+MFDATA\memo.cpp:			// Initialize the memo related stuff.
+MFDATA\memo.cpp:		for (u=memobuff_chain_hdr_ptr; u; u=u->next_ptr)
+MFDATA\memo.cpp:			u->memo_id.memo_offset=-1;
+MFDATA\memo.cpp:			for(v=u->memo_buff_hdr;v;v=v->next_ptr)
+MFDATA\memo.cpp:				// loop thru the memo buffers and reinitialize the offset
+MFDATA\memo.cpp:				// and the number of bytes in the memo buffer.
+MFDATA\memo.cpp:				v->start_offset=MEMO_IS_EMPTY;
+MFDATA\memo.cpp:		case SET_FPOS:		// Setup a buffer within the memo field.
+MFDATA\memo.cpp:			/* We will get passed in a memo_id (a pointer which indicates 
+MFDATA\memo.cpp:				start of the memo field).  Look thru the memobuff chains to
+MFDATA\memo.cpp:				see if we already have this memo_id in memory. If not, setup
+MFDATA\memo.cpp:				a memobuff chain for this memo_id
+MFDATA\memo.cpp:			if (!find_memofield(a_mf_memo_hdlr_pkt->memo_id,
+MFDATA\memo.cpp:				/* The memo_id was not found.  Let's setup a memobuff_chain
+MFDATA\memo.cpp:					for this memo_id
+MFDATA\memo.cpp:				setup_memobuff_chain(a_mf_memo_hdlr_pkt->memo_id,
+MFDATA\memo.cpp:			// memo buffer chain we can use, set it up for use.
+MFDATA\memo.cpp:			if (error_code=position_memobuff(a_mf_memo_hdlr_pkt->memo_position,
+MFDATA\memo.cpp:				// beyond the end of the memo field (that is when memo_position
+MFDATA\memo.cpp:				// is greater than the length of the memo).
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->current.start=current_buffer_chain->current.start;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->current.size=current_buffer_chain->current.size;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->current.beg_pos=current_buffer_chain->current.beg_pos;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->prev.start=current_buffer_chain->prev.start;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->prev.size=current_buffer_chain->prev.size;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->prev.beg_pos=current_buffer_chain->prev.beg_pos;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->next_block=current_buffer_chain->next_block;
+MFDATA\memo.cpp:			if (!find_memofield(a_mf_memo_hdlr_pkt->memo_id,
+MFDATA\memo.cpp:				/* The memo_id was not found.  Let's setup a memobuff_chain
+MFDATA\memo.cpp:					for this memo_id
+MFDATA\memo.cpp:				setup_memobuff_chain(a_mf_memo_hdlr_pkt->memo_id,
+MFDATA\memo.cpp:			// memo buffer chain we can use, set it up for use.  I am not
+MFDATA\memo.cpp:			error_code=position_memobuff(a_mf_memo_hdlr_pkt->memo_position,
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->current.start=current_buffer_chain->current.start;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->current.size=current_buffer_chain->current.size;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->current.beg_pos=current_buffer_chain->current.beg_pos;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->prev.start=current_buffer_chain->prev.start;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->prev.size=current_buffer_chain->prev.size;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->prev.beg_pos=current_buffer_chain->prev.beg_pos;
+MFDATA\memo.cpp:			a_mf_memo_hdlr_pkt->next_block=current_buffer_chain->next_block;
+MFDATA\memo.cpp:				is an offset within the current memo (IE from 0-memo_size).
+MFDATA\memo.cpp:				but we may have to read in more of the memo to satisfy the 
+MFDATA\memo.cpp:			if (!find_memofield(a_mf_memo_hdlr_pkt->memo_id,
+MFDATA\memo.cpp:				/* The memo_id was not found. This is a problem since we already
+MFDATA\memo.cpp:			if (error_code = get_memo_char (a_mf_memo_hdlr_pkt->memo_position,
+MFDATA\memo.cpp:													  a_mf_memo_hdlr_pkt->cp,
+MFDATA\mfgetmch.cpp:// Main memo data reading module.  Loads data buffer with memo data for
+MFDATA\mfgetmch.cpp:// word-wrap routines.	Handles merging of field data into memo.
+MFDATA\mfgetmch.cpp:// Bug: Font change in memo field
+MFDATA\mfgetmch.cpp:// Look for NULL in memo text
+MFDATA\mfgetmch.cpp:// fix RRW 2917, multiple memo fields now print
+MFDATA\mfgetmch.cpp:// -1.  Also mffile.h and memo.cpp.
+MFDATA\mfgetmch.cpp:// Fixed a problem with DB3 style memos that are 'empty'.  The pointer from DBF
+MFDATA\mfgetmch.cpp:// into the DBT is beyond the end of the DBT.  We thought this was a bogus memo
+MFDATA\mfgetmch.cpp:// memo.
+MFDATA\mfgetmch.cpp:// Fixed a problem with DB3 style memos that are 'empty'.  The pointer from DBF
+MFDATA\mfgetmch.cpp:// into the DBT is beyond the end of the DBT.  We thought this was a bogus memo
+MFDATA\mfgetmch.cpp:// memo.
+MFDATA\mfgetmch.cpp:// RRW bug 1976: if a character field is merged into a memo and it
+MFDATA\mfgetmch.cpp:// Fix problem with DBCHARS=ANSI for database memos
+MFDATA\mfgetmch.cpp:// memo performance changes. mfrdflds() has changed for flexfile and hipersix
+MFDATA\mfgetmch.cpp:// memo support.
+MFDATA\mfgetmch.cpp:#include "memo.cpp"
+MFDATA\mfgetmch.cpp:		if (fld->dFlags&zfMEMO)
+MFDATA\mfgetmch.cpp:		{ //found memo field
+MFDATA\mfgetmch.cpp:		fpos=MEMOOff-1;
+MFDATA\mfgetmch.cpp://		memo_pkt.memo_position=fpos;
+MFDATA\mfgetmch.cpp://		error_code=mf_memo_hdlr(GET_FPOS, &memo_pkt);
+MFDATA\mfgetmch.cpp:		fpos=MEMOOff-1;
+MFDATA\mfgetmch.cpp://		memo_pkt.memo_position=fpos;
+MFDATA\mfgetmch.cpp://		error_code=mf_memo_hdlr(GET_FPOS, &memo_pkt);
+MFDATA\mfgetmch.cpp:		MEMOOff=fpos;
+MFDATA\mfgetmch.cpp:		// We call the memo handler to get the file position.  This is so we
+MFDATA\mfgetmch.cpp:		// can preserve the state of DB4 memos.
+MFDATA\mfgetmch.cpp://		memo_pkt.memo_position=BLOBOff;
+MFDATA\mfgetmch.cpp://		error_code=mf_memo_hdlr(SET_DBPOS, &memo_pkt);
+MFDATA\mfgetmch.cpp:		(!((fld=mfbyndx(val.tInteger))->dFlags&zfMEMO)) &&
+MFDATA\mfgetmch.cpp:					return MFRdErr = MFDBCMEM; // insuff memory
+MFDATA\mfgetmch.cpp:			if (!(fld->dFlags&(zfNUMERIC|zfDATE|zfDATETIME|zfTIME|zfLOGICAL|zfMEMO)))
+MFDATA\mfgetmch.cpp:		{  // back 1 to resume memo
+MFDATA\mfgetmch.cpp:			MEMOOff--;
+MFDATA\mfgetmch.cpp:		MEMOOff=fpos;
+MFDATA\mfgetmch.cpp://      memo_pkt.memo_position=fpos;
+MFDATA\mfgetmch.cpp://      error_code = mf_memo_hdlr(SET_DBPOS,&memo_pkt);
+MFDATA\mfgetmch.cpp:	// This appears to be the code that handles access to ASCII memo files.
+MFDATA\mfgetmch.cpp:	// if the current position is greater than the end of the memo, return.
+MFDATA\mfgetmch.cpp:	// When multiple memo fields, MFEO is 0 and the next test will succeed and return,
+MFDATA\mfgetmch.cpp:	// which stops printing of any other copies of the memo field.
+MFDATA\mfgetmch.cpp:	// A side note, MFEO(dP) is 0 for all but the first memo field, the first value is -1.
+MFDATA\mfgetmch.cpp:		if ((unsigned long)MEMOOff > (unsigned long)MFEO(dP))
+MFDATA\mfgetmch.cpp:	memo_pkt.memo_position= MEMOOff;
+MFDATA\mfgetmch.cpp:	memo_pkt.cp=cP;
+MFDATA\mfgetmch.cpp:	if (mf_memo_hdlr(GET_CHAR, &memo_pkt))
+MFDATA\mfgetmch.cpp:	MEMOOff++;
+MFDATA\mfgetmch.cpp:			memo_pkt.memo_position= MEMOOff;
+MFDATA\mfgetmch.cpp:			memo_pkt.cp=&c1;
+MFDATA\mfgetmch.cpp:			if (mf_memo_hdlr(GET_CHAR, &memo_pkt))
+MFDATA\mfgetmch.cpp:			MEMOOff++;
+MFDATA\mfgetmch.cpp:			MEMOOff--;
+MFDATA\mfgetmch.cpp:			memo_pkt.memo_position=MEMOOff;
+MFDATA\mfgetmch.cpp:			memo_pkt.cp=&c2;
+MFDATA\mfgetmch.cpp:			if (mf_memo_hdlr(GET_CHAR, &memo_pkt))
+MFDATA\mfgetmch.cpp:			MEMOOff++;
+MFDATA\mfgetmch.cpp:				memo_pkt.memo_position=MEMOOff;
+MFDATA\mfgetmch.cpp:				memo_pkt.cp=&c3;
+MFDATA\mfgetmch.cpp:				if (mf_memo_hdlr(GET_CHAR, &memo_pkt))
+MFDATA\mfgetmch.cpp:				MEMOOff++;
+MFDATA\mfgetmch.cpp:					MEMOOff=MEMOOff-2;
+MFDATA\mfgetmch.cpp:	          	MEMOOff--;
+MFDATA\mfgetmch.cpp:				memo_pkt.memo_position=MEMOOff;
+MFDATA\mfgetmch.cpp:				memo_pkt.cp=&c2;					
+MFDATA\mfgetmch.cpp:				if (mf_memo_hdlr(GET_CHAR, &memo_pkt))
+MFDATA\mfgetmch.cpp:				MEMOOff++;
+MFDATA\mfgetmch.cpp:					memo_pkt.memo_position=MEMOOff;
+MFDATA\mfgetmch.cpp:					memo_pkt.cp=&c2;					
+MFDATA\mfgetmch.cpp:					if (mf_memo_hdlr(GET_CHAR, &memo_pkt))
+MFDATA\mfgetmch.cpp:					MEMOOff++;
+MFDATA\mfgetmch.cpp:				MEMOOff--;
+MFDATA\mfgetmch.cpp:	memo_pkt.cp = &the_char;
+MFDATA\mfgetmch.cpp:	{ // no memo
+MFDATA\mfgetmch.cpp:	{ // first call for this memo, init memo control
+MFDATA\mfgetmch.cpp:		MEMOOff=0;
+MFDATA\mfgetmch.cpp:		memo_pkt.memo_id.mflags=MFMFF(dataP);
+MFDATA\mfgetmch.cpp:				{	// No bytes read, must be beyond the end of the memo file.
+MFDATA\mfgetmch.cpp:			// Foxpro and db4 style memos are treated as MFDBASE4 style memos
+MFDATA\mfgetmch.cpp:				// For some reason, fox memos always had the MFDBASE4 bit set
+MFDATA\mfgetmch.cpp://				if (whoflag==0) MFMFF(dataP)|= MFFOXMEMO;
+MFDATA\mfgetmch.cpp:				NOTE: This is probably where we want to init memo control.
+MFDATA\mfgetmch.cpp:			  We want to setup a buffer for this memo at MFMO.  Wait...I
+MFDATA\mfgetmch.cpp:			// Position the current memo file to the desired positon.
+MFDATA\mfgetmch.cpp:			// offset.  This gives us the byte number within the current memo
+MFDATA\mfgetmch.cpp:			// memo_pkt.memo_position=MFMO(dataP)-MFSO(dataP);
+MFDATA\mfgetmch.cpp:			memo_pkt.memo_position=MEMOOff;
+MFDATA\mfgetmch.cpp:			memo_pkt.memo_id.memo_offset=MFSO(dataP);
+MFDATA\mfgetmch.cpp:			memo_pkt.memo_id.memo_file=dbtno->m_hFile;
+MFDATA\mfgetmch.cpp:			memo_pkt.memo_id.length=MFEO(dataP);
+MFDATA\mfgetmch.cpp:			memo_pkt.memo_id.mflags=MFMFF(dataP);
+MFDATA\mfgetmch.cpp:			if (mf_error=mf_memo_hdlr(SET_FPOS, &memo_pkt))
+MFDATA\mfgetmch.cpp:				MFCBK(dataP)=memo_pkt.current.beg_pos;
+MFDATA\mfgetmch.cpp:				if (MFMFF(dataP)&MFFOXMEMO)
+MFDATA\mfgetmch.cpp:					memo_pkt.memo_id.length=MFCSZ(dataP);
+MFDATA\mfgetmch.cpp:			if (!(mfld->dFlags&(zfNUMERIC|zfDATE|zfDATETIME|zfTIME|zfLOGICAL|zfMEMO)))
+MFDATA\mfgetmch.cpp:	// We need to get the current byte offset into the memo.
+MFDATA\mfgetmch.cpp:	if ((MFMFF(dataP)&MFDBASE4) && !(MFMFF(dataP)&MFFOXMEMO))
+MFDATA\mfgetmch.cpp:		MEMOOff=MFCST(dataP)+(MFMO(dataP)-MFCBK(dataP));
+MFDATA\mfgetmch.cpp:		MEMOOff=MFMO(dataP)-MFSO(dataP);
+MFDATA\mfgetmch.cpp:	memo_pkt.memo_position=MFMO(dataP)-MFSO(dataP);
+MFDATA\mfgetmch.cpp:	memo_pkt.memo_id.memo_offset=MFSO(dataP);
+MFDATA\mfgetmch.cpp:	memo_pkt.memo_id.memo_file=dbtno->m_hFile;
+MFDATA\mfgetmch.cpp:		memo_pkt.memo_id.length=MFEO(dataP)-MFSO(dataP)+1;
+MFDATA\mfgetmch.cpp:		memo_pkt.memo_id.length=MFEO(dataP);
+MFDATA\mfgetmch.cpp:	mf_memo_hdlr(SET_FPOS, &memo_pkt);
+MFDATA\mfgetmch.cpp:				state = 1;		// restart from memo in state 1
+MFDATA\mfgetmch.cpp:					state = 1;		// restart from memo in state 1
+MFDATA\mfgetmch.cpp:		{ // a hard return from memo data (not merged field data)
+MFDATA\mfgetmch.cpp:					MEMOOff--;
+MFDATA\mfgetmch.cpp:					MEMOOff--;
+MFDATA\mfgetmch.cpp:					MEMOOff--;
+MFDATA\mfgetmch.cpp:	// We need to get the current block information for DB4 memos.
+MFDATA\mfgetmch.cpp:	mf_error = mf_memo_hdlr(GET_FPOS, &memo_pkt);
+MFDATA\mfgetmch.cpp:	// position, even though this routine uses relative memo positioning.
+MFDATA\mfgetmch.cpp:	  	MFCSZ(dataP) = memo_pkt.current.size;
+MFDATA\mfgetmch.cpp:		MFCST(dataP) = memo_pkt.current.start;
+MFDATA\mfgetmch.cpp:		MFCBK(dataP) = memo_pkt.current.beg_pos;
+MFDATA\mfgetmch.cpp:		MFPSZ(dataP) = memo_pkt.prev.size;
+MFDATA\mfgetmch.cpp:		MFPST(dataP) = memo_pkt.prev.start;
+MFDATA\mfgetmch.cpp:		MFPBK(dataP) = memo_pkt.prev.beg_pos;
+MFDATA\mfgetmch.cpp:		MFNBK(dataP) =memo_pkt.next_block;
+MFDATA\mfgetmch.cpp:		MFMO(dataP) = MFCBK(dataP)+(MEMOOff-MFCST(dataP));
+MFDATA\mfgetmch.cpp:		MFMO(dataP) = MFSO(dataP)+MEMOOff;
+MFDATA\mfgetmch.cpp:		if (fld->dFlags&zfMEMO && fld->dTemp.tempP &&
+MFDATA\mfgetmch.cpp:		{ // a not-previewed memo in a double buffer area
+MFDATA\mfgetmch.cpp:			ohoh = mfgetmch(fld,fldp,-1,FALSE); // preview the memo
+MFDATA\mfgetmch.cpp:			MFMO(fldp) = MFSO(fldp); // re-init memo ptrs
+MFDATA\mfgetmch.cpp:				return TRUE; // out of memory
+MFDATA\mfgetbuf.cpp:// call memo.cpp routine to allocate memo field cache buffers here (not in
+MFDATA\mfgetbuf.cpp:		case zfTEXT:	  /* memo field */
+MFDATA\mfgetbuf.cpp:			if (fld->dFileNo!=fnMEMO) MFSO(fld->dFldP)=MFMO(fld->dFldP) = 0L;
+MFDATA\mfgetbuf.cpp:	cfpmemo();				/* see if any prev memos needed */
+MFDATA\mfgetbuf.cpp:			if (mfgetmbs(fld)) // get memo field buffer
+MFDATA\mfgetbuf.cpp:			{ /* can't get memory */
+MFDATA\mfgetbuf.cpp:	if (gotmemo() && (!LChain))
+MFDATA\mfgetbuf.cpp:		if (fld->dFlags&zfTEXT) continue;	/* memos don't share bufs */
+MFDATA\mfgetbuf.cpp:	// sjo - initialize the memo buffers.  This needs to be done before
+MFDATA\mfgetbuf.cpp:	MF_MEMO_HDLR_PKT	memo_pkt;	// memo_pkt used to init buffers.
+MFDATA\mfgetbuf.cpp:	if (mf_memo_hdlr(INIT_BUFFERS, &memo_pkt))
+MFDATA\mfgetbuf.cpp:			if ((fld->dFlags&zfMEMO || !(fld->dFlags&zfDUPFLD)) &&
+MFDATA\mfwrfin.cpp:// Fix the "multiple mfgetbuf()" RSW memory leak.  Sources changed for this
+MFDATA\mfwrfin.cpp:#define CFLD(f) (!(f->dFlags&(zfNUMERIC|zfDATE|zfDATETIME|zfTIME|zfLOGICAL|zfMEMO)))
+MFDATA\mfwrfin.cpp:			{ /* free additional memory for averages */
+MFDATA\mfmembuf.cpp:// Routines to allocate and free memo data buffers.
+MFDATA\mfmembuf.cpp:// For RSW INTERACTIVE, always allocate memo buffers with pointsize and font
+MFDATA\mfmembuf.cpp:// Fixes a memory leak in the memo area.
+MFDATA\mfmembuf.cpp:int CRrComposite::mfrlsmbs(LPMFFIELD fld)	/* release memo data buffers */
+MFDATA\mfmembuf.cpp:int CRrComposite::mfgetmbs(LPMFFIELD fld)	/* get memo data buffers */
+MFDATA\mfmembuf.cpp:	//  It appears that we get buffers for all memo fields when we need one
+MFDATA\mfmembuf.cpp:	//	memo field, because all fields are needed if we need a single memo
+MFDATA\mfmembuf.cpp:	//	changes.  Thus we don't reallocate buffers if you delete one memo field
+MFDATA\mfmembuf.cpp:	//	memo field buffers to hold font information, even for those memos that
+MFDATA\mfmembuf.cpp:		if (fld->dFileNo==fnMEMO)
+MFDATA\mfmembuf.cpp:			if (fld->dFileNo==fnMEMO)
+MFDATA\mfmembuf.cpp:void CRrComposite::mfReleaseMemoMemory()
+MFDATA\mfmembuf.cpp:	LMEMOBUFF_CHAIN_HDR	u, chain_hdr_ptr;
+MFDATA\mfmembuf.cpp:	LMEMO_BUFF_HDR		w, v;
+MFDATA\mfmembuf.cpp:	if (memobuff_chain_hdr_ptr)
+MFDATA\mfmembuf.cpp:		// We basically have a header pointer to the beginning of the memo
+MFDATA\mfmembuf.cpp:		//   buffer chain.  The chain goes from memo_buff_hdr to memo_buff_hdr,
+MFDATA\mfmembuf.cpp:		//   and each memo_buff_hdr points to actual buffers.  The buffers
+MFDATA\mfmembuf.cpp:		//   contain memo data read from the memo identified by the memo_buff_hdr.
+MFDATA\mfmembuf.cpp:		for (u=memobuff_chain_hdr_ptr; u; u=chain_hdr_ptr)
+MFDATA\mfmembuf.cpp:			for (v=u->memo_buff_hdr;v;v=w)
+MFDATA\mfmembuf.cpp:			{ // loop through the memo buff header, freeing up the
+MFDATA\mfmembuf.cpp:			  // memo buffer and then the header itself
+MFDATA\mfmembuf.cpp:				if (v->memo_buff_ptr)
+MFDATA\mfmembuf.cpp:					m_pDoc->globalFree(v->memo_buff_ptr);
+MFDATA\mfmembuf.cpp:			} // end for all memo buff hdrs
+MFDATA\mfmembuf.cpp:		} // end for all memo chain hdrs
+MFDATA\mfmembuf.cpp:		memobuff_chain_hdr_ptr=NULL;
+MFDATA\mfrdmore.cpp:// memo processing.  When a thus-far-unneeded field is referenced in a memo
+MFDATA\mfrdmore.cpp:	savepm = prevmem;	/* save indicator of prev(memo) */
+MFDATA\mfrdmore.cpp:	prevmem = savepm;	/* restore prev(memo) indicator */
+MFDATA\mfrdmore.cpp:			if (fld->dFlags&(zfTEMP1|zfMEMO))
+MFDATA\mfrdmore.cpp:			{ /* needed before, too  - or a memo field */
+MFDATA\mfrdmore.cpp:			{ /* insufficient memory */
+MFDATA\RRW\rdahead.cpp:/* p: ptr to start of memo hdr block; BP(p): corresponding mData ptr */
+MFDATA\RRW\rdahead.cpp:	int memo = (int)fld->dFlags&zfMEMO;
+MFDATA\RRW\rdahead.cpp:	bs = memo ? mbsize : SIZE(fld->dFldP);
+MFDATA\RRW\rdahead.cpp:		bs = memo ? mbsize : SIZE(fld->dTemp.tempP);
+MFDATA\RRW\rdahead.cpp:	int memo = (int)fld->dFlags&zfMEMO;
+MFDATA\RRW\rdahead.cpp:		if (memo)
+MFDATA\RRW\rdahead.cpp:				mfmemcpy(fb,BP(tb)); /* copy main memo header */
+MFDATA\RRW\rdahead.cpp:				if (twobufs)	/*copy prev memo header*/
+MFDATA\RRW\rdahead.cpp:				mfmemcpy(fb,BP(tb)); /* copy main memo hdr */
+MFDATA\RRW\rdahead.cpp:				if (twobufs)	/*copy prev memo header*/
+MFDATA\RRW\rdahead.cpp:	int memo = (int)fld->dFlags&zfMEMO;
+MFDATA\RRW\rdahead.cpp:		if (memo)
+MFDATA\RRW\rdahead.cpp:				mfmemcpy(BP(tb),fb); /* copy main memo hdr */
+MFDATA\RRW\rdahead.cpp:				if (twobufs)	/*copy prev memo header*/
+MFDATA\RRW\rdahead.cpp:				mfmemcpy(BP(tb),fb); /* copy main memo hdr */
+MFDATA\RRW\rdahead.cpp:				if (twobufs)	/*copy prev memo header*/
+MFDATA\RRW\rdahead.cpp:		if (fld->dFlags&zfMEMO || !(fld->dFlags&zfDUPFLD)) savefld(fld);
+MFDATA\RRW\rdahead.cpp:		if (fld->dFlags&zfMEMO || !(fld->dFlags&zfDUPFLD)) restfld(fld);
+MFDATA\RRW\mflkbuf.cpp:	/* allocate NodeBuf if necessary so sort won't take all our memory */
+MFDATA\RRW\mfrdnext.cpp:	mfmeminit();			// initialize all memo control blocks
+MFDATA\mfdbsize.cpp:		case zfMEMO:
+MFDATA\mfdbsize.cpp:			size = MAXMEMOBUF+1;
+MFDATA\mfrlsbuf.cpp:// Fixes a memory leak in the memo area.
+MFDATA\mfrlsbuf.cpp:	// Release memory used by memo.cpp.
+MFDATA\mfrlsbuf.cpp:	mfReleaseMemoMemory();
+MFDATA\mfrdrec.cpp:	mfmeminit();	/* initialize all memo control blocks */
+MFDATA\mfmove.cpp:{ /* copy memo header */
+MFDATA\mfmove.cpp:	int memo = (int)fld->dFlags&zfMEMO;
+MFDATA\mfmove.cpp:			((fld->dFlags&zfPREVARG) || (prevmem && !memo)))
+MFDATA\mfmove.cpp:	{ /* only for memos if they are prevargs, can't merge from memo fld */
+MFDATA\mfmove.cpp:		if (memo) mfmemcpy(fld->dFldP,fld->dFldP+MFUS(fld->dFldP));
+MFDATA\mfrdflds.cpp:// RRW #2125.  Empty SMT memo fields can not be read.  The entry in the memo
+MFDATA\mfrdflds.cpp:// DBF (not memo, like it says above), is all spaces.
+MFDATA\mfrdflds.cpp:// add terminator at end of nearbuf string for memos (RRW 2096)
+MFDATA\mfrdflds.cpp:// fix a memcpy length bug in memo proceesing
+MFDATA\mfrdflds.cpp:// memo performance changes. mfrdflds() has changed for flexfile and hipersix
+MFDATA\mfrdflds.cpp:// memo support.
+MFDATA\mfrdflds.cpp:#define BUFSIZE 512 	/* rdflds() field buffer size (512 for memo read) */
+MFDATA\mfrdflds.cpp:		case zfTEXT:	  /* memo field */
+MFDATA\mfrdflds.cpp:	int memcopylen = 20; // enuf for all dbf memo "pointers", and <BUFSIZE
+MFDATA\mfrdflds.cpp:				mfcpyfil(fnMEMO);
+MFDATA\mfrdflds.cpp:				/* show memo buffer empty */
+MFDATA\mfrdflds.cpp:				/* init starting and current memo offset */
+MFDATA\mfrdflds.cpp:						// Check for SuccessWare memo
+MFDATA\mfrdflds.cpp:						{  // For empty SMT memos, we have spaces where the length
+MFDATA\mfrdflds.cpp:							{ // if all spaces, then we have an empty SMT memo field
+MFDATA\mfrdflds.cpp:							{  // Flexfile memos
+MFDATA\mfrdflds.cpp:						MFMFF(cfld->dFldP) = 0; /* init memo flags */
+MFDATA\mfrdflds.cpp:						MFMF(cfld->dFldP) = NULL; /* init memo merge field */
+MFDATA\mfrdflds.cpp:							MFMFF(cfld->dFldP) |= MFNOTPRE; /* memo not previewed */
+MFDATA\mfsrtfin.cpp:// Fix the "multiple mfgetbuf()" RSW memory leak.  Sources changed for this
+MFDATA\mfsrtfin.cpp:#define CFLD(f) (!(f->dFlags&(zfNUMERIC|zfDATE|zfDATETIME|zfTIME|zfLOGICAL|zfMEMO)))
+MFDATA\RSW\mfsql.cpp:		if ((fld->dFlags&(zfCALCULATED|zfDUPFLD|zfMEMO))==0 &&
+MFDATA\RSW\mfsql.cpp:			 (fld->dRFlags&rfTOTALFLD) || (fld->dFlags&zfMEMO)))
+SETUP\postinst\rvpostin.cpp:				LPSTR pTempPath = (LPSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, dwCount );
+SETUP\postinst\rvpostin.cpp:				{ // we've got the memory
+SETUP\postinst\rvpostin.cpp:			 ( command = (LPSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, dwCount )))
+DATADICT\datadict.cpp://		ddrelease() releases all of the memory malloced for comments.
+DATADICT\datadict.cpp:// Fix a couple of bugs including RRW 2347.  Don't overflow memoname buffer
+DATADICT\datadict.cpp:// Cleaned up determination of memo file type.
+DATADICT\datadict.cpp:// Changed open mode for data dictionary memo file to deny-none.
+DATADICT\datadict.cpp:	DWORD	memopos ;
+DATADICT\datadict.cpp://	char	memoname[MAXSDNAME+1];	// name of current memo calc
+DATADICT\datadict.cpp:	char	memoname[30+1];	// name of current memo calc
+DATADICT\datadict.cpp:	if (psl && name)				// if we got memory for structure and name
+DATADICT\datadict.cpp:		psl->name = name;					// point to name memory
+DATADICT\datadict.cpp:	if (( dbmemo.Seek( hpos, CFile::begin ) != hpos) ||
+DATADICT\datadict.cpp:		 ( dbmemo.Read( (LPTSTR)&block, sizeof(short) ) != sizeof(short)) ||
+DATADICT\datadict.cpp:		 ( dbmemo.Seek( hpos+4L, CFile::begin ) != (hpos+4L)) ||
+DATADICT\datadict.cpp:		 ( dbmemo.Read( ln, 4 ) != 4 ))
+DATADICT\datadict.cpp:	if (mtype == FP)	// FoxPro memo file?
+DATADICT\datadict.cpp:			*nextP = (long) (block*memoblksz);
+DATADICT\datadict.cpp:	memocurpos = dbmemo.GetPosition();		// get cur position
+DATADICT\datadict.cpp:	if (memocurpos >= memocurendoff)		// done with current block?
+DATADICT\datadict.cpp:		if (memonxtblkoff==0L)
+DATADICT\datadict.cpp:		if (ddmemhead(memocurblkoff=memonxtblkoff,&memonxtblkoff,&memocurendoff))
+DATADICT\datadict.cpp:		memocurpos = memocurblkoff+MFDB4HLen;
+DATADICT\datadict.cpp:		if (dbmemo.Seek( memocurpos, CFile::begin ) != memocurpos )
+DATADICT\datadict.cpp:	if (dbmemo.Read( cP, 1 ) != 1 ) 
+DATADICT\datadict.cpp://	Get memo character
+DATADICT\datadict.cpp:		else if (dbmemo.Read( &c1, 1 ) !=1 )
+DATADICT\datadict.cpp://	getmemocalc
+DATADICT\datadict.cpp:int CRrApp::getmemocalc(LPTSTR dataP, int coff)
+DATADICT\datadict.cpp:	{ // first call for this memo, init memo control
+DATADICT\datadict.cpp:		memocurpos = memobegpos;
+DATADICT\datadict.cpp:		if ( dbmemo.Seek( memocurpos, CFile::begin ) != memocurpos )
+DATADICT\datadict.cpp:		if ( dbmemo.Read( (LPSTR)&whoflag, sizeof(short) ) != sizeof(short) )
+DATADICT\datadict.cpp:			if (ddmemhead(memocurblkoff=memobegpos,&memonxtblkoff,&memocurendoff))
+DATADICT\datadict.cpp:			memocurpos = memocurblkoff+MFDB4HLen;
+DATADICT\datadict.cpp:	if ( dbmemo.Seek( memocurpos, CFile::begin ) != memocurpos )
+DATADICT\datadict.cpp:	memocurpos = dbmemo.Seek( 0L, CFile::current );	// get current position
+DATADICT\datadict.cpp://	Read a calc field formula from a data-dictionary memo-file record
+DATADICT\datadict.cpp:	if (!dictRecord.memopos)
+DATADICT\datadict.cpp:	memobegpos = dictRecord.memopos * memoblksz;
+DATADICT\datadict.cpp:	if (getmemocalc(curP,255))
+DATADICT\datadict.cpp:		while (getmemocalc(curP,1))	// keep getting chars until we run out or get error
+DATADICT\datadict.cpp:			memofile[WINPATHLEN+1];
+DATADICT\datadict.cpp:	memos = FALSE;
+DATADICT\datadict.cpp:	// memo-related code that follows is modeled after mfopen.c code
+DATADICT\datadict.cpp:		memos = TRUE;
+DATADICT\datadict.cpp:			memos = TRUE;
+DATADICT\datadict.cpp:	_tcscpy(memofile,Paths->DDFName);		// copy .dbf name
+DATADICT\datadict.cpp:	pDoc->m_pComposite->newext(memofile,mtype==FP ? TFPTX : TDBTX);	// use appropriate extension
+DATADICT\datadict.cpp:	if (!(dbmemo.Open( memofile, CFile::modeRead | CFile::shareDenyNone )))
+DATADICT\datadict.cpp:			pDoc->m_pComposite->newext(memofile,TFPTX);	// try .FPT now (just like in mfopen?!)
+DATADICT\datadict.cpp:			if (!(dbmemo.Open( memofile, CFile::modeRead | CFile::shareDenyNone )))
+DATADICT\datadict.cpp:				memos = FALSE;
+DATADICT\datadict.cpp:				memos = TRUE ;
+DATADICT\datadict.cpp:			memos = FALSE;			// if we can't find memo file, just forget predefined calcs
+DATADICT\datadict.cpp:	// opened memo file; figure out block size
+DATADICT\datadict.cpp:		if ((dbmemo.Seek( (long)fpBlkSize, CFile::begin ) != (long)fpBlkSize )
+DATADICT\datadict.cpp:		 || (dbmemo.Read( bs, 2 ) != 2 ))
+DATADICT\datadict.cpp:			memos = FALSE;
+DATADICT\datadict.cpp:			memoblksz = (bs[0]<<8) + bs[1];
+DATADICT\datadict.cpp:		memoblksz = 0;
+DATADICT\datadict.cpp:		if (( dbmemo.Seek( (long)mhBlkSize, CFile::begin ) != (long)mhBlkSize )
+DATADICT\datadict.cpp:		 || ( dbmemo.Read( (LPSTR)&memoblksz, 2 ) != 2 ))
+DATADICT\datadict.cpp:			memos = FALSE;
+DATADICT\datadict.cpp:		memoblksz = 512;
+DATADICT\datadict.cpp://	close the dictionary dbf, and memo
+DATADICT\datadict.cpp://	close the dictionary dbf, and memo
+DATADICT\datadict.cpp:	if (dbmemo.m_hFile != CFile::hFileNull)
+DATADICT\datadict.cpp:		dbmemo.Close();
+DATADICT\datadict.cpp://	int		memonamelen = min(MAXSDNAME+1,FIELD_NAME_LENGTH);
+DATADICT\datadict.cpp:	int		memonamelen = min(30+1,FIELD_NAME_LENGTH);
+DATADICT\datadict.cpp:	strncpy(dictRecord.memoname,&(record[FIELD_NAME_OFFSET]),memonamelen);
+DATADICT\datadict.cpp:	dictRecord.memoname[memonamelen-1] = 0;
+DATADICT\datadict.cpp:	j = zcutoff(dictRecord.memoname,' ');
+DATADICT\datadict.cpp:		seclvl = dictRecord.memoname[j-1];
+DATADICT\datadict.cpp:			seclvl += (dictRecord.memoname[j-1] - ' ');
+DATADICT\datadict.cpp:	if (memos)
+DATADICT\datadict.cpp://		dictRecord.memopos = atol(&(record[FORMULA_OFFSET]));	// doesn't work for "dialog" .DBFs
+DATADICT\datadict.cpp:		dictRecord.memopos = *(long *)(record+FORMULA_OFFSET) ;
+DATADICT\datadict.cpp:		dictRecord.memopos = 0L;
+DATADICT\datadict.cpp:			ddmakecalc(dictRecord.memoname, *firstfld, alias, FALSE);	// try to turn it into a calc field
+DATADICT\datadict.cpp:					ddmakecalc(dictRecord.memoname, *firstfld, alias, TRUE);	// try to turn it into a calc field
+DATADICT\datadict.cpp:// release all the memory malloced for the comments
+DATADICT\datadict.cpp:	// memory then.
+DATADICT\datadict.cpp:		ddrelease();	/* if failed, release the comment field memory */
+Fax\Fax.cpp:			// 0( dwSize,5th parameter) for the amount of memory for the list of available printers.
+Fax\Fax.cpp:			// Then we will allocated the correct size of memory using dwNeeded
+Fax\Fax.cpp:					// memory was sucessfully allocated
+Fax\Fax.cpp:						// Free up allocated memory and return FALSE
+Fax\Fax.cpp:			// 0( dwSize,5th parameter) for the amount of memory for the list of available printers.
+Fax\Fax.cpp:			// Then we will allocated the correct size of memory using dwNeeded
+Fax\Fax.cpp:					// memory was sucessfully allocated
+Fax\Fax.cpp:						// Free up allocated memory and return FALSE
+LIBIO\yycreate.cpp:	/* VALUE:	NULL		=> insufficient memory; unable to open file
+LIBIO\yycreate.cpp:		YYError = YYEIM;						/* "insufficient memory" */
+LIBIO\yycreate.cpp:		return NULL;							/* not enough memory */
+LIBIO\yyopen.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+LIBIO\yyopen.cpp:	/* VALUE:	NULL		=> insufficient memory; unable to open file
+LIBIO\yyopen.cpp:		YYError = YYEIM;						/* "insufficient memory" */
+LIBIO\yyopen.cpp:		return NULL;							/* not enough memory */
+LIBIO\libfile.cpp:	// Note CString operations can throw memory exceptions!
+LIBIO\libfile.cpp:		case LIB_ENOMEMORY:
+LIBIO\libfile.cpp:		    Description.LoadString( TyyEIM );		// "Insufficient memory"
+LIBIO\yyclose.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+LIBIO\yyetext.cpp:			break;		/* "Insufficient memory" */
+LIBIO\yz.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+LIBIO\yz.cpp:	{	YYError = YYEIM;			/* "insufficient memory" */
+LIBIO\yz.cpp:	/* VALUE:	NULL	 => no names, or insufficient memory
+LIBIO\yz.cpp:				YYError = YYEIM;			/* "insufficient memory" */
+LIBIO\yz.cpp:	/* VALUE:	NULL	 => error, not enough memory, or name doesn't exist
+LIBIO\yz.cpp:		YYError = YYEIM;					/* "insufficient memory" */
+LIBIO\yz.cpp:		return NULL;						/* not enough memory */
+LIBIO\libchunk.cpp:	// Make sure we have a non-negative chunk size.  Then allocate memory for
+LIBIO\libchunk.cpp:	//  chunk data and be sure we were able to get memory.  Set chunk link and
+LIBIO\libchunk.cpp://	Nothing to do but free memory for chunk data via DeleteContents().
+LIBIO\libdir.cpp:					// Remove object from head of list and free its memory.
+LIBIO\libdir.cpp:					m_pLibFile->m_Error = LIB_ENOMEMORY;			/* "insufficient memory" */
+LIBIO\libdir.cpp:		// Remove object from head of list and free its memory.
+LIBIO\yyinit.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+LIBIO\yyinit.cpp:	TRUE			insufficient memory on heap
+LIBIO\yyinit.cpp:	Obtains enough memory on the heap for "bufc" buffers.  Initializes
+LIBIO\yyinit.cpp:	/* VALUE:	TRUE  => insufficient memory
+LIBIO\yyinit.cpp:		YYError = YYEIM;			/* insufficient memory */
+WCLIP\wpaste.cpp:	/*	Get a handle to the clipboard's memory (text only) */
+WCLIP\wpaste.cpp:   /*	Lock the clipboard's memory while we read it */
+REPIO\grfile.cpp:// Fixes bug in handling of ASCII memo files from reports saved in compound
+REPIO\grfile.cpp://  files.  Symptom was "Field <x> no longer in memo file <y>", approximately.
+REPIO\grfile.cpp:			cfn = fnMEMO;
+REPIO\grfile.cpp:			res = override(fname,fname,theApp.m_pRuntime->RpParam->RpMemo,m_pDoc->Defs.MemExt,TRUE);
+REPIO\grfile.cpp:			res = override(fname,fname,theApp.m_pRuntime->RpParam->RpMemo,m_pDoc->Defs.MemExt);
+REPIO\grfile.cpp:				invValue(T15ARun);	/* "Invalid value in RI_MEMO" */
+REPIO\grfile.cpp:			while (ret = m_pDoc->m_pComposite->mfaopen(fname,aalias)) 	/* memo filename, alias */
+REPIO\grfile.cpp:						|| /**RpMemo*/ (next == tTALK)
+REPIO\grmain.cpp:// Fixes a problem with reading yxMEMOTYPE records that are really yxEXPORTADD
+REPIO\grmain.cpp:			// Added yxMEMOTYPE because it had the same type code as exportadd
+REPIO\grmain.cpp:			//  for one beta period (version 6.0) and so, a memotype record
+REPIO\grmain.cpp:			 type!=yxEXPORTADD && type!=yxMEMOTYPE) && 
+REPIO\rpwritex.cpp:// Fix bug in writing of ASCII memo field info to compound files.  Resulted
+REPIO\rpwritex.cpp:// Allows multiple pieces of memory to be output to one record
+REPIO\rpwritex.cpp://		 zfDUPFLD | zfNUMERIC | zfLOGICAL | zfDATE | zfMEMO | zfNEEDED |
+REPIO\rpwritex.cpp:			if ((fld->dFileNo == fnMEMO)
+REPIO\rpwritex.cpp:			if ((fld->dFileNo == fnMEMO)
+REPIO\rpwritex.cpp:	{	if (((fld->dFlags & (zfNEEDED | zfMEMO)) == (zfNEEDED | zfMEMO))
+REPIO\rpwritex.cpp:			NoMerge = FALSE;	/* if there is a needed memo field,
+REPIO\grfield.cpp:#define MASKdFlags (MASKdFlags1 | zfLOGICAL | zfDATE | zfMEMO | zfNEEDED | zfTIME | zfDATETIME)
+REPIO\grfield.cpp:					  type == zfMEMO ? IDS_0012 : IDS_0009,1));
+REPIO\grfield.cpp:	m_pDoc->m_pComposite->mfrlsfld(fld,MFOCNAME | MFONONDX);			/* if not, release its memory */
+REPIO\grfield.cpp:	 && nomerge						/* no memo fields */
+REPIO\grfield.cpp:	if (!(fld->dFlags & NOTCTYPE)				/* if char or memo field */
+REPIO\grfield.cpp:		if (!(fld->dFlags & NOTCTYPE)	/* if char or memo field */
+REPIO\grfield.cpp:	if (!(fld->dFlags & NOTCTYPE)				// if char or memo field
+REPIO\grfield.cpp:		ch = m_pDoc->zwarn4(getString(type == zfMEMO ? IDS_0731 : IDS_0732,0),
+REPIO\grfield.cpp:		ch = m_pDoc->zwarn4(getString((type==zfMEMO) && (cfn&0x80) ? // magic memo
+REPIO\grfield.cpp:		m_pDoc->zwarn4(getString(type == zfMEMO ? IDS_0731 : IDS_0732,0),
+REPIO\grfield.cpp:		ch = m_pDoc->zwarn4(getString(type == zfMEMO ? IDS_0731 : IDS_0732,0),
+REPIO\grfield.cpp:		ch = m_pDoc->zwarn4(getString((type==zfMEMO) && (cfn&0x80) ? // magic memo
+REPIO\grfield.cpp:		m_pDoc->zwarn4(getString(type == zfMEMO ? IDS_0731 : IDS_0732,0),
+REPIO\grfield.cpp:		m_pDoc->m_pComposite->mfrlsfld(fld,MFOCNAME | MFONONDX);	/* out of memory, give up */
+REPIO\grfield.cpp:		m_pDoc->m_pComposite->mfrlsfld(fld,MFOCNAME | MFONONDX);	/* out of memory, give up */
+REPIO\grfield.cpp:		m_pDoc->m_pComposite->mfrlsfld(fld,MFOCNAME | MFONONDX);	/* out of memory, give up */
+REPIO\grfield.cpp:			memChartStream.SetLength ( count ) ;  // Might throw a memory exception. 
+REPIO\grfield.cpp:					if (!(LastFld->dFlags & NOTCTYPE)	/* if char or memo field */
+REPIO\grmisc.cpp:// Fixes a problem with reading yxMEMOTYPE records that are really yxEXPORTADD
+REPIO\grmisc.cpp:		m_pDoc->YYError = YYEIM;                /* "Insufficient memory..." */
+REPIO\grmisc.cpp:			case fnMEMO:
+REPIO\grmisc.cpp:		memExportStream.SetLength ( count ) ;  // Might throw a memory exception. 
+REPIO\grmisc.cpp:			// This is because we are reading from a memory file. 
+REPIO\grmisc.cpp:			// True means insufficient memory.
+REPIO\grmisc.cpp:	case yxMEMOTYPE:
+REPIO\grmisc.cpp:		// For a short time, yxEXPORTADD and yxMEMOTYPE shared the same
+REPIO\grmisc.cpp:		//  we need to read the possible long record.  The yxMEMOTYPE is
+REPIO\fnexpand.cpp:// 11/20/92 - say - change from Sql_Database to ldatadir for starting directory for memos
+INDEX\klpkey.cpp:// two new memo file types (HiPer SIx and FlexFile II).  I also made 
+INDEX\klpkey.cpp:// significant memo performance changes and added support for two index files
+INDEX\klfiles.cpp://  causing a memory leak and is unused anyway.
+INDEX\klfiles.cpp:// two new memo file types (HiPer SIx and FlexFile II).  I also made
+INDEX\klfiles.cpp:// significant memo performance changes and added support for two index files
+INDEX\klfiles.cpp:// Removed obsolete code from lgettname() in fixing a memory leak.
+INDEX\klmisc.cpp:// two new memo file types (HiPer SIx and FlexFile II).  I also made 
+INDEX\klmisc.cpp:// significant memo performance changes and added support for two index files
+INDEX\kltkey.cpp:// two new memo file types (HiPer SIx and FlexFile II).  I also made 
+INDEX\kltkey.cpp:// significant memo performance changes and added support for two index files
+INDEX\klckey.cpp:// two new memo file types (HiPer SIx and FlexFile II).  I also made 
+INDEX\klckey.cpp:// significant memo performance changes and added support for two index files
+INDEX\klnkey.cpp:// two new memo file types (HiPer SIx and FlexFile II).  I also made 
+INDEX\klnkey.cpp:// significant memo performance changes and added support for two index files
+INDEX\kldecomp.cpp:// two new memo file types (HiPer SIx and FlexFile II).  I also made 
+INDEX\kldecomp.cpp:// significant memo performance changes and added support for two index files
+INDEX\klinit.cpp:	#include "util.h"    // for zmemory
+INDEX\klinit.cpp:	bufs = ((CRrApp*)AfxGetApp())->zmemory(KLNODESIZE/16);
+INDEX\klaccess.cpp:// two new memo file types (HiPer SIx and FlexFile II).  I also made 
+INDEX\klaccess.cpp:// significant memo performance changes and added support for two index files
+INDEX\klaccess.cpp:// two new memo file types (HiPer SIx and FlexFile II).  I also made 
+INDEX\klaccess.cpp:// significant memo performance changes and added support for two index files
+DOPTIONS\prefs.cpp:	CMemoEditPrefs dlgMemoEditPrefsPage ( this, IDD_PREFS_MEMOEDIT  ) ;
+DOPTIONS\prefs.cpp:	prefPropSheet.AddPage( &dlgMemoEditPrefsPage  ) ;
+DOPTIONS\prefs.cpp:// CMemoEditPrefs message handlers
+DOPTIONS\prefs.cpp:// Memo Editor Preferences property page
+DOPTIONS\prefs.cpp:CMemoEditPrefs::CMemoEditPrefs(CRrDoc *pDoc, UINT nIDTemplate)
+DOPTIONS\prefs.cpp:void CMemoEditPrefs::DoDataExchange(CDataExchange* pDX)
+DOPTIONS\prefs.cpp:	DDX_Radio(pDX, DPREFDBMEMO, memoEditor);
+DOPTIONS\prefs.cpp:BEGIN_MESSAGE_MAP(CMemoEditPrefs, CPropertyPage)
+DOPTIONS\prefs.cpp:// CMemoEditPrefs message handlers
+DOPTIONS\prefs.cpp:BOOL CMemoEditPrefs::OnInitDialog()
+DOPTIONS\prefs.cpp:BOOL CMemoEditPrefs::OnKillActive(void)
+DOPTIONS\prefs.cpp:BOOL CMemoEditPrefs::OnSetActive(void)
+DOPTIONS\prefs.cpp:	m_pDoc->m_pFrame->m_pFieldView->m_nPrefPage = PAGE_MEMO_EDITOR ;
+DOPTIONS\prefs.cpp:void CMemoEditPrefs::SavePage(void)
+DOPTIONS\prefs.cpp://	pDoc->setIt(hDlg, DPREFDBMEMO, WxMemoEd, &pDoc->m_pComposite->MFDbaseEd)
+DOPTIONS\prefs.cpp:	m_pDoc->saveIntPref(memoEditor == 0 ? 1 : 0, &m_pDoc->m_pComposite->MFDbaseEd, WxMemoEd) ;
+DOPTIONS\prefs.cpp:BOOL CMemoEditPrefs::onTabOrOK()
+DOPTIONS\prefs.cpp:void CMemoEditPrefs::Initialize(void)
+DOPTIONS\prefs.cpp:	memoEditor = m_pDoc->m_pComposite->MFDbaseEd ? 0 : 1 ;
+DOPTIONS\prefs.cpp:void CMemoEditPrefs::OnHelp()
+DOPTIONS\prefs.cpp://	::WinHelp( GetSafeHwnd(), theApp.getHelpPath(), HELP_CONTEXT, WH_PREFS_MEMOEDIT );
+DOPTIONS\prefs.cpp:	m_pDoc->dialogHelp(GetSafeHwnd(), WH_PREFS_MEMOEDIT) ;
+DOPTIONS\prefs.cpp:LRESULT CMemoEditPrefs::OnCommandHelp(WPARAM wParam, LPARAM lParam)
+DOPTIONS\dpref.cpp:			::CheckRadioButton(hDlg,DPREFDBMEMO,DPREFOTHER,pDoc->m_pComposite->MFDbaseEd ? DPREFDBMEMO : DPREFOTHER);
+DOPTIONS\dpref.cpp:							|| !pDoc->setIt(hDlg, DPREFDBMEMO, WxMemoEd, &pDoc->m_pComposite->MFDbaseEd)
+DOPTIONS\dglobdef.cpp:// Free paper size memory when terminating Default Settings dialog
+DOPTIONS\dglobdef.cpp:					// free page size memory
+XBASE\DBF.CPP:    V 1.5   1/2/98     - Added memo field support
+XBASE\DBF.CPP:    V 1.6c  4/16/98    - Big Endian support, dBASE III + memo field support
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   MemoHeader.BlockSize  = XB_DBT_BLOCK_SIZE;
+XBASE\DBF.CPP:   MemoHeader.Version    = 0x03;
+XBASE\DBF.CPP:   CurMemoBlockNo        = -1;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:      MemoHeader.Version = 0x03;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:       MemoHeader.Version = 0x00;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   xbShort MemoSw = 0;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:#endif /* XB_MEMO_FIELDS */
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:      if( !MemoSw && ( s[i].Type=='M' || s[i].Type=='B' || s[i].Type=='O'))
+XBASE\DBF.CPP:         MemoSw++;
+XBASE\DBF.CPP:	   xb_memory_error;
+XBASE\DBF.CPP:      xb_memory_error;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   if (MemoSw) {
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   if( MemoSw ) 
+XBASE\DBF.CPP:      xb_memory_error;
+XBASE\DBF.CPP:      {  /* memo fields are always 10 bytes */
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   if( MemoSw )
+XBASE\DBF.CPP:      CreateMemoFile();
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:     free( mbb );         /* memo block buffer */
+XBASE\DBF.CPP:     fclose( mfp );       /* memo file pointer */
+XBASE\DBF.CPP:         cout << "Dbase III file with memo fields" << endl << endl;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   xbShort MemoSw = 0;
+XBASE\DBF.CPP:   /* copy the header into memory */
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:      MemoHeader.Version = 0x03;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:      MemoHeader.Version = 0x00;
+XBASE\DBF.CPP:else if (Version == 0xf5)							// Visual Foxpro w. memo
+XBASE\DBF.CPP:      xb_memory_error;
+XBASE\DBF.CPP:			xb_memory_error;
+XBASE\DBF.CPP:			xb_memory_error;
+XBASE\DBF.CPP:   /* copy field info into memory */
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:      if( !MemoSw && (SchemaPtr[i].Type == 'M' || 
+XBASE\DBF.CPP:         MemoSw++;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   if( MemoSw )   /* does this table have memo fields ? */
+XBASE\DBF.CPP:      if(( rc = OpenMemoFile()) != XB_NO_ERROR )
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   xbShort  MemoFields;
+XBASE\DBF.CPP:#endif  /* XB_MEMO_FIELDS */
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   if(( MemoFields = MemoFieldsPresent()) > 0 )
+XBASE\DBF.CPP:      if( MemoHeader.Version == 0x03 )
+XBASE\DBF.CPP:         if ((_write(t, &MemoHeader.FileName, 8)) == -1)
+XBASE\DBF.CPP:         xbase->PutShort( tbuf, MemoHeader.BlockSize );
+XBASE\DBF.CPP:         for( i = 22; i < MemoHeader.BlockSize; i++ ) _write (t, &nZero, sizeof (nZero));
+XBASE\DBF.CPP:#endif   /* XB_MEMO_FIELDS */
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:            if( GetFieldType( i ) == 'M' && MemoFieldExists( i ))
+XBASE\DBF.CPP:               len = GetMemoFieldLen( i );
+XBASE\DBF.CPP:										xb_memory_error;
+XBASE\DBF.CPP:               GetMemoField( i, len, Buf, -1 );
+XBASE\DBF.CPP:               Temp.UpdateMemoData( i, len, Buf, -1 );
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   if( MemoFields )
+XBASE\DBF.CPP:#endif /* XB_MEMO_FIELDS */
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   xbString MemoName;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   if( MemoFieldsPresent())
+XBASE\DBF.CPP:      MemoName = ndfn;
+XBASE\DBF.CPP:      NameLen = MemoName.len();
+XBASE\DBF.CPP:      if( MemoName.get_character( NameLen ) == 'F' )
+XBASE\DBF.CPP:         MemoName.put_at(NameLen, 'T');
+XBASE\DBF.CPP:         MemoName.put_at(NameLen, 't');
+XBASE\DBF.CPP:      if(( t = _open( MemoName, _O_BINARY | _O_RDWR | _O_CREAT )) == -1 )
+XBASE\DBF.CPP:        xb_open_error(MemoName);
+XBASE\DBF.CPP:      if( MemoHeader.Version == 0x03 )
+XBASE\DBF.CPP:         xbase->PutShort( buf, MemoHeader.BlockSize );
+XBASE\DBF.CPP:         for( i = 22; i < MemoHeader.BlockSize; i++ ) _write (t, &nZero, sizeof (nZero));
+XBASE\DBF.CPP:#endif   // XB_MEMO_FIELDS
+XBASE\DBF.CPP:		xb_memory_error;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   xbShort MemosExist;
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   MemosExist = MemoFieldsPresent();
+XBASE\DBF.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\DBF.CPP:   if( MemosExist )
+XBASE\DBF.CPP:#endif   // XB_MEMO_FIELDS
+XBASE\HTML.CPP:    V 1.5      1/2/98     - Added memo field support
+XBASE\EXP.CPP:    V 1.5    1/2/97     - Added memo field support
+XBASE\crindex.cpp://			sprintf(buf, "%s (Memo)", fieldName) ;
+XBASE\crindex.cpp://			sprintf(buf, "%s (Memo)", fieldName) ;
+XBASE\crindex.cpp:	ZeroMemory( &si, sizeof(si) );
+XBASE\dfselect.cpp://			sprintf(buf, "%s (Memo)", fieldName) ;
+XBASE\LOCK.CPP:    V 1.5    1/2/98     - Added memo field support
+XBASE\LOCK.CPP:    V 1.7.4b 7/3/98     - Modified Exclusive Lock to conditionally lock memo file
+XBASE\LOCK.CPP:#ifdef XB_MEMO_FIELDS 
+XBASE\LOCK.CPP:xbShort xbDbf::LockMemoFile( const xbShort WaitOption, const xbShort LockType ) const
+XBASE\LOCK.CPP:   /*  This method locks the first 4 bytes of the memo file,
+XBASE\LOCK.CPP:#endif	/* XB_MEMO_FIELDS  */
+XBASE\LOCK.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\LOCK.CPP:   if( MemoFieldsPresent())
+XBASE\LOCK.CPP:      if(( rc = LockMemoFile( LockWaitOption, F_WRLCK )) != XB_NO_ERROR )
+XBASE\LOCK.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\LOCK.CPP:   if( MemoFieldsPresent())
+XBASE\LOCK.CPP:      LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:/*  $Id: memo.cpp,v 1.12 1999/03/19 10:56:34 willy Exp $
+XBASE\MEMO.CPP:    dBASE III+ and dBASE IV style memo .dbt files
+XBASE\MEMO.CPP:    V 1.5   1/2/98     - Added memo field support
+XBASE\MEMO.CPP:    V 1.7.1 5/25/98    - Added support for dBase III+ type memo files
+XBASE\MEMO.CPP:#ifdef XB_MEMO_FIELDS
+XBASE\MEMO.CPP:  return ( _tell( mfp ) / MemoHeader.BlockSize );
+XBASE\MEMO.CPP:  if(( rc = ReadMemoBlock( Location, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      MemoHeader.NextBlock = NextFreeBlock;
+XBASE\MEMO.CPP:      if(( rc = ReadMemoBlock( PrevNode, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      if(( rc = WriteMemoBlock( PrevNode, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      MemoHeader.NextBlock = Location + BlocksNeeded;
+XBASE\MEMO.CPP:      if(( rc = WriteMemoBlock( MemoHeader.NextBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      if(( rc = ReadMemoBlock( PrevNode, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      if(( rc = WriteMemoBlock( PrevNode, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      if(( rc = WriteMemoBlock( NextFreeBlock2, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:   memo file searching for a place to grab some free blocks for reuse 
+XBASE\MEMO.CPP:  if( MemoHeader.NextBlock < LDB ){
+XBASE\MEMO.CPP:    CurNode = MemoHeader.NextBlock;
+XBASE\MEMO.CPP:    if(( rc = ReadMemoBlock( MemoHeader.NextBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      if(( rc = ReadMemoBlock( NextFreeBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:xbShort xbDbf::SetMemoBlockSize( const xbShort BlockSize )
+XBASE\MEMO.CPP:   MemoHeader.BlockSize = BlockSize;
+XBASE\MEMO.CPP:   char MemoBlock[24];
+XBASE\MEMO.CPP:   if(( _read(mfp, MemoBlock, 24)) == -1 )
+XBASE\MEMO.CPP:   p = MemoBlock;
+XBASE\MEMO.CPP:   MemoHeader.NextBlock = xbase->GetLong( p ); 
+XBASE\MEMO.CPP:     MemoHeader.FileName[i] = *p;
+XBASE\MEMO.CPP:   MemoHeader.Version  = *p;
+XBASE\MEMO.CPP:   MemoHeader.BlockSize = xbase->GetShort( p ); 
+XBASE\MEMO.CPP:xbShort xbDbf::OpenMemoFile( void )
+XBASE\MEMO.CPP:   len = GetMemoBlockSize();
+XBASE\MEMO.CPP:   if(( Size % MemoHeader.BlockSize ) != 0 )
+XBASE\MEMO.CPP:     NewSize = ( Size / MemoHeader.BlockSize + 1) * MemoHeader.BlockSize;
+XBASE\MEMO.CPP:     xb_memory_error;
+XBASE\MEMO.CPP:xbShort xbDbf::CreateMemoFile( void )
+XBASE\MEMO.CPP:   len = GetMemoBlockSize();
+XBASE\MEMO.CPP:     sp = MemoHeader.FileName;
+XBASE\MEMO.CPP:   memset( MemoHeader.FileName, 0x00, 8 );
+XBASE\MEMO.CPP:     MemoHeader.FileName[i] = *sp++;
+XBASE\MEMO.CPP:   MemoHeader.NextBlock = 1L;
+XBASE\MEMO.CPP:   xbase->PutLong( buf, MemoHeader.NextBlock );
+XBASE\MEMO.CPP:     _write(mfp, &MemoHeader.FileName,  8);
+XBASE\MEMO.CPP:     xbase->PutShort( buf, MemoHeader.BlockSize );
+XBASE\MEMO.CPP:     for( i = 22; i <  MemoHeader.BlockSize; i++ ) _write (mfp, &nZero, sizeof (nZero));
+XBASE\MEMO.CPP:   if(( mbb = (void *) malloc( MemoHeader.BlockSize )) == NULL )
+XBASE\MEMO.CPP:     xb_memory_error;
+XBASE\MEMO.CPP:xbShort xbDbf::ReadMemoBlock( const xbLong BlockNo, const xbShort Option )
+XBASE\MEMO.CPP:   CurMemoBlockNo = -1;
+XBASE\MEMO.CPP:   if( _lseeki64( mfp,(xbLong) BlockNo * MemoHeader.BlockSize, SEEK_SET ) == -1)
+XBASE\MEMO.CPP:     ReadSize = MemoHeader.BlockSize;
+XBASE\MEMO.CPP:     CurMemoBlockNo = BlockNo;
+XBASE\MEMO.CPP:xbShort xbDbf::WriteMemoBlock( const xbLong BlockNo, const xbShort Option )
+XBASE\MEMO.CPP:   CurMemoBlockNo = -1;
+XBASE\MEMO.CPP:     WriteSize = MemoHeader.BlockSize;
+XBASE\MEMO.CPP:     WriteSize = MemoHeader.BlockSize;
+XBASE\MEMO.CPP:   if( _lseeki64( mfp,(xbLong) BlockNo * MemoHeader.BlockSize, SEEK_SET ) == -1)
+XBASE\MEMO.CPP:     CurMemoBlockNo = BlockNo;
+XBASE\MEMO.CPP:xbShort xbDbf::GetMemoField( const xbShort FieldNo, const xbLong len, 
+XBASE\MEMO.CPP:     xb_error(XB_NOT_MEMO_FIELD);
+XBASE\MEMO.CPP:      if(( rc = LockMemoFile( LockOpt, F_RDLCK )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:       LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:     xb_error(XB_NO_MEMO_DATA);
+XBASE\MEMO.CPP:   if((  rc = ReadMemoBlock( BlockNo, Vswitch )) != 0 )
+XBASE\MEMO.CPP:         LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:      if( Scnt >= MemoHeader.BlockSize )
+XBASE\MEMO.CPP:         if((  rc = ReadMemoBlock( BlockNo, 1 )) != 0 )
+XBASE\MEMO.CPP:      LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:xbLong xbDbf::GetMemoFieldLen( const xbShort FieldNo ) 
+XBASE\MEMO.CPP:      if( BlockNo == CurMemoBlockNo && CurMemoBlockNo != -1 )
+XBASE\MEMO.CPP:      if( ReadMemoBlock( BlockNo, 0 ) != XB_NO_ERROR )
+XBASE\MEMO.CPP:         if( ReadMemoBlock( BlockNo++, 1 ) != XB_NO_ERROR )
+XBASE\MEMO.CPP:xbShort xbDbf::MemoFieldsPresent( void ) const
+XBASE\MEMO.CPP:xbShort xbDbf::DeleteMemoField( const xbShort FieldNo )
+XBASE\MEMO.CPP:   if(( rc = ReadMemoBlock( SBlockNo, 4 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:   if( (MFieldLen+2) % MemoHeader.BlockSize )
+XBASE\MEMO.CPP:     SNoOfBlocks = (MFieldLen+2)/MemoHeader.BlockSize+1L;
+XBASE\MEMO.CPP:     SNoOfBlocks = (MFieldLen+2)/MemoHeader.BlockSize;
+XBASE\MEMO.CPP:   NextFreeBlock = MemoHeader.NextBlock;
+XBASE\MEMO.CPP:      if(( rc = ReadMemoBlock( NextFreeBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      if(( rc = ReadMemoBlock( NextFreeBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      SNextBlock = MemoHeader.NextBlock;
+XBASE\MEMO.CPP:      if(( rc = WriteMemoBlock( SBlockNo, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      MemoHeader.NextBlock = SBlockNo;
+XBASE\MEMO.CPP:      if(( rc = ReadMemoBlock( LastFreeBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      if(( rc = WriteMemoBlock( LastFreeBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:   if(( rc = WriteMemoBlock( SBlockNo, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:   if(( rc = ReadMemoBlock( LastFreeBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:   if(( rc = WriteMemoBlock( LastFreeBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:xbShort xbDbf::AddMemoData( const xbShort FieldNo, const xbLong DataLen,
+XBASE\MEMO.CPP:   xbLong  TotalLen;       /* total length of needed area for memo field */
+XBASE\MEMO.CPP:     ( LastDataBlock == MemoHeader.NextBlock )) /* no free space */
+XBASE\MEMO.CPP:      if( TotalLen % MemoHeader.BlockSize )
+XBASE\MEMO.CPP:        BlocksNeeded = TotalLen / MemoHeader.BlockSize + 1;
+XBASE\MEMO.CPP:        BlocksNeeded = TotalLen / MemoHeader.BlockSize;
+XBASE\MEMO.CPP:      MemoHeader.NextBlock = LastDataBlock + BlocksNeeded;  /* reset to eof */
+XBASE\MEMO.CPP:      if(( rc = PutMemoData( LastDataBlock, BlocksNeeded, DataLen, Buf )) 
+XBASE\MEMO.CPP:      if( TotalLen % MemoHeader.BlockSize )
+XBASE\MEMO.CPP:        BlocksNeeded = TotalLen / MemoHeader.BlockSize + 1;
+XBASE\MEMO.CPP:        BlocksNeeded = TotalLen / MemoHeader.BlockSize;
+XBASE\MEMO.CPP:        if(( rc = PutMemoData( HeadBlock, BlocksNeeded, DataLen, Buf )) !=
+XBASE\MEMO.CPP:         if(( rc = PutMemoData( LastDataBlock, BlocksNeeded, DataLen, Buf )) 
+XBASE\MEMO.CPP:         if(( rc = ReadMemoBlock( PrevNode, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:         if(( rc = WriteMemoBlock( PrevNode, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:   xbase->PutLong( buf, MemoHeader.NextBlock );
+XBASE\MEMO.CPP:xbShort xbDbf::PutMemoData( const xbLong StartBlock,
+XBASE\MEMO.CPP:      while( Tctr < MemoHeader.BlockSize && Qctr < wlen )
+XBASE\MEMO.CPP:         if(( rc = WriteMemoBlock( CurBlock++, 0 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:         if(( rc = WriteMemoBlock( CurBlock++, 1 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:xbShort xbDbf::UpdateMemoData( const xbShort FieldNo, const xbLong DataLen, 
+XBASE\MEMO.CPP:      if(( rc = LockMemoFile( LockOpt, F_WRLCK )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:      if( MemoFieldExists( FieldNo ) ) 
+XBASE\MEMO.CPP:         if(( rc = DeleteMemoField( FieldNo )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:            LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:   else if((IsType3Dbt() || GetMemoFieldLen(FieldNo)==0L))
+XBASE\MEMO.CPP:      if(( rc = AddMemoData( FieldNo, DataLen, Buf )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:         LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:      if( TotalLen % MemoHeader.BlockSize )
+XBASE\MEMO.CPP:        BlocksNeeded = TotalLen / MemoHeader.BlockSize + 1;
+XBASE\MEMO.CPP:        BlocksNeeded = TotalLen / MemoHeader.BlockSize;
+XBASE\MEMO.CPP:      if(( rc = ReadMemoBlock( GetLongField( FieldNo ), 4 )) != XB_NO_ERROR ) 
+XBASE\MEMO.CPP:         LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:      if( (MFieldLen+2) % MemoHeader.BlockSize )
+XBASE\MEMO.CPP:        BlocksAvailable = (MFieldLen+2) / MemoHeader.BlockSize + 1;
+XBASE\MEMO.CPP:        BlocksAvailable = (MFieldLen+2) / MemoHeader.BlockSize;
+XBASE\MEMO.CPP:         if(( rc = PutMemoData( GetLongField( FieldNo ), BlocksNeeded,
+XBASE\MEMO.CPP:             LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:         if(( rc = DeleteMemoField( FieldNo )) != XB_NO_ERROR )  
+XBASE\MEMO.CPP:             LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:         if(( rc = AddMemoData( FieldNo, DataLen, Buf )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:            LockMemoFile( F_SETLK, F_UNLCK );
+XBASE\MEMO.CPP:      if(( rc = LockMemoFile( F_SETLK, F_UNLCK )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:xbShort xbDbf::MemoFieldExists( const xbShort FieldNo ) const
+XBASE\MEMO.CPP:void xbDbf::DumpMemoHeader( void ) const
+XBASE\MEMO.CPP:   cout << "\nMemo header data...";
+XBASE\MEMO.CPP:   cout << "\nNext Block " << MemoHeader.NextBlock;
+XBASE\MEMO.CPP:         cout << MemoHeader.FileName[i];
+XBASE\MEMO.CPP:   cout << "\nBlocksize  " << MemoHeader.BlockSize;
+XBASE\MEMO.CPP:xbShort xbDbf::DumpMemoFreeChain( void ) 
+XBASE\MEMO.CPP:   CurBlock = MemoHeader.NextBlock;
+XBASE\MEMO.CPP:      if(( rc = ReadMemoBlock( CurBlock, 2 )) != XB_NO_ERROR )
+XBASE\MEMO.CPP:void xbDbf::DumpMemoBlock( void ) const
+XBASE\MEMO.CPP:      for( i = 8; i < MemoHeader.BlockSize; i++ )
+XBASE\MEMO.CPP:#endif  /* MEMO_FIELD */
+XBASE\XBEXCEPT.CPP:  case XB_NO_MEMORY: 
+XBASE\XBEXCEPT.CPP:    return "Out of memory";
+XBASE\XBEXCEPT.CPP:  case XB_NOT_MEMO_FIELD: 
+XBASE\XBEXCEPT.CPP:    return "Not memo field";
+XBASE\XBEXCEPT.CPP:  case XB_NO_MEMO_DATA: 
+XBASE\XBEXCEPT.CPP:    return "No memo data";
+XBASE\XBEXCEPT.CPP:xbOutOfMemoryException::xbOutOfMemoryException () : xbException(XB_NO_MEMORY) {
+XBASE\XBEXCEPT.CPP:xbOutOfMemoryException::~xbOutOfMemoryException () XB_THROW {
+XBASE\XBEXCEPT.CPP:const char* xbOutOfMemoryException::what() const XB_THROW {
+XBASE\XBEXCEPT.CPP:  return "xbOutOfMemoryException"; 
+XBASE\STACK.CPP:    V 1.5   1/2/97     - Added memo field support
+XBASE\STACK.CPP:      allocate one from memory */
+XBASE\NDX.CPP:    V 1.5     1/2/98     - Added Dbase IV memo field support
+XBASE\NDX.CPP:   if( CloneChain ) ReleaseNodeMemory( CloneChain );
+XBASE\NDX.CPP:      if(( TempNodeT = GetNodeMemory()) == NULL ) {
+XBASE\NDX.CPP:	 xb_memory_error;
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:void xbNdx::ReleaseNodeMemory( xbNdxNodeLink * n )
+XBASE\NDX.CPP:/* otherwise it allocates new memory for the requested node             */
+XBASE\NDX.CPP:xbNdxNodeLink * xbNdx::GetNodeMemory( void )
+XBASE\NDX.CPP:/*  If SetNodeChain 0, then record is only read to Node memory         */
+XBASE\NDX.CPP:   if(( n = GetNodeMemory()) == NULL )
+XBASE\NDX.CPP:     xb_memory_error;
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:   ReleaseNodeMemory( TempxbNodeLink );
+XBASE\NDX.CPP:      ReleaseNodeMemory( TempxbNodeLink );
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:   ReleaseNodeMemory( TempxbNodeLink );
+XBASE\NDX.CPP:      ReleaseNodeMemory( TempxbNodeLink );
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP://     xb_memory_error;
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:   TempNode = GetNodeMemory();
+XBASE\NDX.CPP:   ReleaseNodeMemory( TempNode );
+XBASE\NDX.CPP:      TempNode = GetNodeMemory();
+XBASE\NDX.CPP:	      xb_memory_error;
+XBASE\NDX.CPP:      ReleaseNodeMemory( TempNode );
+XBASE\NDX.CPP:      ReleaseNodeMemory( CurNode );
+XBASE\NDX.CPP:      TempNode = GetNodeMemory();
+XBASE\NDX.CPP:	      xb_memory_error;
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:      ReleaseNodeMemory( TempNode );
+XBASE\NDX.CPP:   ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:      ReleaseNodeMemory( DeleteChain );
+XBASE\NDX.CPP:      ReleaseNodeMemory( CurNode );
+XBASE\NDX.CPP:      ReleaseNodeMemory( CurNode );
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:   ReleaseNodeMemory( Right );
+XBASE\NDX.CPP:   ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:   ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:   ReleaseNodeMemory( Left );
+XBASE\NDX.CPP:         ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:         ReleaseNodeMemory( TempNode );
+XBASE\NDX.CPP:      ReleaseNodeMemory( n );
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:      ReleaseNodeMemory( Left );
+XBASE\NDX.CPP:         ReleaseNodeMemory( NodeChain );
+XBASE\NDX.CPP:      ReleaseNodeMemory( CurNode );
+XBASE\NDX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP:   if( CloneChain ) ReleaseNodeMemory( CloneChain );
+XBASE\NTX.CPP:      if(( TempNodeT = GetNodeMemory()) == NULL )
+XBASE\NTX.CPP:      throw xbOutOfMemoryException();
+XBASE\NTX.CPP:      return XB_NO_MEMORY;
+XBASE\NTX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP:void xbNtx::ReleaseNodeMemory( xbNodeLink * n )
+XBASE\NTX.CPP:/* otherwise it allocates new memory for the requested node             */
+XBASE\NTX.CPP:xbNodeLink * xbNtx::GetNodeMemory( void )
+XBASE\NTX.CPP:/*  If SetNodeChain 0, then record is only read to Node memory         */
+XBASE\NTX.CPP:   if(( n = GetNodeMemory()) == NULL )
+XBASE\NTX.CPP:       xb_memory_error;
+XBASE\NTX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP:   ReleaseNodeMemory( TempNodeLink );
+XBASE\NTX.CPP:      ReleaseNodeMemory( TempNodeLink );
+XBASE\NTX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP:   ReleaseNodeMemory( TempNodeLink );
+XBASE\NTX.CPP:      ReleaseNodeMemory( TempNodeLink );
+XBASE\NTX.CPP:      ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP:		 throw xbOutOfMemoryException();
+XBASE\NTX.CPP:	   return XB_NO_MEMORY;
+XBASE\NTX.CPP:   TempNode = GetNodeMemory();
+XBASE\NTX.CPP:   ReleaseNodeMemory( TempNode );
+XBASE\NTX.CPP:      TempNode = GetNodeMemory();
+XBASE\NTX.CPP:          throw xbOutOfMemoryException();
+XBASE\NTX.CPP:	   return XB_NO_MEMORY;
+XBASE\NTX.CPP:      ReleaseNodeMemory( TempNode );
+XBASE\NTX.CPP:      ReleaseNodeMemory( CurNode );
+XBASE\NTX.CPP:      TempNode = GetNodeMemory();
+XBASE\NTX.CPP:          throw xbOutOfMemoryException();
+XBASE\NTX.CPP:	   return XB_NO_MEMORY;
+XBASE\NTX.CPP:      ReleaseNodeMemory( TempNode );
+XBASE\NTX.CPP:      ReleaseNodeMemory( DeleteChain );
+XBASE\NTX.CPP://       ReleaseNodeMemory( CurNode );
+XBASE\NTX.CPP://       ReleaseNodeMemory( CurNode );
+XBASE\NTX.CPP://       ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP://    ReleaseNodeMemory( Right );
+XBASE\NTX.CPP://    ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP://    ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP://    ReleaseNodeMemory( Left );
+XBASE\NTX.CPP://          ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP://          ReleaseNodeMemory( TempNode );
+XBASE\NTX.CPP://       ReleaseNodeMemory( n );
+XBASE\NTX.CPP://       ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP://       ReleaseNodeMemory( Left );
+XBASE\NTX.CPP://          ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP://       ReleaseNodeMemory( CurNode );
+XBASE\NTX.CPP://       ReleaseNodeMemory( NodeChain );
+XBASE\NTX.CPP://                ReleaseNodeMemory(n);
+XBASE\NTX.CPP:                ReleaseNodeMemory( sibling );
+XBASE\FIELDS.CPP:    V 1.5    1/2/98     - Added Dbase IV Memo field support
+XBASE\FIELDS.CPP:  /* allocate memory if needed */
+XBASE\FIELDS.CPP:    throw xbOutOfMemoryException();
+XBASE\EXPFUNC.CPP:    V 1.5    1/2/97     - Added memo field support
+XBASE\EXPFUNC.CPP:	   xb_memory_error;
+XBASE\XDATE.CPP:    V 1.5     1/2/98     - Added memo field support
+XBASE\EXPPROC.CPP:    V 1.5   1/2/97     - Added memo field support
+XBASE\EXPPROC.CPP:	      xb_memory_error;
+XBASE\EXPPROC.CPP:	      xb_memory_error;
+XBASE\XBASE.CPP:    V 1.5   1/2/97     - Added memo field support
+XBASE\XBASE.CPP:			xb_memory_error;
+XBASE\XBASE.CPP:    case -102: cout << "No Memory" << endl;                    break;
+XBASE\XBASE.CPP:    case -133: cout << "Not a Memo field" << endl;             break;
+XBASE\XBASE.CPP:    case -134: cout << "No Memo Data" << endl;                 break;
+RUNTIME\wnextjob.cpp:// RpMemo - 	memo file pathname
+RUNTIME\wnextjob.cpp:	RpParam->RpMemo[0] = 0;
+RUNTIME\wnextjob.cpp:	// RI_MEMO
+RUNTIME\wnextjob.cpp:	findStr (T15ARun, RpParam->RpMemo, PATHLENGTH);
+RUNTIME\wnextjob.cpp:		   if (m_pDoc->m_pComposite->MFQuery =	// get memory for it
+RUNTIME\wnextjob.cpp:	   if (m_pDoc->m_pComposite->MFWhere =		   // get memory for it
+RUNTIME\wnextjob.cpp:	fld = findfield(T15ARun);		// RI_MEMO
+RUNTIME\wnextjob.cpp:	*RpParam->RpMemo = 0;
+RUNTIME\wnextjob.cpp:	if (*(name = fld->dFldP))		// ascii memo file?
+RUNTIME\wnextjob.cpp:		lstrcat(RpParam->RpMemo,name);
+RUNTIME\wnextjob.cpp:			if (m_pDoc->m_pComposite->MFQuery = (char*)GlobalAlloc(GPTR,lstrlen(fld->dFldP)+1))	// get memory for it
+RUNTIME\wnextjob.cpp:		if (!(fld->dFlags&(zfNUMERIC|zfDATE|zfDATETIME|zfTIME|zfLOGICAL|zfMEMO)))
+RUNTIME\wnextjob.cpp:	 			case ZNVMEM:				   // ran out of memory
+RUNTIME\wnextjob.cpp:T15ARun,		// RI_MEMO
+RUNTIME\wnextjob.cpp:				if (fld->dFlags&(zfNUMERIC|zfMEMO|zfDATE|zfDATETIME|zfTIME/*|zfLOGICAL*/))
+RUNTIME\wnextjob.cpp:	swrstr(T15ARun,JF_MEMO);					// RI_MEMO
+RUNTIME\wnextjob.cpp:		if (fld->dFlags&(zfDATE|zfDATETIME|zfTIME|zfNUMERIC|zfMEMO|zfLOGICAL))
+RUNTIME\wnextjob.cpp:		case JF_MEMO:				// RI_MEMO
+RUNTIME\wnextjob.cpp:			lstrncpy(RpParam->RpMemo,(char far *)buf,PATHLENGTH);	
+RUNTIME\wnextjob.cpp:					if (m_pDoc->m_pComposite->MFQuery =			// get memory for it
+RUNTIME\wnextjob.cpp:				if (m_pDoc->m_pComposite->MFWhere =			// get memory for it
+RUNTIME\wnextjob.cpp:			return m_pDoc->zack(getString(IDS_1012,0)); 	// "Insufficient memory for data buffers"
+RUNTIME\wnextjob.cpp:			// "Insufficient memory: %s"
+RUNTIME\wnextjob.cpp:		// allocate memory for alias, and store
+RUNTIME\wnextjob.cpp:			// get memory for and store index path
+RUNTIME\wnextjob.cpp:			// get memory for and store tag
+RUNTIME\runtime.cpp:		Name);			// lpName (name of memory-mapped file: "R&RMapFile<process id><handle>)
+RUNTIME\rrun.cpp:	memoblksz = 0;
+RUNTIME\rrun.cpp:	memocurpos = 0L;
+RUNTIME\rrun.cpp:	memobegpos = 0L;
+RUNTIME\rrun.cpp:	memocurblkoff = 0L;
+RUNTIME\rrun.cpp:	memocurendoff = 0L;
+RUNTIME\rrun.cpp:	memonxtblkoff = 0L;
+RUNTIME\rrun.cpp:	memos = FALSE;
+RUNTIME\wrtmain.cpp:// all the jobs are run), would result in the runtime staying in memory.
+RUNTIME\wrtmain.cpp:			// E => memo editor switch
+RUNTIME\wrun.cpp:// We get the needed size first and then allocate the correct size of memory.
+RUNTIME\wrun.cpp:			// 0( dwSize,5th parameter) for the amount of memory for the list of available printers.
+RUNTIME\wrun.cpp:			// Then we will allocated the correct size of memory using dwNeeded
+RUNTIME\wrun.cpp:					// memory was sucessfully allocated
+RUNTIME\wrun.cpp:						// Free up allocated memory and return FALSE
+RUNTIME\wrun.cpp:			// 0( dwSize,5th parameter) for the amount of memory for the list of available printers.
+RUNTIME\wrun.cpp:			// Then we will allocated the correct size of memory using dwNeeded
+RUNTIME\wrun.cpp:					// memory was sucessfully allocated
+RUNTIME\wrun.cpp:						// Free up allocated memory and return FALSE
+RUNTIME\wrun.cpp:			// 0( dwSize,5th parameter) for the amount of memory for the list of available printers.
+RUNTIME\wrun.cpp:			// Then we will allocated the correct size of memory using dwNeeded
+RUNTIME\wrun.cpp:					// memory was sucessfully allocated
+RUNTIME\wrun.cpp:						// Free up allocated memory and return FALSE
+RUNTIME\wrun.cpp:			m_pDoc->yzrlsnames(yzn);				// release the memory
+rrrpt32\rdtable.cpp:// Set various member pointer variables to NULL when memory is freed.
+rrrpt32\rdtable.cpp:	m_pDoc->yyreset();				// free irp buffer-pool memory
+rrrpt32\rdtable.cpp:			m_Util.errBox('D', m_Util.getFString(IDS_INSUF_MEM_FLDS,2)); //"Insufficient memory for field list"
+rrrpt32\rdtable.cpp:			m_Util.errBox('D', m_Util.getFString(IDS_INSUF_MEM_FLDS,2)); //"Insufficient memory for field list"
+rrrpt32\rdrepstf.cpp://  Set various pointers to NULL when memory is freed.
+rrrpt32\rdrepstf.cpp:// Fix memory leaks of CRrRepIO, CRrComposite, CRrDoc.
+rrrpt32\rdrepstf.cpp://  structures themselves to cure a memory leak reported by a beta site.
+rrrpt32\rdrepstf.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+rrrpt32\rdrepstf.cpp:	"RI_MEMO", PATHLIMIT, "", RDReport::getReportMemo, TRUE,
+rrrpt32\rdrepstf.cpp:	m_pDoc->yyreset();				// free irp buffer-pool memory
+rrrpt32\rdrepstf.cpp:			wsprintf (m_Util.ErrorBuf, m_Util.getFString(IDS_INSUF_MEM_VAL,2), valName); //"Insufficient memory to add %s value"
+rrrpt32\rdexec.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+rrrpt32\rdexec.cpp://		errBox ('D', m_Util.getFString(IDS_INSUF_MEM_CL, 2)); // "Insufficient memory for command line"
+rrrpt32\rdexec.cpp:	//  ID to create the memory-mapped filename.
+rrrpt32\rdexec.cpp:		Name);			// lpName (name of memory-mapped file: "R&RMapFile<process id><handle>)
+rrrpt32\rdexec.cpp:	// Prepare first parameter value for EXE in mapped file memory
+rrrpt32\rdexec.cpp:	Objects[0] = hNextEvent;		// EXE has something to tell us in memory-mapped file
+rrrpt32\rdexec.cpp:		  case WAIT_OBJECT_0:					// EXE has left us a message in memory-mapped file
+rrrpt32\rdexec.cpp:				{	// Prepare next parameter value for EXE in mapped file memory
+rrrpt32\rdrepval.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+rrrpt32\rdrepval.cpp:		&& !(fld->dFlags & (zfDUPFLD | zfPAGENO | zfMEMO | zfRECNO | zfPREV))
+rrrpt32\rdrepval.cpp:		&& !(fld->dFlags & (zfDUPFLD | zfPAGENO | zfMEMO | zfPREV))
+rrrpt32\rdrepval.cpp:		m_Util.errBox('D', m_Util.getFString(IDS_INSUF_MEM,2)); //"Insufficient memory"
+rrrpt32\rdrepval.cpp:		m_Util.errBox ('D', m_Util.getFString(IDS_INSUF_MEM,2)); //"Insufficient memory");
+rrrpt32\rdrepval.cpp:		m_Util.errBox ('D', m_Util.getFString(IDS_INSUF_MEM,2)); //"Insufficient memory");
+rrrpt32\rdrepval.cpp:BOOL RDReport::getMemoName(
+rrrpt32\rdrepval.cpp: char *memoTablePath,
+rrrpt32\rdrepval.cpp:	return getCharValue (m_Util.getFString(IDS_RI_MEMO, 0), memoTablePath, mSize);		// handles errors	// "RI_MEMO"
+rrrpt32\rdrepval.cpp:BOOL RDReport::setMemoName(
+rrrpt32\rdrepval.cpp: LPCSTR memoTablePath
+rrrpt32\rdrepval.cpp:	return setCharValue (m_Util.getFString(IDS_RI_MEMO, 0), memoTablePath);	// handles errors	// "RI_MEMO"
+rrrpt32\rrrpt32.cpp:	m_elmFileManager.DeleteContents();	// Avoid bogus reports of memory leaks.
+rrrpt32\rdinit.cpp:// Fix memory leaks of CRrRepIO, CRrComposite, CRrDoc.
+rrrpt32\rdinit.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+rrrpt32\rdinit.cpp:// Fix some memory leaks by calling yyreset() and freeing ActiveApp and
+rrrpt32\rdinit.cpp:		m_Util.errBox( 'S', m_Util.getFString( IDS_INSUF_MEM, 2 ) ); //"Insufficient memory"
+rrrpt32\rdinit.cpp:			case ZNVMEM:				   /* ran out of memory */
+rrrpt32\rdinit.cpp:				m_Util.errBox ('D', m_Util.getFString(IDS_INSUF_MEM,2)); //"Insufficient memory"
+rrrpt32\rdmisc.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+rrrpt32\rdreport.cpp:// Changed all memory allocation and deallocation to use GlobalAllocPtr()
+rrrpt32\rdreport.cpp:// Fix some big memory leaks.
+rrrpt32\rdreport.cpp:		m_Util.errBox ('D', m_Util.getFString(IDS_INSUF_MEM,2)); //"Insufficient memory"
+rrrpt32\rdreport.cpp:		m_Util.errBox ('D', m_Util.getFString(IDS_INSUF_MEM,2)); //"Insufficient memory"
+rrrpt32\rdreport.cpp:		m_Util.errBox ('D', m_Util.getFString(IDS_INSUF_MEM,2)); //"Insufficient memory"
+rrrpt32\rdreport.cpp:BOOL RDReport::getReportMemo(
+rrrpt32\rdreport.cpp:		  case KMEMO:
+rrrpt32\cwrapper.cpp:// Fix memory leaks of CRrRepIO, CRrComposite, CRrDoc.
+rrrpt32\cwrapper.cpp:BOOL RUNDLL_API getMemoName(
+rrrpt32\cwrapper.cpp:		return pReport->getMemoName( lpszPath, size );
+rrrpt32\cwrapper.cpp:BOOL RUNDLL_API setMemoName(
+rrrpt32\cwrapper.cpp:		return pReport->setMemoName( lpszPath );
+DFILE\dpropt.cpp:	{ // okay so far, get the memory
+DFILE\dpropt.cpp:	{	// got memory for keys, not get keys and add them to list
+DFILE\dprset.cpp:						// get memory for "<printer name>PRINTERINFOSEPARATOR<port name>" plus trailing null...
+DFILE\dprset.cpp:						{ // got memory, tuck away the printer/port name...
+DFILE\dprset.cpp:				EndDialog(hDlg, 0);	  // no printers or no memory...
+DFILE\dreport.cpp:// Add a routine that's called for memory free
+DFILE\dreport.cpp:void CRrDoc::freeMemory(void)
+DFILE\dreport.cpp:	{ // no memory for all this...
+DFILE\dreport.cpp:			freeMemory();
+DFILE\dreport.cpp:			freeMemory();
+DFILE\dreport.cpp:		freeMemory();
+DFILE\dreport.cpp:						pDoc->freeMemory();
+DFILE\dreport.cpp:					pDoc->freeMemory();
+DFILE\dreport.cpp:					pDoc->freeMemory();
+DFILE\dprint.cpp:// Test the memory handles before freeing in DoModal()
+DFILE\dprint.cpp:		// get the memory for DEVMODE structure
+DFILE\htmldlg.cpp:	ZeroMemory ( &lf, sizeof( lf ) ) ;
+DFILE\export.cpp:				(zfDATE|zfLOGICAL|zfNUMERIC|zfMEMO|zfDATETIME|zfTIME)));
+DFILE\RSW\dbtrieve.cpp:		wacktive1 (getString (IDS_0619,0)); // Insufficient memory
+DFILE\dfilenew.cpp:		lowMemoryBox(WxNoDlgMem);
+DCALC\dtotals.cpp:	if (f->dFlags & (zfDUPFLD | zfPAGENO | zfTEMP2 | zfMEMO))
+DCALC\dfunc.cpp:"Memo",		// sv_memo   			0x09		/* a memo field */
+DCALC\dfunc.cpp:"I",		// sv_many   			0x11		/* sv_any plus memo */
+DCALC\dfunc.cpp://"?",		// sv_mtmemo 			0x14		/* an empty memo reference */
+DCALC\dfunc.cpp:"Char",		// sv_char   			0x14		/* a memo or char field */
+DCALC\dfunc.cpp:		"Memo",
+DCALC\paramfld.cpp:		default:	// must be char - can't be memo, right?
+DCALC\paramfld.cpp:		default:	// must be char - can't be memo, right?
+DCALC\dcalcudf.cpp:					IDS_0690,	// Cannot sort or group on memo field
+DCALC\dcalcudf.cpp:					IDS_0691,	// Cannot link with memo field
+DCALC\dcalcudf.cpp:					IDS_0780,	// condition cannotbe a memo
+DCALC\dparams.cpp:		"Memo",
+DCALC\dparams.cpp:static	int		anyMemo ;
+DCALC\dparams.cpp:	anyMemo = false ;
+DCALC\dparams.cpp:			(anyMemo || (f->dFlags & zfNEEDED || f->dFlags2 & f2QNEED)))
+DCALC\dparams.cpp:// filter for list of parameter fields - depends of global "anyMemo"
+DCALC\dparams.cpp:				(anyMemo || (fld->dFlags & zfNEEDED || fld->dFlags2 & f2QNEED))) ;
+DCALC\dparams.cpp:	int anyMemo = false ;
+DCALC\dparams.cpp:	// next, check for any needed memo fields
+DCALC\dparams.cpp:		if (fld->dFlags & zfMEMO &&
+DCALC\dparams.cpp:			anyMemo = true ;
+DCALC\dparams.cpp:					(anyMemo || (fld->dFlags & zfNEEDED || fld->dFlags2 & f2QNEED))) 
+DCALC\dcalctot.cpp:		// special "push empty memo" operator
+DCALC\dcalctot.cpp:		case a_mtmemo:
+DCALC\dcalctot.cpp:			{ // get memory to do it
+DCALC\dcalctot.cpp:	{	// get memory for udf expression
+DCALC\dcalctot.cpp:			{	// got memory for inserting spaces after comments, so go do it
+DCALC\dcalctot.cpp:		{	// couldn't get memory, just don't show expression at all
+DCALC\dtotal.cpp:		!(f->dFlags & (zfPAGENO | zfMEMO)) &&
+DCALC\dtotal.cpp:				(((LPMFFIELD)f)->dFlags&(zfMEMO|zfPAGENO)))
+DCALC\dtotal.cpp:				allcanbetotaled = FALSE; // only nonmemo nonpageno datafields eligible
+DCALC\dtotal.cpp:	if (f->dFlags & (zfDUPFLD | zfPAGENO | zfTEMP2 | zfMEMO))
+DCALC\dtotal.cpp:				return FALSE;	  // no memory I guess...
+DCALC\dtotal.cpp:			return(FALSE);			// no memory, I guess
+alive\rrlite\rrvwctrl.cpp:    ZeroMemory( &wndClass, sizeof( WNDCLASS ));
+alive\rrlite\rrvwctrl.cpp:    return *pBstrPath ? S_OK : E_OUTOFMEMORY;
+alive\rrlite\rrvwctrl.cpp:    return m_pReportURL ? S_OK : E_OUTOFMEMORY;
+alive\rrlite\rrvwctrl.cpp:    return *pBstrPath ? S_OK : E_OUTOFMEMORY;
+alive\rrlite\rrvwctrl.cpp:    return m_pImagePath ? S_OK : E_OUTOFMEMORY;
+alive\rrlite\printrep.cpp:	ZeroMemory( &pd, sizeof( PRINTDLG ));
+alive\rrlite\printrep.cpp:		// get the memory for DEVMODE structure
+alive\rrlite\printrep.cpp:	ZeroMemory( &m_pd, sizeof( PRINTDLG ));
+alive\rrlite\printrep.cpp:		// free up any memory allocated by dialog
+alive\rrlite\viewtext.cpp:	MoveMemory( pStr, m_pCurData, nCnt );
+alive\rrlite\viewtext.cpp:	ZeroMemory( &lf, sizeof( lf ));
+alive\rrlite\viewtext.cpp:					ZeroMemory( szFont, sizeof( szFont ));
+alive\rrlite\viewtext.cpp:						ZeroMemory( szFont, sizeof( szFont ));
+alive\rrlite\readv2.cpp:		HEAP_ZERO_MEMORY, pViewCtrl->m_nPageCount * sizeof( PAGE_ARRAY ));
+alive\rrlite\readv2.cpp:							HEAP_ZERO_MEMORY, pagePos.dwTextByteCount );
+alive\rrlite\readv2.cpp:							HEAP_ZERO_MEMORY, pagePos.wBoxCount * sizeof( LINE_BOX ));
+alive\rrlite\readv2.cpp:							HEAP_ZERO_MEMORY, pagePos.wLineCount * sizeof( LINE_BOX ));
+alive\rrlite\readv2.cpp:							HEAP_ZERO_MEMORY, pagePos.wImageCount * sizeof( IMAGE ));
+alive\rrlite\repurl.cpp:		{ // now allocate some memory for full URL name
+alive\rrlite\repurl.cpp:						// get memory for concatenation
+alive\rrlite\repurl.cpp:				// free memory allocated by GetDisplayName()
+alive\rrlite\repurl.cpp:				{ // now allocate some memory for full URL name
+alive\rrlite\repurl.cpp:						// free memory allocated by GetDisplayName()
+alive\rrlite\readimg.cpp:// Read file image info and set up image in memory
+alive\rrlite\readimg.cpp:// Read image file into memory and return Accusoft handle
+alive\rrlite\readimg.cpp:		pImageMem = (LPTSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, dwSize );
+alive\rrlite\readimg.cpp:		{ // read and grab memory as needed
+alive\rrlite\readimg.cpp:			LPTSTR pMore = (LPTSTR)HeapReAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY,
+alive\rrlite\readimg.cpp:			{ // we've shut down  or run out of memory
+alive\rrlite\readimg.cpp:// Read thru image structures and load each image into memory
+alive\rrlite\readimg.cpp:		ZeroMemory( szFileName, sizeof( szFileName ));
+alive\rrlite\readimg.cpp:			// get file from server and store in memory
+alive\rrlite\readchrt.cpp:		ZeroMemory( &pRepPage->m_pCharts[ii], sizeof( CHART ));
+alive\rrlite\readchrt.cpp:		// allocate enough memory to read entire block
+alive\rrlite\readchrt.cpp:			break;	// can't get the memory
+alive\rrlite\readchrt.cpp:		{ // can't lock memory or can't read object data
+alive\rrlite\readchrt.cpp:		CopyMemory( &pRepPage->m_pCharts[ii], &expChart, sizeof( EXPORT_CHART ));
+alive\rrlite\rrprfile.cpp:	pViewCtrl->m_pPageArray = (PAGE_ARRAY *)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, pViewCtrl->m_nPageCount * sizeof( PAGE_ARRAY ));
+alive\rrlite\rrprfile.cpp:						LINE_BOX *pData = (LINE_BOX *)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, pagePos.wBoxCount * sizeof( LINE_BOX ));
+alive\rrlite\rrprfile.cpp:						LINE_BOX *pData = (LINE_BOX *)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, pagePos.wLineCount * sizeof( LINE_BOX ));
+alive\rrlite\rrprfile.cpp:						IMAGE *pData = (IMAGE *)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, pagePos.wImageCount * sizeof( IMAGE ));
+alive\rrlite\rrprfile.cpp:						OBJECT *pData = (OBJECT *)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, pagePos.wObjectCount * sizeof( OBJECT ));
+alive\rrlite\rrprfile.cpp:						CHART *pData = (CHART *)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, pagePos.wChartCount * sizeof( CHART ));
+alive\rrlite\rrprfile.cpp:						LPTSTR pData = (LPTSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, pagePos.dwTextByteCount );
+alive\rrlite\rrprfile.cpp:					{ // no objects read into memory, clean up now
+alive\rrlite\rrprfile.cpp:					{ // no Charts read into memory, clean up now
+alive\rrlite\rrutil.cpp:		ZeroMemory( pBuf, nCount * 6 );
+alive\rrlite\reppage.cpp:		{ // delete images from memory first
+alive\rrlite\reppage.cpp:		{ // release object and free associated memory
+alive\rrlite\reppage.cpp:		{ // release Chart and free associated memory
+alive\rrlite\drawctrl.cpp:	ZeroMemory( &scrollInfo, sizeof( SCROLLINFO ));
+alive\rrlite\drawctrl.cpp:	ZeroMemory( &scrollInfo, sizeof( SCROLLINFO ));
+alive\rrlite\drawctrl.cpp:		ZeroMemory( &scrollInfo, sizeof( SCROLLINFO ));
+alive\rrlite\framewrk\globals.cpp:// our global memory allocator and global memory pool
+alive\rrlite\framewrk\ctlhelp.cpp:    ZeroMemory(&wndclass, sizeof(wndclass));
+alive\rrlite\framewrk\classf.cpp://                        E_OUTOFMEMORY, E_INVALIDARG
+alive\rrlite\framewrk\classf.cpp://    HRESULT     - S_OK, E_FAIL, E_OUTOFMEMORY, E_UNEXPECTED
+alive\rrlite\framewrk\classf.cpp:    return (*pbstr) ? S_OK : E_OUTOFMEMORY;
+alive\rrlite\framewrk\classf.cpp://    HRESULT          - S_OK, E_OUTOFMEMORY, E_NOINTERFACE
+alive\rrlite\framewrk\stdenum.cpp:    // we're done. otherwise, free up the allocated memory we were given
+alive\rrlite\framewrk\stdenum.cpp://    HRESULT            - S_OK, E_OUTOFMEMORY
+alive\rrlite\framewrk\internet.cpp:                hr = E_OUTOFMEMORY;
+alive\rrlite\framewrk\util.cpp://    VOID *         - new memoery.
+alive\rrlite\framewrk\proppage.cpp:    return E_OUTOFMEMORY;
+alive\rrlite\framewrk\ctlmisc.cpp:    // initialize all our variables -- we decided against using a memory-zeroing
+alive\rrlite\framewrk\ctlmisc.cpp:    // memory allocator, so we sort of have to do this work now ...
+alive\rrlite\framewrk\ctlmisc.cpp:        return E_OUTOFMEMORY;
+alive\rrlite\framewrk\ctlmisc.cpp:    // fill out the Counted array, using IMalloc'd memory.
+alive\rrlite\framewrk\ctlmisc.cpp:        // allocate some memory big enough to hold all of the sinks.
+alive\rrlite\framewrk\ctlmisc.cpp:        return E_OUTOFMEMORY;
+alive\rrlite\framewrk\ctlmisc.cpp:    // clean up some memory stuff
+alive\rrlite\framewrk\ctlmisc.cpp:    CopyMemory(pData, &(v2.lVal), g_rgcbDataTypeSize[vt]);
+alive\rrlite\framewrk\ipserver.cpp://    HRESULT         - S_OK, CLASS_E_CLASSNOTAVAILABLE, E_OUTOFMEMORY,
+alive\rrlite\framewrk\ipserver.cpp:        return E_OUTOFMEMORY;
+alive\rrlite\framewrk\autoobj.cpp://    HRESULT           - S_OK, E_OUTOFMEMORY, DISP_E_UNKNOWNNAME,
+alive\rrlite\framewrk\ctlembed.cpp://    HRESULT            - S_OK, E_OUTOFMEMORY
+alive\rrlite\framewrk\ctlembed.cpp:        return E_OUTOFMEMORY;
+alive\rrlite\framewrk\ctlembed.cpp:        return E_OUTOFMEMORY;
+alive\rrlite\framewrk\ctlembed.cpp://    HRESULT      - S_OK, OLE_S_USEREG, E_OUTOFMEMORY
+alive\rrlite\framewrk\ctlembed.cpp:    return (*ppszUserType) ? S_OK : E_OUTOFMEMORY;
+alive\rrlite\framewrk\ctlembed.cpp://    HRESULT           - S_OK, E_OUTOFMEMORY
+alive\rrlite\framewrk\ctlembed.cpp://    HRESULT       - S_OK, E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL
+alive\rrlite\framewrk\ctlembed.cpp://    HRESULT         - S_OK, E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED
+alive\rrlite\framewrk\ctlembed.cpp://    HRESULT        - S_OK, E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED
+alive\rrlite\framewrk\extobj.cpp:// create an ASSERT for because it would require memoizing the LCID at some point.
+alive\rrlite\framewrk\extobj.cpp:		hr = E_OUTOFMEMORY;
+alive\rrlite\framewrk\extobj.cpp:			return E_OUTOFMEMORY;
+alive\rrlite\readobj.cpp:// Read file object info and set up object in memory
+alive\rrlite\readobj.cpp:		ZeroMemory( &pRepPage->m_pObjects[ii], sizeof( OBJECT ));
+alive\rrlite\readobj.cpp:		// allocate enough memory to read entire block
+alive\rrlite\readobj.cpp:			break;	// can't get the memory
+alive\rrlite\readobj.cpp:		{ // can't lock memory or can't read object data
+alive\rrlite\readobj.cpp:		CopyMemory( &pRepPage->m_pObjects[ii], &expObject, sizeof( EXPORT_OBJECT ));
+alive\rrlite\accusoft.cpp:// Load image into memory and return dib
+alive\rrlite\accusoft.cpp:// Delete image from memory
+WMAIN\wserial.cpp://	store the serial number in bytes 0 - 3 of a memory-mapped file and
+WMAIN\wserial.cpp:// Make RSW and RRW use different memory-mapped files for serial nos.
+WMAIN\wserial.cpp://  serial number.  Uses memory-mapped files instead of INI file settings.
+WMAIN\wserial.cpp:	// Create a memory-mapped file for retaining serial number info and a mutex for controlling
+WMAIN\wserial.cpp:	//	3) Create (or open) a memory-mapped file for SNUMINFO contents.
+WMAIN\wserial.cpp:		MAPPED_FILE );		// lpName (name of memory-mapped file)
+WMAIN\wserial.cpp:	// Clean up memory-mapped file used to allow multi-use of single serial number
+WMAIN\rrinit.cpp:// Added more error checking when looking/allocating memory for the userid
+WMAIN\rrinit.cpp://  INI file at startup, maintained in memory (in the Paths structure),
+WMAIN\rrinit.cpp:// Fix crock #1835, problem with /G switch not freeing memory and resources.
+WMAIN\rrinit.cpp:				LPSTR pTemp = (LPSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, dwCount );
+WMAIN\rrinit.cpp:				{ // we've got the memory
+WMAIN\rrinit.cpp:	ZeroMemory( &si, sizeof(si) );
+WMAIN\rrinit.cpp:		// Make sure that the memory is clean.
+WMAIN\explmgr.cpp:// Provide a function for releasing all memory.  
+WMAIN\explmgr.cpp:	// Provide a function for releasing all memory.  
+WMAIN\explmgr.cpp:	// This is so that the RUNTIME DLL will not report memory leaks. 
+WMAIN\explmgr.cpp:	// it is just that the destructor is called after the memory dump occurs.  
+WMAIN\explmgr.cpp:	// ZeroMemory(tcsDLL, MAX_PATH);
+WMAIN\explmgr.cpp:		//	ZeroMemory(tcsDLL, MAX_PATH);
+WMAIN\cmdline.cpp:		pDoc->yzrlsnames(yzn);					// give back the memory
+WMAIN\cmdline.cpp:			pDoc->yzrlsnames(yzn);			// release the memory
+WMAIN\version.cpp:// Fixed memory leak by moving #endif
+WMAIN\winit.cpp:// Fix some memory leaks.
+WMAIN\winit.cpp:// Fix memory leak by calling freextab on exit.
+WMAIN\winit.cpp:// Call MFXFLD_ResetExport on exit to free memory.
+WMAIN\winit.cpp:// Fixed CRrRepIO memory leak.
+WMAIN\winit.cpp:// set up MF long char and memo vars from [Database] section of INI
+WMAIN\winit.cpp://  INI file at startup, maintained in memory (in the Paths structure),
+WMAIN\winit.cpp:// Get PrevWinClr and DBMemoEd in Runtime; init printer and fonts in runtime.
+WMAIN\winit.cpp:// Global alloc and free memory for PrOptLabel, the structure for current
+WMAIN\winit.cpp:		1	ASCII memo file
+WMAIN\winit.cpp:	11 table/11 memofile/11 index report with allow write set to "no" or
+WMAIN\winit.cpp:	m_pComposite->MFMemoLimit     = GetPrivateProfileInt( WxDBKey,  WxMemoLimit,30, theApp.m_elmFileManager.GetRRInitFile());
+WMAIN\winit.cpp:	m_pComposite->MFMemoWrap      = GetPrivateProfileInt( WxDBKey,  WxMemoWrap,TRUE, theApp.m_elmFileManager.GetRRInitFile());
+WMAIN\winit.cpp:			// copy strings from DLL to memory of ours
+WMAIN\winit.cpp:	freeSolomonInit();					// free up memory allocated for InitialValues structure
+WMAIN\winit.cpp:	m_pComposite->MFDbaseEd = GetPrivateProfileInt( WxPrefKey, WxMemoEd, TRUE, theApp.m_elmFileManager.GetRRInitFile());
+WUTIL\wfile.cpp:   // gotta use this Ole allocation crap to free memory allocated by SHBroweForFolder call
+WUTIL\wfile.cpp:   // what we're doing is "free memory using the currently active IMalloc* allocator"
+WUTIL\custcfd.cpp:	ZeroMemory( &si, sizeof(si) );
+WUTIL\custcfd.cpp:		// NOTE: this subclass causes a memory leak that Paul and I couldn't find.
+WUTIL\custcfd.cpp:			//m_pwndChild->EndDialog(IDOK);		// doesn't fix memory leak
+WUTIL\custcfd.cpp:			//UnsubclassWindow( );					// also doen's fix memory leak
+WUTIL\werror.cpp:// This fixes the bogus low memory error when there is a data source
+WUTIL\werror.cpp:// Clear startup bitmap in lowMemory routine
+WUTIL\werror.cpp:// lowMemoryBox() now takes LPSTR, not PSTR
+WUTIL\werror.cpp:	// can cause bogus low memory error.  Use frame wnd if we have one.
+WUTIL\werror.cpp:void CRrDoc::lowMemoryBox(LPSTR errtx)	// special, low-memory conditions
+WUTIL\rpmem.cpp:// manage getting/releasing memory for parts or all of fields
+WUTIL\fldlist.cpp:	else if (f->dFlags & zfMEMO)
+WUTIL\wdialog.cpp:			lowMemoryBox(WxNoDlgMem);
+WUTIL\wdialog.cpp:			lowMemoryBox(WxNoDlgMem);
+WUTIL\ntcode.cpp:			// allocate memory for directory and file buffers
+WUTIL\ntcode.cpp:			// if Select Directory dialog, free alloced memory
+WUTIL\wglobal.cpp://  INI file at startup, maintained in memory (in the Paths structure),
+WUTIL\wglobal.cpp:	{ // got a report in memory, re-size fields, images, options...
+WUTIL\wglobal.cpp:	{ // okay, get the memory
+WUTIL\wglobal.cpp:			{ // got memory for size values
+WUTIL\wglobal.cpp:				LPSTR pTempPath = (LPSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, dwCount );
+WUTIL\wglobal.cpp:				{ // we've got the memory
+WUTIL\wglobal.cpp:			LPSTR pTemp = (LPSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, dwCount );
+WUTIL\wglobal.cpp:			{ // we've got the memory
+WUTIL\wglobal.cpp:			LPSTR pTemp = (LPSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, dwCount );
+WUTIL\wglobal.cpp:			{ // we've got the memory
+WUTIL\wstring.cpp:	switch (f->dFlags & (zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfTIME|zfDATETIME))
+WUTIL\wstring.cpp:		case zfMEMO:
+WUTIL\wmem.cpp://	Windows dynamic memory allocation routines
+WUTIL\wmem.cpp:// I added a call to localcompact if we cant get enough local memory.
+WUTIL\wmem.cpp:// Don't clear globally alloc'ed memory if you don't get any
+WUTIL\wmem.cpp:// The HeapAlloc function allocates a block of memory from a
+WUTIL\wmem.cpp:// heap. The allocated memory is not movable. 
+WUTIL\wmem.cpp:	LPSTR pMem = (LPSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, dwSize );
+WUTIL\wmem.cpp:// The HeapReAlloc function reallocates a block of memory from a heap.
+WUTIL\wmem.cpp:// This function enables you to resize a memory block and change other
+WUTIL\wmem.cpp:// memory block properties. The allocated memory is not movable. 
+WUTIL\wmem.cpp:	LPSTR pNew = (LPSTR)HeapReAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, (LPVOID)pMem, dwNewSize );
+WUTIL\wmem.cpp:// The HeapFree function frees a memory block allocated from a
+WUTIL\wmem.cpp:// The HeapSize function returns the size, in bytes, of a memory
+WUTIL\futil.cpp:// RRW #2329.  Remove check of char/memo fields in inches/cm extending past
+WUTIL\futil.cpp:// RRW #2329.  Remove check of char/memo fields in inches/cm extending past
+WUTIL\futil.cpp:// Fix zero-width char/memo fields declared in inches (zero saved w/ report)
+WUTIL\futil.cpp:	{ // character/logical/memo field for test pattern
+WUTIL\futil.cpp:		&& !(fld->dFlags & (zfDUPFLD | zfPAGENO | zfMEMO | zfRECNO | zfPREV))
+WUTIL\futil.cpp:		&& !(fld->dFlags & (zfDUPFLD | zfPAGENO | zfMEMO | zfPREV))
+WUTIL\futil.cpp:// set character (or memo) field width..
+WPRINTUI\wprev.cpp:			errorMessage(IDS_0626); // no memory (GDI)
+WPRINTUI\wexport.cpp:// txtx_expInitPrt so don't get "insufficient memory for print/preview"
+WPRINTUI\wexport.cpp:		case MAPI_E_INSUFFICIENT_MEMORY :
+WPRINTUI\wexport.cpp:			// There was insufficient memory to proceed. No message was sent. 
+WPRINTUI\wexport.cpp:		ZeroMemory( &StartupInfo, sizeof( STARTUPINFO ));
+WPRINTUI\wexport.cpp:	 	// got a query, so get some memory for it
+WPRINTUI\wprint.cpp:// Fix memory leak
+WPRINTUI\wprint.cpp:// getDevMode() allocates memory for and retrieves a DEVMODE structure
+WPRINTUI\wprint.cpp:// memory allocated (by globalAlloc) appropriately.
+WPRINTUI\wprint.cpp:// IMPORTANT NOTE: Caller must free this memory when done with it!
+WPRINTUI\wprint.cpp:// can't get the memory.
+WPRINTUI\wprint.cpp:	globalFree(pDevMode);	// we free the memory!
+WPRINTUI\wprint.cpp:	PrtStruct->pDest.wpd.nMinMemKB = GetPrivateProfileInt ("Memory", "MinMem", 256, theApp.m_elmFileManager.GetRRInitFile() );
+WPRINTUI\wprint.cpp:			  type == zfMEMO ? IDS_0012 : IDS_0009,1));
+WPRINTUI\wprint.cpp:#define DTYPE (zfNUMERIC | zfDATE | zfLOGICAL | zfMEMO | zfDATETIME | zfTIME)
+WPRINTUI\wprint.cpp:void CRrDoc::printCleanUp() 	// free memory used
+WPRINTUI\wprint.cpp:			printCleanUp(); 	// free memory mostly
+WPRINTUI\wprint.cpp:					case SP_OUTOFMEMORY:
+WPRINTUI\wprint.cpp:			wack1(MainWnd,getString(IDS_0626,0)); // no memory (GDI)
+WPRINTUI\preview.cpp:	{ // it's in memory...
+WPRINTUI\prevdraw.cpp:					m_pDoc->lowMemoryBox(WxNoPrtMem);
+WPRINTUI\wdbexp.cpp://	match the expected line type, and will want to exclude more than just memos
+WPRINTUI\wdbexp.cpp:		 // and not a memo (CSV export eats memos)
+WPRINTUI\wdbexp.cpp:		 ((pDoc->m_pExport->ExportType == CSVEXP) || (pDoc->m_pExport->ExportType == WRDEXP) || !(((LPMFFIELD)fld)->dFlags & zfMEMO)) &&
+WPRINTUI\wdbexp.cpp:			 // and not a memo (CSV export eats memos)
+WPRINTUI\wdbexp.cpp:			/*((pDoc->m_pExport->ExportType == CSVEXP) || (pDoc->m_pExport->ExportType == WRDEXP) ||*/ !(mffield->dFlags & zfMEMO) &&
+WPRINTUI\wdbexp.cpp:	if ((fld->fhdr.hflags & DATAFLD) && (!(fld->dFlags & zfMEMO)))
+WPRINTUI\wdbexp.cpp:	// Need to worry about memos?
+WPRINTUI\wdbexp.cpp:	switch (fld->dFlags & (zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME))
+WPRINTUI\wdbexp.cpp:		case zfMEMO:
+WPRINTUI\wdbexp.cpp:			fs->type = dbxMEMO;
+WPRINTUI\wdbexp.cpp:	// Need to worry about memos?
+WPRINTUI\wdbexp.cpp:	switch (fld->dFlags & (zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME))
+WPRINTUI\wdbexp.cpp:		case zfMEMO:
+WPRINTUI\wdbexp.cpp:			fs->type = dbxMEMO;
+WPRINTUI\wdbexp.cpp:	switch (fld->dFlags & (zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME))
+WPRINTUI\wdbexp.cpp:		case zfMEMO:
+WPRINTUI\wdbexp.cpp:			fs->type = dbxMEMO;
+WPRINTUI\wtxtexp.cpp:// fixed memory leak by moving
+WPRINTUI\wtxtexp.cpp:// so don't get "insufficient memory for print/preview" in 
+WPRINTUI\wtxtexp.cpp:// Init new friends-of-word-wrapped-memo fields text export struct
+WPRINTUI\wtxtexp.cpp:	{ 	// Free up the memory we just sent out..
+RRATL\RRControl.cpp:	m_memoName = "";
+RRATL\RRControl.cpp:		!setMemoName(m_nReportHandle, m_memoName.c_str()) */
+RRATL\RRControl.cpp:STDMETHODIMP CRRControl::put_memoName(BSTR newVal)
+RRATL\RRControl.cpp:	m_memoName = _bstr_t(newVal);
+chart\rrchlist.cpp://  of BOOL since it now may allocate memory.
+chart\rrchlist.cpp:								// Since pLabels and ppSortz may point to "new"ed memory
+chart\rrchart.cpp://  memory allocations without full rebuild.
+PD-ORIG\wexpint.cpp:// printing a word-wrapped memo.  No position backwards in a line
+PD-ORIG\wexpint.cpp:	// lBuf is memory locked by caller
+PD-ORIG\genreport.cpp:void CGenerateReportHTML::freePDIMemory ()
+PD-ORIG\memdlg.cpp:			MEM_SetLowMemoryOption (0);
+PD-ORIG\memdlg.cpp:						MEM_SetLowMemoryOption (ID_RADIO_TERMINATE_PREVIEW);
+PD-ORIG\memdlg.cpp:						MEM_SetLowMemoryOption (ID_RADIO_PAUSE_PRINT_PREVIEW);
+PD-ORIG\memdlg.cpp:						MEM_SetLowMemoryOption (ID_RADIO_FREE_PAGES);
+PD-ORIG\rtfxint.cpp:// Changed "MEM_" calls to regular Windows memory calls.
+PD-ORIG\rtfxint.cpp:// lBuf is memory locked by caller
+PD-ORIG\rtfxint.cpp:// add a print/preview font to memory cache
+PD-ORIG\rtfxint.cpp:						MEMORYSTATUS ms ;
+PD-ORIG\rtfxint.cpp:						GlobalMemoryStatus ( &ms ) ;
+PD-ORIG\rtfxint.cpp:						if ( ms.dwMemoryLoad >= 98 )  // 100 equals full memory use. 
+PD-ORIG\rtfxint.cpp:					MEMORYSTATUS ms ;
+PD-ORIG\rtfxint.cpp:					GlobalMemoryStatus ( &ms ) ;
+PD-ORIG\rtfxint.cpp:					if (!WEXPPS.preview && (ms.dwMemoryLoad >= 98) )
+PD-ORIG\pwdriver.cpp:// has been changed to DWORD to fix RRW 2892 insufficient memory for print/
+PD-ORIG\pwdriver.cpp:// Fix memory leaks
+PD-ORIG\pwdriver.cpp:// Change Local memory functions to Global - again
+PD-ORIG\pwdriver.cpp:	MEM_InitMem (ps);	// preview memory initialization
+PD-ORIG\pwdriver.cpp:	{ // sorry, not enough memory...
+PD-ORIG\pwdriver.cpp:	return TRUE;	// memory allocated
+PD-ORIG\pxdriver.cpp:	{ // sorry, not enough memory...
+PD-ORIG\pxdriver.cpp:	GlobalFree( hPagePos );	// free page index memory
+PD-ORIG\pxdriver.cpp:				MoveMemory( pPageData + pPage->dwPageTextCount, pLine, nSize );
+PD-ORIG\pxdriver.cpp:			MoveMemory( pImages + pPage->wPageImages, pNew, sizeof( PRT_IMG ));
+PD-ORIG\pxdriver.cpp:			MoveMemory( pObject + pPage->wPageObjects, pNew, sizeof( PRT_OBJECT ));
+PD-ORIG\pxdriver.cpp:			MoveMemory( pChart + pPage->wPageCharts, pchart, sizeof( PRT_CHART ));
+PD-ORIG\rtfexp.cpp:// Fixed problem with word-wrapped memos where we wrapped after every
+PD-ORIG\rtfexp.cpp:// clean up memory, fonts, etc.
+PD-ORIG\genhtml.cpp:		CATCH( CMemoryException, e )
+PD-ORIG\genhtml.cpp:	CATCH( CMemoryException, e )
+PD-ORIG\dbfexp.cpp:				ALLOCERR	- couln't allocate memory for header or record buf
+PD-ORIG\csvxint.cpp:// Fix bug where memo or char data may be bigger than record buffer.
+PD-ORIG\csvxint.cpp:// Fix bug where memo or char data may be bigger than record buffer.
+PD-ORIG\htmlint.cpp:// Memory leak, free memory
+PD-ORIG\htmlint.cpp:// lBuf is memory locked by caller
+PD-ORIG\htmlint.cpp:		// Don't free memory here, 
+PD-ORIG\htmlint.cpp:		// We were losing track of memory so just free it after use it since
+PD-ORIG\htmlint.cpp:		// don't use it elsewhere.  Used to call freeMemory() after this routine
+PD-ORIG\htmlint.cpp:		// which will go thru list of tableentrys freeing memory and resetting data.
+PD-ORIG\htmlint.cpp:		// Even if did free memory here, FreePDIString() is a better choice because
+PD-ORIG\htmlint.cpp:			//This code free the memory that was allocated in getNextPDIField function using *pThePDI=pFoo
+PD-ORIG\htmlint.cpp:		    //This unfreed memory caused a leak with every field that was generated. WO150994. WRR
+PD-ORIG\htmlint.cpp:void freeMemory(LPPRT_STRUCT ps)
+PD-ORIG\htmlint.cpp:	HEXPPS.pReportHTMLgenerator->freePDIMemory ();
+PD-ORIG\htmlint.cpp:		freeMemory (ps);
+PD-ORIG\htmlint.cpp:// add a print/preview font to memory cache
+PD-ORIG\htmlint.cpp:					MEMORYSTATUS ms ;
+PD-ORIG\htmlint.cpp:					GlobalMemoryStatus ( &ms ) ;
+PD-ORIG\htmlint.cpp:					if ( ms.dwMemoryLoad >= 98 )
+PD-ORIG\htmlint.cpp:					//	if (!HWEXPPS.preview && (ms.dwMemoryLoad >= 98) )
+PD-ORIG\pwint.cpp:// Bug: fail to delete cpen object uses memory
+PD-ORIG\pwint.cpp:// memory for print/preview problem. In PD.h pageByteCount has been changed to
+PD-ORIG\pwint.cpp:// Fix memory leaks
+PD-ORIG\pwint.cpp:// Change Local memory functions to Global - again
+PD-ORIG\pwint.cpp:// add a print/preview font to memory cache
+PD-ORIG\pwint.cpp:// free page memory for page "pg"
+PD-ORIG\htmlexp.cpp:// Separate processes would get a separate memory space for the flag, so it 
+PD-ORIG\htmlexp.cpp:// clean up memory, fonts, etc.
+PD-ORIG\wksexp.cpp:				ALLOCERR	- couln't allocate memory for header or record buf
+PD-ORIG\mem.cpp:// This is an insulating layer to the Windows memory API. This should be used
+PD-ORIG\mem.cpp:// only by the printer driver code, since under low memory conditions, a message
+PD-ORIG\mem.cpp:// pages of memory.
+PD-ORIG\mem.cpp://					  to satisfy the memory request. By doing a GlobalCompact, there
+PD-ORIG\mem.cpp:// 06/07/93 ERP 	- Removed extra memory checks to speed things up.
+PD-ORIG\mem.cpp:// iLowMemoryOption is the action to take when a low memory condtion is found
+PD-ORIG\mem.cpp:static int iLowMemoryOption 	= 0;
+PD-ORIG\mem.cpp:	if ((iLowMemoryOption == ID_RADIO_PAUSE_PRINT_PREVIEW) &&
+PD-ORIG\mem.cpp:		iLowMemoryOption = 0;
+PD-ORIG\mem.cpp:	iLowMemoryOption = 0;
+PD-ORIG\mem.cpp:	// Only set the low memory limit for the preview case.
+PD-ORIG\mem.cpp:			WritePrivateProfileString ("Memory", "MinMem", "256", "RSW.INI");
+PD-ORIG\mem.cpp:			WritePrivateProfileString ("Memory", "MinMem", "256", "RRW.INI");
+PD-ORIG\mem.cpp:// These should simple map onto the Windows memory API calls.
+PD-ORIG\mem.cpp:	switch (iLowMemoryOption)
+PD-ORIG\mem.cpp:void DLLENTRY MEM_SetLowMemoryOption (int iLowMemOption)
+PD-ORIG\mem.cpp:	iLowMemoryOption = iLowMemOption;
+PD-ORIG\mem.cpp:} // end MEM_SetLowMemoryOption
+PD-ORIG\pwprev.cpp:// Change Local memory functions to Global - again
+PD-ORIG\pxint.cpp:// Add a print/preview font to memory cache
+PD-ORIG\pxint.cpp:// Free page memory for page. Called from free freePageMem()
+PD-ORIG\pxint.cpp:					MoveMemory( &boxTemp, &pBoxes[jj], sizeof( LINE_BOX ));
+PD-ORIG\pxint.cpp:					MoveMemory( &pBoxes[jj], &pBoxes[jj + nGap], sizeof( LINE_BOX ));
+PD-ORIG\pxint.cpp:					MoveMemory( &pBoxes[jj + nGap], &boxTemp, sizeof( LINE_BOX ));
+PD-ORIG\pxint.cpp:		// attempt to get the handle to the global memory
+PD-ORIG\pxint.cpp:	{ // free memory
+PD-ORIG\dllmem.cpp:	Need to use GlobalAlloc to allocate memory in a DLL bacause _fmalloc
+PD-ORIG\dllmem.cpp:	allocates memory as GMEM_SHARE.
+PD-ORIG\dllmem.cpp:	I took the memory calls from revision 1.4 of wmem.c (vdir=win, vroot=vcs, 
+PD-ORIG\dllmem.cpp:	I got my information from Dale Rogerson's article "Allocating Memory 
+PD-ORIG\dllmem.cpp:	memory allocated from a DLL marked as GMEM_SHARE.
+PD-ORIG\dllmem.cpp:	The GMEM_SHARE flag tells Windows that this memory is going to be shared 
+PD-ORIG\dllmem.cpp:	in a DLL is that the memory will not be released until the DLL is 
+PD-ORIG\dllmem.cpp:	unloaded from memory. The DLL is not always unloaded from memory when 
+PD-ORIG\dllmem.cpp:	instances of an application are using a DLL, the DLL and its memory will 
+PD-ORIG\dllmem.cpp:	The following are the possible times when memory is freed:
+PD-ORIG\dllmem.cpp:	-	If an application allocates memory and does not free it, the memory is 
+PD-ORIG\dllmem.cpp:	-	If an application calls a DLL that allocates memory without the 
+PD-ORIG\dllmem.cpp:		GMEM_SHARE flag (via GlobalAlloc), the memory is owned by the 
+PD-ORIG\dllmem.cpp:	-	If an application calls a DLL that allocates memory with the GMEM_SHARE 
+PD-ORIG\dllmem.cpp:		flag, the memory will be owned by the DLL and not by the application. 
+PD-ORIG\dllmem.cpp:		The memory will be released when the DLL is unloaded and not when the 
+PD-ORIG\dllmem.cpp:	large pools of allocated but unneeded memory. It is usually best to use 
+PD-ORIG\dllmem.cpp:	the GMEM_SHARE flag only when memory must be shared or must exist for the 
+PD-ORIG\dllmem.cpp:	generate a call to GlobalFree. Even if the DLL is freeing memory before 
+PD-ORIG\dllmem.cpp:	it returns to the application, memory can be wasted. Refer to the previous 
+PD-ORIG\dllmem.cpp:	// call me w/ the GHND flag for moveable, zero init memory
+PD-ORIG\tblentry.cpp:	// would unlock memory it didn't have, and then not free it anyway.
+PD-ORIG\csvexp.cpp:				ALLOCERR	- couln't allocate memory for header or record buf
+PD-ORIG\csvexp.cpp:	// 	mechanism if make this memory dynamic b/c can use record_buf
+PD-ORIG\csvexp.cpp:				// else CHAR or MEMO, must disambiguate data first (look for quotes, separator)
+PD-ORIG\csvexp.cpp:				case dbxMEMO:
+PD-ORIG\csvexp.cpp:// CloseFile does the final data flush, closes the file, and frees alloced memory
+EXPORTMG\DLG\xtabdlg.cpp:// Eliminated memo flds from crosstab/chart dialogs to fix Bugs 2191 2220
+EXPORTMG\DLG\xtabdlg.cpp:// fixed bug in memory management
+EXPORTMG\DLG\rrxtab.cpp:// fixed bug in memory management 
+EXPORTMG\FLDLST\fldlst.cpp:	CATCH (CMemoryException, e)
+EXPORTMG\FLDLST\usrobj.cpp:		CATCH (CMemoryException, e)
+EXPORTMG\CALLBACK\crstabif.cpp:// Free lpszModuleName to fix memory leak.  Cut back on verbosity.
+EXPORTMG\CALLBACK\crstabif.cpp:			// Get a copy of the DLL name to local memory. Can't wait until we
+MFERROR\mfack.cpp:		case MFMEMNFL:		/* no such memo file */
+SORT\sortmerg.cpp: LPLPSTR	memory,		// pointers to sort records
+SORT\sortmerg.cpp:	LPLPSTR line = memory + first - 1;
+SORT\sortmerg.cpp: char	**memory,		// pointers to sort records
+SORT\sortmerg.cpp:{	char **line = memory+first; 	/* similar to "memory" but points to
+SORT\sortmerg.cpp:	LPSTR	lineMemory[MAX_MERGE_FILES];
+SORT\sortmerg.cpp:	if (!(lineMemory[0] = bufpool = m_pDoc->globalAlloc(GMEM_FIXED,numFiles*SRMxRcSz)))
+SORT\sortmerg.cpp:		lineMemory[i] = lineMemory[i-1] + SRMxRcSz;
+SORT\sortmerg.cpp:		if (!srrdrecord(&(SRHandles[i]),lineMemory[i]))
+SORT\sortmerg.cpp:			line[--firstLine] = lineMemory[i];
+SORT\sortmerg.cpp:	if (srsortmemory(line, firstLine, LAST_LINE))	// make initial heap
+SORT\sortmerg.cpp:		from = (line[firstLine] - lineMemory[0])/SRMxRcSz;
+SORT\sort.cpp:// Fix the "multiple mfgetbuf()" RSW memory leak.  Sources changed for this
+SORT\sort.cpp:	#include	"memory.h"     // for fmemcpy()
+SORT\sortutil.cpp: LPSTR	record		// pointer to memory space for sort record
+SORT\sortruns.cpp:	make a temporary file with all the sorted records in memory
+SORT\sortruns.cpp:BOOL CRrComposite::savememory(
+SORT\sortruns.cpp: LPLPSTR	memory,		// array of pointers to sorted records
+SORT\sortruns.cpp: int    	lastRecord,	// index in memory of last record pointer
+SORT\sortruns.cpp:			if ( srwrrecord( this, &tempFile, *memory++ ))
+SORT\sortruns.cpp:	Simple insertion sort for use after srsortmemory has "nearly" sorted
+SORT\sortruns.cpp:	memory.  This routine will more quickly fix those last few out-of-
+SORT\sortruns.cpp: LPLPSTR	memory,
+SORT\sortruns.cpp:		tt = memory[kk];			// pointer to value to position
+SORT\sortruns.cpp:			&& !srinorder(memory[kk-1],tt))	// til we find where to stop
+SORT\sortruns.cpp:		{	memory[kk] = memory[kk-1];	// shuffle elements up to make room
+SORT\sortruns.cpp:		memory[kk] = tt;			// position for value in question
+SORT\sortruns.cpp:	srsortmemory() and the need to call srinorder() to determine
+SORT\sortruns.cpp:BOOL CRrComposite::srsortmemory(
+SORT\sortruns.cpp: LPLPSTR	memory,
+SORT\sortruns.cpp:			tt = memory[pp];	// pointer to value of middle element
+SORT\sortruns.cpp:			memory[pp] = memory[ii];
+SORT\sortruns.cpp:				if (!srinorder(memory[kk],tt))	// found a value to move above pivot
+SORT\sortruns.cpp:						if (srinorder(memory[qq],tt))	// found one to move below pivot
+SORT\sortruns.cpp:							xx = memory[kk];	// swap
+SORT\sortruns.cpp:							memory[kk] = memory[qq];
+SORT\sortruns.cpp:							memory[qq] = xx;
+SORT\sortruns.cpp:			memory[ii] = memory[qq];	// put "middle" element at start
+SORT\sortruns.cpp:			memory[qq] = tt;			// put pivot element in "middle"
+SORT\sortruns.cpp:					if (!srinorder(memory[ii],memory[jj]))	/* swap if necessary */
+SORT\sortruns.cpp:						xx = memory[ii];
+SORT\sortruns.cpp:						memory[ii] = memory[jj];
+SORT\sortruns.cpp:						memory[jj] = xx;
+SORT\sortruns.cpp:BOOL CRrComposite::srsortmemory(
+SORT\sortruns.cpp: char	**memory;
+SORT\sortruns.cpp:		{	while (i < j && srinorder(memory[i], memory[pivot]))
+SORT\sortruns.cpp:			while (j > i && srinorder(memory[pivot], memory[j]))
+SORT\sortruns.cpp:			srexchange(memory+i, memory+j);
+SORT\sortruns.cpp:		if (i > pivot && srinorder(memory[pivot], memory[i]))	/*DLM*/
+SORT\sortruns.cpp:		srexchange(memory+i, memory+pivot);
+SORT\sortruns.cpp:		{	if (srsortmemory(memory, firstRecord, i-1))
+SORT\sortruns.cpp:		{	if (srsortmemory(memory, i+1, lastRecord))
+SORT\sortruns.cpp:	LPLPSTR	memory;
+SORT\sortruns.cpp:	memory = (LPLPSTR)(buffer + recSpace);
+SORT\sortruns.cpp:			if (srsortmemory(memory, /* FIRSTREC, */ lastRecord))
+SORT\sortruns.cpp:			if (savememory(memory, lastRecord, ++_SR_tempNum))
+SORT\sortruns.cpp:		memory[++lastRecord] = freeLoc;
+SORT\sortruns.cpp:	if (FIRSTREC <= lastRecord) 	// have records in memory
+SORT\sortruns.cpp:		if (srsortmemory(memory, /* FIRSTREC, */ lastRecord))
+SORT\sortruns.cpp:		 && savememory(memory, lastRecord, ++_SR_tempNum))
+SORT\sortruns.cpp:	if (_SR_tempNum == -1)	// entire file is in memory
+SORT\sortruns.cpp:			if ((*SRWrite)( this, &masterOut, memory[i] ))
+SORT\sortruns.cpp:	} // all in memory
+CFEVAL\fnum.cpp:	{ /* results must be memos */
+CFEVAL\fldtrue.cpp:	switch (fld->dFlags&(zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME))
+CFEVAL\fldtrue.cpp:		case zfMEMO:
+CFEVAL\fldtrue.cpp:		//   zfMEMO field, we have a memo, so I'm setting ret=TRUE. 
+CFEVAL\fldtrue.cpp:		//   in mfgetmch(), for example, that checks to what type of memo and
+CFEVAL\fldtrue.cpp:			{ /* memo present, check for all white space */
+CFEVAL\fldtrue.cpp:				if (mfgetmch(fld,buf,255,FALSE))	/* fill memo buffer */
+CFEVAL\fldtrue.cpp:				mfmeminit();	/* re-init memos */
+CFEVAL\fstr.cpp:	{ /* second arg is memo */
+CFEVAL\fstr.cpp:		fld = pDoc->m_pComposite->popfld(); /* get the memo */
+CFEVAL\eval.cpp:				(zfDATE|zfLOGICAL|zfNUMERIC|zfMEMO|zfDATETIME|zfTIME))));
+CFEVAL\eval.cpp:		case sv_memo:								  /* memo field */
+CFEVAL\eval.cpp:		case sv_mtmemo: len=0;
+CFEVAL\eval.cpp:			break;	/* empty memo */
+CFEVAL\eval.cpp:void CRrComposite::pushm(LPMFFIELD f) 	/* push memo */
+CFEVAL\eval.cpp:	if (argt==sv_mtmemo)
+CFEVAL\eval.cpp:		cf_MTMemFld.dFlags = zfMEMO;
+CFEVAL\eval.cpp:		{ /* this is memo match */
+CFEVAL\eval.cpp:	{ /* condition must be memo */
+CFEVAL\eval.cpp:		{ /* memo present, check for all white space */
+CFEVAL\eval.cpp:			if (mfgetmch(fld,fld->dFldP,255,FALSE)) /* fill memo buffer */
+CFEVAL\eval.cpp:			mfmeminit();	/* re-init memos */
+CFEVAL\eval.cpp:		int *prevmemP)	 /* TRUE=> result is prev of a memo */
+CFEVAL\eval.cpp:				if (argt==sv_mtmemo)	/* magic "empty memo" */
+CFEVAL\eval.cpp:								dFlags&(zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfDATETIME|zfTIME))
+CFEVAL\eval.cpp:						case zfMEMO:
+CFEVAL\eval.cpp:							mfmemcpy(buf,valP); /* copy memo header */
+CFEVAL\eval.cpp:			case a_mtmemo:
+CFEVAL\eval.cpp:				*(xs++) = sv_mtmemo;
+CFEVAL\RRW\lookup.cpp:#define BUFSIZE 512 	/* rdflds() field buffer size (512 for memo read) */
+CFEVAL\RRW\lookup.cpp:	UTWO d3memocnt;
+USERS\wusers.cpp:// Changed array of serial numbers from a global array to malloced memory.
+USERS\wusers.cpp:			_ffree (UserList);	// Release memory
+WFIELD\wbitmap.cpp://		case OUT_OF_MEMORY:
+WFIELD\wbitmap.cpp:		case ERROR_NO_MEMORY:
+WFIELD\wbitmap.cpp:		case ERROR_MEMORY_TOO_LOW:
+WFIELD\wbitmap.cpp:			// mjs 4/3/95  This used to GPF with humongous images.  Now it returns an Out of memory error.
+WFIELD\wbitmap.cpp:			if (err != OUT_OF_MEMORY)
+WFIELD\wbitmap.cpp:		img_showerror (0, OUT_OF_MEMORY);
+WFIELD\wbitmap.cpp:	// May not have enough memory for the DDB.
+WFIELD\edittext.cpp://	::WinHelp( GetSafeHwnd(), theApp.getHelpPath(), HELP_CONTEXT, WH_MEMOHTML );
+WFIELD\edittext.cpp:	m_pDoc->dialogHelp(GetSafeHwnd(), WH_MEMOHTML) ;
+MFFILE\mfopen.cpp:// to do with adding FlexFile and HiPer SIx memos as well as HiPer SIx NSX
+MFFILE\mfopen.cpp:BOOL CRrComposite::memoFileExists(LPSTR nameRoot,LPSTR extension)
+MFFILE\mfopen.cpp:	int		memos=FALSE;
+MFFILE\mfopen.cpp:		pApp->ddrelease();	/* if failed, release the comment field memory */
+MFFILE\mfopen.cpp:			case 'M':     // memo
+MFFILE\mfopen.cpp:				memos = TRUE;
+MFFILE\mfopen.cpp:				m_pDoc->setCharFldWidth(fld,MFMemoLimit,!MFMemoWrap);	// set width / metric info
+MFFILE\mfopen.cpp:				if (MFMemoWrap)
+MFFILE\mfopen.cpp:		pApp->ddrelease();	// if failed, release the comment field memory
+MFFILE\mfopen.cpp:	if (memos)
+MFFILE\mfopen.cpp:		{ //foxpro memos
+MFFILE\mfopen.cpp:				// FLEXFILE memos look like 03
+MFFILE\mfopen.cpp:			if (memoFileExists(mffileP->mDbfName,TFPTX))
+MFFILE\mfopen.cpp:			else if (memoFileExists(mffileP->mDbfName,TSSMT))
+MFFILE\mfopen.cpp:			else if (memoFileExists(mffileP->mDbfName,TFDBV))
+MFFILE\mfopen.cpp:		// figure out what the memo file extension is and tack it on.
+MFFILE\mfopen.cpp:			// If we were unable to open the memo file, check to see if we were
+MFFILE\mfopen.cpp:			// not opening a foxpro memo file.
+MFFILE\mfopen.cpp:				{	// If it wasnt a foxpro memo file, try opening it as a foxpro memo
+MFFILE\mfopen.cpp:				// If we were able to open the file as a foxpro memo file, then set
+MFFILE\mfopen.cpp:					// unable to open the memo file, there must be a problem.
+MFFILE\mfopen.cpp:		// We have the memo file open.
+MFFILE\mfopen.cpp:		{ // FoxPro memo file format
+MFFILE\mfopen.cpp:			{ // dBASE IV memo file format
+MFFILE\mfopen.cpp:		{ // HiPer SIX/SIX driver memo format
+MFFILE\mfopen.cpp:		{ // dBASE III memo file format
+MFFILE\mfopen.cpp:			mffileP->mBlkSize = 512;	// bytes per dBASE III memo block
+MFFILE\mfclose.cpp:// Close an MFFILE and free associated memory (file table, field specs,...).
+MFFILE\mfclose.cpp:			// FCLOSE(file->mDbtNo);	/* close memo file */
+MFFILE\mfclose.cpp:			file->dbtFile.Close();		/* close memo file */
+MFFILE\mflink.cpp:// to do with adding FlexFile and HiPer SIx memos as well as HiPer SIx NSX
+MFFILE\mfdbf.cpp:		else if (fld->dFlags & zfMEMO)
+MFFILE\mfdbf.cpp:	else if (fld->dFlags & zfMEMO)
+MFFILE\mfdbf.cpp:	else if (f->dFlags & zfMEMO)
+MFFILE\mfdbf.cpp:	ZeroMemory( &si, sizeof(si) );
+MFFILE\mfdbf.cpp:	ZeroMemory( &si, sizeof(si) );
+MFFILE\mfdbf.cpp:	ZeroMemory( &si, sizeof(si) );
+MFFILE\mfchgfil.cpp:	mightmerge = gotmemo(); /* flag for mfdelcnt/mfdelcons */
+MFFILE\mfmemfld.cpp:// Routines to open an ASCII memo file - allocate field specifiers,
+MFFILE\mfmemfld.cpp:// identify named memos, etc.
+MFFILE\mfmemfld.cpp:// WO129695 - preview memo code
+MFFILE\mfmemfld.cpp:// define ascii memo needed routines for RSW to minimize needed field count
+MFFILE\mfmemfld.cpp:	m_pDoc->setCharFldWidth(fld,MFMemoLimit,!MFMemoWrap);	// set width / metric info
+MFFILE\mfmemfld.cpp:	if (MFMemoWrap)
+MFFILE\mfmemfld.cpp:	fld->dFlags = zfMEMO;
+MFFILE\mfmemfld.cpp:	fld->dFileNo = (char)fnMEMO;
+MFFILE\mfmemfld.cpp:	MFANamedMemos = names;		/* an indication for editascii */
+MFFILE\mfmemfld.cpp:					(!((fld=mfbyndx(val.tInteger))->dFlags&zfMEMO)) &&
+MFFILE\mfmemfld.cpp:				{ // found a fldname for non-memo, db, or evaluable calc or total - make it needed.
+MFFILE\mfmemfld.cpp:		if ( (fld->dFileNo==fnMEMO) && !(fld->dFlags & zfCALCULATED) )
+MFFILE\RRW\mfo.cpp:// Fix rrw 2895 - mfodbt need to handle SMT and DBV memo files
+MFFILE\RRW\mfsetndx.cpp:// to do with adding FlexFile and HiPer SIx memos as well as HiPer SIx NSX
+MFFILE\olfmfopen.cpp:// to do with adding FlexFile and HiPer SIx memos as well as HiPer SIx NSX
+MFFILE\olfmfopen.cpp:BOOL CRrComposite::memoFileExists(LPSTR nameRoot,LPSTR extension)
+MFFILE\olfmfopen.cpp:	int memos=FALSE;
+MFFILE\olfmfopen.cpp:		pApp->ddrelease();	/* if failed, release the comment field memory */
+MFFILE\olfmfopen.cpp:				case 'M':     /* memo */
+MFFILE\olfmfopen.cpp:					memos = TRUE;
+MFFILE\olfmfopen.cpp:					m_pDoc->setCharFldWidth(fld,MFMemoLimit,!MFMemoWrap);	// set width / metric info
+MFFILE\olfmfopen.cpp:					if (MFMemoWrap)
+MFFILE\olfmfopen.cpp:		pApp->ddrelease();	/* if failed, release the comment field memory */
+MFFILE\olfmfopen.cpp:	if (memos)
+MFFILE\olfmfopen.cpp:		{ /* foxpro memos */
+MFFILE\olfmfopen.cpp:				// FLEXFILE memos look like 03
+MFFILE\olfmfopen.cpp:			if (memoFileExists(mffileP->mDbfName,TFPTX))
+MFFILE\olfmfopen.cpp:			else if (memoFileExists(mffileP->mDbfName,TSSMT))
+MFFILE\olfmfopen.cpp:			else if (memoFileExists(mffileP->mDbfName,TFDBV))
+MFFILE\olfmfopen.cpp:		// figure out what the memo file extension is and tack it on.
+MFFILE\olfmfopen.cpp:			// If we were unable to open the memo file, check to see if we were
+MFFILE\olfmfopen.cpp:			// not opening a foxpro memo file.
+MFFILE\olfmfopen.cpp:				{	// If it wasnt a foxpro memo file, try opening it as a foxpro memo
+MFFILE\olfmfopen.cpp:				// If we were able to open the file as a foxpro memo file, then set
+MFFILE\olfmfopen.cpp:					// unable to open the memo file, there must be a problem.
+MFFILE\olfmfopen.cpp:		// We have the memo file open.
+MFFILE\olfmfopen.cpp:		{ /* FoxPro memo file format */
+MFFILE\olfmfopen.cpp:			{ /* dBASE IV memo file format */
+MFFILE\olfmfopen.cpp:			   { /* HiPer SIX/SIX driver memo format */
+MFFILE\olfmfopen.cpp:			{ /* dBASE III memo file format */
+MFFILE\olfmfopen.cpp:				mffileP->mBlkSize = 512;	/* bytes per dBASE III memo block */
+SPEC\specdb.cpp:void CRrView::PrAMemo( LPSTR head, LPSTR file ) 	/* ASCII memo, please */
+SPEC\specdb.cpp:		PrFile( head, file, FALSE, NULL, TRUE ); 			/* Memo file name */
+SPEC\specdb.cpp:		PrFile( head, file, FALSE, NULL );					/* Memo file name */
+SPEC\specmain.cpp:	   // allocate movable and zero initialized memory ( GHND flag is used )
+SPEC\specmain.cpp:			// sucessfully allocated memory	 now get the file version info
+SPEC\specmain.cpp:   		// free up memory you allocated
+SPEC\RRW\xspec.cpp:void CRrView::PrMemo (LPSTR head, LPMFFILE file)
+SPEC\RRW\xspec.cpp:	// if (file->mDbtNo != -1) 					/* is there a memo file? */
+SPEC\RRW\xspec.cpp:		PrFile (head == NULL ? "" : head, fn, TRUE, NULL);		/* Memo file name */
+SPEC\RRW\xspec.cpp:		PrMemo( getString(T2lRpSp,0), pDoc->m_pComposite->MFFiles[0] ); /* Master memo file */
+SPEC\RRW\xspec.cpp:	PrAMemo( getString(T2oRpSp,0), pDoc->m_pComposite->MFAName ); /* ASCII memo */
+SPEC\RRW\xspec.cpp:	PrMemo (NULL, file);
+SPEC\RRW\xspec.cpp:	zpprintf("%s %s", getString(T9aRpSp,0),                  /* "Memo Editor:" */
+SPEC\RRW\xspec.cpp:	/* "Default Memo Extension:" */
+SPEC\specquer.cpp:			zpprintf(getString(T9gRpSp,0)); 	/* Insufficient memory for query() */
+SPEC\specfld2.cpp:					flags & zfMEMO ? getString(IDS_0012,0) : getString(IDS_0009,0);
+SPEC\specfld1.cpp:					flags & zfMEMO ? getString(IDS_0012,0) : getString(T4rRpSp,0);	/* "Memo" : "Char" */
+SPEC\RSW\sspec.cpp:					flags & zfMEMO ? getString(IDS_0012,0) : getString(T4rRpSp,0);	/* "Memo" : "Char" */
+SPEC\RSW\sspec.cpp:		if (fld->dFlags&(zfDUPFLD|zfNOTinREC|zfMEMO))  continue;
+SPEC\RSW\sspec.cpp:void CRrView::PrMemo(LPSTR head, LPSTR file )
+SPEC\RSW\sspec.cpp:		PrFile( head, file, FALSE, NULL, TRUE );					/* Memo file name */
+SPEC\RSW\sspec.cpp:		PrMemo( getString(T2lRpSp,1), pDoc->m_pComposite->MFAName );
+WDISPLAY\wdsp.cpp:		switch (mf->dFlags & (zfNUMERIC|zfDATE|zfLOGICAL|zfMEMO|zfTIME|zfDATETIME))
+WDISPLAY\wdsp.cpp:			//  This should leave numeric, char, and memo.
+WDISPLAY\wdsp.cpp:			  && ( ( pFld->dFlags & zfMEMO )
+WDISPLAY\statbar.cpp:					if (fld->dFlags & zfMEMO)
+PRINT\rpsetup.cpp:// Fix the "multiple mfgetbuf()" RSW memory leak.  Sources changed for this
+PRINT\rpsetup.cpp:int CRrDoc::setMult(void)		// get memory for n-across
+PRINT\rpsetup.cpp:void CRrDoc::resMult(void)			// give up memory for n-across
+PRINT\rpsetup.cpp:  // 2.0 memory leak bug.
+PRINT\prec.cpp:// metafiles, thus introducing a memory leak that I'll clean up later.
+PRINT\prec.cpp:// enable printing box/vertical line following word-wrapped memo fields
+PRINT\prec.cpp:			// Allocate that much memory
+PRINT\prec.cpp:				TRACE( "Error Reading MetaFile: Failed to Allocate Memory for Metafile Bits\n" ) ;
+PRINT\prec.cpp:			LPBYTE pabyBitsPlaceable = new BYTE[dwSizePlaceable] ;  // Allocate enough memory to hold it
+PRINT\prec.cpp:				TRACE( "Error Reading MetaFile: Failed to Allocate Memory for ReadFile\n" ) ;
+PRINT\prec.cpp:// (memory) for that chart.  If the data array pointer (pValues) is NULL, also generate
+PRINT\prec.cpp:					lowMemoryBox(WxNoPrtMem); // must be memory shortage
+PRINT\prec.cpp:					lowMemoryBox(WxNoPrtMem); // must be memory shortage
+PRINT\prec.cpp:					lowMemoryBox(WxNoPrtMem); // must be memory shortage
+PRINT\prec.cpp:					lowMemoryBox(WxNoPrtMem); // must be memory shortage
+PRINT\prec.cpp:// now return the memory we stole
+PRINT\prec.cpp:				if (!errflags && (mf->dFlags & zfMEMO) &&
+PRINT\prec.cpp:				{ // first time for this memo field
+PRINT\prec.cpp:						(mf->dFlags & zfMEMO) ? 0 : m_pComposite->ltrimlen((LPSTR)dataloc),
+PRINT\prec.cpp:				{ // no memory?
+PRINT\rptest.cpp:	{ // need to get memory for n-across 
+PRINT\rptest.cpp:		resMult();			// release memory 
+PRINT\rpsort.cpp:// fix WO 129695 - preview ASCII memos
+PRINT\rpsort.cpp:// Fix the "multiple mfgetbuf()" RSW memory leak.  Sources changed for this
+PRINT\rpsort.cpp: 6) SQL only - set needed on database fields if memo in report
+PRINT\rpsort.cpp: 1) "main" totals if memo is in report or is needed
+PRINT\rpsort.cpp:// int alltots; // TRUE=> consider all totals as needed if memos 
+PRINT\rpsort.cpp:	register int gm = m_pComposite->gotmemo();
+PRINT\rpsort.cpp:		if ((fld->dFlags&(zfCALCULATED|zfDUPFLD|zfMEMO))==0 &&
+PRINT\rpsort.cpp:			zack(getString(IDS_0619,0));		// memory problem 
+PRINT\rpsort.cpp:				  zack(getString(IDS_0619,0));		// memory problem 
+PRINT\rpsort.cpp:int CRrComposite::gotmemo(void)
+PRINT\rpsort.cpp:		if ((f->dFlags & zfMEMO) && (!(f->dRFlags & rfDELETED) ||
+PRINT\rpsort.cpp:// int alltots; // TRUE=> consider all totals as needed if memo present 
+PRINT\rpsort.cpp:// int alltots; // TRUE=> consider all totals as needed if memo present 
+PRINT\rpsort.cpp://		  zack(getString(IDS_0619,0));		// memory problem 
+PRINT\vputil.cpp:	{ // free our multi-up memory
+PRINT\vputil.cpp:		return TRUE;		  // no memory faults, please...
+PRINT\vputil.cpp:			case zfMEMO:
+PRINT\vputil.cpp:				m_pComposite->mfmemcpy(fld->dFldP,dest);	  // memo field
+PRINT\rprint.cpp:				if ((((LPMFFIELD)f)->dFlags & zfMEMO) && (NULL != dp)) // added check of dp. fixed RRW 2923 JSF 2/14/97
+PRINT\rprint.cpp:	{ // if there's memory we print
+PRINT\pline.cpp:					lowMemoryBox(WxNoPrtMem); // must be memory shortage
+PRINT\pline.cpp:						lowMemoryBox(WxNoPrtMem); // must be memory shortage
+PRINT\pline.cpp:				lowMemoryBox(WxNoPrtMem); // must be memory shortage
+PRINT\pline.cpp:							// we're going to dynamically allocate memory
+PRINT\pline.cpp:								lowMemoryBox(WxNoPrtMem); // must be memory shortage
+PRINT\rpwrap.cpp:// enable printing of box/vertical line following word-wrapped memo field
+PRINT\rpwrap.cpp:#define MEMOFULL	254
+PRINT\rpwrap.cpp:	if (f->dFlags & zfMEMO)
+PRINT\rpwrap.cpp:	{ // memos are special
+PRINT\rpwrap.cpp:		if ((first && f->wrapInd) || (f->wrapInd == MEMOFULL))
+PRINT\rpwrap.cpp:			(unsigned char)((f->dFlags & zfMEMO) ? 'm' : 'x'),	// duplicate layout
+PRINT\rpwrap.cpp:			if (!(f->dFlags & zfMEMO) && !PrOpt[NLSEMI])
+PRINT\rpwrap.cpp:				if (!(f->dFlags & zfMEMO) && !PrOpt[NLSEMI])
+PRINT\rpwrap.cpp:			nextchar = ((f->dFlags & zfMEMO) ?
+PRINT\rpexport.cpp:// Fixed bug where would truncate long memo and char data in CSV
+PRINT\rpexport.cpp:// Fixed bug where would truncate long memo and char data in CSV
+PRINT\rpexport.cpp:// Alter size of char and memo fields around picdata call in csv
+PRINT\rpexport.cpp:// Routine to see if have memo that's bigger then original buffer, and continue
+PRINT\rpexport.cpp:BOOL CRrExport::dbx_memoRead( LPMFFIELD mf, LPSTR * databuf, LPSTR dataloc )
+PRINT\rpexport.cpp:	// note that this just shifts the memo in the buffer by one, and puts the new char at 
+PRINT\rpexport.cpp:				// read memo if have one, but just one buffer's worth (256 chars)
+PRINT\rpexport.cpp:				if ( !errflags && (mf->dFlags & zfMEMO) )
+PRINT\rpexport.cpp:					//  read rest of memo, if necessary
+PRINT\rpexport.cpp:					if (!dbx_memoRead( mf, &buffordata, dataloc ))
+PRINT\rpexport.cpp:				// format data (w/o PDI codes please), if not memo or char
+PRINT\rpexport.cpp:					// if not char or memo...
+PRINT\rpexport.cpp:	//					if ( mf->dFlags & zfMEMO )
+PRINT\rpexport.cpp:	// if there's memory we print
+PRINT\rpexport.cpp:	{ // if there's memory we print
+PRINT\rpexport.cpp:				// format data (w/o PDI codes please), if not memo or char
+PRINT\rpexport.cpp:					// if not char or memo...
+PRINT\rpexport.cpp:	//					if ( mf->dFlags & zfMEMO )
+allfiles.cpp:09/02/2006  02:35 PM             4,029 memo.h
+allfiles.cpp:03/07/2007  11:07 PM            25,831 memo.cpp
+allfiles.cpp:04/30/2013  04:45 PM             2,845 MEMO.obj
+allfiles.cpp:04/30/2013  05:03 PM                 0 MEMO.sbr
+allfiles.cpp:04/30/2013  05:01 PM             1,627 ZMEMORY.obj
+allfiles.cpp:04/30/2013  05:03 PM                 0 ZMEMORY.sbr
+allfiles.cpp:10/17/2013  01:47 PM            13,689 MEMO.obj
+allfiles.cpp:10/17/2013  01:47 PM           243,589 MEMO.sbr
+allfiles.cpp:10/17/2013  01:58 PM             8,247 ZMEMORY.obj
+allfiles.cpp:10/17/2013  01:58 PM           108,320 ZMEMORY.sbr
+allfiles.cpp:11/06/2013  06:28 PM             2,323 MEMO.obj
+allfiles.cpp:11/06/2013  06:49 PM                 0 MEMO.sbr
+allfiles.cpp:11/06/2013  06:46 PM             1,375 ZMEMORY.obj
+allfiles.cpp:11/06/2013  06:49 PM                 0 ZMEMORY.sbr
+allfiles.cpp:10/22/2013  05:18 PM             8,270 ZMEMORY.obj
+allfiles.cpp:10/22/2013  05:17 PM           109,595 ZMEMORY.sbr
+allfiles.cpp:11/07/2013  10:00 AM             1,485 ZMEMORY.obj
+allfiles.cpp:11/07/2013  10:02 AM                 0 ZMEMORY.sbr
+allfiles.cpp:04/10/2008  10:07 AM             1,278 ZMEMORY.obj
+allfiles.cpp:11/07/2013  02:58 PM            13,687 MEMO.obj
+allfiles.cpp:11/07/2013  03:11 PM                 0 MEMO.sbr
+allfiles.cpp:11/07/2013  03:09 PM             8,245 ZMEMORY.obj
+allfiles.cpp:11/07/2013  03:11 PM                 0 ZMEMORY.sbr
+allfiles.cpp:11/20/2013  03:48 PM             2,323 MEMO.obj
+allfiles.cpp:11/20/2013  03:47 PM           244,504 MEMO.sbr
+allfiles.cpp:11/20/2013  04:02 PM             1,375 ZMEMORY.obj
+allfiles.cpp:11/20/2013  04:02 PM           109,910 ZMEMORY.sbr
+allfiles.cpp:11/20/2013  05:22 PM             1,375 ZMEMORY.obj
+allfiles.cpp:09/02/2006  02:39 PM             1,305 zmemory.cpp
+allfiles.cpp:02/08/2007  10:11 AM            29,194 MEMO.CPP

@@ -1,0 +1,18 @@
+EXPORTMG\DLG\resource.h:#define IDS_CO					12015
+H\LeadTools\LTDLGRES.H:#define LT_DLG_PAINTEFX_IDEDT_WAND                                   22015
+H\LeadTools\L_FOX.H:#DEFINE ERROR_DLG_CANCELED 20150
+H\LeadTools\L_FOX.H:#DEFINE ERROR_DLG_FAILED 20151
+H\LeadTools\L_OcxErr.h:   #define ERROR_DLG_CANCELED 20150
+H\LeadTools\L_OcxErr.h:   #define ERROR_DLG_FAILED 20151
+H\LTDLGRES.H:#define LT_DLG_PAINTEFX_IDEDT_WAND                                   22015
+H\L_FOX.H:#DEFINE ERROR_DLG_CANCELED 20150
+H\L_FOX.H:#DEFINE ERROR_DLG_FAILED 20151
+H\L_OcxErr.h:   #define ERROR_DLG_CANCELED 20150
+H\L_OcxErr.h:   #define ERROR_DLG_FAILED 20151
+H\resource.h:#define T2dRpSp 2015
+H\wmain.h:#define WH_FUNC_ADDWKS      2015    // ADDWKS
+RRATL\irrcontrol.h:/* at Fri Jan 09 11:51:16 2015
+RRATL\RSWATL.h:/* at Fri Jan 09 11:49:47 2015
+SETUP\gosubdir\resource.h:#define T2dRpSp                         2015
+SETUP\sdinclud\sdrc.h:#define SD_NDLG_CHANGEDIR               12015
+TOOLS\IS\Include\sdrc.h:#define SD_NDLG_CHANGEDIR               12015

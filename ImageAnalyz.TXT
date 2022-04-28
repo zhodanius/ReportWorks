@@ -1,0 +1,2421 @@
+PS K:\rr> get-childitem -r -i *.cpp | select-string image
+
+ENG\RSW\iengflds.cpp:238:                      8,SDateTime, 100,SText, 101,SBinary, 103,SImage, 109,STinyInt,
+DFORMAT\dledit.cpp:105:// 3.0: images on any line
+DFORMAT\fcharpic.cpp:74:    ON_BN_CLICKED(IDC_RADIO2, OnDisplayImage)
+DFORMAT\fcharpic.cpp:114:// "Display image" radio button...
+DFORMAT\fcharpic.cpp:115:void CCharPic::OnDisplayImage()
+DFORMAT\fldprop.cpp:26:// Unused (commented out) code for image property
+DFORMAT\dfmod.cpp:23:// Unused code for image property
+DFORMAT\dfmod.cpp:31:// 155558 - notice when user changed image file so redraw.
+DFORMAT\dfmod.cpp:34:// Insert new rows if image is edited.
+DFORMAT\dfmod.cpp:37:// Update image properties when Original Size button is pressed.
+DFORMAT\dfmod.cpp:40:// To fis RRW #2589, call shadeFldBand when changing image properties.
+DFORMAT\dfmod.cpp:52:// Original image nUserWidthPixels was not being converted to hundredths of inches before
+DFORMAT\dfmod.cpp:94:// Use new image library functions.
+DFORMAT\dfmod.cpp:104:// Fixed RRW #2164 by setting RpChanbge to TRUE if image props change.
+DFORMAT\dfmod.cpp:107:// Fixed RRW #2164 by setting RpChange to TRUE when image props change.
+DFORMAT\dfmod.cpp:110:// Changed max image size to 25.4" (not 14" or 22").
+DFORMAT\dfmod.cpp:126:// Real fix for Barry's bug where entering 2" in image props got you a 1.91"
+DFORMAT\dfmod.cpp:127:// image.  Use ruler inches rather than screen inches.
+DFORMAT\dfmod.cpp:130:// Fix RRW #1734 by disallowing 0 as image nUserWidthPixels or nUserHeightPixels.
+DFORMAT\dfmod.cpp:226:        CFile       imageFile    ;
+DFORMAT\dfmod.cpp:227:        CFileStatus imageStatus ;
+DFORMAT\dfmod.cpp:228:        if ( !imageFile.GetStatus(Paths->FileOpenName, imageStatus) )
+DFORMAT\dfmod.cpp:254:            setImageCrop ( imgNum, f->fr.left, f->fr.top, nCurrentWidthPixels, nCurrentHeightPixe
+ls ) ;
+DFORMAT\dfmod.cpp:256:            createDDB ( imgNum, TRUE ) ;  // mjs 4/26/93  Create DDB for new image.
+DFORMAT\dfmod.cpp:257:            setImagePalette  ( FALSE ) ;  // say 7/13/93  Re-set flag indicating whether we have
+colorful images.
+DFORMAT\dfmod.cpp:301:    int nGridInchX = getPixFromCol(1) * RulerPitch    ;  // This matches the images to the rulers
+.
+DFORMAT\dfmod.cpp:393:// If size or scaling changed, and editing the image, change the handles, too.
+DFORMAT\dfmod.cpp:396:        setImageCrop ( imgNum, f->fr.left, f->fr.top, nUserWidthPixels, nUserHeightPixels ) ;
+DFORMAT\dfmod.cpp:406:        createDDB ( imgNum, TRUE ) ;  // mjs 4/29/93  Unbundled from setImageCrop.
+DFORMAT\dfmod.cpp:412:        if ( m_pFrame->ActiveState & IMAGE_EDIT )
+DFORMAT\dfmod.cpp:414:            setImageLoc ( -1 ) ;
+DFORMAT\dfmod.cpp:450:    int nGridInchX = getPixFromCol(1) * RulerPitch    ;  // This matches the images to the rulers
+.
+DFORMAT\dfmod.cpp:587:                    if ( pDoc->openFileDialog(hDlg, (PSTR)NULL, pDoc->Defs.ImageDir, IDS_0209, pD
+oc->Defs.ImgExt, IDS_0177, WH_DOPENIMG) )
+DFORMAT\dfmod.cpp:599:                    pDoc->dialogHelp ( hDlg, WH_DIMAGE ) ;
+DFORMAT\dfmod.cpp:612:                        // 06/04/97 PAR.  setWhen() will add new rows as necessary of the image i
+s enlarged.
+DFORMAT\dfmod.cpp:623:                    HWND hwndImageWidth  = ::GetDlgItem(hDlg, DIMGWIDTH  ) ;
+DFORMAT\dfmod.cpp:624:                    HWND hwndImageHeight = ::GetDlgItem(hDlg, DIMGHEIGHT ) ;
+DFORMAT\dfmod.cpp:625:                    ASSERT( hwndImageWidth  ) ;
+DFORMAT\dfmod.cpp:626:                    ASSERT( hwndImageHeight ) ;
+DFORMAT\dfmod.cpp:627:                    pDoc->resetNumEditProc ( hwndImageWidth,  FALSE ) ;
+DFORMAT\dfmod.cpp:628:                    pDoc->resetNumEditProc ( hwndImageHeight, FALSE ) ;
+DFORMAT\dfmod.cpp:754:                    if (pDoc->getImageField(hDlg))
+DFORMAT\dfmod.cpp:762:                    pDoc->dialogHelp ( hDlg, WH_DIMAGE ) ;
+DFORMAT\dfmod.cpp:773:                        // 06/04/97 PAR.  setWhen() will add new rows as necessary of the image i
+s enlarged.
+DFORMAT\dfmod.cpp:784:                    HWND hwndImageWidth  = ::GetDlgItem(hDlg, DIMGWIDTH  ) ;
+DFORMAT\dfmod.cpp:785:                    HWND hwndImageHeight = ::GetDlgItem(hDlg, DIMGHEIGHT ) ;
+DFORMAT\dfmod.cpp:786:                    ASSERT( hwndImageWidth  ) ;
+DFORMAT\dfmod.cpp:787:                    ASSERT( hwndImageHeight ) ;
+DFORMAT\dfmod.cpp:788:                    pDoc->resetNumEditProc ( hwndImageWidth,  FALSE ) ;
+DFORMAT\dfmod.cpp:789:                    pDoc->resetNumEditProc ( hwndImageHeight, FALSE ) ;
+rrocx\rsw\rswctl.cpp:130:    DISP_PROPERTY_EX(CRrocxCtrl, "ImageDirectory",      GetImageDirectory,      SetImageDirect
+ory,       VT_BSTR )
+rrocx\rsw\rswctl.cpp:415:    PX_String(pPX, _T("ImageDirectory"    ), m_strImageDirectory               ) ;
+rrocx\rsw\rswctl.cpp:544:    // Get the data, image and report directories
+rrocx\rsw\rswctl.cpp:554:    m_strImageDirectory = szTempDir ;
+rrocx\rsw\rswctl.cpp:558:    m_strImageDirectory  = _T("") ;
+rrocx\rsw\rswctl.cpp:1074:    // Get the data, image and report directories
+rrocx\rsw\rswctl.cpp:1082:    m_strImageDirectory = szTempDir ;
+rrocx\rsw\rswctl.cpp:1086:    m_strImageDirectory  = _T("") ;
+rrocx\rsw\rsdefaul.cpp:60:    ON_BN_CLICKED(IDC_IMAGEDIR_BUTTON, OnImagedirButton)
+rrocx\rsw\rsdefaul.cpp:101:    m_strImageDirectory = _T("");
+rrocx\rsw\rsdefaul.cpp:116:    DDP_Text(pDX, IDC_DEF_IMAGEDIR, m_strImageDirectory, _T("ImageDirectory") );
+rrocx\rsw\rsdefaul.cpp:117:    DDX_Text(pDX, IDC_DEF_IMAGEDIR, m_strImageDirectory);
+rrocx\rsw\rsdefaul.cpp:118:    DDV_MaxChars(pDX, m_strImageDirectory, 260);
+rrocx\rsw\rsdefaul.cpp:142:        else if (nCurDispPropPage == DEF_IMAGEDIR)
+rrocx\rsw\rsdefaul.cpp:143:            defControl = GetDlgItem (IDC_DEF_IMAGEDIR);
+rrocx\rsw\rsdefaul.cpp:156:void CArpDefaultsPropPage::OnImagedirButton()
+rrocx\rsw\rsdefaul.cpp:159:    CString strImageFilters     = _T("BMP (*.BMP)|*.BMP|DIB (*.DIB)|*.DIB|EPS (*.EPS)|*.EPS|
+JPEG (*.JPG)|*.JPG|"
+rrocx\rsw\rsdefaul.cpp:163:    CString strDialogTitle      = _T("Default Image Directory") ;
+rrocx\rsw\rsdefaul.cpp:166:    if ( OpenDlgCommonNT(m_hWnd, strDefaultFile, m_strImageDirectory,
+rrocx\rsw\rsdefaul.cpp:167:                         strImageFilters, strDefaultExtension, strDialogTitle, strUserSelect
+edDirectory))
+rrocx\rsw\rsdefaul.cpp:169:        m_strImageDirectory = strUserSelectedDirectory ;
+rrocx\rsw\rsdefaul.cpp:170:        SetControlStatus ( IDC_DEF_IMAGEDIR, TRUE ) ;
+rrocx\rsw\rsdefaul.cpp:172:        CWnd* pwndEditControl = GetDlgItem ( IDC_DEF_IMAGEDIR ) ;
+rrocx\rsw\rsdefaul.cpp:174:        pwndEditControl->SetWindowText ( m_strImageDirectory ) ;
+rrocx\rsw\rsdefaul.cpp:229:    IgnoreApply( IDC_IMAGEDIR_BUTTON ) ;
+rrocx\rrw\rrwctl.cpp:119:    DISP_PROPERTY_EX(CRrocxCtrl, "ImageDirectory",      GetImageDirectory,      SetImageDirect
+ory,       VT_BSTR )
+rrocx\rrw\rrwctl.cpp:381:    PX_String(pPX, _T("ImageDirectory"    ), m_strImageDirectory               ) ;
+rrocx\rrw\rrwctl.cpp:506:    // Get the data, image and report directories
+rrocx\rrw\rrwctl.cpp:514:    m_strImageDirectory = szTempDir ;
+rrocx\rrw\rrwctl.cpp:1195:    // Get the data, image and report directories
+rrocx\rrw\rrwctl.cpp:1203:    m_strImageDirectory = szTempDir ;
+rrocx\property.cpp:693:BSTR CRrocxCtrl::GetImageDirectory()
+rrocx\property.cpp:696:        // for MSVC 4.X you have to convert the CString m_strImageDirectory to an OLECHAR *
+rrocx\property.cpp:699:        return SysAllocString ( T2OLE(m_strImageDirectory) ) ;
+rrocx\property.cpp:701:        return SysAllocString ( m_strImageDirectory ) ;
+rrocx\property.cpp:705:void CRrocxCtrl::SetImageDirectory(LPCTSTR pszImageDirectory)
+rrocx\property.cpp:707:    m_strImageDirectory = pszImageDirectory ;
+rrocx\report.cpp:268:    // Image Directory
+rrocx\report.cpp:269:    strcpy ( szTemp, m_strImageDirectory ) ;
+rrocx\report.cpp:270:    if ( !setImageDir(nReportHandle, szTemp) )
+rrocx\report.cpp:735:    // PX_String(pPX, _T("ImageDirectory"), m_strImageDirectory) ;
+rrocx\vbutil.cpp:458:        case dispidImageDirectory:
+rrocx\vbutil.cpp:459:            strValue = m_strImageDirectory  ;
+rrocx\vbutil.cpp:737:        case dispidImageDirectory:
+rrocx\vbutil.cpp:739:            // editing of the ImageDirectory.
+rrocx\vbutil.cpp:746:            nCurDispPropPage = DEF_IMAGEDIR;
+rrocx\defaults.cpp:72:    ON_BN_CLICKED(IDC_IMAGEDIR_BUTTON, OnImagedirButton)
+rrocx\defaults.cpp:107:    m_strImageDirectory  = _T("") ;
+rrocx\defaults.cpp:123:    DDP_Text    (pDX, IDC_DEF_IMAGEDIR,   m_strImageDirectory,  _T("ImageDirectory" ) ) ;
+rrocx\defaults.cpp:124:    DDX_Text    (pDX, IDC_DEF_IMAGEDIR,   m_strImageDirectory) ;
+rrocx\defaults.cpp:125:    DDV_MaxChars(pDX, m_strImageDirectory, 260) ;
+rrocx\defaults.cpp:176:        else if (nCurDispPropPage == DEF_IMAGEDIR)
+rrocx\defaults.cpp:177:            defControl = GetDlgItem (IDC_DEF_IMAGEDIR);
+rrocx\defaults.cpp:214:    IgnoreApply( IDC_IMAGEDIR_BUTTON ) ;
+rrocx\defaults.cpp:220:void CDefaultsPropPage::OnImagedirButton()
+rrocx\defaults.cpp:223:    CString strImageFilters     = _T("BMP (*.BMP)|*.BMP|DIB (*.DIB)|*.DIB|EPS (*.EPS)|*.EPS|JPEG
+ (*.JPG)|*.JPG|"
+rrocx\defaults.cpp:227:    CString strDialogTitle      = _T("Default Image Directory") ;
+rrocx\defaults.cpp:230:    if ( OpenDlgCommonNT(m_hWnd, strDefaultFile, m_strImageDirectory, strImageFilters, strDefaul
+tExtension, strDialogTitle, strUserSelectedDirectory) )
+rrocx\defaults.cpp:232:        m_strImageDirectory = strUserSelectedDirectory ;
+rrocx\defaults.cpp:233:        SetControlStatus ( IDC_DEF_IMAGEDIR, TRUE ) ;
+rrocx\defaults.cpp:235:        CWnd* pwndEditControl = GetDlgItem ( IDC_DEF_IMAGEDIR ) ;
+rrocx\defaults.cpp:237:        pwndEditControl->SetWindowText ( m_strImageDirectory ) ;
+RR\cntritem.cpp:23:// Make sure to correct image format for 8-bit and 24-bit color.  IE3 does not
+RR\cntritem.cpp:27:// Trying to locate problem creating chart images.
+RR\cntritem.cpp:40:// Functions to generate an image from an object.  Mostly directory parsing.
+RR\cntritem.cpp:440:        // The real bug fix was in adjustImages() and adjustObjectY() where objects
+RR\cntritem.cpp:473:        // Don't need to do units fixups, they are handled inside checkImages() called after report
+ is loaded.
+RR\cntritem.cpp:496:        int nGridInchX = pDoc->getPixFromCol(1) * pDoc->RulerPitch    ;  // This matches the images
+ to the rulers.
+RR\cntritem.cpp:519:            // Don't change the m_thdr inches values.  They will be updated inside checkImages().
+RR\cntritem.cpp:525:        // The real bug fix was in adjustImages() and adjustObjectY() where objects
+RR\cntritem.cpp:529:        // Mike fixed this problem for images in REPIO\GRFIELD.CPP on 3/25/96.
+RR\cntritem.cpp:626:    else if ( m_wScaling == NOSCALE )  // No scaling.    Crop original image to fit rect.
+RR\cntritem.cpp:873:BOOL SaveEnhancedMetafileAsPicture(CRrDoc* pDoc, HENHMETAFILE hEnhMetafile, int nPictureWidth, int
+nPictureHeight, const CString& csImagePathname)
+RR\cntritem.cpp:931:        _splitpath ( csImagePathname, NULL, NULL, szFName, szExt) ;
+RR\cntritem.cpp:939:            // 06/09/97 PAR. Jim Paylow recommended that we convert 4 bits per pixel images to
+RR\cntritem.cpp:949:        pDoc->img_save   ( nOlePicture, (char*)(const char*)csImagePathname, -1 ) ;  // Save based
+on file extension.
+RR\cntritem.cpp:957:        csError.Format ( "Snowbound RasterMaster returned error %d for file %s", nOlePicture, csIma
+gePathname );
+RR\cntritem.cpp:966:BOOL CRrCntrItem::SaveAsPicture(const CString& csImagePathname)
+RR\cntritem.cpp:1013:    BOOL bSuccess = SaveEnhancedMetafileAsPicture ( pDoc, hEnhMetafile, rectOleObject.Width(), rec
+tOleObject.Height(), csImagePathname ) ;
+RR\cntritem.cpp:1027:    if ( pDoc->saveAsDialog(theApp.m_pMainWnd->GetSafeHwnd(), szItemName, pDoc->Defs.ImageDir, IDS
+_0209, pDoc->Defs.ImgExt, IDS_0177) )
+RR\cntritem.cpp:1074:            if ( pDoc->m_pFrame->ActiveState & IMAGE_EDIT )
+RR\cntritem.cpp:1415:                // rect is "wider" than image, so use rect nNewHeight, and scale nNewWidth.
+RR\cntritem.cpp:1422:                // image is "wider" than rect, so use rect nNewWidth, and scale nNewHeight.
+RR\cntritem.cpp:1429:        case NOSCALE:    // No scaling.    Crop original image to fit rect.
+RR\cntritem.cpp:1493:    // Update the xinch and yinch members in an Image or Box struct,
+RR\cntritem.cpp:1505:        int nGridInchX = pDoc->getPixFromCol(1) * pDoc->RulerPitch    ;  // This matches the image
+s to the rulers.
+RR\cntritem.cpp:1672:    int nGridInchX = m_pDoc->getPixFromCol(1) * m_pDoc->RulerPitch    ;  // This matches the image
+s to the rulers.
+RR\cntritem.cpp:1749:    int nGridInchX = m_pDoc->getPixFromCol(1) * m_pDoc->RulerPitch    ;  // This matches the image
+s to the rulers.
+RR\mainfrm.cpp:782:            m_pFieldView->m_pDoc->setImagePalette(FALSE); // install the palette if necessary
+RR\mainfrm.cpp:941:    if (m_pFieldView->m_pDoc->hImageLib >= (HINSTANCE)32)
+RR\mainfrm.cpp:942:        FreeLibrary(m_pFieldView->m_pDoc->hImageLib);    // and image library
+RR\mainfrm.cpp:1105:          m_pFieldView->m_pDoc->setImagePalette(FALSE); // install the palette if necessary
+RR\mainfrm.cpp:1106:          m_pFieldView->m_pDoc->invalidateImages();
+RR\mainfrm.cpp:1156:        displaySplashImage(FALSE);        // remove the bitmap window
+RR\mainfrm.cpp:1444:        // add image file drives
+RR\mainfrm.cpp:1445:        for (int imgfld=0; imgfld < m_pFieldView->m_pDoc->Images; imgfld++)
+RR\mainfrm.cpp:1516:    LPRRIMAGE f ;
+RR\mainfrm.cpp:1520:        for (int imgfld=0; imgfld < m_pFieldView->m_pDoc->Images; imgfld++)
+RR\rrdoc.cpp:65:// Changes for data images
+RR\rrdoc.cpp:1031:   hImageLib = (HINSTANCE)0;     // instance handle of image library
+RR\rrdoc.cpp:1035:   Images = 0;                // number of bitmaps in report
+RR\rrdoc.cpp:1036:   ImageshDib = 0;
+RR\rrdoc.cpp:1038:   ImgStruct = (LPRRIMAGE)NULL;  // R&R image structure
+RR\rrdoc.cpp:1039:   ImageshDibArray = NULL ;
+RR\rrdoc.cpp:1045:   MarkedImages = 0;
+RR\rrdoc.cpp:1056:   PageImages = 0;
+RR\rrdoc.cpp:1228:   img = (LPRRIMAGE)NULL;
+RR\rrdoc.cpp:1528:   curImage = 0;
+RR\rrdoc.cpp:1632:   clipImage = 0;
+RR\rrdoc.cpp:1843:   if (!getClipImageNames())
+RR\rrdoc.cpp:1972:   if (!getClipImageNames())
+RR\RREXPORT.CPP:54:// Added TableBorder, ImagePathname, and color members
+RR\rrview.cpp:79:// added a handler to disable the alignment menu for boxes,lines,images
+RR\rrview.cpp:99:// Prepare to save OLE objects as images.
+RR\rrview.cpp:381:// Pasting an OLE object was supported thru "Paste Clipboard Image".
+RR\rrview.cpp:532:#include "wfield.h"     // for invalidateImages()
+RR\rrview.cpp:570:    ON_UPDATE_COMMAND_UI ( IDM_PASTECLIPIMAGE,         OnUpdatePasteClipImage)
+RR\rrview.cpp:571:    ON_UPDATE_COMMAND_UI ( ID_EDIT_PASTE_SPECIAL,      OnUpdatePasteClipImage)
+RR\rrview.cpp:615:    ON_UPDATE_COMMAND_UI ( IDM_INSIMAGE,               OnUpdateGotRep)
+RR\rrview.cpp:616:    ON_UPDATE_COMMAND_UI ( IDM_INSIMAGEFIELD,          OnUpdateGotRep)
+RR\rrview.cpp:709:    ON_COMMAND ( IDM_PASTECLIPIMAGE,         OnPasteClipImage       )
+RR\rrview.cpp:726:    ON_COMMAND ( IDM_INSIMAGE,               OnInsertImage           )
+RR\rrview.cpp:727:    ON_COMMAND ( IDM_INSIMAGEFIELD,          OnInsertImageField    )
+RR\rrview.cpp:1035:        if (m_pFrame->ActiveState & (MOUSE_MOVE | BOX_MOVE | IMAGE_MOVE | DATA_MOVE))
+RR\rrview.cpp:1108:                case IMAGE_MOVE:
+RR\rrview.cpp:1109:                    m_pDoc->moveImageRect((POINT)point);
+RR\rrview.cpp:1153:            if (m_pDoc->Drawing & bxImage)
+RR\rrview.cpp:1154:                m_pDoc->endImageOutline();
+RR\rrview.cpp:1156:                m_pDoc->endImageOutline();
+RR\rrview.cpp:1979:            if ( m_pDoc->MarkedImages == 1 )
+RR\rrview.cpp:2180:void CRrView::OnInsertImage()
+RR\rrview.cpp:2182:    m_pDoc->startImageOutline();
+RR\rrview.cpp:2185:void CRrView::OnInsertImageField()
+RR\rrview.cpp:2187:    m_pDoc->startImageOutlineField();
+RR\rrview.cpp:2227:    else if (m_pDoc->MarkedFlds == m_pDoc->MarkedImages)
+RR\rrview.cpp:2228:        m_pDoc->imageFormat();
+RR\rrview.cpp:2910:                m_pDoc->endBoxDrawing();    // same for images.
+RR\rrdrag.cpp:67:// Update band line on object drag.  Snap to NEARGRID as images do.
+RR\rrole.cpp:62:// Snap to NEARGRID as images do.
+RR\rrole.cpp:82:// an IMAGE MOVE.  This fixes focus rect problem with OLE objects.
+RR\rrole.cpp:342:        else if ( (m_pDoc->MarkedFlds == 1) && (m_pDoc->nMarkedOleObjects == 1) && (m_pFrame->ActiveSt
+ate != IMAGE_MOVE) )
+RR\rrole.cpp:344:            // Make sure Active State is not IMAGE MOVE.  If so, then calling onHandle() a second
+RR\rrole.cpp:587:void CRrView::OnPasteClipImage()
+RR\rrole.cpp:668:void CRrView::OnUpdatePasteClipImage(CCmdUI* pCmdUI)
+MFMISC\mfgetord.cpp:13:// mode layout (objects are fields, text, images, and boxes).  Array entries
+MFMISC\mfgetord.cpp:31://  in the "screen order" list and also with images disappearing from report
+MFMISC\mfgetord.cpp:50:// Fixed an unreported bug having to do with boxes obscuring images.
+MFMISC\mfgetord.cpp:97:// An OLE Object is treated the same as an image.
+MFMISC\mfgetord.cpp:98:#define POS(f) (FOUR)(((f)->hflags & (IMAGEFLD|BOXFLD|CHARTFLD|LINEFLD|OBJECTFLD)) ? (((FOUR)(f)
+->fr.top*m_pDoc->MaxHorzPix)+(f)->fr.left) : (((FOUR)(((f)->fr.bottom ? (f)->fr.bottom : (f)->fr.top)-(f)->descent)*m_p
+Doc->MaxHorzPix)+(f)->fr.left))
+MFMISC\mfgetord.cpp:105:#define IMAGE    2
+MFMISC\mfgetord.cpp:113:    if ((f)->hflags & (IMAGEFLD|BOXFLD|LINEFLD|OBJECTFLD))
+MFMISC\mfgetord.cpp:137:    int data=-1, imagefld=0, boxfld=0, chartfld=0 ;
+MFMISC\mfgetord.cpp:158:    else if ( m_pDoc->Images )
+MFMISC\mfgetord.cpp:160:        curfld   = (LPFLDHDR)(&m_pDoc->ImgStruct[imagefld++]);
+MFMISC\mfgetord.cpp:161:        data     = IMAGE;
+MFMISC\mfgetord.cpp:170:    // images and boxes would not allow the tab to cycle through images.
+MFMISC\mfgetord.cpp:237:                    else if ( imagefld < m_pDoc->Images )
+MFMISC\mfgetord.cpp:239:                        curfld   = (LPFLDHDR)(&m_pDoc->ImgStruct[imagefld++]);
+MFMISC\mfgetord.cpp:240:                        data     = IMAGE;
+MFMISC\mfgetord.cpp:275:                    if ( m_pDoc->Images )
+MFMISC\mfgetord.cpp:277:                        curfld   = (LPFLDHDR)(&m_pDoc->ImgStruct[imagefld++]);
+MFMISC\mfgetord.cpp:278:                        data     = IMAGE ;
+MFMISC\mfgetord.cpp:310:            case IMAGE:     // Image
+MFMISC\mfgetord.cpp:311:                curfld = (imagefld < m_pDoc->Images) ? (LPFLDHDR)(&m_pDoc->ImgStruct[imagefld++
+]) : NULL;
+MFMISC\mfgetord.cpp:312:                if (!curfld)     // mjs 1/21/93  Finished with images.
+RRWCNVRT\fixrecs.cpp:199:            case yxIMAGEX:
+RRWCNVRT\fixrecs.cpp:213:                put(yxIMAGE,off-rb.yxRec,(char *)&rb.yxRec); // write it out
+RRWCNVRT\rp5_rp1.cpp:44:// out the yxIMAGE record.
+RRWCNVRT\rp5_rp1.cpp:53:// Bug 2111: added code to convert Windows images to DOS.
+RRWCNVRT\rp5_rp1.cpp:506:        case yxIMAGE:        // translate Windows Image to DOS
+RRWCNVRT\rp5_rp1.cpp:509:            hbuf.yxType = yxDOSIMG;                    // it's a DOS image
+RRWCNVRT\rp5_rp1.cpp:512:            i = buf.yxCount - 20;                    // image name length
+RRWCNVRT\rp5_rp1.cpp:515:            hbuf.yxRec[4] = IMAGEFLD;                // hflags
+MFFIELD\mfrlsfld.cpp:203:        // Fix Image id's
+MFFIELD\mfrlsfld.cpp:204:        LPRRIMAGE g ;
+MFFIELD\mfrlsfld.cpp:206:        for (k = 0 ; k < m_pDoc->Images ; k++)
+WLAYOUT\wmove.cpp:204:// 3.0: images on any line
+WLAYOUT\wmove.cpp:445:    //    eraseImageOutline();
+WLAYOUT\wmove.cpp:720:        if (m_pFrame->ActiveState & (IMAGE_MOVE | BOX_MOVE | DATA_MOVE))
+WLAYOUT\wmove.cpp:797:        if (!(m_pFrame->ActiveState & (MOUSE_MOVE | IMAGE_MOVE | BOX_MOVE | DATA_MOVE)))
+WLAYOUT\wmove.cpp:849:        if (!(m_pFrame->ActiveState & (MOUSE_MOVE | IMAGE_MOVE | BOX_MOVE | DATA_MOVE)))
+WLAYOUT\wmove.cpp:884:        if (!(m_pFrame->ActiveState & (MOUSE_MOVE | IMAGE_MOVE | BOX_MOVE | DATA_MOVE)))
+WLAYOUT\wmove.cpp:960:        if (!(m_pFrame->ActiveState & (MOUSE_MOVE | IMAGE_MOVE | BOX_MOVE | DATA_MOVE)))
+WLAYOUT\wmove.cpp:1022:        if (!(m_pFrame->ActiveState & (MOUSE_MOVE | IMAGE_MOVE | BOX_MOVE | DATA_MOVE)))
+WLAYOUT\wmove.cpp:1062:        if (!(m_pFrame->ActiveState & (MOUSE_MOVE | IMAGE_MOVE | BOX_MOVE | DATA_MOVE)))
+WLAYOUT\wmove.cpp:1179:#ifdef SQUEEZE_IMAGE
+WLAYOUT\wmove.cpp:1195:    if (m_pDoc->markBox(nopoint) || m_pDoc->markImage(nopoint) || markData(nopoint))
+WLAYOUT\wmove.cpp:1295:#ifdef SQUEEZE_IMAGE
+WLAYOUT\wmove.cpp:1301:            if (IMAGE_FLD(f) && (When[f->hrow].whenhtmode == lnHtAUTO))
+WLAYOUT\wmove.cpp:1462:                        case IMAGE_MOVE:
+WLAYOUT\wmove.cpp:1465:                                m_pDoc->markImage(pt);
+WLAYOUT\wmove.cpp:1507:                        case IMAGE_MOVE:
+WLAYOUT\wmove.cpp:1527:                        case IMAGE_MOVE:
+WLAYOUT\wmove.cpp:1528:                            m_pDoc->markImage(pt);
+WLAYOUT\wmove.cpp:1550:                                m_pDoc->markImage(pt);
+WLAYOUT\wmove.cpp:1578:                case IMAGE_MOVE:
+WLAYOUT\wmove.cpp:1581:                   // Not moving, but sizing and scrolling image or box.
+WLAYOUT\wmove.cpp:1583:                        m_pDoc->nonClientImageRect(point, xmove, ymove);
+WLAYOUT\wmove.cpp:1710:    if (m_pDoc->moveImageRect(point) || m_pDoc->moveBoxRect(point))
+WLAYOUT\wmove.cpp:1861:    // if (!MarkedBoxes && (!MarkedLns) && (!MarkedImages))
+WLAYOUT\wmove.cpp:1876:            else if ( IMAGE_FLD(f) && m_pDoc->selectImage(f,point,bMouseDown) )
+WLAYOUT\wmove.cpp:1888:            // Treat an OLE object just like an image.
+WLAYOUT\wmark.cpp:22:// Insert Image from field
+WLAYOUT\wmark.cpp:69:// Ole handles should be the same as image handles.
+WLAYOUT\wmark.cpp:133:// Fixed RSW #1169, where a box on top of an image of the same size could
+WLAYOUT\wmark.cpp:191:    else if ( IMAGE_FLD(f)  ) m_pDoc->MarkedImages++      ;
+WLAYOUT\wmark.cpp:202:    else if ( IMAGE_FLD(f)  ) m_pDoc->MarkedImages--      ;
+WLAYOUT\wmark.cpp:261:    if (IMAGE_FLD(f) || OBJECT_FLD(f)|| CHART_FLD(f))    // Check handles, too.
+WLAYOUT\wmark.cpp:309:        if ((f->hflags & MARKED) /*&& !IMAGE_FLD(f)*/)
+WLAYOUT\wmark.cpp:323:    m_pDoc->MarkedImages = 0 ;
+WLAYOUT\wmark.cpp:586:    // Create the hit-test/invalidate rect for lines, boxes, and images.
+WLAYOUT\wmark.cpp:590:    // Inflate image or box to edge of handles.
+WLAYOUT\wmark.cpp:601:            else if ( TWOD_FLD(f) )               // box or image
+WLAYOUT\wmark.cpp:647:    // ... and to fix RSW #1169, check for images, too.
+WLAYOUT\wmark.cpp:649:    // Is this a box or an image?
+WLAYOUT\wmark.cpp:650:    if ( !BOX_FLD(f) && (!IMAGE_FLD(f)) && (!OBJECT_FLD(f)) && (!CHART_FLD(f)) )
+WLAYOUT\wmark.cpp:653:    // Is a box or image already marked?
+WLAYOUT\wmark.cpp:655:        !m_pDoc->MarkedImages &&
+WLAYOUT\wmark.cpp:699:        else if (m_pDoc->Drawing & bxImage) // Image
+WLAYOUT\wmark.cpp:701:        else if (m_pDoc->Drawing & bxImageField) // Image from field
+WLAYOUT\wmark.cpp:730:        // Expand hit-test area for lines, boxes, and images.
+WLAYOUT\wmark.cpp:739:                // Special case:  don't allow click to select multiple boxes/images.
+WLAYOUT\wmark.cpp:758:            // #1250  Exit after mark/unmark single box/image.
+WLAYOUT\wpix.cpp:32:// Trim code was causing images to get lost when exporting to html.
+WLAYOUT\wpix.cpp:40:// JPG images need to be promoted to 24 bits before exporting.
+WLAYOUT\wpix.cpp:43:// Images, objects and charts do not have alignment issues.  Reset the position.
+WLAYOUT\wpix.cpp:44:// This fixes a problem with the images getting lost when on the summary band.
+WLAYOUT\wpix.cpp:55:// Resize images and create new file when necessary for HTML export.
+WLAYOUT\wpix.cpp:61:// Create image directory and convert background image.
+WLAYOUT\wpix.cpp:64:// New HTML options to specify file format and to copy all images.
+WLAYOUT\wpix.cpp:67:// Functions to generate an image from an object.  Mostly directory parsing.
+WLAYOUT\wpix.cpp:70:// New fields for image pathname.
+WLAYOUT\wpix.cpp:76:// Added call to new function to retrieve if the field to add is an image
+WLAYOUT\wpix.cpp:77:// and to save the image relative path
+WLAYOUT\wpix.cpp:517:    // Align image/line/box to grid.  Always align to top left.
+WLAYOUT\wpix.cpp:810:        // 06/13/97 PAR.  Images were getting lost because they were being treated as trimmed and
+wrapped.
+WLAYOUT\wpix.cpp:811:        // So, don't treat images, objects or charts as trimmed or wrapped.
+WLAYOUT\wpix.cpp:812:        bTrimmedAndWrapped &= !(IMAGE_FLD(f) || OBJECT_FLD(f) || CHART_FLD(f)) ;
+WLAYOUT\wpix.cpp:920:    // The background image requires additional processing.  The image
+WLAYOUT\wpix.cpp:926:        objHtml.CreateImageDirectory() ;
+WLAYOUT\wpix.cpp:928:        CString csImageSavedPath ;
+WLAYOUT\wpix.cpp:929:        csImageSavedPath = objHtml.csBackgroundImagePathname ;
+WLAYOUT\wpix.cpp:935:        _splitpath ( csImageSavedPath, szDrive, szDirectory, szFilename, szExtension ) ;
+WLAYOUT\wpix.cpp:938:        BOOL bDifferentFormat = (objHtml.csHtmlImageFileFormat.CompareNoCase ( csExtension ) != 0)
+ ;
+WLAYOUT\wpix.cpp:939:        if ( objHtml.bCopyAllImagesToDirectory || bDifferentFormat )
+WLAYOUT\wpix.cpp:941:            int hDib = img_load ( csImageSavedPath.GetBuffer(0) ) ;
+WLAYOUT\wpix.cpp:950:                if ( ((bits_pix != 8) && (bits_pix != 24) ) && (objHtml.csHtmlImageFileFormat.Comp
+areNoCase("JPG") == 0) )
+WLAYOUT\wpix.cpp:952:                    // 06/09/97 PAR. Jim Paylow recommended that we convert 4 bits per pixel image
+s to
+WLAYOUT\wpix.cpp:958:                if ( (bits_pix == 24) && ((objHtml.csHtmlImageFileFormat.CompareNoCase("GIF") == 0
+) || (objHtml.csHtmlImageFileFormat.CompareNoCase("BMP") == 0)) )
+WLAYOUT\wpix.cpp:963:                CString csImageFilename = CString(szFilename) + CString('.') + objHtml.csHtmlImage
+FileFormat ;
+WLAYOUT\wpix.cpp:964:                objHtml.ConvertFilename ( csImageFilename, csImageSavedPath ) ;
+WLAYOUT\wpix.cpp:965:                img_save   ( hDib, csImageSavedPath.GetBuffer(0), -1 ) ;
+WLAYOUT\wpix.cpp:970:        CString csImageRelativePath  ;
+WLAYOUT\wpix.cpp:971:        HTML_EXPORT::PathnameDifference ( objHtml.csExportPathname, csImageSavedPath, csImageRelat
+ivePath ) ;
+WLAYOUT\wpix.cpp:972:        // The HTML Generator will only use the image code in the szImagePathname variable.
+WLAYOUT\wpix.cpp:973:        strcpy ( objHtml.szImagePathname, csImageRelativePath );
+WLAYOUT\wpix.cpp:1035:    CString csImageSavedPath ;
+WLAYOUT\wpix.cpp:1036:    CString csImageRelativePath  ;
+WLAYOUT\wpix.cpp:1039:    if ( uFieldFlags & IMAGEFLD  )
+WLAYOUT\wpix.cpp:1042:        // The images, ole object and charts seem to have the RIGHT align bit set when not on the
+ top line.
+WLAYOUT\wpix.cpp:1043:        // This is causing the position to be different than expect and the image becomes lost.
+WLAYOUT\wpix.cpp:1046:        // Make sure the image directory exists.  If not, then create.
+WLAYOUT\wpix.cpp:1047:        objHtml.CreateImageDirectory() ;
+WLAYOUT\wpix.cpp:1049:        LPRRIMAGE lpImage = (LPRRIMAGE) prevF ;
+WLAYOUT\wpix.cpp:1054:        _splitpath ( lpImage->filename, szDrive, szDirectory, szFilename, szExtension ) ;
+WLAYOUT\wpix.cpp:1056:        csImageSavedPath = lpImage->filename ;
+WLAYOUT\wpix.cpp:1059:        BOOL bDifferentFormat = (objHtml.csHtmlImageFileFormat.CompareNoCase ( csExtension ) != 0
+) ;
+WLAYOUT\wpix.cpp:1061:        if ( lpImage->hDib < 0 )
+WLAYOUT\wpix.cpp:1062:            lpImage->hDib = img_load ( lpImage->filename ) ;
+WLAYOUT\wpix.cpp:1063:        if ( lpImage->hDib >= 0 )
+WLAYOUT\wpix.cpp:1065:            int nDrawnWidthPixels  = lpImage->fhdr.fr.right  - lpImage->fhdr.fr.left + 1 ;
+WLAYOUT\wpix.cpp:1066:            int nDrawnHeightPixels = lpImage->fhdr.fr.bottom - lpImage->fhdr.fr.top  + 1 ;
+WLAYOUT\wpix.cpp:1072:            if ( (nActualWidthPixels != nDrawnWidthPixels) || (nActualHeightPixels != nDrawnHeigh
+tPixels) || (lpImage->scaling != PARTSCALE) )
+WLAYOUT\wpix.cpp:1074:                // If image is scaled, cropped or in any way different from the original, then it
+ must be
+WLAYOUT\wpix.cpp:1076:                CString csImageFilename = CString(szFilename) ;
+WLAYOUT\wpix.cpp:1077:                switch ( lpImage->scaling )
+WLAYOUT\wpix.cpp:1080:                        csImageFilename += " Zoom " ;
+WLAYOUT\wpix.cpp:1083:                        csImageFilename += " Crop " ;
+WLAYOUT\wpix.cpp:1086:                        csImageFilename += " Stretch " ;
+WLAYOUT\wpix.cpp:1091:                csImageFilename += csDimensions + CString('.') + objHtml.csHtmlImageFileFormat ;
+WLAYOUT\wpix.cpp:1092:                objHtml.ConvertFilename ( csImageFilename, csImageSavedPath ) ;
+WLAYOUT\wpix.cpp:1095:                if ( lpImage->hDdb == (HBITMAP)-1 )
+WLAYOUT\wpix.cpp:1097:                    for ( int nImageIndex=0 ; nImageIndex < Images ; nImageIndex++ )
+WLAYOUT\wpix.cpp:1099:                        if ( lpImage == &ImgStruct[nImageIndex] )
+WLAYOUT\wpix.cpp:1101:                            createDDB ( nImageIndex, TRUE ) ;
+WLAYOUT\wpix.cpp:1107:                if ( lpImage->hDdb != (HBITMAP)-1 )
+WLAYOUT\wpix.cpp:1109:                    HPALETTE hPalette = img_get_bitmap_palette ( lpImage->hDib ) ;
+WLAYOUT\wpix.cpp:1113:                    // 06/11/97 PAR.  The copy is critial to being able to resize the image.
+WLAYOUT\wpix.cpp:1114:                    // If we just used the lpImage->hDib, the image saved would be the original s
+ize.
+WLAYOUT\wpix.cpp:1116://                    hDibCopy = img_create_ddb ( lpImage->hDdb, hPalette ) ;
+WLAYOUT\wpix.cpp:1117:                    hDibCopy = img_copy(lpImage->hDib, lpImage->scaling, nDrawnWidthPixels, nDraw
+nHeightPixels) ;
+WLAYOUT\wpix.cpp:1125:                    if ( ((bits_pix != 8) && (bits_pix != 24) ) && (objHtml.csHtmlImageFileFormat
+.CompareNoCase("JPG") == 0) )
+WLAYOUT\wpix.cpp:1127:                        // 06/09/97 PAR. Jim Paylow recommended that we convert 4 bits per pixel
+images to
+WLAYOUT\wpix.cpp:1133:                    if ( (bits_pix == 24) && ((objHtml.csHtmlImageFileFormat.CompareNoCase("GIF")
+ == 0) || (objHtml.csHtmlImageFileFormat.CompareNoCase("BMP") == 0)) )
+WLAYOUT\wpix.cpp:1138:                    img_save    ( hDibCopy, csImageSavedPath.GetBuffer(0), -1 ) ;
+WLAYOUT\wpix.cpp:1144:                    img_info ( lpImage->hDib, &nActualWidthPixels, &nActualHeightPixels, &bits_pi
+x ) ;
+WLAYOUT\wpix.cpp:1145:                    if ( ((bits_pix != 8) && (bits_pix != 24) ) && (objHtml.csHtmlImageFileFormat
+.CompareNoCase("JPG") == 0) )
+WLAYOUT\wpix.cpp:1147:                        // 06/09/97 PAR. Jim Paylow recommended that we convert 4 bits per pixel
+images to
+WLAYOUT\wpix.cpp:1149:                        nPromoteResult = img_promote_24 ( lpImage->hDib ) ;
+WLAYOUT\wpix.cpp:1153:                    if ( (bits_pix == 24) && ((objHtml.csHtmlImageFileFormat.CompareNoCase("GIF")
+ == 0) || (objHtml.csHtmlImageFileFormat.CompareNoCase("BMP") == 0)) )
+WLAYOUT\wpix.cpp:1156:                        nPromoteResult = img_mediancut ( lpImage->hDib ) ;
+WLAYOUT\wpix.cpp:1158:                    img_save   ( lpImage->hDib, csImageSavedPath.GetBuffer(0), -1 ) ;
+WLAYOUT\wpix.cpp:1161:            else if ( objHtml.bCopyAllImagesToDirectory || bDifferentFormat )
+WLAYOUT\wpix.cpp:1163:                CString csImageFilename = CString(szFilename) + CString('.') + objHtml.csHtmlImag
+eFileFormat ;
+WLAYOUT\wpix.cpp:1164:                objHtml.ConvertFilename ( csImageFilename, csImageSavedPath ) ;
+WLAYOUT\wpix.cpp:1166:                img_info ( lpImage->hDib, &nActualWidthPixels, &nActualHeightPixels, &bits_pix )
+;
+WLAYOUT\wpix.cpp:1167:                if ( ((bits_pix != 8) && (bits_pix != 24) ) && (objHtml.csHtmlImageFileFormat.Com
+pareNoCase("JPG") == 0) )
+WLAYOUT\wpix.cpp:1169:                    // 06/09/97 PAR. Jim Paylow recommended that we convert 4 bits per pixel imag
+es to
+WLAYOUT\wpix.cpp:1171:                    nPromoteResult = img_promote_24 ( lpImage->hDib ) ;
+WLAYOUT\wpix.cpp:1175:                if ( (bits_pix == 24) && ((objHtml.csHtmlImageFileFormat.CompareNoCase("GIF") ==
+0) || (objHtml.csHtmlImageFileFormat.CompareNoCase("BMP") == 0)) )
+WLAYOUT\wpix.cpp:1178:                    nPromoteResult = img_mediancut ( lpImage->hDib ) ;
+WLAYOUT\wpix.cpp:1180:                img_save ( lpImage->hDib, csImageSavedPath.GetBuffer(0), -1 ) ;
+WLAYOUT\wpix.cpp:1188:                csPromoteError.Format ( "The image library returned %d for image %s", nPromoteRes
+ult, csImageSavedPath ) ;
+WLAYOUT\wpix.cpp:1193:        HTML_EXPORT::PathnameDifference ( objHtml.csExportPathname, csImageSavedPath, csImageRela
+tivePath ) ;
+WLAYOUT\wpix.cpp:1194:        newTableEntry->SetImagePath ( csImageRelativePath ) ;
+WLAYOUT\wpix.cpp:1199:        // The images, ole object and charts seem to have the RIGHT align bit set when not on the
+ top line.
+WLAYOUT\wpix.cpp:1200:        // This is causing the position to be different than expect and the image becomes lost.
+WLAYOUT\wpix.cpp:1203:        // Make sure the image directory exists.  If not, then create.
+WLAYOUT\wpix.cpp:1204:        objHtml.CreateImageDirectory() ;
+WLAYOUT\wpix.cpp:1211:        csItemName += objHtml.csHtmlImageFileFormat ;
+WLAYOUT\wpix.cpp:1213:        objHtml.ConvertFilename ( csItemName, csImageSavedPath ) ;
+WLAYOUT\wpix.cpp:1214:        pItem->SaveAsPicture ( csImageSavedPath ) ;
+WLAYOUT\wpix.cpp:1215:        HTML_EXPORT::PathnameDifference ( objHtml.csExportPathname, csImageSavedPath, csImageRela
+tivePath ) ;
+WLAYOUT\wpix.cpp:1216:        newTableEntry->SetImagePath ( csImageRelativePath ) ;
+WLAYOUT\wpix.cpp:1221:        // The images, ole object and charts seem to have the RIGHT align bit set when not on the
+ top line.
+WLAYOUT\wpix.cpp:1222:        // This is causing the position to be different than expect and the image becomes lost.
+WLAYOUT\wpix.cpp:1225:        //CString csImageRelativePath = "file:///c:\\win95\\bubbles.bmp";
+WLAYOUT\wpix.cpp:1226:        //newTableEntry->SetImagePath ( csImageRelativePath ) ;
+WLAYOUT\wfont.cpp:225:// 3.0: images on any line
+WLAYOUT\wfont.cpp:906:#ifdef SQUEEZE_IMAGE
+WLAYOUT\wfont.cpp:916:#ifdef SQUEEZE_IMAGE
+WLAYOUT\wfont.cpp:997:#ifdef SQUEEZE_IMAGE
+WLAYOUT\wfont.cpp:1087:// (or fr.top, if line/box/image) value is adjusted (a routine called within
+WLAYOUT\wfont.cpp:1092:// check for fields (not lines/boxes/images) that might extend outside
+WLAYOUT\wfont.cpp:1115:#ifdef SQUEEZE_IMAGE
+WLAYOUT\wfont.cpp:1116:                if (IMAGE_FLD(f))
+WLAYOUT\wfont.cpp:1117:                { // image top/bottom on same (freeform) line
+WLAYOUT\wfont.cpp:1124://                if (IMAGE_FLD(f))
+WLAYOUT\wfont.cpp:1125://                    TRACE( "sizeBandsFlds:  working on an image. OLD Bottom=%d, Top=%d, Hite=%
+d\n", f->fr.bottom, f->fr.top, f->hite );
+WLAYOUT\wfont.cpp:1144:                { // lines/boxes/images - set the top first, then bottom
+WLAYOUT\wfont.cpp:1170:#ifdef SQUEEZE_IMAGE
+WBAND\bandview.cpp:355:            if (m_pDoc->Drawing & bxImage)
+WBAND\bandview.cpp:356:                m_pDoc->endImageOutline();
+WBAND\bandview.cpp:358:                m_pDoc->endImageOutline();
+WBAND\wband.cpp:163:                     // .. and handles on images can hang over lines.
+WBAND\wband.cpp:165:                    { // line/box/image
+WBAND\wledit.cpp:108:// 3.0: images on any line
+WBAND\wledit.cpp:166:#ifdef SQUEEZE_IMAGE
+WBAND\wledit.cpp:174:    { // check for images on line
+WBAND\wledit.cpp:175:        if ((f->hrow == line) && IMAGE_FLD(f))
+WBAND\wledit.cpp:189:        if (IMAGE_FLD(f) && (When[f->hrow].whenflags & WHENMARKED))
+WBAND\wledit.cpp:241:#ifdef SQUEEZE_IMAGE
+WBAND\wledit.cpp:264:#ifdef SQUEEZE_IMAGE
+WBAND\wledit.cpp:281:#ifdef SQUEEZE_IMAGE
+WBAND\wledit.cpp:407:#ifdef SQUEEZE_IMAGE
+WBAND\wledit.cpp:444:#ifdef SQUEEZE_IMAGE
+WBAND\wledit.cpp:640:#ifdef SQUEEZE_IMAGE
+DINSERT\listcontrol.cpp:45://    m_pimageListDrag = NULL;
+DINSERT\listcontrol.cpp:663://    m_pimageListDrag = NULL;
+DINSERT\dinsfld.cpp:805:BOOL CALLBACK CRrDoc::insImageFldDialog(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+ODBC\libodbc++-0.2.5\src\resultsetmetadata.cpp:104:   case SQL_VARGRAPHIC: // Image         -96
+PD\genreport.cpp:61:CGenerateReportHTML::CGenerateReportHTML(BOOL bUseColor, LPCTSTR strBackImage, LPCTSTR strBackColor
+)
+PD\genreport.cpp:71:    m_strBackImage        = strBackImage;
+PD\genreport.cpp:152:        ASSERT(!(m_strBackImage.IsEmpty()));
+PD\genreport.cpp:153:        wsprintf(szTemp,"<BODY BACKGROUND=\"%s\"><TABLE>\r\n", m_strBackImage);
+PD\genreport.cpp:513:void CGenerateReportHTML::AddTableCell (long lBandNumber, long lYPos, long lStartingPosition, LPCT
+STR pszCellName, long lSize, ULONG flags, long lAlign, LPCSTR pszHEXcolor, int iFontSize, LPCSTR pszFontName, LPCSTR ps
+zImagePathname)
+PD\genreport.cpp:515:    //TRACE( "CGenerateReportHTML::AddTableCell (%5d, %2d, %3d, %s, %s)\n", lYPos, lBandNumber, lS
+tartingPosition, pszCellName, pszImagePathname );
+PD\genreport.cpp:522:    CTableEntry  *newTableEntry = new CTableEntry ( lBandNumber, lYPos, lStartingPosition, pszCell
+Name, lSize, flags, lAlign, pszHEXcolor, iFontSize, pszFontName, pszImagePathname);
+PD\genreport.cpp:590:void CGenerateReportHTML::AddUniqueCell (long lBandNumber, long lYPos, long lStartingPosition, LPC
+TSTR pszCellName, long lSize, ULONG flags, long lAlign, LPCSTR pszHEXcolor, int iFontSize, LPCSTR pszFontName, LPCSTR p
+szImagePathname)
+PD\genreport.cpp:597:    CTableEntry  *newTableEntry = new CTableEntry ( lBandNumber, lYPos, lStartingPosition, pszCell
+Name, lSize, flags, lAlign, pszHEXcolor, iFontSize, pszFontName, pszImagePathname);
+PD\genreport.cpp:699:void CGenerateReportHTML::SetTableCellPosition (long lBandNumber, long lYpos, long lStartingPositi
+on, LPCTSTR pszCellName, long lSize, ULONG flags, long lAlign, LPCSTR pszHEXcolor, int iFontSize, LPCSTR pszFontName, L
+PCSTR pszImagePathname)
+PD\genreport.cpp:710:    AddTableCell  (lBandNumber, lYpos, lStartingPosition, pszCellName, lSize, flags, lAlign, pszHE
+Xcolor, iFontSize, pszFontName, pszImagePathname);
+PD\genreport.cpp:717:    AddUniqueCell (lBandNumber, lYpos, lStartingPosition, pszCellName, lSize, flags, lAlign, pszHE
+Xcolor, iFontSize, pszFontName, pszImagePathname);
+PD\genreport.cpp:901:                        if ( !previousTableEntry->GetIsImage() )
+PD\genreport.cpp:925:                if ( currentTableEntry->GetIsImage() )
+PD\genreport.cpp:927:                    WriteImageTag ( pstrOutput, currentTableEntry->GetImagePath(), csAlign ) ;
+PD\genreport.cpp:990:        if ( !previousTableEntry->GetIsImage() )
+PD\genreport.cpp:1009:void CGenerateReportHTML::WriteImageTag(CString * pstrOutput, LPCSTR pszImagePathname, LPCSTR psz
+Align)
+PD\genreport.cpp:1011:    CString csImageTag ;
+PD\genreport.cpp:1014:        csImageTag.Format ( "<IMG SRC=\"%s\" ALIGN=%s>", pszImagePathname, pszAlign ) ;
+PD\genreport.cpp:1016:        csImageTag.Format ( "<IMG SRC=\"%s\">", pszImagePathname ) ;
+PD\genreport.cpp:1017:    HTMLOutput (pstrOutput, csImageTag );
+PD\rtfxint.cpp:1195:    if (pgBuf[pg].pageImages && pgBuf[pg].hImgArray)
+PD\rtfxint.cpp:1196:        GlobalFree(pgBuf[pg].hImgArray);  // free any images
+PD\rtfxint.cpp:1202:    pgBuf[pg].pageImages = 0;
+PD\pwdriver.cpp:122:// Get fast/slow image printing flag from INI file.
+PD\pwdriver.cpp:156:// 08/04/93 SBC Change data/box/image pointers to HUGE
+PD\pwdriver.cpp:657:// record an image
+PD\pwdriver.cpp:658:BOOL WINAPI pwRecordImage(LPPRT_STRUCT ps, char *pimg)
+PD\pwdriver.cpp:660:    //TRACE( "pwRecordImage\n" );
+PD\pwdriver.cpp:670:        h = !pgBuf[page].pageImages ?
+PD\pwdriver.cpp:672:            MEM_GlobalReAlloc(pgBuf[page].hImgArray, (DWORD)(((DWORD)pgBuf[page].pageImages + 1) *
+(DWORD)sizeof(PRT_IMG)), GMEM_ZEROINIT);
+PD\pwdriver.cpp:676:            _fmemmove((char *)(lpImg + pgBuf[page].pageImages), (char *)pimg, sizeof(PRT_IMG));
+PD\pwdriver.cpp:677:            pgBuf[page].pageImages++;
+PD\pxdriver.cpp:609:// Record an image
+PD\pxdriver.cpp:610:BOOL WINAPI pwRecordImage( LPPRT_STRUCT ps, LPPRT_IMG pNew )
+PD\pxdriver.cpp:615:    PRT_IMG *pImages;
+PD\pxdriver.cpp:619:        hGlobal = !pPage->wPageImages ? GlobalAlloc( GHND, sizeof( PRT_IMG )) :
+PD\pxdriver.cpp:621:                ( pPage->wPageImages + 1 ) * sizeof( PRT_IMG ), GMEM_ZEROINIT );
+PD\pxdriver.cpp:622:        if ( hGlobal && ( pImages = (PRT_IMG *)GlobalLock( hGlobal )))
+PD\pxdriver.cpp:625:            MoveMemory( pImages + pPage->wPageImages, pNew, sizeof( PRT_IMG ));
+PD\pxdriver.cpp:626:            pPage->wPageImages++;
+PD\rtfexp.cpp:535:// manipulating an image, not when printing.  R?WPD.DLL should always be
+PD\rtfexp.cpp:559:// record an image
+PD\rtfexp.cpp:560:BOOL WINAPI pwRecordImage(LPPRT_STRUCT ps, char *pimg)
+PD\htmlint.cpp:745:                    case PDI_IMAGE    :  TRACE( "HTMLINT getNextPDIField:   PDI_IMAGE    \n" );  bre
+ak ;
+PD\htmlint.cpp:1223:    if (pgBuf[pg].pageImages && pgBuf[pg].hImgArray)
+PD\htmlint.cpp:1224:        GlobalFree(pgBuf[pg].hImgArray);  // free any images
+PD\htmlint.cpp:1230:    pgBuf[pg].pageImages = 0;
+PD\wexpdriv.cpp:127://    Export no-op, wpd - Store dib handle of the image voted 'most colorful'.
+PD\wexpdriv.cpp:431:// manipulating an image, not when printing.  R?WPD.DLL should always be
+PD\wexpdriv.cpp:484:// record an image
+PD\wexpdriv.cpp:485:BOOL WINAPI pwRecordImage(LPPRT_STRUCT ps, char *pimg)
+PD\pwint.cpp:155:// New function to get image function pointers from the EXE.
+PD\pwint.cpp:171:// Call to new peek routine for images, boxes and at every PDI_EOL in printLine
+PD\pwint.cpp:189://  the outlines of all boxes, then images, then data.  This prevents fill
+PD\pwint.cpp:196:// Speed up preview by caching image as a DDB.  Speed up printing by using
+PD\pwint.cpp:203:// Use update region to check for image print
+PD\pwint.cpp:250:#include "imglib.h"    // contains function prototypes for image library functions.
+PD\pwint.cpp:277:// Image cache stuff.
+PD\pwint.cpp:281:// Image functions.
+PD\pwint.cpp:297:    // Get the image function pointers loaded by the EXE.
+PD\pwint.cpp:964:    if (pgBuf[pg].pageImages && pgBuf[pg].hImgArray)
+PD\pwint.cpp:965:        MEM_GlobalFree(pgBuf[pg].hImgArray);  // free any images
+PD\pwint.cpp:979:    pgBuf[pg].pageImages      = 0 ;
+PD\pwint.cpp:1413:    // Speed up image preview by caching the last image as a DDB.
+PD\pwint.cpp:1414:    // This will help label-type reports where the same image repeats.
+PD\pwint.cpp:1445:        // If changing to a new image, remove cached bitmap.
+PD\pwint.cpp:1451:        //  Only realize palette when image changes, and there's an 8 bitter.
+PD\pwint.cpp:1452:        if (hDIB >= 0)     // GPF if B&W image has no palette.
+PD\pwint.cpp:1467:// output images to display or printer
+PD\pwint.cpp:1468:void printImage(LPPRT_STRUCT ps, PRT_IMG *pImg, LPRECT updateRect)
+PD\pwint.cpp:1470:    //TRACE( "printImage\n" );
+PD\pwint.cpp:1506:        //TRACE( "  Print preview image at (%d,%d) with dimensions of (%d,%d)\n", imgX, imgY, imgWid,
+ imgHite ) ;
+PD\pwint.cpp:1525:    //TRACE( "  Print image at (%d,%d) with dimensions of (%d,%d)\n", imgX, imgY, imgWid, imgHite ) ;
+PD\pwint.cpp:1593:// output images to display or printer
+PD\pwint.cpp:1663:        // These are unknow adjustments. They were taken from the image code above.
+PD\pwint.cpp:1777:        // So, save the DC, restore it after drawing boxes and images, then
+PD\pwint.cpp:1850:        if (!ps->pDest.wpd.bCancelled && pgBuf[page].pageImages && (pImg = (PRT_IMG *)MEM_GlobalLock(
+pgBuf[page].hImgArray)))
+PD\pwint.cpp:1851:        { // then images...
+PD\pwint.cpp:1854:            for (i = 0; !ps->pDest.wpd.bCancelled && (i < pgBuf[page].pageImages); i++, pImg++)
+PD\pwint.cpp:1855:                printImage(ps, pImg, updateRect);
+PD\htmlexp.cpp:32:// If image format is not found, just use provided value.
+PD\htmlexp.cpp:35:// New fields for image pathname.
+PD\htmlexp.cpp:44:// Passed in the image info to the creation of CGenerateReportHTML
+PD\htmlexp.cpp:305:            // sp 3/4/97 send in the image path
+PD\htmlexp.cpp:306:            ps->pDest.html.pReportHTMLgenerator = new CGenerateReportHTML(FALSE, ps->pDest.html.pHtm
+lExport->szImagePathname, NULL);
+PD\htmlexp.cpp:355:        CString            csImagePathname = pTableEntry->GetImagePath() ;
+PD\htmlexp.cpp:364:        ps->pDest.html.pReportHTMLgenerator->SetTableCellPosition ( lBandNumber, lYPos, lStartPos, s
+trName, lWidth, uFlags, lAlign, csHEXColor, iFontSize, csFontName, csImagePathname);
+PD\htmlexp.cpp:899:// manipulating an image, not when printing.  R?WPD.DLL should always be
+PD\htmlexp.cpp:956:// record an image
+PD\htmlexp.cpp:957:BOOL WINAPI pwRecordImage(LPPRT_STRUCT ps, char *pimg)
+PD\htmlexp.cpp:961:        TRACE( "HTMLEXP: pwRecordImage\n" ) ;
+PD\pwprev.cpp:59:// Get update region in paint routine, pass to playback routine for images
+PD\pxint.cpp:94:#include "imglib.h"    // contains function prototypes for image library functions.
+PD\pxint.cpp:461:    if ( pPage->wPageImages     && pPage->hImgArray   ) GlobalFree( pPage->hImgArray   );
+PD\pxint.cpp:475:    pPage->wPageImages     = 0;
+PD\pxint.cpp:776:        { // write each export image structure followed by filename
+PD\pxint.cpp:857:        { // write each export image structure followed by filename
+PD\pxint.cpp:883:// Write image data
+PD\pxint.cpp:884:BOOL writeImageData( LPPRT_STRUCT ps, EXP_PAGE *pPage, PAGE_POS *pPos )
+PD\pxint.cpp:887:    DWORD dwImageBytes = 0;
+PD\pxint.cpp:889:    if ( pPage->wPageImages && pPage->hImgArray &&
+PD\pxint.cpp:891:    { // got images and storage array, compute size of image data to be written
+PD\pxint.cpp:892:        for ( WORD ii = 0; ii < pPage->wPageImages; ii++ )
+PD\pxint.cpp:893:        { // image structure plus filename plus filename count byte
+PD\pxint.cpp:894:            dwImageBytes += sizeof( EXPORT_IMAGE ) + lstrlen( pImg[ii].pFilename ) + 1;
+PD\pxint.cpp:898:    if ( !wfWriteByte( PDI_START ) || !wfWriteByte( PDI_IMAGE_CNT ) || !wfWriteLong( dwImageBytes ))
+PD\pxint.cpp:903:    { // output the images
+PD\pxint.cpp:905:        EXPORT_IMAGE expImage;
+PD\pxint.cpp:906:        pPos[dwReportPages].wImageCount = pPage->wPageImages;
+PD\pxint.cpp:907:        for ( WORD ii = 0; ii < pPage->wPageImages; ii++, pImg++ )
+PD\pxint.cpp:908:        { // write each export image structure followed by filename
+PD\pxint.cpp:909:            expImage.wLeft = scaleX( ps, pImg->x ) + nLeftMargin;    // left edge
+PD\pxint.cpp:910:            expImage.wBottom = scaleFromPrtY( ps, pImg->y );        // bottom edge
+PD\pxint.cpp:911:            expImage.wWidth = scaleX( ps, pImg->wid );                // width
+PD\pxint.cpp:912:            expImage.wHeight = scaleY( ps, pImg->hite );            // height
+PD\pxint.cpp:913:            expImage.wCropWidth = scaleX( ps, pImg->wCropWidth );    // cropping width
+PD\pxint.cpp:914:            expImage.wCropHeight = scaleY( ps, pImg->wCropHeight );    // cropping height
+PD\pxint.cpp:916:            if ( !wfWriteData( (LPSTR)&expImage, sizeof( EXPORT_IMAGE )) ||
+PD\pxint.cpp:935://   3) Images
+PD\pxint.cpp:982:        bResult = bResult && writeImageData  ( ps, pPage, pPos ) ;  // write images
+PD\pxint.cpp:1030:// Image functions.
+PD\pxint.cpp:1038:// Get the image function pointers loaded by the EXE.
+PD\tblentry.cpp:56:// Background images use relative directory code.
+PD\tblentry.cpp:59:// New HTML options to specify file format and to copy all images.
+PD\tblentry.cpp:62:// Functions to generate an image from an object.  Mostly directory parsing.
+PD\tblentry.cpp:65:// New fields for image pathname.
+PD\tblentry.cpp:74:// added 4 new member functions Set/Get IsImage and Set/Get ImagePath
+PD\tblentry.cpp:178:    strcpy ( szImagePathname, csBackgroundImagePathname ) ;
+PD\tblentry.cpp:191:    // 06/11/97 PAR.  Scott and I concluded that the images should be always be copied.
+PD\tblentry.cpp:192:    // We also concluded that bCopyAllImagesToDirectory and the bSameDirectoryAsOutput
+PD\tblentry.cpp:194:    bCopyAllImagesToDirectory = TRUE  ;
+PD\tblentry.cpp:197:    csBackgroundImagePathname = _T("") ;
+PD\tblentry.cpp:200:    csImageDirectory          = _T("") ;
+PD\tblentry.cpp:202:    csHtmlImageFileFormat     = _T("JPG") ;
+PD\tblentry.cpp:210:    csBackgroundImagePathname = src.csBackgroundImagePathname ;
+PD\tblentry.cpp:215:    csImageDirectory          = src.csImageDirectory          ;
+PD\tblentry.cpp:217:    bCopyAllImagesToDirectory = src.bCopyAllImagesToDirectory ;
+PD\tblentry.cpp:218:    csHtmlImageFileFormat     = src.csHtmlImageFileFormat     ;
+PD\tblentry.cpp:233:    bNotEqual |= (BOOL)(h1.csBackgroundImagePathname != h2.csBackgroundImagePathname ) ;
+PD\tblentry.cpp:238:    bNotEqual |= (BOOL)(h1.csImageDirectory          != h2.csImageDirectory          ) ;
+PD\tblentry.cpp:240:    bNotEqual |= (h1.bCopyAllImagesToDirectory != h2.bCopyAllImagesToDirectory ) ;
+PD\tblentry.cpp:241:    bNotEqual |= (BOOL)(h1.csHtmlImageFileFormat     != h2.csHtmlImageFileFormat     ) ;
+PD\tblentry.cpp:250:    csConvertedPathname = csImageDirectory ;
+PD\tblentry.cpp:274:int HTML_EXPORT::PathnameDifference (CString csOutputPathname , CString csImagePathname , CString&
+csRelativePathname )
+PD\tblentry.cpp:282:    char szImageDrive    [_MAX_DRIVE]="" ;
+PD\tblentry.cpp:283:    char szImageDirectory[_MAX_DIR  ]="" ;
+PD\tblentry.cpp:284:    char szImageFilename [_MAX_FNAME]="" ;
+PD\tblentry.cpp:285:    char szImageExtension[_MAX_EXT  ]="" ;
+PD\tblentry.cpp:286:    _splitpath ( csImagePathname, szImageDrive, szImageDirectory, szImageFilename, szImageExtension
+ ) ;
+PD\tblentry.cpp:289:    CString csImageDirectory  = CString(szImageDrive ) + CString(szImageDirectory ) ;
+PD\tblentry.cpp:291:    BOOL bIsRelative = DirectoryDifference ( csOutputDirectory, csImageDirectory, csRelativeDirecto
+ry ) ;
+PD\tblentry.cpp:294:    csRelativePathname += szImageFilename     ;
+PD\tblentry.cpp:295:    csRelativePathname += szImageExtension    ;
+PD\tblentry.cpp:299:int HTML_EXPORT::DirectoryDifference(CString csOutputDirectory, CString csImageDirectory, CString&
+csRelativeDirectory)
+PD\tblentry.cpp:302:    csImageDirectory .TrimLeft () ;
+PD\tblentry.cpp:304:    csImageDirectory .TrimRight() ;
+PD\tblentry.cpp:308:    CStringList slistImage  ;
+PD\tblentry.cpp:311:    BOOL bImageUNC  = (strncmp ( csImageDirectory , "\\\\", 2 ) == 0) ;  // Isolate Windows UNC nam
+es. \\Westboro_01
+PD\tblentry.cpp:333:    CString csImageDirectoryTemp = csImageDirectory ;
+PD\tblentry.cpp:335:    char* pszDesNext = strtok ( csImageDirectoryTemp.GetBuffer(MAX_PATH), "\\" ) ;
+PD\tblentry.cpp:342:        if ( bImageUNC  )
+PD\tblentry.cpp:343:            slistImage .AddHead ( CString("\\\\") + pszDesNext ) ;
+PD\tblentry.cpp:345:            slistImage .AddTail ( pszDesNext ) ;
+PD\tblentry.cpp:347:        bImageUNC = FALSE ;
+PD\tblentry.cpp:353:    for ( int nLevel=0 ; slistOutput.GetCount() && slistImage.GetCount() ; nLevel++ )
+PD\tblentry.cpp:356:        CString& csImageDirectoryHead  = slistImage .GetHead() ;
+PD\tblentry.cpp:357:        if ( csOutputDirectoryHead.CompareNoCase(csImageDirectoryHead) != 0 )
+PD\tblentry.cpp:360:        slistImage .RemoveHead() ;
+PD\tblentry.cpp:368:        if ( (slistOutput.GetCount() == 0) && (slistImage.GetCount() == 0)  )
+PD\tblentry.cpp:373:        else if ( slistImage.GetCount() == 0 )
+PD\tblentry.cpp:376:            return TRUE ;  //  Image directory empty means no difference.
+PD\tblentry.cpp:379:        // Since we are about to use the csImageDirectory practically unprocesed,
+PD\tblentry.cpp:381:        int nLength = csImageDirectory.GetLength() ;
+PD\tblentry.cpp:382:        if ( nLength && (csImageDirectory[nLength-1] != '\\') )
+PD\tblentry.cpp:383:            csImageDirectory += '\\' ;
+PD\tblentry.cpp:386:        BOOL bDriveColon = (csImageDirectory.Find ( ':' ) >= 0 ) ;
+PD\tblentry.cpp:387:        BOOL bImageUNC   = (strncmp ( csImageDirectory , "\\\\", 2 ) == 0) ;  // Isolate Windows UN
+C names. \\Westboro_01
+PD\tblentry.cpp:388:        if ( bDriveColon || bImageUNC )
+PD\tblentry.cpp:389:            csRelativeDirectory = "file:///" + csImageDirectory ;
+PD\tblentry.cpp:391:            csRelativeDirectory = csImageDirectory ;
+PD\tblentry.cpp:402:    // Now add a level for each directory in the image list.
+PD\tblentry.cpp:403:    while ( slistImage.GetCount() )
+PD\tblentry.cpp:405:        csRelativeDirectory += slistImage.RemoveHead() + "\\" ;
+PD\tblentry.cpp:411:void HTML_EXPORT::CreateImageDirectory()
+PD\tblentry.cpp:413:    CString csDirectory = csImageDirectory ;
+PD\tblentry.cpp:547:    // sp 3/13/97 clear the image path variable
+PD\tblentry.cpp:548:    m_csImagePath.Empty();
+PD\tblentry.cpp:558:CTableEntry::CTableEntry (long lBandLineNumber, long lYPos, long lStartingPosition, LPCTSTR pszCell
+Name, long lInSize, ULONG flags, long lAlign, CString csHEXColor, int iFontSize, LPCTSTR pszFontName, LPCTSTR pszImageP
+athname)
+PD\tblentry.cpp:585:    m_csImagePath= pszImagePathname  ;
+PD\tblentry.cpp:816:// sp 3/13/97 get image location
+PD\tblentry.cpp:817:BOOL CTableEntry::GetIsImage  ()
+PD\tblentry.cpp:819:    return m_csImagePath.GetLength() ;
+PD\tblentry.cpp:822:// sp 3/13/97 set the image location
+PD\tblentry.cpp:823:void CTableEntry::SetImagePath  (CString csImagePath)
+PD\tblentry.cpp:825:    m_csImagePath = csImagePath;
+PD\tblentry.cpp:828:// sp 3/13/97 get image location
+PD\tblentry.cpp:829:CString CTableEntry::GetImagePath  ()
+PD\tblentry.cpp:831:    return m_csImagePath;
+WREPORT\wrepfix.cpp:45:// Modified adjustObjectY to do the same thing for images that it was
+WREPORT\wrepfix.cpp:98:// New function adjustImages() for old DOS reports.
+WREPORT\wrepfix.cpp:116:// 3.0: images on any line
+WREPORT\wrepfix.cpp:471:void CRrDoc::adjustImages( void )
+WREPORT\wrepfix.cpp:477:        if (IMAGE_FLD(f) || OBJECT_FLD(f)|| CHART_FLD(f))
+WREPORT\wrepfix.cpp:479:            //  Put a y offset into hcol. DOS images start at top of band.
+WREPORT\wrepfix.cpp:502:#ifdef SQUEEZE_IMAGE
+WREPORT\wrepfix.cpp:505:        // images handled differently starting with report version 8.0
+WREPORT\wrepfix.cpp:507:          || ( ( m_pRepIO->RpMajVer >= 8 ) && IMAGE_FLD(f) )
+WREPORT\wrepfix.cpp:516:            if ( IMAGE_FLD(f) )
+WREPORT\wrepfix.cpp:517:            { // old image record, compensate...
+WREPORT\rpinit.cpp:25:// Change for Image from data field
+WREPORT\rpinit.cpp:155:// Set Images to 0 in initRep()
+WREPORT\rpinit.cpp:450:    Images = 0;
+WREPORT\rpinit.cpp:451:    ImageshDib = 0;
+WREPORT\wreport.cpp:369:// Remove getClipImageNames() call from saveReport.  It's now in
+WREPORT\wreport.cpp:658:// Moved adjustImages proto to wreport.h
+WREPORT\wreport.cpp:670:// Added call to adjustImages() for old DOS reports.
+WREPORT\wreport.cpp:926:#include "dfile.h"      // for clipImageDialog (at least)
+WREPORT\wreport.cpp:991:    removeImages();
+WREPORT\wreport.cpp:1034:BOOL CRrDoc::getClipImageNames( void )
+WREPORT\wreport.cpp:1041:        if (IMAGE_FLD(f) & (((LPRRIMAGE)f)->thdr.source & IMAGE_CLIPBOARD))
+WREPORT\wreport.cpp:1043:            if (!dialogBoxParam(MainWnd,clipImageDialog,"DClipImg",(DWORD)findImage(f)))
+WREPORT\wreport.cpp:1273:    removeImages();         // wipe bitmaps
+WREPORT\wreport.cpp:1897:      adjustImages();
+WREPORT\wreport.cpp:1952:        removeImages();
+SETUP\utildll\mfcdll.cpp:109:      MessageBox( "Unable to retrive the Image Frame handle!" );
+SETUP\utildll\mfcdll.cpp:136:   if( !bmp.LoadBitmap( RS_BMP_IMAGE )  )
+SETUP\utildll\mfcdll.cpp:138:       MessageBox( "Unable to retrive the Image handle!" );
+SETUP\gosubdir\setup.cpp:5:    present in the disk drive, or because you have all disk images copied to one "CD image"
+SETUP\gosubdir\setup.cpp:10:    that I had to leave the diskette images in "disk#" subdirs on the CD, and call
+WCLIP\wclip.cpp:31:// set curChart, curBox, and curImage following deletion of one of those
+WCLIP\wclip.cpp:143:// 3.0: images on any line
+WCLIP\wclip.cpp:170:// Change line type to freeform if undeleting image onto auto line. Show field
+WCLIP\wclip.cpp:212:#ifdef SQUEEZE_IMAGE
+WCLIP\wclip.cpp:295:    for (i = 0; i < (int)Images; i++)
+WCLIP\wclip.cpp:299:            zapAnImage(i--,FALSE);    // bye bye pic
+WCLIP\wclip.cpp:301:            curImage = 0;
+WCLIP\wclip.cpp:488:        for (i = 0; i < (int)Images; i++)
+WCLIP\wclip.cpp:497:                MarkedImages++;
+WCLIP\wclip.cpp:540:#ifdef SQUEEZE_IMAGE
+WCLIP\wclip.cpp:586:    if ( MarkedBoxes || MarkedImages || nMarkedOleObjects )
+WCLIP\wclip.cpp:591:#ifdef SQUEEZE_IMAGE
+WCLIP\wclip.cpp:595:            { // dropping image on auto line?
+WCLIP\wclip.cpp:596:                if (IMAGE_FLD(f) && AUTOLINE(f->hrow))
+WCLIP\wclip.cpp:618:#ifdef SQUEEZE_IMAGE
+WCLIP\wclip.cpp:709:#ifdef SQUEEZE_IMAGE
+WCLIP\wclip.cpp:713:            // better do this for images too now
+WCLIP\wclip.cpp:717:// snapping lines/boxes/images:
+WCLIP\wclip.cpp:736:#ifdef SQUEEZE_IMAGE
+WCLIP\wclip.cpp:747:#ifdef SQUEEZE_IMAGE
+WCLIP\wclip.cpp:748:        if (IMAGE_FLD(f) && AUTOLINE(f->hrow))
+WCLIP\wclip.cpp:839:                if ( Images && IMAGE_FLD(f) )
+WCLIP\wclip.cpp:840:                    MarkedImages--;
+WCLIP\wclip.cpp:888:    MarkedImages = 0 ;
+WCLIP\wclip.cpp:919:                    if ( Images && IMAGE_FLD(f) )
+WCLIP\wclip.cpp:920:                        MarkedImages--;
+WCLIP\wclip.cpp:1039:        if ( Images && IMAGE_FLD(f) )
+WCLIP\wclip.cpp:1040:            MarkedImages--;
+WCLIP\wclip.cpp:1057:    MarkedImages = 0 ;
+WCLIP\wclip.cpp:1271:    MarkedImages = 0 ;
+WCLIP\wclip.cpp:1287:#ifdef SQUEEZE_IMAGE
+WCLIP\wclip.cpp:1350:            for (i = 0; i < (int)Images; i++)
+WCLIP\wclip.cpp:1357:                    MarkedImages++;
+WCLIP\wclip.cpp:1389:#ifdef SQUEEZE_IMAGE
+WCLIP\wclip.cpp:1391:          { // dropping image on auto line?
+WCLIP\wclip.cpp:1392:            if (IMAGE_FLD(f) && AUTOLINE(f->hrow))
+WCLIP\wclip.cpp:1454:    MarkedImages = 0 ;
+REPIO\grmain.cpp:649:    for (i = 0; i < m_pDoc->Images; i++)
+REPIO\grmain.cpp:1201:    // mjs 6/15/93    Convert image dimensions if curretn setting differs.
+REPIO\grmain.cpp:1202:    m_pDoc->checkImages(oldMeasure, m_pDoc->Measurement);
+REPIO\rpwritex.cpp:38:// Save line styles and data images
+REPIO\rpwritex.cpp:95:// New HTML options to specify file format and to copy all images.
+REPIO\rpwritex.cpp:469:// New Y delta for images for R?W 3.0
+REPIO\rpwritex.cpp:1136:    FOURBYTE(buf[2]) = (fld->fhdr.hflags & (DATAFLD | IMAGEFLD | NOTRIM | HTMLALLOWANGLE));
+REPIO\rpwritex.cpp:1162:// It is used for all field types except TEXT, lines/boxes, images, OLE objects.
+REPIO\rpwritex.cpp:1286:    if (((fld->fhdr.hflags & (DATAFLD | IMAGEFLD | NOTRIM)) & 0xFF00) != 0)
+REPIO\rpwritex.cpp:1291:    buf[0] = (char)(fld->fhdr.hflags & (DATAFLD | IMAGEFLD | NOTRIM));    // XXXX hflags is uns
+igned int
+REPIO\rpwritex.cpp:2061:// write line, box, and image records
+REPIO\rpwritex.cpp:2069:    LPRRIMAGE g ;
+REPIO\rpwritex.cpp:2181:    // Images
+REPIO\rpwritex.cpp:2182:    for (i = 0; i < (int)(m_pDoc->Images); i++)
+REPIO\rpwritex.cpp:2190:#ifdef SQUEEZE_IMAGE
+REPIO\rpwritex.cpp:2193:                // Starting in R?W 3.0 (report version 8.0), images no
+REPIO\rpwritex.cpp:2206:                // 1 in following byte means image wasn't in same dir as library
+REPIO\rpwritex.cpp:2211:                    if (yxput(yxIMAGEX, next - data, data))
+REPIO\rpwritex.cpp:2219:                    if (yxput(yxIMAGEY, j, data))
+REPIO\rpwritex.cpp:2227:                    TRACE( "putBoxes image left overflow\n" );
+REPIO\rpwritex.cpp:2231:#ifdef SQUEEZE_IMAGE
+REPIO\rpwritex.cpp:2234:                    TRACE( "putBoxes image bottom offset overflow\n" );
+REPIO\rpwritex.cpp:2239:                // Starting in R?W 3.0 (report version 8.0), images no
+REPIO\rpwritex.cpp:2243:                    TRACE( "putBoxes image top offset overflow\n" );
+REPIO\rpwritex.cpp:2253:                    TRACE( "putBoxes image xinch overflow\n" );
+REPIO\rpwritex.cpp:2259:                    TRACE( "putBoxes image yinch overflow\n" );
+REPIO\rpwritex.cpp:2277:                // 1 in following byte means image wasn't in same dir as library
+REPIO\rpwritex.cpp:2281:                if (yxput(yxIMAGE, 20+j, data))
+REPIO\rpwritex.cpp:2571:            arExportArchive << objHtml.bUseColor                 ;  // NEW - indicates whether
+color or image is active
+REPIO\rpwritex.cpp:2574:            arExportArchive << objHtml.csBackgroundImagePathname ;  // Backround image file
+REPIO\rpwritex.cpp:2579:            arExportArchive << objHtml.csImageDirectory          ;
+REPIO\rpwritex.cpp:2581:            arExportArchive << objHtml.bCopyAllImagesToDirectory ;
+REPIO\rpwritex.cpp:2582:            arExportArchive << objHtml.csHtmlImageFileFormat     ;
+REPIO\rpwritex.cpp:3154:        if (putBoxes(data))             /* Lines, boxes, and images */
+REPIO\grfield.cpp:26:// Read line styles and data image records
+REPIO\grfield.cpp:114:// Set fr.bottom to -1 for images, just like Steve did for boxes.
+REPIO\grfield.cpp:199:// Use new image library functions.
+REPIO\grfield.cpp:280:// Fixed RRW #1206 by setting our crop rect to the image size when image is
+REPIO\grfield.cpp:290:// Added new function to handle images in old DOS reports.
+REPIO\grfield.cpp:349:// Removed RSW conditional code from near image size calculations.
+REPIO\grfield.cpp:357:// Fixes RSW bug 858 (also in RRW) regarding image file search rules.
+REPIO\grfield.cpp:368:// Fixes RSW bug 858 involving search rules for image fields.
+REPIO\grfield.cpp:1181:    CFile         imageFile;
+REPIO\grfield.cpp:1182:    CFileStatus imageStatus;
+REPIO\grfield.cpp:1187:    {    // if image & library were together, try current lib dir first
+REPIO\grfield.cpp:1188:        // then try saved path, then default image directory.
+REPIO\grfield.cpp:1191:            //    of library name with filename part of image name.
+REPIO\grfield.cpp:1200:            if (imageFile.GetStatus((LPSTR)tempname,imageStatus))
+REPIO\grfield.cpp:1208:                && (imageFile.GetStatus((LPSTR)filename,imageStatus)))
+REPIO\grfield.cpp:1210:        if (*(m_pDoc->Defs.ImageDir))                // anybody home?
+REPIO\grfield.cpp:1212:            lstrcpy(tempname,m_pDoc->Defs.ImageDir);    // default image directory
+REPIO\grfield.cpp:1213:            nameptr = tempname+strlen(tempname)-1;    // ptr to last char of ImageDir copy
+REPIO\grfield.cpp:1218:            if (imageFile.GetStatus((LPSTR)tempname,imageStatus))
+REPIO\grfield.cpp:1224:        if (findImageFile(filename))
+REPIO\grfield.cpp:1235:// Need to combine code with setimagefld(), too much duplication!!
+REPIO\grfield.cpp:1236:BOOL CRrRepIO::setimagefldx(
+REPIO\grfield.cpp:1243:    LPRRIMAGE f ;
+REPIO\grfield.cpp:1250:    diffdir = buf->yxRec[36];    // 0 => image and library were in same dir
+REPIO\grfield.cpp:1255:        return FALSE;        // proceed, even though we don't have the image
+REPIO\grfield.cpp:1261:    // Allocate space for image
+REPIO\grfield.cpp:1262:    if (m_pDoc->Images == 0)
+REPIO\grfield.cpp:1263:        f = (LPRRIMAGE)(m_pDoc->globalAlloc(0, sizeof(RRIMAGE))) ;
+REPIO\grfield.cpp:1265:        f = (LPRRIMAGE)(m_pDoc->globalReAlloc((LPSTR)m_pDoc->ImgStruct,
+REPIO\grfield.cpp:1266:            (DWORD)((m_pDoc->Images+1)*sizeof(RRIMAGE)))) ;
+REPIO\grfield.cpp:1272:    f = &(m_pDoc->ImgStruct[m_pDoc->Images]);         // Point to new empty slot.
+REPIO\grfield.cpp:1273:    m_pDoc->Images++;
+REPIO\grfield.cpp:1275:    lmemset(f, 0, sizeof(RRIMAGE)) ;
+REPIO\grfield.cpp:1278:    f->fhdr.hflags = IMAGEFLD ;
+REPIO\grfield.cpp:1308:     // If different image, use full size as crop rect (#1206)
+REPIO\grfield.cpp:1313:    m_pDoc->createDDB(m_pDoc->Images-1,FALSE);        // There should be no DDB to delete (#984)
+.
+REPIO\grfield.cpp:1320:BOOL CRrRepIO::setimagefldy(YXBUF *buf)
+REPIO\grfield.cpp:1322:    LPRRIMAGE g ;
+REPIO\grfield.cpp:1325:    if (setimagefldx(buf))
+REPIO\grfield.cpp:1327:    g = &(m_pDoc->ImgStruct[m_pDoc->Images-1]);
+REPIO\grfield.cpp:1334:BOOL CRrRepIO::setimagefld(
+REPIO\grfield.cpp:1341:    LPRRIMAGE f ;
+REPIO\grfield.cpp:1349:    diffdir = buf->yxRec[19];    // 0 => image and library were in same dir
+REPIO\grfield.cpp:1356:        return FALSE;        // proceed, even though we don't have the image
+REPIO\grfield.cpp:1362:    // Allocate space for image
+REPIO\grfield.cpp:1363:    if (m_pDoc->Images == 0)
+REPIO\grfield.cpp:1364:        f = (LPRRIMAGE)(m_pDoc->globalAlloc(0, sizeof(RRIMAGE))) ;
+REPIO\grfield.cpp:1366:        f = (LPRRIMAGE)(m_pDoc->globalReAlloc((LPSTR)m_pDoc->ImgStruct,
+REPIO\grfield.cpp:1367:            (DWORD)((m_pDoc->Images+1)*sizeof(RRIMAGE)))) ;
+REPIO\grfield.cpp:1373:    f = &(m_pDoc->ImgStruct[m_pDoc->Images]);         // Point to new empty slot.
+REPIO\grfield.cpp:1374:    m_pDoc->Images++;
+REPIO\grfield.cpp:1376:    lmemset(f, 0, sizeof(RRIMAGE)) ;
+REPIO\grfield.cpp:1379:    f->fhdr.hflags = IMAGEFLD ;
+REPIO\grfield.cpp:1416:     // If different image, use full size as crop rect (#1206)
+REPIO\grfield.cpp:1421:    m_pDoc->createDDB(m_pDoc->Images-1,FALSE);        // There should be no DDB to delete (#984)
+.
+REPIO\grfield.cpp:1435:    LPRRIMAGE f ;
+REPIO\grfield.cpp:1443:    diffdir = buf->yxRec[5] & imgDIFF;    // 0 => image and library were in same dir
+REPIO\grfield.cpp:1450:        return FALSE;        // proceed, even though we don't have the image
+REPIO\grfield.cpp:1456:    // Allocate space for image
+REPIO\grfield.cpp:1457:    if (m_pDoc->Images == 0)
+REPIO\grfield.cpp:1458:        f = (LPRRIMAGE)(m_pDoc->globalAlloc(0, sizeof(RRIMAGE))) ;
+REPIO\grfield.cpp:1460:        f = (LPRRIMAGE)(m_pDoc->globalReAlloc((LPSTR)m_pDoc->ImgStruct,
+REPIO\grfield.cpp:1461:            (DWORD)((m_pDoc->Images+1)*sizeof(RRIMAGE)))) ;
+REPIO\grfield.cpp:1467:    f = &(m_pDoc->ImgStruct[m_pDoc->Images]);         // Point to new empty slot.
+REPIO\grfield.cpp:1468:    m_pDoc->Images++;
+REPIO\grfield.cpp:1470:    lmemset(f, 0, sizeof(RRIMAGE)) ;
+REPIO\grfield.cpp:1473:    f->fhdr.hflags = IMAGEFLD ;
+REPIO\grfield.cpp:1503:    // Crop DOS image to full size.
+REPIO\grfield.cpp:1504:    m_pDoc->setImageCrop(m_pDoc->Images-1, f->fhdr.fr.left, f->fhdr.fr.right, (int)xpix, (int)yp
+ix);
+REPIO\grfield.cpp:1509:    m_pDoc->createDDB(m_pDoc->Images-1,FALSE);        // There should be no DDB to delete (#984)
+.
+REPIO\grfield.cpp:2390:    case yxIMAGEX:
+REPIO\grfield.cpp:2391:        if (res = setimagefldx(buf))
+REPIO\grfield.cpp:2395:    case yxIMAGEY:
+REPIO\grfield.cpp:2396:        if (res = setimagefldy(buf))
+REPIO\grfield.cpp:2400:    case yxIMAGE:
+REPIO\grfield.cpp:2401:        if (res = setimagefld(buf))
+REPIO\grfield.cpp:2453:            //  related to charts.  I think they may be peculiar to images and maybe
+REPIO\grfield.cpp:2455:            //  to add code to checkImages() and stuff in statbar.cpp.  I've decided
+REPIO\grfield.cpp:2466:            // Next 7 statements copied from setimagefld()
+REPIO\grmisc.cpp:55:// New HTML options to specify file format and to copy all images.
+REPIO\grmisc.cpp:719:        arExportArchive >> objHtml.bUseColor                 ;  // NEW - indicates whether color o
+r image is active
+REPIO\grmisc.cpp:722:        arExportArchive >> objHtml.csBackgroundImagePathname ;  // Backround image file
+REPIO\grmisc.cpp:727:        arExportArchive >> objHtml.csImageDirectory          ;
+REPIO\grmisc.cpp:729:        arExportArchive >> objHtml.bCopyAllImagesToDirectory ;
+REPIO\grmisc.cpp:730:        arExportArchive >> objHtml.csHtmlImageFileFormat     ;
+REPIO\fnexpand.cpp:24:// Change runtime response if image file not found
+REPIO\fnexpand.cpp:211:// Use new OK / Ignore / Help dialog if image not found
+REPIO\fnexpand.cpp:862:BOOL CRrRepIO::findImageFile(
+REPIO\fnexpand.cpp:883:    if (ret = m_pDoc->openFileDialog(m_pDoc->MainWnd,(PSTR)NULL,m_pDoc->Defs.ImageDir,IDS_0209,m
+_pDoc->Defs.ImgExt,IDS_0177,0))
+REPIO\gropts.cpp:609:        // mjs 6/15/93    Save in/cm setting for use by checkImages().
+REPIO\gropts.cpp:616:        // mjs 6/15/93    Save in/cm setting for use by checkImages().
+WTOOLS\toolbars.cpp:186:    IDM_INSIMAGE,
+WTOOLS\formbar.cpp:177:    return (pDoc->MarkedFlds ? (pDoc->MarkedFlds - pDoc->MarkedBoxes - pDoc->MarkedLns - pDoc->M
+arkedImages - pDoc->nMarkedOleObjects) : 0);
+WTOOLS\formbar.cpp:418:                    // #529 Image may have bogus hpoint/hfont data.  How?
+DOPTIONS\dfileset.cpp:120:    CEdit*  pwndImageDirectory    = (CEdit*) GetDlgItem ( IDC_FILESETTINGS_IMAGE_DIRECTORY
+ ) ;
+DOPTIONS\dfileset.cpp:126:    CComboBox* pwndImageExtension = (CComboBox*) GetDlgItem ( IDC_FILESETTINGS_IMAGE_EXTENSIO
+N    ) ;
+DOPTIONS\dfileset.cpp:128:    ASSERT( pwndImageDirectory    ) ;
+DOPTIONS\dfileset.cpp:134:    ASSERT( pwndImageExtension    ) ;
+DOPTIONS\dfileset.cpp:136:    pwndImageDirectory->LimitText    ( WINPATHLEN ) ;
+DOPTIONS\dfileset.cpp:142:    VERIFY( pwndImageExtension->LimitText(EXTLEN) != CB_ERR );
+DOPTIONS\dfileset.cpp:145:    SetExtensionList ( IDC_FILESETTINGS_IMAGE_EXTENSION, IDS_0170 ) ;
+DOPTIONS\dfileset.cpp:166:    CString csImageDirectory    = m_szImageDirectory    ;
+DOPTIONS\dfileset.cpp:172:    CString csImageExtension    = m_szImageExtension    ;
+DOPTIONS\dfileset.cpp:175:    DDX_Text    (pDX, IDC_FILESETTINGS_IMAGE_DIRECTORY,    csImageDirectory   ) ;
+DOPTIONS\dfileset.cpp:181:    DDX_CBString(pDX, IDC_FILESETTINGS_IMAGE_EXTENSION,    csImageExtension   ) ;
+DOPTIONS\dfileset.cpp:184:    DDX_Control (pDX, IDC_FILESETTINGS_IMAGE_EXTENSION,    m_cbImageExtension   ) ;
+DOPTIONS\dfileset.cpp:189:    if ( csImageExtension.GetLength() > EXTLEN )
+DOPTIONS\dfileset.cpp:190:        csImageExtension = csImageExtension.Left ( EXTLEN ) ;
+DOPTIONS\dfileset.cpp:193:    strcpy ( m_szImageDirectory    , csImageDirectory    ) ;
+DOPTIONS\dfileset.cpp:199:    strcpy ( m_szImageExtension    , csImageExtension    ) ;
+DOPTIONS\dfileset.cpp:210:    ON_BN_CLICKED(IDC_FILESETTINGS_IMAGE_BROWSE,             OnFileSettingsImageBrowse
+    )
+DOPTIONS\dfileset.cpp:264:        m_szImageDirectory,
+DOPTIONS\dfileset.cpp:373:void CFileSettingsDialog::OnFileSettingsImageBrowse()
+DOPTIONS\dfileset.cpp:375:    m_pDoc->browse   ( GetSafeHwnd(), IDC_FILESETTINGS_IMAGE_DIRECTORY,    m_szImageDirectory
+,    m_pDoc->ldatadir, FALSE, IDS_0209, IDC_FILESETTINGS_IMAGE_EXTENSION, m_szImageExtension, IDS_1131 ) ;
+DOPTIONS\dfileset.cpp:376:    ::GetDlgItemText ( GetSafeHwnd(), IDC_FILESETTINGS_IMAGE_DIRECTORY,    m_szImageDirectory
+,    WINPATHLEN ) ;
+DOPTIONS\dglobdef.cpp:132:// Image extension wasn't being saved RRW #1776; RSW #1189
+DOPTIONS\dglobdef.cpp:555:    WritePrivateProfileString(WxDefKey, WxDefImgDir,   Defs.ImageDir,        theApp.m_elmFile
+Manager.GetRRInitFile());
+DOPTIONS\dglobdef.cpp:680:    strcpy ( dlgFileSettings.m_szImageDirectory,    Defs.ImageDir         ) ;
+DOPTIONS\dglobdef.cpp:687:    strcpy ( dlgFileSettings.m_szImageExtension,    Defs.ImgExt           ) ;
+DOPTIONS\dglobdef.cpp:695:        strcpy ( Defs.ImageDir,         dlgFileSettings.m_szImageDirectory    ) ;
+DOPTIONS\dglobdef.cpp:702:        strcpy ( Defs.ImgExt,           dlgFileSettings.m_szImageExtension    ) ;
+RUNTIME\wnextjob.cpp:1953:        m_pDoc->m_pFrame->displaySplashImage(TRUE);
+RUNTIME\wnextjob.cpp:3221:        m_pDoc->m_pFrame->displaySplashImage(TRUE);
+RUNTIME\wnextjob.cpp:3424:        m_pDoc->m_pFrame->displaySplashImage(TRUE);
+RUNTIME\wrtmain.cpp:380:    pFrame->displaySplashImage(FALSE);
+RUNTIME\wrtmain.cpp:870:            pFrameWnd->displaySplashImage(TRUE);
+RUNTIME\wrtmain.cpp:1168:            // I => image library arg
+RUNTIME\wrtmain.cpp:1626:        strcpy(pDoc->Defs.ImageDir, argv[pDoc->IArg]);
+RUNTIME\wrtmain.cpp:1627:        last = pDoc->Defs.ImageDir + strlen(pDoc->Defs.ImageDir) - 1;
+RUNTIME\wrtmain.cpp:1630:            strcat(pDoc->Defs.ImageDir, "\\");
+RUNTIME\wrun.cpp:282:// Call adjustImages, just like in wreport.c
+RUNTIME\wrun.cpp:1172:    pFrame->displaySplashImage(FALSE);
+RUNTIME\wrun.cpp:1249:    if (m_pDoc->m_pRepIO->bOldDOSRep)                 // fix dos images, too.
+RUNTIME\wrun.cpp:1250:      m_pDoc->adjustImages();
+RUNTIME\wrun.cpp:1476:    m_pDoc->removeImages();
+rrrpt32\rdrepstf.cpp:236:// Added DUMMY_DATADIR, DUMMY_IMAGEDIR, DUMMY_LIBDIR entries to table of
+rrrpt32\rdrepstf.cpp:361:    "DUMMY_IMAGEDIR", PATHLIMIT, "", NULL, TRUE,
+rrrpt32\rdexec.cpp:299:    LPSTR imageDir;
+rrrpt32\rdexec.cpp:327:    imageDir = getCharValPtr (m_Util.getFString(IDS_DUMMY_IMAGEDIR, 0));
+rrrpt32\rdexec.cpp:350:                   //   |     | | | | | | | | | | | | | | | | | | | image dir
+rrrpt32\rdexec.cpp:389:            imageDir && *imageDir ? " " : "",
+rrrpt32\rdexec.cpp:390:            imageDir && *imageDir ? "/I" : "",
+rrrpt32\rdexec.cpp:391:            imageDir && *imageDir ? imageDir : "",
+rrrpt32\rdexec.cpp:408:                    //     |       | | | | | | | |  |  | | | | | | | | | image dir
+rrrpt32\rdexec.cpp:445:            imageDir && *imageDir ? " " : "",
+rrrpt32\rdexec.cpp:446:            imageDir && *imageDir ? "/I" : "",
+rrrpt32\rdexec.cpp:447:            imageDir && *imageDir ? imageDir : "",
+rrrpt32\rdrepval.cpp:170:// Added g/setLibrary(), set{Data/Image/Library}Dir() routines.
+rrrpt32\rdrepval.cpp:1702:BOOL RDReport::setImageDir(
+rrrpt32\rdrepval.cpp:1708:    return setCharValue (m_Util.getFString(IDS_DUMMY_IMAGEDIR, 0), Name.GetBuffer(Name.GetLen
+gth()));        // handles errors    // "DUMMY_IMAGEDIR"
+rrrpt32\cwrapper.cpp:1670:BOOL RUNDLL_API setImageDir(
+rrrpt32\cwrapper.cpp:1678:        return pReport->setImageDir( lpszDir );
+DFILE\dreport.cpp:201:// Use library-independent image functions.
+DFILE\dreport.cpp:1324:void CRrDoc::paintImage(HWND hDlg)
+DFILE\dreport.cpp:1326:    LPRRIMAGE img = &ImgStruct[clipImage];
+DFILE\dreport.cpp:1364:    // If we have an image dir, use that.
+DFILE\dreport.cpp:1365:    if (Defs.ImageDir[0])
+DFILE\dreport.cpp:1366:        lstrcpy(file,Defs.ImageDir);
+DFILE\dreport.cpp:1386:BOOL CALLBACK CRrDoc::clipImageDialog( HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam )
+DFILE\dreport.cpp:1389:    LPRRIMAGE img;
+DFILE\dreport.cpp:1400:            pDoc->clipImage = (int)lParam;    // image index
+DFILE\dreport.cpp:1401:            lstrcpy((LPSTR)newImgDir,(LPSTR)pDoc->Defs.ImageDir);
+DFILE\dreport.cpp:1408:            pDoc->paintImage(hDlg);
+DFILE\dreport.cpp:1421:                    img = &pDoc->ImgStruct[pDoc->clipImage];
+DFILE\dreport.cpp:1456:                    img->thdr.source &= ~IMAGE_CLIPBOARD;
+DFILE\exportActivex.cpp:55:char szObjectImageParam[] = "  <PARAM NAME=\"ImagePath\" VALUE=\"%s\">\r\n";
+DFILE\exportActivex.cpp:56:char szEmbedImageParam[] = "\r\n  PARAM_ImagePath=\"%s\"";
+DFILE\exportActivex.cpp:78:    DDX_Text(pDX, IDC_IMAGEPATH, m_csImagePath);
+DFILE\exportActivex.cpp:79:    DDV_MaxChars(pDX, m_csImagePath, WINPATHLEN);
+DFILE\exportActivex.cpp:121:    ReadImageLocFromIni();
+DFILE\exportActivex.cpp:317:            WriteImageLocToIni();
+DFILE\exportActivex.cpp:338:    int iImgLen = m_csImagePath.GetLength();
+DFILE\exportActivex.cpp:352:    // check for image path
+DFILE\exportActivex.cpp:357:        // append image path to Object tag
+DFILE\exportActivex.cpp:358:        wsprintf( szImgTmp, szObjectImageParam, m_csImagePath );
+DFILE\exportActivex.cpp:361:        // append image path to EMBED tag
+DFILE\exportActivex.cpp:362:        wsprintf( szImgTmp, szEmbedImageParam, m_csImagePath );
+DFILE\exportActivex.cpp:363:        lstrcat( szEmbed, szImgTmp );    // append image path
+DFILE\exportActivex.cpp:590:void CExportOptionsActiveX::WriteImageLocToIni()
+DFILE\exportActivex.cpp:593:                            WxImageLoc, // ImageLoc  key
+DFILE\exportActivex.cpp:594:                            m_csImagePath,
+DFILE\exportActivex.cpp:598:void CExportOptionsActiveX::ReadImageLocFromIni()
+DFILE\exportActivex.cpp:601:                            WxImageLoc, // ImageLoc  key
+DFILE\exportActivex.cpp:603:                            m_csImagePath.GetBuffer(WINPATHLEN),
+DFILE\exportActivex.cpp:607:    m_csImagePath.ReleaseBuffer();
+DFILE\actxedlg.cpp:113:char szObjectImageParam[] = "  <PARAM NAME=\"ImagePath\" VALUE=\"%s\">\r\n";
+DFILE\actxedlg.cpp:114:char szEmbedImageParam[] = "\r\n  PARAM_ImagePath=\"%s\"";
+DFILE\actxedlg.cpp:510:    m_csImagePath = _T("");
+DFILE\actxedlg.cpp:531:    DDX_Text(pDX, IDC_IMAGEPATH, m_csImagePath);
+DFILE\actxedlg.cpp:532:    DDV_MaxChars(pDX, m_csImagePath, WINPATHLEN);
+DFILE\actxedlg.cpp:556:    ReadImageLocFromIni();
+DFILE\actxedlg.cpp:655:    WriteImageLocToIni();
+DFILE\actxedlg.cpp:744:void CRrActXObjTagPage::WriteImageLocToIni()
+DFILE\actxedlg.cpp:747:                            WxImageLoc, // ImageLoc  key
+DFILE\actxedlg.cpp:748:                            m_csImagePath,
+DFILE\actxedlg.cpp:752:void CRrActXObjTagPage::ReadImageLocFromIni()
+DFILE\actxedlg.cpp:755:                            WxImageLoc, // ImageLoc  key
+DFILE\actxedlg.cpp:757:                            m_csImagePath.GetBuffer(WINPATHLEN),
+DFILE\actxedlg.cpp:761:    m_csImagePath.ReleaseBuffer();
+DFILE\actxedlg.cpp:851:            WriteImageLocToIni();
+DFILE\actxedlg.cpp:873:    int iImgLen = m_csImagePath.GetLength();
+DFILE\actxedlg.cpp:887:    // check for image path
+DFILE\actxedlg.cpp:892:        // append image path to Object tag
+DFILE\actxedlg.cpp:893:        wsprintf( szImgTmp, szObjectImageParam, m_csImagePath );
+DFILE\actxedlg.cpp:896:        // append image path to EMBED tag
+DFILE\actxedlg.cpp:897:        wsprintf( szImgTmp, szEmbedImageParam, m_csImagePath );
+DFILE\actxedlg.cpp:898:        lstrcat( szEmbed, szImgTmp );    // append image path
+DFILE\dexport.cpp:117:// New HTML options to specify file format and to copy all images.
+DFILE\dexport.cpp:120:// Functions to generate an image from an object.  Mostly directory parsing.
+DFILE\dhtmlopt.cpp:45:// backimage, and border controls.
+DFILE\htmldlg.cpp:26:// Initialize the image directory when empty.
+DFILE\htmldlg.cpp:41:// Image directory was still getting overwritten.
+DFILE\htmldlg.cpp:49:// Allow existing image format even if it is not in the list.
+DFILE\htmldlg.cpp:52:// New HTML options to specify file format and to copy all images.
+DFILE\htmldlg.cpp:55:// Functions to generate an image from an object.  Mostly directory parsing.
+DFILE\htmldlg.cpp:58:// Only default to the image directory when no file is provided.
+DFILE\htmldlg.cpp:61:// Stop resetting image directory.
+DFILE\htmldlg.cpp:83:// For HTML export only allow GIF or JPG files for backgoud image
+DFILE\htmldlg.cpp:270:            m_HtmlExport.csImageDirectory = m_HtmlExport.csExportDirectory ;
+DFILE\htmldlg.cpp:272:    // If the image directory is different, then use the sample file to extract
+DFILE\htmldlg.cpp:273:    // a complete directory path to the image directory.
+DFILE\htmldlg.cpp:276:        CString csTempImagePathname = m_HtmlExport.csImageDirectory ;
+DFILE\htmldlg.cpp:277:        int nLen = csTempImagePathname.GetLength() ;
+DFILE\htmldlg.cpp:280:            if ( csTempImagePathname[nLen-1] != '\\' )
+DFILE\htmldlg.cpp:281:                csTempImagePathname += '\\' ;
+DFILE\htmldlg.cpp:282:            csTempImagePathname += "sample.jpg" ;
+DFILE\htmldlg.cpp:283:            if ( theApp.IsValidFileName(csTempImagePathname, fs) )
+DFILE\htmldlg.cpp:287:                m_HtmlExport.csImageDirectory  = szDrive     ;
+DFILE\htmldlg.cpp:288:                m_HtmlExport.csImageDirectory += szDirectory ;
+DFILE\htmldlg.cpp:293:        m_HtmlExport.csImageDirectory = m_HtmlExport.csExportDirectory ;
+DFILE\htmldlg.cpp:295:    if ( theApp.IsValidFileName(m_HtmlExport.csBackgroundImagePathname, fs) )
+DFILE\htmldlg.cpp:296:        m_HtmlExport.csBackgroundImagePathname = fs.m_szFullName ;
+DFILE\htmldlg.cpp:309:    m_csHtmlImageDirectory      (pHtmlExport->csImageDirectory         ),
+DFILE\htmldlg.cpp:311:    m_bCopyAllImagesToDirectory (pHtmlExport->bCopyAllImagesToDirectory),
+DFILE\htmldlg.cpp:312:    m_csHtmlImageFileFormat     (pHtmlExport->csHtmlImageFileFormat    ),
+DFILE\htmldlg.cpp:327:    DDX_Control (pDX, IDC_HTMLIMAGE_FILEFORMAT      , m_comboImageFileFormat          );
+DFILE\htmldlg.cpp:328:    DDX_CBString(pDX, IDC_HTMLIMAGE_FILEFORMAT      , m_csHtmlImageFileFormat         );
+DFILE\htmldlg.cpp:329:    DDX_Check   (pDX, IDC_HTMLIMAGE_COPY_ALL        , m_bCopyAllImagesToDirectory     );
+DFILE\htmldlg.cpp:330:    DDX_Check   (pDX, IDC_HTMLIMAGE_PLACE_SAME      , m_bHtmlSameDirectoryAsOutput    );
+DFILE\htmldlg.cpp:331:    DDX_Text    (pDX, IDC_HTMLIMAGE_DIRECTORY       , m_csHtmlImageDirectory          );
+DFILE\htmldlg.cpp:332:    DDX_Control (pDX, IDC_HTMLIMAGE_DIRECTORY       , m_editHtmlImageDirectory        );
+DFILE\htmldlg.cpp:333:    DDX_Control (pDX, IDC_HTMLIMAGE_DIRECTORY_BROWSE, m_buttonHtmlImageDirectoryBrowse);
+DFILE\htmldlg.cpp:334:    DDX_Control (pDX, IDC_HTMLIMAGE_SAMPLE          , m_staticSample                  );
+DFILE\htmldlg.cpp:379:            m_csHtmlImageDirectory = m_csExportDirectory ;
+DFILE\htmldlg.cpp:382:        m_csHtmlImageFileFormat.TrimLeft () ;
+DFILE\htmldlg.cpp:383:        m_csHtmlImageFileFormat.TrimRight() ;
+DFILE\htmldlg.cpp:384:        if ( m_csHtmlImageFileFormat.GetLength() && (m_csHtmlImageFileFormat[0] == '.') )
+DFILE\htmldlg.cpp:385:            m_csHtmlImageFileFormat = m_csHtmlImageFileFormat.Mid ( 1 ) ;
+DFILE\htmldlg.cpp:393:    ON_BN_CLICKED    (IDC_HTMLIMAGE_PLACE_SAME      , OnHtmlImagePlaceSame           )
+DFILE\htmldlg.cpp:394:    ON_BN_CLICKED    (IDC_HTMLIMAGE_DIRECTORY_BROWSE, OnHtmlImageDirectoryBrowse     )
+DFILE\htmldlg.cpp:395:    ON_EN_CHANGE     (IDC_HTMLIMAGE_DIRECTORY       , OnChangeHtmlImageDirectory     )
+DFILE\htmldlg.cpp:396:    ON_CBN_SELCHANGE (IDC_HTMLIMAGE_FILEFORMAT      , OnSelchangeHtmlimageFileformat )
+DFILE\htmldlg.cpp:397:    ON_CBN_EDITCHANGE(IDC_HTMLIMAGE_FILEFORMAT      , OnEditchangeHtmlimageFileformat)
+DFILE\htmldlg.cpp:408:    CString csImageFileFormats ;
+DFILE\htmldlg.cpp:409:    for ( int nFormat=IDS_HTML_IMAGE_FORMATS_FIRST ; nFormat <= IDS_HTML_IMAGE_FORMATS_LAST ; nFo
+rmat++ )
+DFILE\htmldlg.cpp:411:        VERIFY( csImageFileFormats.LoadString(nFormat) );  // "GIF|JPG|BMP|" // image types
+DFILE\htmldlg.cpp:412:        m_comboImageFileFormat.AddString ( csImageFileFormats ) ;
+DFILE\htmldlg.cpp:414:    if ( m_comboImageFileFormat.SelectString(-1, m_csHtmlImageFileFormat) == CB_ERR )
+DFILE\htmldlg.cpp:415:        m_comboImageFileFormat.SetWindowText ( m_csHtmlImageFileFormat ) ;
+DFILE\htmldlg.cpp:417:    m_comboImageFileFormat  .LimitText ( 3        ) ;
+DFILE\htmldlg.cpp:419:    m_editHtmlImageDirectory.LimitText ( MAX_PATH ) ;
+DFILE\htmldlg.cpp:422:    // 06/11/97 PAR.  Scott and I concluded that the images should be always be copied.
+DFILE\htmldlg.cpp:423:    // We also concluded that bCopyAllImagesToDirectory and the bSameDirectoryAsOutput
+DFILE\htmldlg.cpp:426:    m_bCopyAllImagesToDirectory  = TRUE  ;
+DFILE\htmldlg.cpp:428:    // 015/12/97 PAR. Can't call OnHtmlImagePlaceSame() because it will always overwrite the imag
+e directory.
+DFILE\htmldlg.cpp:431:    m_editHtmlImageDirectory        .EnableWindow ( !m_bHtmlSameDirectoryAsOutput ) ;
+DFILE\htmldlg.cpp:432:    m_buttonHtmlImageDirectoryBrowse.EnableWindow ( !m_bHtmlSameDirectoryAsOutput ) ;
+DFILE\htmldlg.cpp:434:        m_csHtmlImageDirectory = m_csExportDirectory ;
+DFILE\htmldlg.cpp:436:    // 07/02/97 PAR.  An empty image directory can cause problems.
+DFILE\htmldlg.cpp:438:    if ( m_csHtmlImageDirectory.IsEmpty() && m_csExportPathname.GetLength() )
+DFILE\htmldlg.cpp:447:            m_csHtmlImageDirectory = CString(szDrive) + CString(szDirectory) ;
+DFILE\htmldlg.cpp:449:            m_csHtmlImageDirectory = CString(szDrive) + CString(szDirectory) + CString(szFilename
+) ;
+DFILE\htmldlg.cpp:450:        m_editHtmlImageDirectory.SetWindowText ( m_csHtmlImageDirectory ) ;
+DFILE\htmldlg.cpp:469:    CString csTypicalImageDirectory ;
+DFILE\htmldlg.cpp:470:    csTypicalImageDirectory  = szDrive     ;
+DFILE\htmldlg.cpp:471:    csTypicalImageDirectory += szDirectory ;
+DFILE\htmldlg.cpp:472:    csTypicalImageDirectory += szFilename  ;
+DFILE\htmldlg.cpp:476:    // So, only add the trailing slash if the image directory has one.
+DFILE\htmldlg.cpp:477:    int nTrailingSlash = m_csHtmlImageDirectory.GetLength() ;
+DFILE\htmldlg.cpp:478:    if ( nTrailingSlash && m_csHtmlImageDirectory[nTrailingSlash-1] == '\\' )
+DFILE\htmldlg.cpp:479:        csTypicalImageDirectory += '\\' ;
+DFILE\htmldlg.cpp:481:    BOOL bAlsoChangeImageDirectory=FALSE ;
+DFILE\htmldlg.cpp:482:    if ( m_csHtmlImageDirectory.GetLength() == 0 )
+DFILE\htmldlg.cpp:483:        bAlsoChangeImageDirectory = TRUE ;
+DFILE\htmldlg.cpp:484:    else if ( m_csHtmlImageDirectory.CompareNoCase(csTypicalImageDirectory) == 0 )
+DFILE\htmldlg.cpp:485:        bAlsoChangeImageDirectory = TRUE ;
+DFILE\htmldlg.cpp:499:            m_csHtmlImageDirectory = m_csExportDirectory ;
+DFILE\htmldlg.cpp:501:        else if ( bAlsoChangeImageDirectory )
+DFILE\htmldlg.cpp:503:            // The image directory is the same as the export name.
+DFILE\htmldlg.cpp:504:            m_csHtmlImageDirectory  = m_csExportDirectory ;
+DFILE\htmldlg.cpp:505:            m_csHtmlImageDirectory += szFilename ;
+DFILE\htmldlg.cpp:506:            m_csHtmlImageDirectory += '\\'       ;  // Include trailing slash
+DFILE\htmldlg.cpp:516:void CHtmlLocationPage::OnHtmlImagePlaceSame()
+DFILE\htmldlg.cpp:521:    m_editHtmlImageDirectory        .EnableWindow ( !m_bHtmlSameDirectoryAsOutput ) ;
+DFILE\htmldlg.cpp:522:    m_buttonHtmlImageDirectoryBrowse.EnableWindow ( !m_bHtmlSameDirectoryAsOutput ) ;
+DFILE\htmldlg.cpp:524:    // 04/18/97 PAR.  Image directory was always being reset.  This was fixed after RRW8 Beta 1b.
+
+DFILE\htmldlg.cpp:526:        m_csHtmlImageDirectory = m_csExportDirectory ;
+DFILE\htmldlg.cpp:537:        m_csHtmlImageDirectory = CString(szDrive) + CString(szDirectory) + CString(szFilename) ;
+DFILE\htmldlg.cpp:555:    CString csDefaultImageDirectory ;
+DFILE\htmldlg.cpp:557:        csDefaultImageDirectory = CString(szDrive) + CString(szDirectory) ;
+DFILE\htmldlg.cpp:559:        csDefaultImageDirectory = CString(szDrive) + CString(szDirectory) + CString(szFilename) ;
+DFILE\htmldlg.cpp:561:     if ( csDefaultImageDirectory == m_csHtmlImageDirectory )
+DFILE\htmldlg.cpp:566:            m_csHtmlImageDirectory = CString(szDrive) + CString(szDirectory) ;
+DFILE\htmldlg.cpp:568:            m_csHtmlImageDirectory = CString(szDrive) + CString(szDirectory) + CString(szFilename
+) ;
+DFILE\htmldlg.cpp:576:void CHtmlLocationPage::OnChangeHtmlImageDirectory()
+DFILE\htmldlg.cpp:590:        HTML_EXPORT::DirectoryDifference ( m_csExportDirectory, m_csHtmlImageDirectory, csDiffere
+nce ) ;
+DFILE\htmldlg.cpp:592:    csSample.Format ( "<img src = \"%ssample.%s\">", csDifference, m_csHtmlImageFileFormat ) ;
+DFILE\htmldlg.cpp:596:void CHtmlLocationPage::OnHtmlImageDirectoryBrowse()
+DFILE\htmldlg.cpp:598:    char* pszImageDirectory = m_csHtmlImageDirectory.GetBuffer ( WINPATHLEN ) ;
+DFILE\htmldlg.cpp:599:    CString csFilesOfImageFormat = CString("*.") + m_csHtmlImageFileFormat ;
+DFILE\htmldlg.cpp:600:    m_pDoc->browse   ( GetSafeHwnd(), IDC_HTMLIMAGE_DIRECTORY, pszImageDirectory, m_pDoc->ldatadi
+r, FALSE, IDS_0209, IDC_HTMLIMAGE_DIRECTORY, csFilesOfImageFormat.GetBuffer(0), IDS_HTML_IMAGE_DIRECTORY ) ;
+DFILE\htmldlg.cpp:601:    ::GetDlgItemText ( GetSafeHwnd(), IDC_HTMLIMAGE_DIRECTORY, pszImageDirectory, WINPATHLEN ) ;
+DFILE\htmldlg.cpp:602:    m_csHtmlImageDirectory.ReleaseBuffer() ;
+DFILE\htmldlg.cpp:604:    OnChangeHtmlImageDirectory() ;
+DFILE\htmldlg.cpp:607:void CHtmlLocationPage::OnSelchangeHtmlimageFileformat()
+DFILE\htmldlg.cpp:609:    OnChangeHtmlImageDirectory() ;
+DFILE\htmldlg.cpp:612:void CHtmlLocationPage::OnEditchangeHtmlimageFileformat()
+DFILE\htmldlg.cpp:614:    OnChangeHtmlImageDirectory() ;
+DFILE\htmldlg.cpp:747:    m_csHtmlBackgroundImage (m_pExport->csBackgroundImagePathname),
+DFILE\htmldlg.cpp:760:    DDX_Radio  (pDX, DIMAGESET  , m_nHtmlBackgroundType    );
+DFILE\htmldlg.cpp:762:    DDX_Control(pDX, DIMAGEPATH , m_editHtmlBackgroundImage);
+DFILE\htmldlg.cpp:763:    DDX_Text   (pDX, DIMAGEPATH , m_csHtmlBackgroundImage  );
+DFILE\htmldlg.cpp:764:    DDX_Control(pDX, DIMAGEGET  , m_buttonImageBrowse      );
+DFILE\htmldlg.cpp:780:    ON_BN_CLICKED   (DIMAGEGET  , OnHtmlBackgroundImageBrowse)
+DFILE\htmldlg.cpp:782:    ON_BN_CLICKED   (DIMAGESET  , OnHtmlBackgroundImage      )
+DFILE\htmldlg.cpp:803:// show background image
+DFILE\htmldlg.cpp:804:BOOL CHtmlBackgroundPage::displayImage( HDC hDC, CRect &rect )
+DFILE\htmldlg.cpp:808:    if ( GetDlgItemText( DIMAGEPATH, szPath, _MAX_PATH ))
+DFILE\htmldlg.cpp:814:        { // set up to load image
+DFILE\htmldlg.cpp:831:                { // tile image into sample area
+DFILE\htmldlg.cpp:850:// show sample color or image
+DFILE\htmldlg.cpp:854:    DDX_Radio ( &dx, DIMAGESET, m_nHtmlBackgroundType ) ;
+DFILE\htmldlg.cpp:884:        { // image
+DFILE\htmldlg.cpp:885:            if ( bShowText = displayImage( clientDC.GetSafeHdc(), rect ))
+DFILE\htmldlg.cpp:943:    m_editHtmlBackgroundImage.LimitText ( MAX_PATH ) ;
+DFILE\htmldlg.cpp:973:void CHtmlBackgroundPage::OnHtmlBackgroundImageBrowse()
+DFILE\htmldlg.cpp:977:    // 04/18/97 PAR.  Use the default image directory only when no image is provided.
+DFILE\htmldlg.cpp:979:    CString csDefaultImageDirectory = m_pDoc->Defs.ImageDir ;
+DFILE\htmldlg.cpp:980:    if ( m_csHtmlBackgroundImage.GetLength() )
+DFILE\htmldlg.cpp:981:        csDefaultImageDirectory.Empty() ;
+DFILE\htmldlg.cpp:982:    strcpy ( m_pDoc->Paths->FileOpenName, m_csHtmlBackgroundImage ) ;
+DFILE\htmldlg.cpp:984:    if ( m_pDoc->openFileDialog(GetSafeHwnd(),m_pDoc->Paths->FileOpenName, csDefaultImageDirector
+y.GetBuffer(0),IDS_0209,m_pDoc->Defs.ImgExt,IDS_0177,0) )
+DFILE\htmldlg.cpp:986:        m_csHtmlBackgroundImage = m_pDoc->Paths->FileOpenName ; // return it
+DFILE\htmldlg.cpp:988:        showSample() ; // show sample if image file exists
+DFILE\htmldlg.cpp:994:    OnHtmlBackgroundImage() ;
+DFILE\htmldlg.cpp:997:void CHtmlBackgroundPage::OnHtmlBackgroundImage()
+DFILE\htmldlg.cpp:1001:    m_editHtmlBackgroundImage.EnableWindow ( !m_nHtmlBackgroundType ) ;
+DFILE\htmldlg.cpp:1002:    m_buttonImageBrowse      .EnableWindow ( !m_nHtmlBackgroundType ) ;
+DFILE\htmldlg.cpp:1006:        GotoDlgCtrl ( &m_editHtmlBackgroundImage ) ;
+DFILE\mkhtmdlg.cpp:45:char szObjectImageParam[] = "  <PARAM NAME=\"ImagePath\" VALUE=\"%s\">\r\n";
+DFILE\mkhtmdlg.cpp:46:char szEmbedImageParam[] = "\r\n  PARAM_ImagePath=\"%s\"";
+DFILE\mkhtmdlg.cpp:202:    // check for image path
+DFILE\mkhtmdlg.cpp:205:    if ( GetDlgItemText( IDC_IMAGEPATH, szImgPath, MAX_URL_LENGTH ))
+DFILE\mkhtmdlg.cpp:207:        wsprintf( szImgTmp, szObjectImageParam, szImgPath );
+DFILE\mkhtmdlg.cpp:214:    { // append image path to EMBED tag
+DFILE\mkhtmdlg.cpp:215:        wsprintf( szImgTmp, szEmbedImageParam, szImgPath );
+DFILE\mkhtmdlg.cpp:216:        lstrcat( szEmbed, szImgTmp );    // append image path
+DFILE\exporthtml.cpp:78:    DDX_Control (pDX, IDC_HTMLIMAGE_FILEFORMAT,        m_comboImageFileFormat          );
+DFILE\exporthtml.cpp:79:    DDX_CBString(pDX, IDC_HTMLIMAGE_FILEFORMAT,        imageFileFormat         );
+DFILE\exporthtml.cpp:80:    DDX_Text    (pDX, IDC_HTMLIMAGE_DIRECTORY,        imageDirectory          );
+DFILE\exporthtml.cpp:81:    DDX_Control (pDX, IDC_HTMLIMAGE_DIRECTORY       , m_editHtmlImageDirectory        );
+DFILE\exporthtml.cpp:82:    DDX_Control (pDX, IDC_HTMLIMAGE_DIRECTORY_BROWSE, m_buttonHtmlImageDirectoryBrowse);
+DFILE\exporthtml.cpp:83://    DDX_Control (pDX, IDC_HTMLIMAGE_SAMPLE          , m_staticSample                  );
+DFILE\exporthtml.cpp:86:    DDX_Radio  (pDX, DIMAGESET  , backgroundType    );
+DFILE\exporthtml.cpp:88:    DDX_Control(pDX, DIMAGEPATH , m_editHtmlBackgroundImage);
+DFILE\exporthtml.cpp:89:    DDX_Text   (pDX, DIMAGEPATH , backgroundImage  );
+DFILE\exporthtml.cpp:90:    DDX_Control(pDX, DIMAGEGET  , m_buttonImageBrowse      );
+DFILE\exporthtml.cpp:107:    ON_BN_CLICKED    (IDC_HTMLIMAGE_DIRECTORY_BROWSE, OnHtmlImageDirectoryBrowse     )
+DFILE\exporthtml.cpp:108:    ON_EN_CHANGE    (IDC_HTMLIMAGE_DIRECTORY       , OnChangeHtmlImageDirectory     )
+DFILE\exporthtml.cpp:109:    ON_CBN_SELCHANGE (IDC_HTMLIMAGE_FILEFORMAT      , OnSelchangeHtmlimageFileformat )
+DFILE\exporthtml.cpp:110:    ON_CBN_EDITCHANGE(IDC_HTMLIMAGE_FILEFORMAT      , OnEditchangeHtmlimageFileformat)
+DFILE\exporthtml.cpp:114:    ON_BN_CLICKED   (DIMAGEGET  , OnHtmlBackgroundImageBrowse)
+DFILE\exporthtml.cpp:116:    ON_BN_CLICKED   (DIMAGESET  , OnHtmlBackgroundImage      )
+DFILE\exporthtml.cpp:164:    // initialize image section
+DFILE\exporthtml.cpp:165:    CString csImageFileFormats ;
+DFILE\exporthtml.cpp:166:    for ( nFormat=IDS_HTML_IMAGE_FORMATS_FIRST ; nFormat <= IDS_HTML_IMAGE_FORMATS_LAST ; nFor
+mat++ )
+DFILE\exporthtml.cpp:168:        VERIFY( csImageFileFormats.LoadString(nFormat) );  // "GIF|JPG|BMP|" // image types
+DFILE\exporthtml.cpp:169:        m_comboImageFileFormat.AddString ( csImageFileFormats ) ;
+DFILE\exporthtml.cpp:171:    if ( m_comboImageFileFormat.SelectString(-1, imageFileFormat) == CB_ERR )
+DFILE\exporthtml.cpp:172:        m_comboImageFileFormat.SetWindowText ( imageFileFormat ) ;
+DFILE\exporthtml.cpp:175:    m_comboImageFileFormat  .LimitText ( 3        ) ;
+DFILE\exporthtml.cpp:177:    m_editHtmlImageDirectory.LimitText ( MAX_PATH ) ;
+DFILE\exporthtml.cpp:180:    // 06/11/97 PAR.  Scott and I concluded that the images should be always be copied.
+DFILE\exporthtml.cpp:181:    // We also concluded that bCopyAllImagesToDirectory and the bSameDirectoryAsOutput
+DFILE\exporthtml.cpp:184:    m_bCopyAllImagesToDirectory  = TRUE  ;
+DFILE\exporthtml.cpp:186:    // 05/12/97 PAR. Can't call OnHtmlImagePlaceSame() because it will always overwrite the im
+age directory.
+DFILE\exporthtml.cpp:189:    m_editHtmlImageDirectory        .EnableWindow ( !m_bHtmlSameDirectoryAsOutput ) ;
+DFILE\exporthtml.cpp:190:    m_buttonHtmlImageDirectoryBrowse.EnableWindow ( !m_bHtmlSameDirectoryAsOutput ) ;
+DFILE\exporthtml.cpp:192:        imageDirectory = m_csExportDirectory ;
+DFILE\exporthtml.cpp:194:    // 07/02/97 PAR.  An empty image directory can cause problems.
+DFILE\exporthtml.cpp:196:    if ( imageDirectory.IsEmpty() && XFileName.GetLength() )
+DFILE\exporthtml.cpp:205:            imageDirectory = CString(szDrive) + CString(szDirectory) ;
+DFILE\exporthtml.cpp:207:            imageDirectory = CString(szDrive) + CString(szDirectory) + CString(szFilename) ;
+DFILE\exporthtml.cpp:208:        m_editHtmlImageDirectory.SetWindowText ( imageDirectory ) ;
+DFILE\exporthtml.cpp:219:    m_editHtmlBackgroundImage.LimitText ( MAX_PATH ) ;
+DFILE\exporthtml.cpp:287:void CExportOptionsHTML::OnHtmlImageDirectoryBrowse()
+DFILE\exporthtml.cpp:289:    char* pszImageDirectory = imageDirectory.GetBuffer ( WINPATHLEN ) ;
+DFILE\exporthtml.cpp:290:    CString csFilesOfImageFormat = CString("*.") + imageFileFormat ;
+DFILE\exporthtml.cpp:291:    m_pDoc->browse   ( GetSafeHwnd(), IDC_HTMLIMAGE_DIRECTORY, pszImageDirectory, m_pDoc->ldat
+adir, FALSE, IDS_0209, IDC_HTMLIMAGE_DIRECTORY, csFilesOfImageFormat.GetBuffer(0), IDS_HTML_IMAGE_DIRECTORY ) ;
+DFILE\exporthtml.cpp:292:    ::GetDlgItemText ( GetSafeHwnd(), IDC_HTMLIMAGE_DIRECTORY, pszImageDirectory, WINPATHLEN )
+ ;
+DFILE\exporthtml.cpp:293:    imageDirectory.ReleaseBuffer() ;
+DFILE\exporthtml.cpp:295:    OnChangeHtmlImageDirectory() ;
+DFILE\exporthtml.cpp:298:void CExportOptionsHTML::OnSelchangeHtmlimageFileformat()
+DFILE\exporthtml.cpp:300:    OnChangeHtmlImageDirectory() ;
+DFILE\exporthtml.cpp:303:void CExportOptionsHTML::OnEditchangeHtmlimageFileformat()
+DFILE\exporthtml.cpp:305:    OnChangeHtmlImageDirectory() ;
+DFILE\exporthtml.cpp:309:void CExportOptionsHTML::OnChangeHtmlImageDirectory()
+DFILE\exporthtml.cpp:319:    OnHtmlBackgroundImage() ;
+DFILE\exporthtml.cpp:322:void CExportOptionsHTML::OnHtmlBackgroundImage()
+DFILE\exporthtml.cpp:326:    m_editHtmlBackgroundImage.EnableWindow ( !backgroundType ) ;
+DFILE\exporthtml.cpp:327:    m_buttonImageBrowse      .EnableWindow ( !backgroundType ) ;
+DFILE\exporthtml.cpp:331:        GotoDlgCtrl ( &m_editHtmlBackgroundImage ) ;
+DFILE\exporthtml.cpp:352:void CExportOptionsHTML::OnHtmlBackgroundImageBrowse()
+DFILE\exporthtml.cpp:356:    // 04/18/97 PAR.  Use the default image directory only when no image is provided.
+DFILE\exporthtml.cpp:358:    CString csDefaultImageDirectory = m_pDoc->Defs.ImageDir ;
+DFILE\exporthtml.cpp:359:    if ( backgroundImage.GetLength() )
+DFILE\exporthtml.cpp:360:        csDefaultImageDirectory.Empty() ;
+DFILE\exporthtml.cpp:361:    strcpy ( m_pDoc->Paths->FileOpenName, backgroundImage ) ;
+DFILE\exporthtml.cpp:363:    if ( m_pDoc->openFileDialog(GetSafeHwnd(),m_pDoc->Paths->FileOpenName, csDefaultImageDirec
+tory.GetBuffer(0),IDS_0209,m_pDoc->Defs.ImgExt,IDS_0177,0) )
+DFILE\exporthtml.cpp:365:        backgroundImage = m_pDoc->Paths->FileOpenName ; // return it
+DFILE\exporthtml.cpp:367://        showSample() ; // show sample if image file exists
+DFILE\exporthtml.cpp:381:    m_HtmlExport.csImageDirectory    =imageDirectory ;
+DFILE\exporthtml.cpp:383:    m_HtmlExport.csHtmlImageFileFormat =imageFileFormat ;
+DFILE\exporthtml.cpp:387:    m_HtmlExport.bCopyAllImagesToDirectory = m_bCopyAllImagesToDirectory ;
+DFILE\exporthtml.cpp:390:    m_HtmlExport.csBackgroundImagePathname  = backgroundImage ;
+DFILE\exporthtml.cpp:414:    imageDirectory                    = m_HtmlExport.csImageDirectory ;
+DFILE\exporthtml.cpp:416:    imageFileFormat                    = m_HtmlExport.csHtmlImageFileFormat ;
+DFILE\exporthtml.cpp:420:    m_bCopyAllImagesToDirectory        = m_HtmlExport.bCopyAllImagesToDirectory ;
+DFILE\exporthtml.cpp:423:    backgroundImage                    = m_HtmlExport.csBackgroundImagePathname ;
+DCALC\dtotals.cpp:1072:    pImageListSmall = NULL ;
+DCALC\dtotals.cpp:1080:    if (pImageListSmall != NULL)
+DCALC\dtotals.cpp:1081:        delete pImageListSmall;
+DCALC\dtotals.cpp:1136:    pImageListSmall = new CImageList();
+DCALC\dtotals.cpp:1137:    pImageListSmall->Create(16, 16, TRUE, 3, 3);
+DCALC\dtotals.cpp:1138:    pImageListSmall->Add(pApp->LoadIcon(IDI_ICON_GO));
+DCALC\dtotals.cpp:1139:    pImageListSmall->Add(pApp->LoadIcon(IDI_ICON_MAYBE));
+DCALC\dtotals.cpp:1140:    pImageListSmall->Add(pApp->LoadIcon(IDI_ICON_NOGO));
+DCALC\dtotals.cpp:1141:    flist->SetImageList(pImageListSmall, LVSIL_SMALL);
+DCALC\dtotals.cpp:1186:        lvitem.mask = LVIF_TEXT | LVIF_IMAGE | LVIF_PARAM ;
+DCALC\dtotals.cpp:1189:        lvitem.iImage = status ;
+DCALC\dtotals.cpp:1280:        lvitem.mask = LVIF_TEXT | LVIF_IMAGE | LVIF_PARAM ;
+DCALC\dtotals.cpp:1288:        lvitem.mask = LVIF_PARAM | LVIF_IMAGE ;
+DCALC\dtotals.cpp:1294:        status = lvitem.iImage ;
+DCALC\dparams.cpp:2291:    pImageListSmall = NULL ;
+DCALC\dparams.cpp:2297:    if( pImageListSmall != NULL)
+DCALC\dparams.cpp:2298:        delete pImageListSmall;
+DCALC\dparams.cpp:2615:    pImageListSmall = new CImageList();
+DCALC\dparams.cpp:2616:    pImageListSmall->Create(16, 16, TRUE, 2, 2);
+DCALC\dparams.cpp:2617:    pImageListSmall->Add(pApp->LoadIcon(IDI_ICON_BLANK));
+DCALC\dparams.cpp:2618:    pImageListSmall->Add(pApp->LoadIcon(IDI_ICON_GO));
+DCALC\dparams.cpp:2619:    flist->SetImageList(pImageListSmall, LVSIL_SMALL);
+DCALC\dparams.cpp:3038:            lvitem.mask = LVIF_TEXT | LVIF_IMAGE ;
+DCALC\dparams.cpp:3044:            lvitem.iImage = x.def ? 1 : 0 ;
+DCALC\dparams.cpp:3530:    pImageListSmall = NULL ;
+DCALC\dparams.cpp:3539:    if( pImageListSmall != NULL)
+DCALC\dparams.cpp:3540:        delete pImageListSmall;
+DCALC\dparams.cpp:3730:    pImageListSmall = new CImageList();
+DCALC\dparams.cpp:3731:    pImageListSmall->Create(16, 16, TRUE, 2, 2);
+DCALC\dparams.cpp:3732:    pImageListSmall->Add(pApp->LoadIcon(IDI_ICON_UNCHECK));
+DCALC\dparams.cpp:3733:    pImageListSmall->Add(pApp->LoadIcon(IDI_ICON_CHECK));
+DCALC\dparams.cpp:3734:    plist->SetImageList(pImageListSmall, LVSIL_SMALL);
+DCALC\dparams.cpp:4406:            lvitem.mask = LVIF_TEXT | LVIF_IMAGE ;
+DCALC\dparams.cpp:4412:            lvitem.iImage = (k == pindex) ? 1 : 0 ;
+alive\rrlite\viewimg.cpp:12:// Handles rendering of images
+alive\rrlite\viewimg.cpp:41:ViewImage::ViewImage( ViewCtrl *pViewCtrl, HDC hDC, BOOL bPreview, LPRECT pRect,
+alive\rrlite\viewimg.cpp:42:    UINT nCount, IMAGE *pImage ) : ViewRep( pViewCtrl, hDC, bPreview, pRect, nCount )
+alive\rrlite\viewimg.cpp:44:    m_pImage = pImage;        // pointer to image array
+alive\rrlite\viewimg.cpp:49:ViewImage::~ViewImage()
+alive\rrlite\viewimg.cpp:54:// Speed up image preview by caching the last image as a DDB
+alive\rrlite\viewimg.cpp:55:void ViewImage::displayDDB( int nDib, HDC hDC, int nLeft, int nTop, int nWidth, int nHeight
+ )
+alive\rrlite\viewimg.cpp:58:    { // if changing to a new image, remove cached bitmap
+alive\rrlite\viewimg.cpp:68:// Output image to display or printer
+alive\rrlite\viewimg.cpp:69:void ViewImage::renderImage( IMAGE *pImg )
+alive\rrlite\viewimg.cpp:87:            { // cropped image
+alive\rrlite\viewimg.cpp:109:            { // cropped image
+alive\rrlite\viewimg.cpp:121:void ViewImage::showPage( void )
+alive\rrlite\viewimg.cpp:123:    if ( loadImageLib())
+alive\rrlite\viewimg.cpp:127:        IMAGE *pImg = m_pImage;
+alive\rrlite\viewimg.cpp:129:        // show each image on page
+alive\rrlite\viewimg.cpp:131:            renderImage( pImg );
+alive\rrlite\rrvwctrl.cpp:71:// Find images in ImagePath
+alive\rrlite\rrvwctrl.cpp:111:// Image path property name
+alive\rrlite\rrvwctrl.cpp:112://WCHAR wszImagePath[] = L"ImagePath";
+alive\rrlite\rrvwctrl.cpp:158:    m_pImagePath = NULL;                // image path
+alive\rrlite\rrvwctrl.cpp:184:    m_bImageDLLError = FALSE;            // Accusoft DLL load flag
+alive\rrlite\rrvwctrl.cpp:195:    m_hImageLib = NULL;    // Accusoft not loaded
+alive\rrlite\rrvwctrl.cpp:197:    m_hMutex = CreateMutex( NULL, FALSE, _T( "RRPrViewImage" ));
+alive\rrlite\rrvwctrl.cpp:226:    if ( m_pImagePath )
+alive\rrlite\rrvwctrl.cpp:227:        delete [] m_pImagePath;
+alive\rrlite\rrvwctrl.cpp:241:    if ( m_hImageLib != NULL )
+alive\rrlite\rrvwctrl.cpp:242:        ::FreeLibrary( m_hImageLib );
+alive\rrlite\rrvwctrl.cpp:457:    { // got data file address, now get image path to image files
+alive\rrlite\rrvwctrl.cpp:458:        getImagePath( pPropertyBag, pErrorLog );
+alive\rrlite\rrvwctrl.cpp:575:// "Get" image path property function
+alive\rrlite\rrvwctrl.cpp:576:STDMETHODIMP ViewCtrl::get_ImagePath( BSTR * pPath )
+alive\rrlite\rrvwctrl.cpp:586:    *pBstrPath = ( m_pImagePath && *m_pImagePath ) ?
+alive\rrlite\rrvwctrl.cpp:587:        BSTRFROMANSI( m_pImagePath ) : SysAllocString(L"");
+alive\rrlite\rrvwctrl.cpp:593:// "Put" image path property function
+alive\rrlite\rrvwctrl.cpp:594:STDMETHODIMP ViewCtrl::put_ImagePath( BSTR pPath )
+alive\rrlite\rrvwctrl.cpp:602:    if ( m_pImagePath )
+alive\rrlite\rrvwctrl.cpp:603:        delete [] m_pImagePath;
+alive\rrlite\rrvwctrl.cpp:605:    m_pImagePath = new TCHAR[dwLen + 1];
+alive\rrlite\rrvwctrl.cpp:606:    if ( m_pImagePath )
+alive\rrlite\rrvwctrl.cpp:607:        lstrcpy( m_pImagePath, pszPath );
+alive\rrlite\rrvwctrl.cpp:612:    PropertyChanged( DISPID_IMAGEPATH );
+alive\rrlite\rrvwctrl.cpp:614:    return m_pImagePath ? S_OK : E_OUTOFMEMORY;
+alive\rrlite\rrvwctrl.cpp:797:    { // if file read, check if image DLL loaded
+alive\rrlite\rrvwctrl.cpp:798:        if ( m_bImageDLLError )
+alive\rrlite\rrvwctrl.cpp:799:            errorMessage( IDS_ERR_IMAGELIB );
+alive\rrlite\readv2.cpp:94:                    // and finally images
+alive\rrlite\readv2.cpp:95:                    if ( pagePos.wImageCount )
+alive\rrlite\readv2.cpp:96:                    { // got some image(s)
+alive\rrlite\readv2.cpp:97:                        IMAGE *pData = (IMAGE *)HeapAlloc( GetProcessHeap(),
+alive\rrlite\readv2.cpp:98:                            HEAP_ZERO_MEMORY, pagePos.wImageCount * sizeof( IMAGE ));
+alive\rrlite\readv2.cpp:101:                            pRepPage->m_pImages = pData;
+alive\rrlite\readv2.cpp:103:                            pRepPage->m_nImageCount = pagePos.wImageCount;
+alive\rrlite\readv2.cpp:144:                if ( !g_bStopThreads && ( pRepPage->m_pImages != NULL ))
+alive\rrlite\readv2.cpp:145:                { // and finally, images
+alive\rrlite\readv2.cpp:146:                    if ( !pViewCtrl->m_bImageDLLError && ( pViewCtrl->m_hImageLib == NULL )
+)
+alive\rrlite\readv2.cpp:148:                        pViewCtrl->m_hImageLib = loadImageLib();
+alive\rrlite\readv2.cpp:149:                        if ( pViewCtrl->m_hImageLib == NULL )
+alive\rrlite\readv2.cpp:150:                            pViewCtrl->m_bImageDLLError = TRUE;    // flag error
+alive\rrlite\readv2.cpp:152:                    if ( !readImages( pFileRead, pRepPage, pViewCtrl ))
+alive\rrlite\imgpath.cpp:12:// Get any image path property and convert to full Internet directory
+alive\rrlite\imgpath.cpp:33:// Image path property name
+alive\rrlite\imgpath.cpp:34:WCHAR wszImagePath [] = L"ImagePath";
+alive\rrlite\imgpath.cpp:37:// Build full image URL & convert spaces to http lingo
+alive\rrlite\imgpath.cpp:38:void ViewCtrl::getImagePath( IPropertyBag *pPropertyBag, IErrorLog *pErrorLog )
+alive\rrlite\imgpath.cpp:45:    pPropertyBag->Read( wszImagePath, &v, pErrorLog );
+alive\rrlite\imgpath.cpp:49:        MAKE_ANSIPTR_FROMWIDE( pImagePath, v.bstrVal );
+alive\rrlite\imgpath.cpp:50:        DWORD dwLen = lstrlen( pImagePath );
+alive\rrlite\imgpath.cpp:51:        m_pImagePath = new TCHAR[dwLen + 2]; // allow room to append slash
+alive\rrlite\imgpath.cpp:52:        lstrcpy( m_pImagePath, pImagePath );
+alive\rrlite\imgpath.cpp:53:        if ( !strCompareN( pImagePath, _T( "http:" ), 5 ))
+alive\rrlite\imgpath.cpp:55:            if ( !InternetCanonicalizeUrl( pImagePath, m_pImagePath,
+alive\rrlite\imgpath.cpp:58:                delete [] m_pImagePath;
+alive\rrlite\imgpath.cpp:59:                m_pImagePath = NULL;
+alive\rrlite\imgpath.cpp:62:                    m_pImagePath = new TCHAR[dwLen + 2];
+alive\rrlite\imgpath.cpp:63:                    if ( !InternetCanonicalizeUrl( pImagePath, m_pImagePath,
+alive\rrlite\imgpath.cpp:66:                        delete [] m_pImagePath;
+alive\rrlite\imgpath.cpp:67:                        m_pImagePath = NULL;
+alive\rrlite\imgpath.cpp:72:        if ( m_pImagePath )
+alive\rrlite\imgpath.cpp:74:            dwLen = lstrlen( m_pImagePath );
+alive\rrlite\imgpath.cpp:75:            if (( m_pImagePath[dwLen - 1] != '\\' ) && ( m_pImagePath[dwLen - 1] != '/' ))
+alive\rrlite\imgpath.cpp:76:                lstrcat( m_pImagePath, _T( "\\" ) );
+alive\rrlite\imgpath.cpp:80:    { // concatenate w/ report url to build full image path
+alive\rrlite\imgpath.cpp:81:        WCHAR wszTemp[MAX_IMAGE__PATH];
+alive\rrlite\imgpath.cpp:82:        WCHAR szImagePath[MAX_IMAGE__PATH];
+alive\rrlite\imgpath.cpp:83:        LPWSTR pwImagePath = szImagePath;
+alive\rrlite\imgpath.cpp:84:        wcscpy( szImagePath, v.bstrVal ? v.bstrVal : L"" );
+alive\rrlite\imgpath.cpp:85:        if ( wcschr( szImagePath, ' ' ) && !strCompareN( m_pReportURL, _T( "http:" ), 5 ))
+alive\rrlite\imgpath.cpp:86:        { // have to encode image path first
+alive\rrlite\imgpath.cpp:87:            TCHAR szTemp[MAX_IMAGE__PATH];
+alive\rrlite\imgpath.cpp:88:            MAKE_ANSIPTR_FROMWIDE( pImagePath, pwImagePath );
+alive\rrlite\imgpath.cpp:90:            InternetCanonicalizeUrl( pImagePath, szTemp, &dwLen, ICU_DECODE | ICU_BROWSER_M
+ODE );
+alive\rrlite\imgpath.cpp:91:            MultiByteToWideChar( CP_ACP, 0, szTemp, -1, szImagePath, sizeof ( szImagePath )
+);
+alive\rrlite\imgpath.cpp:93:        MultiByteToWideChar( CP_ACP, 0, m_pReportURL, -1, wszTemp, MAX_IMAGE__PATH );
+alive\rrlite\imgpath.cpp:101:            if ( wcslen( pwImagePath ))
+alive\rrlite\imgpath.cpp:102:            { // use image path property
+alive\rrlite\imgpath.cpp:103:                wcscat( wszTemp, ( *pwImagePath != '\\' ) && ( *pwImagePath != '/' ) ?
+alive\rrlite\imgpath.cpp:104:                    pwImagePath : pwImagePath + 1 );
+alive\rrlite\imgpath.cpp:109:            m_pImagePath = new TCHAR[wcslen( wszTemp ) + 1];
+alive\rrlite\imgpath.cpp:110:            if ( m_pImagePath )
+alive\rrlite\imgpath.cpp:111:                WideCharToMultiByte( CP_ACP, 0, wszTemp, -1, m_pImagePath, MAX_IMAGE__PATH
+, NULL, NULL );
+alive\rrlite\readimg.cpp:12:// Read file image info and set up image in memory
+alive\rrlite\readimg.cpp:29:// Find images in ImagePath
+alive\rrlite\readimg.cpp:45:// Read image file into memory and return Accusoft handle
+alive\rrlite\readimg.cpp:46:int loadImageFile( LPTSTR pFileName, HANDLE hMutex )
+alive\rrlite\readimg.cpp:50:    LPTSTR pImageMem = NULL;
+alive\rrlite\readimg.cpp:54:        DWORD dwSize = IMAGE_READ_SIZE;    // start with this - grab more later
+alive\rrlite\readimg.cpp:55:        pImageMem = (LPTSTR)HeapAlloc( GetProcessHeap(), HEAP_ZERO_MEMORY, dwSize );
+alive\rrlite\readimg.cpp:56:        while ( !g_bStopThreads && pImageMem &&
+alive\rrlite\readimg.cpp:57:            fileRd.frReadBlock( pImageMem + dwOffset, IMAGE_READ_SIZE ))
+alive\rrlite\readimg.cpp:59:            dwSize += IMAGE_READ_SIZE;
+alive\rrlite\readimg.cpp:61:                (LPVOID)pImageMem, dwSize );
+alive\rrlite\readimg.cpp:65:                if ( pImageMem != NULL )
+alive\rrlite\readimg.cpp:66:                    HeapFree( GetProcessHeap(), 0, pImageMem );
+alive\rrlite\readimg.cpp:69:            pImageMem = pMore;
+alive\rrlite\readimg.cpp:70:            dwOffset += IMAGE_READ_SIZE;
+alive\rrlite\readimg.cpp:73:        int nDib = !g_bStopThreads ? loadImageToMem( hMutex, pImageMem ) : -1;
+alive\rrlite\readimg.cpp:74:        HeapFree( GetProcessHeap(), 0, pImageMem );
+alive\rrlite\readimg.cpp:76:        return nDib;    // return image handle
+alive\rrlite\readimg.cpp:82:// Read thru image structures and load each image into memory
+alive\rrlite\readimg.cpp:83:BOOL readImages( FileRead *pFileRead, RepPage *pRepPage, ViewCtrl *pViewCtrl )
+alive\rrlite\readimg.cpp:85:    for ( UINT ii = 0; ii < pRepPage->m_nImageCount; ii++ )
+alive\rrlite\readimg.cpp:86:    { // read and set up each image
+alive\rrlite\readimg.cpp:88:        EXPORT_IMAGE expImage;
+alive\rrlite\readimg.cpp:93:        if ( !pFileRead->frReadBlock( (LPTSTR)&expImage, sizeof( EXPORT_IMAGE )) ||
+alive\rrlite\readimg.cpp:97:        if ( !pViewCtrl->m_bImageDLLError && ( pViewCtrl->m_pImagePath != NULL ))
+alive\rrlite\readimg.cpp:98:        { // look for images in report file location (or directory below)
+alive\rrlite\readimg.cpp:99:            TCHAR szImage[MAX_IMAGE__PATH];
+alive\rrlite\readimg.cpp:100:            lstrcpy( szImage, pViewCtrl->m_pImagePath );
+alive\rrlite\readimg.cpp:101:            lstrcat( szImage, szFileName );
+alive\rrlite\readimg.cpp:103:            int nDib = loadImageFile( szImage, pViewCtrl->m_hMutex );
+alive\rrlite\readimg.cpp:104:            pRepPage->m_pImages[ii].nDib = nDib;
+alive\rrlite\readimg.cpp:106:            { // image loaded, store parameters
+alive\rrlite\readimg.cpp:107:                pRepPage->m_pImages[ii].wLeft = expImage.wLeft;
+alive\rrlite\readimg.cpp:108:                pRepPage->m_pImages[ii].wBottom = expImage.wBottom;
+alive\rrlite\readimg.cpp:109:                pRepPage->m_pImages[ii].wWidth = expImage.wWidth;
+alive\rrlite\readimg.cpp:110:                pRepPage->m_pImages[ii].wHeight = expImage.wHeight;
+alive\rrlite\readimg.cpp:111:                pRepPage->m_pImages[ii].wCropWidth = expImage.wCropWidth;
+alive\rrlite\readimg.cpp:112:                pRepPage->m_pImages[ii].wCropHeight = expImage.wCropHeight;
+alive\rrlite\readimg.cpp:113:                pRepPage->m_pImages[ii].bCropped = FALSE;
+alive\rrlite\readimg.cpp:116:        else    // no image loaded
+alive\rrlite\readimg.cpp:117:            pRepPage->m_pImages[ii].nDib = -1;
+alive\rrlite\rrprfile.cpp:68:// Moved image code to readimg.cpp and added auto-comment header.
+alive\rrlite\rrprfile.cpp:155:                    if ( pagePos.wImageCount )
+alive\rrlite\rrprfile.cpp:157:                        IMAGE *pData = (IMAGE *)HeapAlloc( GetProcessHeap(), HEAP_ZERO_ME
+MORY, pagePos.wImageCount * sizeof( IMAGE ));
+alive\rrlite\rrprfile.cpp:160:                            pRepPage->m_pImages     = pData;
+alive\rrlite\rrprfile.cpp:161:                            pRepPage->m_nImageCount = pagePos.wImageCount;
+alive\rrlite\rrprfile.cpp:225:                if ( !g_bStopThreads && ( pRepPage->m_pImages != NULL ))
+alive\rrlite\rrprfile.cpp:227:                    if ( !pViewCtrl->m_bImageDLLError && ( pViewCtrl->m_hImageLib == NULL
+ ))
+alive\rrlite\rrprfile.cpp:229:                        pViewCtrl->m_hImageLib = loadImageLib();
+alive\rrlite\rrprfile.cpp:230:                        if ( pViewCtrl->m_hImageLib == NULL )
+alive\rrlite\rrprfile.cpp:231:                            pViewCtrl->m_bImageDLLError = TRUE;    // flag error
+alive\rrlite\rrprfile.cpp:233:                    if ( !readImages( pFileRead, pRepPage, pViewCtrl ))
+alive\rrlite\rrutil.cpp:112://#define IMAGE_WIDTH        24
+alive\rrlite\rrutil.cpp:113://#define IMAGE_INDENT_X    4
+alive\rrlite\rrutil.cpp:114://#define IMAGE_INDENT_Y    2
+alive\rrlite\rrutil.cpp:115://#define IMAGE_RIGHT        ( IMAGE_WIDTH + IMAGE_INDENT_X )
+alive\rrlite\rrutil.cpp:117://#define TEXT_LEFT        ( IMAGE_WIDTH + IMAGE_INDENT_X + 8 )
+alive\rrlite\rrutil.cpp:135://        BitBlt( hDC, IMAGE_INDENT_X, IMAGE_INDENT_Y,
+alive\rrlite\rrutil.cpp:143://         // center page number to right of image
+alive\rrlite\rrutil.cpp:144://        ExtTextOut( hDC, IMAGE_RIGHT + (( rect.right - IMAGE_RIGHT ) / 2 ),
+alive\rrlite\guids.cpp:22:// Find images in ImagePath
+alive\rrlite\reppage.cpp:52:    m_nImageCount     = 0 ;
+alive\rrlite\reppage.cpp:60:    m_pImages  = NULL;
+alive\rrlite\reppage.cpp:81:    if ( m_pImages != NULL )
+alive\rrlite\reppage.cpp:82:    { // delete any images
+alive\rrlite\reppage.cpp:83:        IMAGE *pImg = m_pImages;
+alive\rrlite\reppage.cpp:84:        for ( UINT ii = 0; ii < m_nImageCount; ii++, pImg++ )
+alive\rrlite\reppage.cpp:85:        { // delete images from memory first
+alive\rrlite\reppage.cpp:87:                deleteImage( m_pViewCtrl->m_hMutex, pImg->nDib );
+alive\rrlite\reppage.cpp:90:        HeapFree( GetProcessHeap(), 0, m_pImages );
+alive\rrlite\reppage.cpp:179:    if ( m_nImageCount && ( m_pImages != NULL ))
+alive\rrlite\reppage.cpp:180:    { // then images
+alive\rrlite\reppage.cpp:181:        ViewImage viewImage( m_pViewCtrl, hDC, bPreview, pWndRect, m_nImageCount, m_pImage
+s );
+alive\rrlite\reppage.cpp:182:        viewImage.showPage();
+alive\rrlite\accusoft.cpp:53:HINSTANCE loadImageLib( void )
+alive\rrlite\accusoft.cpp:89:// Load image into memory and return dib
+alive\rrlite\accusoft.cpp:90:int loadImageToMem( HANDLE hMutex, LPSTR pImageMem )
+alive\rrlite\accusoft.cpp:97:        nDib = ( *lpfnImgLoadMem )( pImageMem, 0 );
+alive\rrlite\accusoft.cpp:143:// Delete image from memory
+alive\rrlite\accusoft.cpp:144:void deleteImage( HANDLE hMutex, int nDib )
+WMAIN\wserial.cpp:332:            pFrame->displaySplashImage( FALSE );
+WMAIN\wserial.cpp:381:                pFrame->displaySplashImage( FALSE );
+WMAIN\wserial.cpp:405:                pFrame->displaySplashImage( FALSE );
+WMAIN\rrinit.cpp:689:#include "wfield.h"     // for invalidateImages()
+WMAIN\rrinit.cpp:747:    if (!(m_pFrame->hImgCursor = LoadCursor((HINSTANCE)HInst, "wimage")))
+WMAIN\rrinit.cpp:1061:            pFrame->displaySplashImage(TRUE);
+WMAIN\explmgr.cpp:200:static char szImageName[]          = SZ_IMGLIB      ;  // ACCUISR5.DLL.
+WMAIN\explmgr.cpp:769:    The first directory searched is the one directory containing the image
+WMAIN\explmgr.cpp:983:CString CExplicitLibraryManager::GetImageDriver() const
+WMAIN\explmgr.cpp:986:    CString csImageName ( szImageName ) ;
+WMAIN\explmgr.cpp:987:    ASSERT( DoesDllExist(csImageName) );
+WMAIN\explmgr.cpp:988:    return csImageName ;
+WMAIN\cmdline.cpp:171:// Call adjustImages, just like in wreport.c
+WMAIN\cmdline.cpp:303:#include "wfield.h"     // for invalidateImages()
+WMAIN\version.cpp:285:    if ((!stricmp (lpszLibFileName, csPrinterDriver)) && (pDoc->hImageLib != NULL))
+WMAIN\version.cpp:287:        pDoc->hPrinterDriver = hLoadedDLL;    // loadImageLib uses hPrinterDriver
+WMAIN\version.cpp:288:        pDoc->loadImageLib();
+WMAIN\winit.cpp:941:    Images = 0;
+WMAIN\winit.cpp:1067:    GetPrivateProfileString( WxDefKey, WxDefImgDir, Defs.StartingDir,Defs.ImageDir,WINPATHLEN+1, t
+heApp.m_elmFileManager.GetRRInitFile());
+WMAIN\winit.cpp:1068:    if (lstrlen(Defs.ImageDir) > MAXDIRLEN)
+WMAIN\winit.cpp:1070:        zwarn1(getString(TxInvImageDir,0));
+WMAIN\winit.cpp:1071:        Defs.ImageDir[MAXDIRLEN] = 0;
+WMAIN\winit.cpp:1671:    removeImages();         // wipe bitmaps
+WUTIL\wfile.cpp:1368:                   int titid)    // string ID of dialog title (ex: "Default Image Directory")
+WUTIL\werror.cpp:764:    m_pFrame->displaySplashImage(FALSE);
+WUTIL\wglobal.cpp:31:// Disable Format Properties if multiple images, objects or charts
+WUTIL\wglobal.cpp:61:// checkImages needs to allow objects to be processed.
+WUTIL\wglobal.cpp:100:// Part of fix for globalReAlloc when copying lines/boxes/images (along
+WUTIL\wglobal.cpp:203:// applied even if boxes/images are hightlighted
+WUTIL\wglobal.cpp:356:    return (MarkedFlds && (MarkedFlds - MarkedBoxes - MarkedLns - MarkedImages - nMarkedOleObject
+s - MarkedCharts > 0));
+WUTIL\wglobal.cpp:357://    return (MarkedFlds && !MarkedBoxes && !MarkedLns && !MarkedImages);
+WUTIL\wglobal.cpp:372:        // multiple images, objects or charts are selected.
+WUTIL\wglobal.cpp:373:        if ( MarkedImages )
+WUTIL\wglobal.cpp:374:            return FALSE ;  //return (MarkedFlds == MarkedImages) ;
+WUTIL\wglobal.cpp:408:    // if (MarkedBoxes || MarkedLns || MarkedImages)
+WUTIL\wglobal.cpp:429:    // Editing a single line, box, or image.
+WUTIL\wglobal.cpp:430:    // if ((ActiveState & IMAGE_EDIT) || (ActiveState & BOX_EDIT))
+WUTIL\wglobal.cpp:444:    LPRRIMAGE bf;
+WUTIL\wglobal.cpp:455:                if (IMAGE_FLD(f))
+WUTIL\wglobal.cpp:456:                  { // it's an image we want...
+WUTIL\wglobal.cpp:459:                    for (ii = 0; ii < Images; ii++)
+WUTIL\wglobal.cpp:460:                    { // find field entry in image array
+WUTIL\wglobal.cpp:464:                    if ((bf = (LPRRIMAGE)copyImage(ii)) == NULL)
+WUTIL\wglobal.cpp:478:                  { // it's an image we want...
+WUTIL\wglobal.cpp:482:                    { // find field entry in image array
+WUTIL\wglobal.cpp:749:void CRrDoc::checkImages(int oldmeasure,int newmeasure)
+WUTIL\wglobal.cpp:757:    // no images or no changes.
+WUTIL\wglobal.cpp:765:    if ( Images )
+WUTIL\wglobal.cpp:767:        // Convert dimensions of all images.
+WUTIL\wglobal.cpp:768:        for (i = 0; i < (int)Images; i++)
+WUTIL\wglobal.cpp:778:        // Convert dimensions of all images.
+WUTIL\wglobal.cpp:918:    { // got a report in memory, re-size fields, images, options...
+WUTIL\wglobal.cpp:926:        checkImages(oldmeasure, measure);        // mjs 6/15/93
+WPRINTUI\wexport.cpp:206:// Steve C: When PDI export, write location of images to ini file.
+WPRINTUI\wexport.cpp:1411:                m_pDoc->Export = TRUE;    // no lines/boxes/images, please!
+WPRINTUI\wexport.cpp:1503:            // remove temporary image file if export failed
+WPRINTUI\wexport.cpp:1504:            if ( !ret && nImagesExported && szImageIniPath[0] )
+WPRINTUI\wexport.cpp:1505:                DeleteFile( szImageIniPath );
+WPRINTUI\wexport.cpp:2003:                m_pDoc->Export = TRUE;    // no lines/boxes/images, please!
+WPRINTUI\wexport.cpp:2886:                m_pDoc->Export = TRUE;    // no lines/boxes/images, please!
+WPRINTUI\wexport.cpp:3310:            // remove temporary image file if export failed
+WPRINTUI\wexport.cpp:3311:            if ( !ret && nImagesExported && szImageIniPath[0] )
+WPRINTUI\wexport.cpp:3312:                DeleteFile( szImageIniPath );
+WPRINTUI\wprint.cpp:399:// Clear PageImages in printCommon()
+WPRINTUI\wprint.cpp:1218:    PageImages      = 0 ;
+WPRINTUI\wprint.cpp:1242:        setImagePalette(TRUE);
+WPRINTUI\wprint.cpp:1418:        // set cancel window handle for image peeking...
+WPRINTUI\wdbexp.cpp:354:         // field is data (not text, line, box, or image)
+WPRINTUI\wdbexp.cpp:365:             // field is data (not text, line, box, or image)
+WPRINTUI\wdbexp.cpp:445: // field is data (not text, line, box, or image)
+WPRINTUI\wtxtexp.cpp:514:        // initialize exported image info
+WPRINTUI\wtxtexp.cpp:515:        pDoc->m_pExport->szImageIniPath[0] = '\0';
+WPRINTUI\wtxtexp.cpp:516:        pDoc->m_pExport->nImagesExported = 0;
+WPRINTUI\wtxtexp.cpp:517:        if ( pDoc->Images )
+WPRINTUI\wtxtexp.cpp:518:        { // store image paths in temp file for Alive
+WPRINTUI\wtxtexp.cpp:519:            _tcscpy( pDoc->m_pExport->szImageIniPath, pDoc->Paths->ExpPDIPath );
+WPRINTUI\wtxtexp.cpp:521:            pDoc->appendExt( pDoc->m_pExport->szImageIniPath, "ini", TRUE );
+DMISC\dabout.cpp:160:    int imageIndex, xsize, ysize, pixels ;
+DMISC\dabout.cpp:192:                ((imageIndex = pDoc->img_load(szTemp)) >= 0))
+DMISC\dabout.cpp:194:                pDoc->img_info(imageIndex, &xsize, &ysize, &pixels) ;
+DMISC\dabout.cpp:195:                pDoc->img_delete(imageIndex);
+DMISC\dabout.cpp:227://                pDoc->img_display(imageIndex, dc.m_hDC, 0, 0, xsize, ysize);
+DMISC\dabout.cpp:228://                pDoc->img_delete(imageIndex);
+DMISC\dabout.cpp:286:                ((imageIndex = pDoc->img_load(szTemp)) >= 0))
+DMISC\dabout.cpp:288:                pDoc->img_info(imageIndex, &xsize, &ysize, &pixels) ;
+DMISC\dabout.cpp:289:                pDoc->img_display(imageIndex, lpdis->hDC, 0, 0, xsize, ysize);
+DMISC\dabout.cpp:290:                pDoc->img_delete(imageIndex);
+DMISC\dmess.cpp:145:        m_pFrame->displaySplashImage(FALSE);
+chart\chartdlg.cpp:330:LPRRCHART pchart = &(pDoc->ChartStruct[ii]);        //get chart image object
+chart\chartdlg.cpp:653:    int nGridInchX = m_pDoc->getPixFromCol(1) * m_pDoc->RulerPitch    ;  // This matches the ima
+ges to the rulers.
+chart\chartdlg.cpp:1897:    m_hIconUp = (HICON)LoadImage(AfxGetInstanceHandle( ),
+chart\chartdlg.cpp:1898:                        MAKEINTRESOURCE(IDI_ARROW_UP),IMAGE_ICON,16,16,0);
+chart\chartdlg.cpp:1906:    m_hIconDn = (HICON)LoadImage(AfxGetInstanceHandle( ),
+chart\chartdlg.cpp:1907:                        MAKEINTRESOURCE(IDI_ARROW_DN),IMAGE_ICON,16,16,0);
+PD-ORIG\genreport.cpp:61:CGenerateReportHTML::CGenerateReportHTML(BOOL bUseColor, LPCTSTR strBackImage, LPCTSTR strBack
+Color)
+PD-ORIG\genreport.cpp:71:    m_strBackImage        = strBackImage;
+PD-ORIG\genreport.cpp:152:        ASSERT(!(m_strBackImage.IsEmpty()));
+PD-ORIG\genreport.cpp:153:        wsprintf(szTemp,"<BODY BACKGROUND=\"%s\"><TABLE>\r\n", m_strBackImage);
+PD-ORIG\genreport.cpp:513:void CGenerateReportHTML::AddTableCell (long lBandNumber, long lYPos, long lStartingPosition,
+ LPCTSTR pszCellName, long lSize, ULONG flags, long lAlign, LPCSTR pszHEXcolor, int iFontSize, LPCSTR pszFontName, LPCS
+TR pszImagePathname)
+PD-ORIG\genreport.cpp:515:    //TRACE( "CGenerateReportHTML::AddTableCell (%5d, %2d, %3d, %s, %s)\n", lYPos, lBandNumbe
+r, lStartingPosition, pszCellName, pszImagePathname );
+PD-ORIG\genreport.cpp:522:    CTableEntry  *newTableEntry = new CTableEntry ( lBandNumber, lYPos, lStartingPosition, ps
+zCellName, lSize, flags, lAlign, pszHEXcolor, iFontSize, pszFontName, pszImagePathname);
+PD-ORIG\genreport.cpp:590:void CGenerateReportHTML::AddUniqueCell (long lBandNumber, long lYPos, long lStartingPosition
+, LPCTSTR pszCellName, long lSize, ULONG flags, long lAlign, LPCSTR pszHEXcolor, int iFontSize, LPCSTR pszFontName, LPC
+STR pszImagePathname)
+PD-ORIG\genreport.cpp:597:    CTableEntry  *newTableEntry = new CTableEntry ( lBandNumber, lYPos, lStartingPosition, ps
+zCellName, lSize, flags, lAlign, pszHEXcolor, iFontSize, pszFontName, pszImagePathname);
+PD-ORIG\genreport.cpp:699:void CGenerateReportHTML::SetTableCellPosition (long lBandNumber, long lYpos, long lStartingP
+osition, LPCTSTR pszCellName, long lSize, ULONG flags, long lAlign, LPCSTR pszHEXcolor, int iFontSize, LPCSTR pszFontNa
+me, LPCSTR pszImagePathname)
+PD-ORIG\genreport.cpp:710:    AddTableCell  (lBandNumber, lYpos, lStartingPosition, pszCellName, lSize, flags, lAlign,
+pszHEXcolor, iFontSize, pszFontName, pszImagePathname);
+PD-ORIG\genreport.cpp:717:    AddUniqueCell (lBandNumber, lYpos, lStartingPosition, pszCellName, lSize, flags, lAlign,
+pszHEXcolor, iFontSize, pszFontName, pszImagePathname);
+PD-ORIG\genreport.cpp:901:                        if ( !previousTableEntry->GetIsImage() )
+PD-ORIG\genreport.cpp:925:                if ( currentTableEntry->GetIsImage() )
+PD-ORIG\genreport.cpp:927:                    WriteImageTag ( pstrOutput, currentTableEntry->GetImagePath(), csAlign )
+;
+PD-ORIG\genreport.cpp:990:        if ( !previousTableEntry->GetIsImage() )
+PD-ORIG\genreport.cpp:1009:void CGenerateReportHTML::WriteImageTag(CString * pstrOutput, LPCSTR pszImagePathname, LPCST
+R pszAlign)
+PD-ORIG\genreport.cpp:1011:    CString csImageTag ;
+PD-ORIG\genreport.cpp:1014:        csImageTag.Format ( "<IMG SRC=\"%s\" ALIGN=%s>", pszImagePathname, pszAlign ) ;
+PD-ORIG\genreport.cpp:1016:        csImageTag.Format ( "<IMG SRC=\"%s\">", pszImagePathname ) ;
+PD-ORIG\genreport.cpp:1017:    HTMLOutput (pstrOutput, csImageTag );
+PD-ORIG\rtfxint.cpp:1195:    if (pgBuf[pg].pageImages && pgBuf[pg].hImgArray)
+PD-ORIG\rtfxint.cpp:1196:        GlobalFree(pgBuf[pg].hImgArray);  // free any images
+PD-ORIG\rtfxint.cpp:1202:    pgBuf[pg].pageImages = 0;
+PD-ORIG\pwdriver.cpp:122:// Get fast/slow image printing flag from INI file.
+PD-ORIG\pwdriver.cpp:156:// 08/04/93 SBC Change data/box/image pointers to HUGE
+PD-ORIG\pwdriver.cpp:657:// record an image
+PD-ORIG\pwdriver.cpp:658:BOOL WINAPI pwRecordImage(LPPRT_STRUCT ps, char *pimg)
+PD-ORIG\pwdriver.cpp:660:    //TRACE( "pwRecordImage\n" );
+PD-ORIG\pwdriver.cpp:670:        h = !pgBuf[page].pageImages ?
+PD-ORIG\pwdriver.cpp:672:            MEM_GlobalReAlloc(pgBuf[page].hImgArray, (DWORD)(((DWORD)pgBuf[page].pageImages +
+1) * (DWORD)sizeof(PRT_IMG)), GMEM_ZEROINIT);
+PD-ORIG\pwdriver.cpp:676:            _fmemmove((char *)(lpImg + pgBuf[page].pageImages), (char *)pimg, sizeof(PRT_IMG))
+;
+PD-ORIG\pwdriver.cpp:677:            pgBuf[page].pageImages++;
+PD-ORIG\pxdriver.cpp:609:// Record an image
+PD-ORIG\pxdriver.cpp:610:BOOL WINAPI pwRecordImage( LPPRT_STRUCT ps, LPPRT_IMG pNew )
+PD-ORIG\pxdriver.cpp:615:    PRT_IMG *pImages;
+PD-ORIG\pxdriver.cpp:619:        hGlobal = !pPage->wPageImages ? GlobalAlloc( GHND, sizeof( PRT_IMG )) :
+PD-ORIG\pxdriver.cpp:621:                ( pPage->wPageImages + 1 ) * sizeof( PRT_IMG ), GMEM_ZEROINIT );
+PD-ORIG\pxdriver.cpp:622:        if ( hGlobal && ( pImages = (PRT_IMG *)GlobalLock( hGlobal )))
+PD-ORIG\pxdriver.cpp:625:            MoveMemory( pImages + pPage->wPageImages, pNew, sizeof( PRT_IMG ));
+PD-ORIG\pxdriver.cpp:626:            pPage->wPageImages++;
+PD-ORIG\rtfexp.cpp:535:// manipulating an image, not when printing.  R?WPD.DLL should always be
+PD-ORIG\rtfexp.cpp:559:// record an image
+PD-ORIG\rtfexp.cpp:560:BOOL WINAPI pwRecordImage(LPPRT_STRUCT ps, char *pimg)
+PD-ORIG\htmlint.cpp:745:                    case PDI_IMAGE    :  TRACE( "HTMLINT getNextPDIField:   PDI_IMAGE    \n" );
+  break ;
+PD-ORIG\htmlint.cpp:1223:    if (pgBuf[pg].pageImages && pgBuf[pg].hImgArray)
+PD-ORIG\htmlint.cpp:1224:        GlobalFree(pgBuf[pg].hImgArray);  // free any images
+PD-ORIG\htmlint.cpp:1230:    pgBuf[pg].pageImages = 0;
+PD-ORIG\wexpdriv.cpp:127://    Export no-op, wpd - Store dib handle of the image voted 'most colorful'.
+PD-ORIG\wexpdriv.cpp:431:// manipulating an image, not when printing.  R?WPD.DLL should always be
+PD-ORIG\wexpdriv.cpp:484:// record an image
+PD-ORIG\wexpdriv.cpp:485:BOOL WINAPI pwRecordImage(LPPRT_STRUCT ps, char *pimg)
+PD-ORIG\pwint.cpp:155:// New function to get image function pointers from the EXE.
+PD-ORIG\pwint.cpp:171:// Call to new peek routine for images, boxes and at every PDI_EOL in printLine
+PD-ORIG\pwint.cpp:189://  the outlines of all boxes, then images, then data.  This prevents fill
+PD-ORIG\pwint.cpp:196:// Speed up preview by caching image as a DDB.  Speed up printing by using
+PD-ORIG\pwint.cpp:203:// Use update region to check for image print
+PD-ORIG\pwint.cpp:250:#include "imglib.h"    // contains function prototypes for image library functions.
+PD-ORIG\pwint.cpp:277:// Image cache stuff.
+PD-ORIG\pwint.cpp:281:// Image functions.
+PD-ORIG\pwint.cpp:297:    // Get the image function pointers loaded by the EXE.
+PD-ORIG\pwint.cpp:964:    if (pgBuf[pg].pageImages && pgBuf[pg].hImgArray)
+PD-ORIG\pwint.cpp:965:        MEM_GlobalFree(pgBuf[pg].hImgArray);  // free any images
+PD-ORIG\pwint.cpp:979:    pgBuf[pg].pageImages      = 0 ;
+PD-ORIG\pwint.cpp:1413:    // Speed up image preview by caching the last image as a DDB.
+PD-ORIG\pwint.cpp:1414:    // This will help label-type reports where the same image repeats.
+PD-ORIG\pwint.cpp:1445:        // If changing to a new image, remove cached bitmap.
+PD-ORIG\pwint.cpp:1451:        //  Only realize palette when image changes, and there's an 8 bitter.
+PD-ORIG\pwint.cpp:1452:        if (hDIB >= 0)     // GPF if B&W image has no palette.
+PD-ORIG\pwint.cpp:1467:// output images to display or printer
+PD-ORIG\pwint.cpp:1468:void printImage(LPPRT_STRUCT ps, PRT_IMG *pImg, LPRECT updateRect)
+PD-ORIG\pwint.cpp:1470:    //TRACE( "printImage\n" );
+PD-ORIG\pwint.cpp:1506:        //TRACE( "  Print preview image at (%d,%d) with dimensions of (%d,%d)\n", imgX, imgY, im
+gWid, imgHite ) ;
+PD-ORIG\pwint.cpp:1525:    //TRACE( "  Print image at (%d,%d) with dimensions of (%d,%d)\n", imgX, imgY, imgWid, imgHit
+e ) ;
+PD-ORIG\pwint.cpp:1593:// output images to display or printer
+PD-ORIG\pwint.cpp:1663:        // These are unknow adjustments. They were taken from the image code above.
+PD-ORIG\pwint.cpp:1777:        // So, save the DC, restore it after drawing boxes and images, then
+PD-ORIG\pwint.cpp:1850:        if (!ps->pDest.wpd.bCancelled && pgBuf[page].pageImages && (pImg = (PRT_IMG *)MEM_Global
+Lock(pgBuf[page].hImgArray)))
+PD-ORIG\pwint.cpp:1851:        { // then images...
+PD-ORIG\pwint.cpp:1854:            for (i = 0; !ps->pDest.wpd.bCancelled && (i < pgBuf[page].pageImages); i++, pImg++)
+PD-ORIG\pwint.cpp:1855:                printImage(ps, pImg, updateRect);
+PD-ORIG\htmlexp.cpp:32:// If image format is not found, just use provided value.
+PD-ORIG\htmlexp.cpp:35:// New fields for image pathname.
+PD-ORIG\htmlexp.cpp:44:// Passed in the image info to the creation of CGenerateReportHTML
+PD-ORIG\htmlexp.cpp:305:            // sp 3/4/97 send in the image path
+PD-ORIG\htmlexp.cpp:306:            ps->pDest.html.pReportHTMLgenerator = new CGenerateReportHTML(FALSE, ps->pDest.html
+.pHtmlExport->szImagePathname, NULL);
+PD-ORIG\htmlexp.cpp:355:        CString            csImagePathname = pTableEntry->GetImagePath() ;
+PD-ORIG\htmlexp.cpp:364:        ps->pDest.html.pReportHTMLgenerator->SetTableCellPosition ( lBandNumber, lYPos, lStartP
+os, strName, lWidth, uFlags, lAlign, csHEXColor, iFontSize, csFontName, csImagePathname);
+PD-ORIG\htmlexp.cpp:899:// manipulating an image, not when printing.  R?WPD.DLL should always be
+PD-ORIG\htmlexp.cpp:956:// record an image
+PD-ORIG\htmlexp.cpp:957:BOOL WINAPI pwRecordImage(LPPRT_STRUCT ps, char *pimg)
+PD-ORIG\htmlexp.cpp:961:        TRACE( "HTMLEXP: pwRecordImage\n" ) ;
+PD-ORIG\pwprev.cpp:59:// Get update region in paint routine, pass to playback routine for images
+PD-ORIG\pxint.cpp:94:#include "imglib.h"    // contains function prototypes for image library functions.
+PD-ORIG\pxint.cpp:461:    if ( pPage->wPageImages     && pPage->hImgArray   ) GlobalFree( pPage->hImgArray   );
+PD-ORIG\pxint.cpp:475:    pPage->wPageImages     = 0;
+PD-ORIG\pxint.cpp:776:        { // write each export image structure followed by filename
+PD-ORIG\pxint.cpp:857:        { // write each export image structure followed by filename
+PD-ORIG\pxint.cpp:883:// Write image data
+PD-ORIG\pxint.cpp:884:BOOL writeImageData( LPPRT_STRUCT ps, EXP_PAGE *pPage, PAGE_POS *pPos )
+PD-ORIG\pxint.cpp:887:    DWORD dwImageBytes = 0;
+PD-ORIG\pxint.cpp:889:    if ( pPage->wPageImages && pPage->hImgArray &&
+PD-ORIG\pxint.cpp:891:    { // got images and storage array, compute size of image data to be written
+PD-ORIG\pxint.cpp:892:        for ( WORD ii = 0; ii < pPage->wPageImages; ii++ )
+PD-ORIG\pxint.cpp:893:        { // image structure plus filename plus filename count byte
+PD-ORIG\pxint.cpp:894:            dwImageBytes += sizeof( EXPORT_IMAGE ) + lstrlen( pImg[ii].pFilename ) + 1;
+PD-ORIG\pxint.cpp:898:    if ( !wfWriteByte( PDI_START ) || !wfWriteByte( PDI_IMAGE_CNT ) || !wfWriteLong( dwImageBytes
+ ))
+PD-ORIG\pxint.cpp:903:    { // output the images
+PD-ORIG\pxint.cpp:905:        EXPORT_IMAGE expImage;
+PD-ORIG\pxint.cpp:906:        pPos[dwReportPages].wImageCount = pPage->wPageImages;
+PD-ORIG\pxint.cpp:907:        for ( WORD ii = 0; ii < pPage->wPageImages; ii++, pImg++ )
+PD-ORIG\pxint.cpp:908:        { // write each export image structure followed by filename
+PD-ORIG\pxint.cpp:909:            expImage.wLeft = scaleX( ps, pImg->x ) + nLeftMargin;    // left edge
+PD-ORIG\pxint.cpp:910:            expImage.wBottom = scaleFromPrtY( ps, pImg->y );        // bottom edge
+PD-ORIG\pxint.cpp:911:            expImage.wWidth = scaleX( ps, pImg->wid );                // width
+PD-ORIG\pxint.cpp:912:            expImage.wHeight = scaleY( ps, pImg->hite );            // height
+PD-ORIG\pxint.cpp:913:            expImage.wCropWidth = scaleX( ps, pImg->wCropWidth );    // cropping width
+PD-ORIG\pxint.cpp:914:            expImage.wCropHeight = scaleY( ps, pImg->wCropHeight );    // cropping height
+PD-ORIG\pxint.cpp:916:            if ( !wfWriteData( (LPSTR)&expImage, sizeof( EXPORT_IMAGE )) ||
+PD-ORIG\pxint.cpp:935://   3) Images
+PD-ORIG\pxint.cpp:982:        bResult = bResult && writeImageData  ( ps, pPage, pPos ) ;  // write images
+PD-ORIG\pxint.cpp:1030:// Image functions.
+PD-ORIG\pxint.cpp:1038:// Get the image function pointers loaded by the EXE.
+PD-ORIG\tblentry.cpp:56:// Background images use relative directory code.
+PD-ORIG\tblentry.cpp:59:// New HTML options to specify file format and to copy all images.
+PD-ORIG\tblentry.cpp:62:// Functions to generate an image from an object.  Mostly directory parsing.
+PD-ORIG\tblentry.cpp:65:// New fields for image pathname.
+PD-ORIG\tblentry.cpp:74:// added 4 new member functions Set/Get IsImage and Set/Get ImagePath
+PD-ORIG\tblentry.cpp:169:    strcpy ( szImagePathname, csBackgroundImagePathname ) ;
+PD-ORIG\tblentry.cpp:182:    // 06/11/97 PAR.  Scott and I concluded that the images should be always be copied.
+PD-ORIG\tblentry.cpp:183:    // We also concluded that bCopyAllImagesToDirectory and the bSameDirectoryAsOutput
+PD-ORIG\tblentry.cpp:185:    bCopyAllImagesToDirectory = TRUE  ;
+PD-ORIG\tblentry.cpp:188:    csBackgroundImagePathname = _T("") ;
+PD-ORIG\tblentry.cpp:191:    csImageDirectory          = _T("") ;
+PD-ORIG\tblentry.cpp:193:    csHtmlImageFileFormat     = _T("JPG") ;
+PD-ORIG\tblentry.cpp:201:    csBackgroundImagePathname = src.csBackgroundImagePathname ;
+PD-ORIG\tblentry.cpp:206:    csImageDirectory          = src.csImageDirectory          ;
+PD-ORIG\tblentry.cpp:208:    bCopyAllImagesToDirectory = src.bCopyAllImagesToDirectory ;
+PD-ORIG\tblentry.cpp:209:    csHtmlImageFileFormat     = src.csHtmlImageFileFormat     ;
+PD-ORIG\tblentry.cpp:224:    bNotEqual |= (BOOL)(h1.csBackgroundImagePathname != h2.csBackgroundImagePathname ) ;
+PD-ORIG\tblentry.cpp:229:    bNotEqual |= (BOOL)(h1.csImageDirectory          != h2.csImageDirectory          ) ;
+PD-ORIG\tblentry.cpp:231:    bNotEqual |= (h1.bCopyAllImagesToDirectory != h2.bCopyAllImagesToDirectory ) ;
+PD-ORIG\tblentry.cpp:232:    bNotEqual |= (BOOL)(h1.csHtmlImageFileFormat     != h2.csHtmlImageFileFormat     ) ;
+PD-ORIG\tblentry.cpp:241:    csConvertedPathname = csImageDirectory ;
+PD-ORIG\tblentry.cpp:265:int HTML_EXPORT::PathnameDifference (CString csOutputPathname , CString csImagePathname , CStr
+ing& csRelativePathname )
+PD-ORIG\tblentry.cpp:273:    char szImageDrive    [_MAX_DRIVE]="" ;
+PD-ORIG\tblentry.cpp:274:    char szImageDirectory[_MAX_DIR  ]="" ;
+PD-ORIG\tblentry.cpp:275:    char szImageFilename [_MAX_FNAME]="" ;
+PD-ORIG\tblentry.cpp:276:    char szImageExtension[_MAX_EXT  ]="" ;
+PD-ORIG\tblentry.cpp:277:    _splitpath ( csImagePathname, szImageDrive, szImageDirectory, szImageFilename, szImageExte
+nsion ) ;
+PD-ORIG\tblentry.cpp:280:    CString csImageDirectory  = CString(szImageDrive ) + CString(szImageDirectory ) ;
+PD-ORIG\tblentry.cpp:282:    BOOL bIsRelative = DirectoryDifference ( csOutputDirectory, csImageDirectory, csRelativeDi
+rectory ) ;
+PD-ORIG\tblentry.cpp:285:    csRelativePathname += szImageFilename     ;
+PD-ORIG\tblentry.cpp:286:    csRelativePathname += szImageExtension    ;
+PD-ORIG\tblentry.cpp:290:int HTML_EXPORT::DirectoryDifference(CString csOutputDirectory, CString csImageDirectory, CStr
+ing& csRelativeDirectory)
+PD-ORIG\tblentry.cpp:293:    csImageDirectory .TrimLeft () ;
+PD-ORIG\tblentry.cpp:295:    csImageDirectory .TrimRight() ;
+PD-ORIG\tblentry.cpp:299:    CStringList slistImage  ;
+PD-ORIG\tblentry.cpp:302:    BOOL bImageUNC  = (strncmp ( csImageDirectory , "\\\\", 2 ) == 0) ;  // Isolate Windows UN
+C names. \\Westboro_01
+PD-ORIG\tblentry.cpp:324:    CString csImageDirectoryTemp = csImageDirectory ;
+PD-ORIG\tblentry.cpp:326:    char* pszDesNext = strtok ( csImageDirectoryTemp.GetBuffer(MAX_PATH), "\\" ) ;
+PD-ORIG\tblentry.cpp:333:        if ( bImageUNC  )
+PD-ORIG\tblentry.cpp:334:            slistImage .AddHead ( CString("\\\\") + pszDesNext ) ;
+PD-ORIG\tblentry.cpp:336:            slistImage .AddTail ( pszDesNext ) ;
+PD-ORIG\tblentry.cpp:338:        bImageUNC = FALSE ;
+PD-ORIG\tblentry.cpp:344:    for ( int nLevel=0 ; slistOutput.GetCount() && slistImage.GetCount() ; nLevel++ )
+PD-ORIG\tblentry.cpp:347:        CString& csImageDirectoryHead  = slistImage .GetHead() ;
+PD-ORIG\tblentry.cpp:348:        if ( csOutputDirectoryHead.CompareNoCase(csImageDirectoryHead) != 0 )
+PD-ORIG\tblentry.cpp:351:        slistImage .RemoveHead() ;
+PD-ORIG\tblentry.cpp:359:        if ( (slistOutput.GetCount() == 0) && (slistImage.GetCount() == 0)  )
+PD-ORIG\tblentry.cpp:364:        else if ( slistImage.GetCount() == 0 )
+PD-ORIG\tblentry.cpp:367:            return TRUE ;  //  Image directory empty means no difference.
+PD-ORIG\tblentry.cpp:370:        // Since we are about to use the csImageDirectory practically unprocesed,
+PD-ORIG\tblentry.cpp:372:        int nLength = csImageDirectory.GetLength() ;
+PD-ORIG\tblentry.cpp:373:        if ( nLength && (csImageDirectory[nLength-1] != '\\') )
+PD-ORIG\tblentry.cpp:374:            csImageDirectory += '\\' ;
+PD-ORIG\tblentry.cpp:377:        BOOL bDriveColon = (csImageDirectory.Find ( ':' ) >= 0 ) ;
+PD-ORIG\tblentry.cpp:378:        BOOL bImageUNC   = (strncmp ( csImageDirectory , "\\\\", 2 ) == 0) ;  // Isolate Windo
+ws UNC names. \\Westboro_01
+PD-ORIG\tblentry.cpp:379:        if ( bDriveColon || bImageUNC )
+PD-ORIG\tblentry.cpp:380:            csRelativeDirectory = "file:///" + csImageDirectory ;
+PD-ORIG\tblentry.cpp:382:            csRelativeDirectory = csImageDirectory ;
+PD-ORIG\tblentry.cpp:393:    // Now add a level for each directory in the image list.
+PD-ORIG\tblentry.cpp:394:    while ( slistImage.GetCount() )
+PD-ORIG\tblentry.cpp:396:        csRelativeDirectory += slistImage.RemoveHead() + "\\" ;
+PD-ORIG\tblentry.cpp:402:void HTML_EXPORT::CreateImageDirectory()
+PD-ORIG\tblentry.cpp:404:    CString csDirectory = csImageDirectory ;
+PD-ORIG\tblentry.cpp:538:    // sp 3/13/97 clear the image path variable
+PD-ORIG\tblentry.cpp:539:    m_csImagePath.Empty();
+PD-ORIG\tblentry.cpp:549:CTableEntry::CTableEntry (long lBandLineNumber, long lYPos, long lStartingPosition, LPCTSTR ps
+zCellName, long lInSize, ULONG flags, long lAlign, CString csHEXColor, int iFontSize, LPCTSTR pszFontName, LPCTSTR pszI
+magePathname)
+PD-ORIG\tblentry.cpp:576:    m_csImagePath= pszImagePathname  ;
+PD-ORIG\tblentry.cpp:807:// sp 3/13/97 get image location
+PD-ORIG\tblentry.cpp:808:BOOL CTableEntry::GetIsImage  ()
+PD-ORIG\tblentry.cpp:810:    return m_csImagePath.GetLength() ;
+PD-ORIG\tblentry.cpp:813:// sp 3/13/97 set the image location
+PD-ORIG\tblentry.cpp:814:void CTableEntry::SetImagePath  (CString csImagePath)
+PD-ORIG\tblentry.cpp:816:    m_csImagePath = csImagePath;
+PD-ORIG\tblentry.cpp:819:// sp 3/13/97 get image location
+PD-ORIG\tblentry.cpp:820:CString CTableEntry::GetImagePath  ()
+PD-ORIG\tblentry.cpp:822:    return m_csImagePath;
+WFIELD\wbitmap.cpp:12://    functions to support bitmap images
+WFIELD\wbitmap.cpp:25:// Bug if printing image (from field) in footer
+WFIELD\wbitmap.cpp:37:// Don't crash if image library is not loaded.
+WFIELD\wbitmap.cpp:55:// If we decide to insert pictures at the caret location, the image will need
+WFIELD\wbitmap.cpp:59:// Set mediancut color for 16 color images, too.
+WFIELD\wbitmap.cpp:62:// Realize palette on 4 bit images, too.
+WFIELD\wbitmap.cpp:76:// Can't treat OLE object as a image field.  This was one of those nasty
+WFIELD\wbitmap.cpp:80:// I think we need invalidateImages in the runtime - but that may change when
+WFIELD\wbitmap.cpp:106:// Tap into the image rectangle code to enable sizing of an Ole Object.
+WFIELD\wbitmap.cpp:119:// Part of fix for globalReAlloc problem when copying lines/boxes/images
+WFIELD\wbitmap.cpp:156:// Fixed RRW #2215 by making sure curImage is set to marked field.
+WFIELD\wbitmap.cpp:160:// large images.  Thanks, Palo.
+WFIELD\wbitmap.cpp:163:// Fixed RRW #1904 by forcing hundreths to be round when outlining an image.
+WFIELD\wbitmap.cpp:182:// Fixed Barry's bug where typing 2 X 2 in image properties got you a 1.91 inch
+WFIELD\wbitmap.cpp:183:// image.  Should not be snapping to grid in setInches().
+WFIELD\wbitmap.cpp:192:// when we insert the image, but also when we need to do a RealizePalette in
+WFIELD\wbitmap.cpp:197:// images, just for 24 bit color.
+WFIELD\wbitmap.cpp:215:// 3.0: images on any line
+WFIELD\wbitmap.cpp:264:    // Map image library error (from img_err.h) to an error string, and display it.
+WFIELD\wbitmap.cpp:278://        case FORMAT_NOT_ALLOWED:    // EPS with no image.
+WFIELD\wbitmap.cpp:292://        case FILE_NOT_FOUND:            // WPG with no image.
+WFIELD\wbitmap.cpp:293://        case CORRUPTED_FILE:            // WMF with no image.
+WFIELD\wbitmap.cpp:294://        case NO_CLIPBOARD_IMAGE:    // Should never happen.
+WFIELD\wbitmap.cpp:304:void CRrDoc::removeImages(void)     // new/open report, exit
+WFIELD\wbitmap.cpp:309:    if (Images)
+WFIELD\wbitmap.cpp:311:        for (UINT i = 0; i < Images; i++)
+WFIELD\wbitmap.cpp:321:        Images   =  0    ;
+WFIELD\wbitmap.cpp:322:        curImage  = 0    ;  // Could be left over.
+WFIELD\wbitmap.cpp:364:    // mjs 9/2/94  The doc says that this is just for reducing 24 bit images
+WFIELD\wbitmap.cpp:365:    // to 8 bit.  So we should not call it for 8 bit images.     RRW #1329.
+WFIELD\wbitmap.cpp:372:        // to display all 8-bit and 24-bit images. -steve y
+WFIELD\wbitmap.cpp:376:            // mjs 4/3/95  This used to GPF with humongous images.  Now it returns an Out of mem
+ory error.
+WFIELD\wbitmap.cpp:392:void CRrDoc::validCropRect(LPRRIMAGE img)
+WFIELD\wbitmap.cpp:394:    // Somehow, images can get saved with cropping rects larger than their
+WFIELD\wbitmap.cpp:411:void CRrDoc::createDDB(int image,BOOL bDelete)
+WFIELD\wbitmap.cpp:417:    LPRECT wr = &ImgStruct[image].fhdr.fr;
+WFIELD\wbitmap.cpp:418:    LPRECT    cr = &ImgStruct[image].cropRect;
+WFIELD\wbitmap.cpp:419:    int hDib = ImgStruct[image].hDib;
+WFIELD\wbitmap.cpp:424:    // need to copy and dither the image
+WFIELD\wbitmap.cpp:429:            zack ("Cant lock image handle");
+WFIELD\wbitmap.cpp:433:        // copy the image
+WFIELD\wbitmap.cpp:452:        // IMG_diffusion_color's output is a 16-color image
+WFIELD\wbitmap.cpp:464:    // Also used by copyImage, so don't always delete old ddb.
+WFIELD\wbitmap.cpp:465:    if (bDelete && (ImgStruct[image].hDdb != (HBITMAP)-1))
+WFIELD\wbitmap.cpp:466:        DeleteObject((HGDIOBJ)ImgStruct[image].hDdb);
+WFIELD\wbitmap.cpp:468:    if ( (ImgStruct[image].hDdb = img_dib_to_ddb(hDib,
+WFIELD\wbitmap.cpp:471:        ImgStruct[image].hDdb = (HBITMAP)-1;
+WFIELD\wbitmap.cpp:492:BOOL CRrDoc::installPalette (int nImage)
+WFIELD\wbitmap.cpp:494:    // 05/17/97 PAR.  Make sure image library exists.
+WFIELD\wbitmap.cpp:495:    if (hImageLib != (HINSTANCE)NULL)
+WFIELD\wbitmap.cpp:498:        int hdib = ImgStruct[nImage].hDib;
+WFIELD\wbitmap.cpp:501:        // mjs 3/20/96  16 color images also seem to be effected.  RSW #2175
+WFIELD\wbitmap.cpp:514:// Install the image palette (a 332 RGB palette) if we have any 8-bit
+WFIELD\wbitmap.cpp:515:// or 24-bit images displayed
+WFIELD\wbitmap.cpp:516:void CRrDoc::setImagePalette(BOOL bPrint)
+WFIELD\wbitmap.cpp:525:    for (UINT i = 0; i < Images; i++)
+WFIELD\wbitmap.cpp:529:        // mjs 3/20/96  16 color images also seem to be effected.  RSW #2175
+WFIELD\wbitmap.cpp:547:    if (!bSet)        // no more colorful images.
+WFIELD\wbitmap.cpp:551:        else bMainPalSet = FALSE;        // Colorful image may have been deleted.
+WFIELD\wbitmap.cpp:608:    // Update the xinch and yinch members in an Image or Box struct,
+WFIELD\wbitmap.cpp:611:    LPRRIMAGE lpi = (LPRRIMAGE)f;
+WFIELD\wbitmap.cpp:630:    // Kludge to force stretched images to round down from .n1
+WFIELD\wbitmap.cpp:637:void CRrDoc::setImageCrop(int i, int left, int top, int width, int height)
+WFIELD\wbitmap.cpp:640:    // This function gets called after stretching or Image Properties.
+WFIELD\wbitmap.cpp:644:    long ar_image, ar_rect;
+WFIELD\wbitmap.cpp:662:        case NOSCALE:    // No scaling.    Crop original image to fit rect.
+WFIELD\wbitmap.cpp:686:            ar_image = (long)owidth * 100 / oheight;
+WFIELD\wbitmap.cpp:689:            if (ar_rect >= ar_image)
+WFIELD\wbitmap.cpp:692:                // rect is "wider" than image, so use rect height, and scale width.
+WFIELD\wbitmap.cpp:701:                // image is "wider" than rect, so use rect width, and scale height.
+WFIELD\wbitmap.cpp:738:    // setImagePalette();  no need to redo palette on crop; palette is constant.
+WFIELD\wbitmap.cpp:744:int CRrDoc::getClipboardImage()
+WFIELD\wbitmap.cpp:775:             stat =  NO_CLIPBOARD_IMAGE;
+WFIELD\wbitmap.cpp:783:void CRrDoc::setCurImage()
+WFIELD\wbitmap.cpp:785:    // Set curImage to the first marked image.
+WFIELD\wbitmap.cpp:786:    for (UINT i = 0; i < Images; i++)
+WFIELD\wbitmap.cpp:791:            curImage = i;
+WFIELD\wbitmap.cpp:799:    // Set curImage to the first marked image.
+WFIELD\wbitmap.cpp:811:void CRrDoc::imageFormat(void)
+WFIELD\wbitmap.cpp:813:    // Bring up image properties dialog for current image.
+WFIELD\wbitmap.cpp:815:    //  Don't show image prop dlg if multiple images selected.
+WFIELD\wbitmap.cpp:819:    // RRW #2215  curImage may not be correct.
+WFIELD\wbitmap.cpp:820:    setCurImage();
+WFIELD\wbitmap.cpp:822:    DlgFld = (LPMFFIELD)&ImgStruct[curImage];
+WFIELD\wbitmap.cpp:823:    if (ImgStruct[curImage].fid == NOID)
+WFIELD\wbitmap.cpp:824:        dialogBoxParam(MainWnd,imgModDialog,"DImgMod",(LONG)curImage);
+WFIELD\wbitmap.cpp:826:        dialogBoxParam(MainWnd,imgFieldModDialog,"DFieldImgMod",(LONG)curImage);
+WFIELD\wbitmap.cpp:833:    // Are we stretching an image?
+WFIELD\wbitmap.cpp:854:    else if (Drawing & bxImage)
+WFIELD\wbitmap.cpp:863:// Invalidates the rectangles of all images
+WFIELD\wbitmap.cpp:864:void CRrDoc::invalidateImages(void)
+WFIELD\wbitmap.cpp:868:    for (UINT i = 0; i < Images; i++)
+WFIELD\wbitmap.cpp:876:void CRrDoc::startImageOutline(void)
+WFIELD\wbitmap.cpp:883:    Drawing = TRUE | bxImage;
+WFIELD\wbitmap.cpp:888:void CRrDoc::startImageOutlineField(void)
+WFIELD\wbitmap.cpp:895:    Drawing = TRUE | bxImageField;
+WFIELD\wbitmap.cpp:901:void CRrDoc::endImageOutline(void)
+WFIELD\wbitmap.cpp:913:// Select an image file
+WFIELD\wbitmap.cpp:914:BOOL CRrDoc::getImageFile(void)
+WFIELD\wbitmap.cpp:916:return (openFileDialog(MainWnd,(PSTR)NULL,Defs.ImageDir,IDS_0209,Defs.ImgExt,IDS_0177,WH_DOPENIM
+G));
+WFIELD\wbitmap.cpp:919:// Select an image field
+WFIELD\wbitmap.cpp:920:BOOL CRrDoc::getImageField(HWND hDlg)
+WFIELD\wbitmap.cpp:925:    if ( dialogBoxParam(hDlg, insImageFldDialog, "DQSelFld", 1L) > 0 )
+WFIELD\wbitmap.cpp:935:void CRrDoc::setImageLoc(int img)        // maintain static loc & size
+WFIELD\wbitmap.cpp:938:    if (Images)
+WFIELD\wbitmap.cpp:939:    {     // fix screen loc of current image
+WFIELD\wbitmap.cpp:940:        f = (LPFLDHDR)&ImgStruct[(img < 0) ? curImage : img];
+WFIELD\wbitmap.cpp:950:    {     // fix screen loc of current image
+WFIELD\wbitmap.cpp:955:        fixRect( &f->fr, &imgRect );  // Still use the same image rectangle.  It is just a commo
+n rectangle.
+WFIELD\wbitmap.cpp:960:// Try using the image rectangle.
+WFIELD\wbitmap.cpp:973:    // Find the index in the list of images of this fdlhdr.
+WFIELD\wbitmap.cpp:982:int CRrDoc::findImage(LPFLDHDR f)
+WFIELD\wbitmap.cpp:984:    // Find the index in the list of images of this fdlhdr.
+WFIELD\wbitmap.cpp:985:    for (UINT i = 0; i < Images; i++)
+WFIELD\wbitmap.cpp:994:LPFLDHDR CRrDoc::noImage(void)
+WFIELD\wbitmap.cpp:1001:LPFLDHDR CRrDoc::copyImage(int n)
+WFIELD\wbitmap.cpp:1003:    // Create a new image based on another.
+WFIELD\wbitmap.cpp:1005:    LPRRIMAGE pDest, pSrc = &ImgStruct[n];
+WFIELD\wbitmap.cpp:1009:    // Make sure we've been passed an image.
+WFIELD\wbitmap.cpp:1010:    if (!IMAGE_FLD(pSrc))
+WFIELD\wbitmap.cpp:1016:    if (pSrc->thdr.source & IMAGE_CLIPBOARD)
+WFIELD\wbitmap.cpp:1018:        if ((hDib = getClipboardImage()) < 0)
+WFIELD\wbitmap.cpp:1019:            return noImage();
+WFIELD\wbitmap.cpp:1023:        return noImage();
+WFIELD\wbitmap.cpp:1025:    // Allocate space for another image.
+WFIELD\wbitmap.cpp:1026:    if (pDest = (RRIMAGE far *)globalReAlloc((LPSTR)ImgStruct,
+WFIELD\wbitmap.cpp:1027:        (DWORD)((Images+1)*sizeof(RRIMAGE))))
+WFIELD\wbitmap.cpp:1029:    else return noImage();
+WFIELD\wbitmap.cpp:1032:    pDest = &ImgStruct[Images];        // Point to new empty slot.
+WFIELD\wbitmap.cpp:1035:    *pDest = *pSrc;                    // Copy the image data.
+WFIELD\wbitmap.cpp:1039:    setImageCrop(Images,(int)f->fr.left,(int)f->fr.top,
+WFIELD\wbitmap.cpp:1042:    createDDB(Images,FALSE);   // Don't delete old ddb.
+WFIELD\wbitmap.cpp:1045:    if (ImgStruct[Images].hDdb == (HBITMAP)-1)
+WFIELD\wbitmap.cpp:1047:        Images++;    // we allocated space for one.
+WFIELD\wbitmap.cpp:1048:        zapAnImage(Images-1,FALSE);
+WFIELD\wbitmap.cpp:1049:        return noImage();
+WFIELD\wbitmap.cpp:1052:    Images++;
+WFIELD\wbitmap.cpp:1062:    // Create a new image based on another.
+WFIELD\wbitmap.cpp:1066:    // Make sure we've been passed an image.
+WFIELD\wbitmap.cpp:1073:    // Allocate space for another image.
+WFIELD\wbitmap.cpp:1077:        return noImage();
+WFIELD\wbitmap.cpp:1082:    *pDest = *pSrc;                    // Copy the image data.
+WFIELD\wbitmap.cpp:1098:    // Outline of image passed in from endMarkRect().
+WFIELD\wbitmap.cpp:1104:    LPRRIMAGE pImg;
+WFIELD\wbitmap.cpp:1111:    endImageOutline();
+WFIELD\wbitmap.cpp:1116:    if (clipboard || getImageFile())
+WFIELD\wbitmap.cpp:1121:            if (Images)
+WFIELD\wbitmap.cpp:1123:                if (pImg = (RRIMAGE far *)globalReAlloc((LPSTR)ImgStruct,
+WFIELD\wbitmap.cpp:1124:                 (DWORD)((Images+1)*sizeof(RRIMAGE))))
+WFIELD\wbitmap.cpp:1130:                if ((ImgStruct = (RRIMAGE far *)globalAlloc(GHND,(DWORD)sizeof(RRIMAGE))) == NU
+LL)
+WFIELD\wbitmap.cpp:1133:            f = (LPFLDHDR)&ImgStruct[Images];
+WFIELD\wbitmap.cpp:1134:            ImgStruct[Images].fid = NOID ;
+WFIELD\wbitmap.cpp:1135:            ImgStruct[Images].hDib = hDib;
+WFIELD\wbitmap.cpp:1136:            ImgStruct[Images].hDdb = (HBITMAP)-1;     // Not created yet.
+WFIELD\wbitmap.cpp:1137:            ImgStruct[Images].scaling = PARTSCALE;    // default
+WFIELD\wbitmap.cpp:1138:            ImgStruct[Images].thdr.source = clipboard ? 0x01 : 0;
+WFIELD\wbitmap.cpp:1139:            ImgStruct[Images].thdr.align = txLEFT;
+WFIELD\wbitmap.cpp:1143:            if (prect == (PRECT)NULL)     // a clipboard image.
+WFIELD\wbitmap.cpp:1147:                // 02/28/97 PAR.  Place the image on the current caret line.
+WFIELD\wbitmap.cpp:1153:                CPoint ptImageLocation ;
+WFIELD\wbitmap.cpp:1154:                ptImageLocation.x = XPos /*+ XLeft + rectLayout.left */;
+WFIELD\wbitmap.cpp:1155:                ptImageLocation.y = pView->GetTopLineGridPixel ( YLine ) ;   // YPix
+WFIELD\wbitmap.cpp:1156:                setImageCrop ( Images, ptImageLocation.x, ptImageLocation.y, owidth, oheight )
+;
+WFIELD\wbitmap.cpp:1158:            else    // User's outline of image.
+WFIELD\wbitmap.cpp:1167:                setImageCrop(Images,(int)(prect->left+XLeft),(int)(prect->top+YTop),
+WFIELD\wbitmap.cpp:1172:            f->hflags = IMAGEFLD | NOTRIM;
+WFIELD\wbitmap.cpp:1173:            lstrcpy((LPSTR)ImgStruct[Images].filename,
+WFIELD\wbitmap.cpp:1177:            Images++;
+WFIELD\wbitmap.cpp:1182:            createDDB(Images-1,TRUE);
+WFIELD\wbitmap.cpp:1183:#ifdef SQUEEZE_IMAGE
+WFIELD\wbitmap.cpp:1213:    // Outline of image passed in from endMarkRect().
+WFIELD\wbitmap.cpp:1217:    LPRRIMAGE pImg;
+WFIELD\wbitmap.cpp:1224:    endImageOutline();
+WFIELD\wbitmap.cpp:1227:    if (getImageField(MainWnd))
+WFIELD\wbitmap.cpp:1234:            if (Images)
+WFIELD\wbitmap.cpp:1236:                if (pImg = (RRIMAGE far *)globalReAlloc((LPSTR)ImgStruct,
+WFIELD\wbitmap.cpp:1237:                 (DWORD)((Images+1)*sizeof(RRIMAGE))))
+WFIELD\wbitmap.cpp:1243:                if ((ImgStruct = (RRIMAGE far *)globalAlloc(GHND,(DWORD)sizeof(RRIMAGE))) == NU
+LL)
+WFIELD\wbitmap.cpp:1246:            f = (LPFLDHDR)&ImgStruct[Images];
+WFIELD\wbitmap.cpp:1247:            ImgStruct[Images].fid = insertInd ;
+WFIELD\wbitmap.cpp:1248:            ImgStruct[Images].hDib = hDib;
+WFIELD\wbitmap.cpp:1249:            ImgStruct[Images].hDibX = hDib;
+WFIELD\wbitmap.cpp:1250:            ImgStruct[Images].hDdb = (HBITMAP)-1;     // Not created yet.
+WFIELD\wbitmap.cpp:1251:            ImgStruct[Images].scaling = PARTSCALE;    // default
+WFIELD\wbitmap.cpp:1252:            ImgStruct[Images].thdr.source = 0;
+WFIELD\wbitmap.cpp:1253:            ImgStruct[Images].thdr.align = txLEFT;
+WFIELD\wbitmap.cpp:1267:            setImageCrop(Images,(int)(prect->left+XLeft),(int)(prect->top+YTop),
+WFIELD\wbitmap.cpp:1271:            f->hflags = IMAGEFLD | NOTRIM;
+WFIELD\wbitmap.cpp:1272:            lstrcpy((LPSTR)ImgStruct[Images].filename,
+WFIELD\wbitmap.cpp:1276:            Images++;
+WFIELD\wbitmap.cpp:1281:            createDDB(Images-1,TRUE);
+WFIELD\wbitmap.cpp:1282:#ifdef SQUEEZE_IMAGE
+WFIELD\wbitmap.cpp:1312:    // Used for scrolling box or image.
+WFIELD\wbitmap.cpp:1388:            pView->drawImageOutline();
+WFIELD\wbitmap.cpp:1423:void CRrDoc::nonClientImageRect(POINT point,int xmove,int ymove)
+WFIELD\wbitmap.cpp:1425:    //    eraseImageOutline();
+WFIELD\wbitmap.cpp:1456:BOOL CRrDoc::moveImageRect(POINT point)
+WFIELD\wbitmap.cpp:1468:    pView->drawImageOutline();  // erase the outline.
+WFIELD\wbitmap.cpp:1480:#ifdef SQUEEZE_IMAGE
+WFIELD\wbitmap.cpp:1482:    int row = ImgStruct[curImage].fhdr.hrow;
+WFIELD\wbitmap.cpp:1582:    // drawImageOutline();    // Draw the outline.
+WFIELD\wbitmap.cpp:1596:            pView->drawImageOutline();     // Draw the outline.
+WFIELD\wbitmap.cpp:1599:    else pView->drawImageOutline();    // Draw the outline.
+WFIELD\wbitmap.cpp:1601:#ifndef SQUEEZE_IMAGE    // new way
+WFIELD\wbitmap.cpp:1602:    // for images, shade the band area if stretching top
+WFIELD\wbitmap.cpp:1612:// Function:  selectImage.  Called in two situations:
+WFIELD\wbitmap.cpp:1617:BOOL CRrDoc::selectImage(LPFLDHDR f,POINT point, BOOL bMouseDown)
+WFIELD\wbitmap.cpp:1623:    setImageLoc(curImage=findImage(f));     // Get a rect for this image fld.
+WFIELD\wbitmap.cpp:1643:    // check for a hit on the sides - if not a zoomed image.
+WFIELD\wbitmap.cpp:1644:    if (((LPRRIMAGE)f)->scaling != PARTSCALE)
+WFIELD\wbitmap.cpp:1670:            pView->drawImageOutline();
+WFIELD\wbitmap.cpp:1672:            m_pFrame->ActiveState = IMAGE_MOVE;
+WFIELD\wbitmap.cpp:1675:            pView->tfmove = pView->bfmove = pView->lfmove = pView->rfmove = (LPFLDHDR)&ImgStruc
+t[curImage];
+WFIELD\wbitmap.cpp:1698:    setOleObjectLoc ( pCurrentItem ) ;     // Get a rect for this image fld.
+WFIELD\wbitmap.cpp:1700:    // Try to use the image tracker code.
+WFIELD\wbitmap.cpp:1719:    // check for a hit on the sides - if not a zoomed image.
+WFIELD\wbitmap.cpp:1746:            pView->drawImageOutline();
+WFIELD\wbitmap.cpp:1748:            m_pFrame->ActiveState = IMAGE_MOVE;
+WFIELD\wbitmap.cpp:1821:            pView->drawImageOutline();
+WFIELD\wbitmap.cpp:1823:            m_pFrame->ActiveState = IMAGE_MOVE;
+WFIELD\wbitmap.cpp:1835:BOOL CRrDoc::markImage(POINT point)     // button up
+WFIELD\wbitmap.cpp:1837:    // Note:  This is only used for stretching now, not for moving image.
+WFIELD\wbitmap.cpp:1845:        pView->drawImageOutline();             // Erase dashed line rect
+WFIELD\wbitmap.cpp:1871:            if ( CurFld && IMAGE_FLD(CurFld) )
+WFIELD\wbitmap.cpp:1873:                f = (LPFLDHDR)&ImgStruct[curImage];
+WFIELD\wbitmap.cpp:1877:                if ( (ImgStruct[curImage].scaling != PARTSCALE) ||
+WFIELD\wbitmap.cpp:1883:                    setImageCrop(curImage,(int)(imgRect.left+XLeft),(int)(imgRect.top+YTop),
+WFIELD\wbitmap.cpp:1885:                    createDDB(curImage,TRUE);    // recreate ddb.
+WFIELD\wbitmap.cpp:1907:                    int nGridInchX = getPixFromCol(1) * RulerPitch    ;  // This matches the im
+ages to the rulers.
+WFIELD\wbitmap.cpp:1945:#ifdef SQUEEZE_IMAGE
+WFIELD\wbitmap.cpp:1954:        if ( CurFld && IMAGE_FLD(CurFld) )
+WFIELD\wbitmap.cpp:1955:            setImageLoc(curImage);
+WFIELD\wbitmap.cpp:1959:        m_pFrame->ActiveState &= ~IMAGE_MOVE;
+WFIELD\wbitmap.cpp:1963:#ifdef SQUEEZE_IMAGE
+WFIELD\wbitmap.cpp:1967:        m_pFrame->m_wndStatusBar.fPrompt(f,TRUE);    // Update image size.
+WFIELD\wbitmap.cpp:1976:    if ((hClip = getClipboardImage()) >= 0)
+WFIELD\wbitmap.cpp:1988:void CRrDoc::zapAnImage(int index,BOOL dsp) // zap it from index passed
+WFIELD\wbitmap.cpp:1990:    LPRRIMAGE pImg;
+WFIELD\wbitmap.cpp:1998:    Images--;
+WFIELD\wbitmap.cpp:1999:    if (Images)
+WFIELD\wbitmap.cpp:2002:         sizeof(RRIMAGE)*(Images-index));
+WFIELD\wbitmap.cpp:2003:        if (pImg = (RRIMAGE far *)globalReAlloc((LPSTR)ImgStruct,
+WFIELD\wbitmap.cpp:2004:         (DWORD)(Images*sizeof(RRIMAGE))))
+WFIELD\wbitmap.cpp:2013:    // if (Images)
+WFIELD\wbitmap.cpp:2014:    // setImagePalette(); Don't need to reset; they all share the 332 palette.
+WFIELD\wbitmap.cpp:2025:    setImagePalette(FALSE);    // colorful image may have been deleted.
+WFIELD\wbitmap.cpp:2029:void CRrDoc::delImage(void)         // zap current one
+WFIELD\wbitmap.cpp:2031:    zapAnImage(curImage,TRUE);    // use new zapper above
+WFIELD\wbitmap.cpp:2032:    curImage = 0;        // Could be left over.
+WFIELD\wbitmap.cpp:2038:void CRrDoc::newBitmapImageField(int when, LPRRIMAGE lpimage)
+WFIELD\wbitmap.cpp:2045:    lpimage->hDibX = lpimage->hDib ;
+WFIELD\wbitmap.cpp:2046:    f = m_pComposite->mfbyndx(lpimage->fid) ;
+WFIELD\wbitmap.cpp:2053:    if (ImageshDib)
+WFIELD\wbitmap.cpp:2055:        if (phDib = (int *)globalReAlloc((LPSTR)ImageshDibArray,
+WFIELD\wbitmap.cpp:2056:                 (DWORD)((ImageshDib+1)*sizeof(int))))
+WFIELD\wbitmap.cpp:2057:              ImageshDibArray = phDib;
+WFIELD\wbitmap.cpp:2066:        if ((ImageshDibArray = (int *)globalAlloc(GHND,(DWORD)sizeof(int))) == NULL)
+WFIELD\wbitmap.cpp:2072:    lpimage->hDibX = hDib ;
+WFIELD\wbitmap.cpp:2073:    ImageshDibArray[ImageshDib++] = hDib ;
+WFIELD\wbitmap.cpp:2075:    lpimage->cropRectX.top = 0 ;
+WFIELD\wbitmap.cpp:2076:    lpimage->cropRectX.bottom = pheight ;
+WFIELD\wbitmap.cpp:2077:    lpimage->cropRectX.left = 0 ;
+WFIELD\wbitmap.cpp:2078:    lpimage->cropRectX.right = pwidth ;
+WFIELD\wbitmap.cpp:2086:    if (ImageshDib > 0)
+WFIELD\wbitmap.cpp:2088:        for (i = 0 ; i < ImageshDib ; i++)
+WFIELD\wbitmap.cpp:2089:            img_delete(ImageshDibArray[i]) ;
+WFIELD\wbitmap.cpp:2091:        globalFree(ImageshDibArray) ;
+WFIELD\wbitmap.cpp:2092:        ImageshDibArray = NULL ;
+WFIELD\wbitmap.cpp:2093:        ImageshDib = 0 ;
+WFIELD\wbox.cpp:45:// Part of fix for globalReAlloc problem when copying lines/boxes/images
+WFIELD\wbox.cpp:336:        else if (!(Drawing & bxImage))
+WFIELD\chart.cpp:695:    // Outline of image passed in from endMarkRect().
+WFIELD\chart.cpp:705:    endImageOutline();    // same as for images
+WFIELD\chart.cpp:741:    if (prect == (PRECT)NULL)     // a clipboard image.
+WFIELD\chart.cpp:746:        setImageCrop(Charts,(int)(XPos+XLeft+rectLayout.left),(int)YPix, owidth,oheight);
+WFIELD\chart.cpp:749:    else    // User's outline of image.
+WFIELD\chart.cpp:754:owidth and oheight are uninitialized, reason: setImageCrop() is not called to set them.
+WFIELD\chart.cpp:761:        setImageCrop(Charts,(int)(prect->left+XLeft),(int)(prect->top+YTop),
+WFIELD\chart.cpp:764:        // dlm - setImageCrop is what fills in f->fr!!
+WFIELD\chart.cpp:804:#ifdef SQUEEZE_IMAGE
+WFIELD\chart.cpp:818:#endif    //SQUEEZE_IMAGE
+WFIELD\chart.cpp:942:    //  Don't show chart prop dlg if multiple images selected.
+WFIELD\imglib.cpp:12://    functions to interface to image library (currently Accusoft)
+WFIELD\imglib.cpp:33:// image.  The RRPD image function pointers were not getting reset.
+WFIELD\imglib.cpp:36:// Don't crash if image library is not loaded.
+WFIELD\imglib.cpp:42:// Loading the image library needs to exit if it is already loaded.
+WFIELD\imglib.cpp:45:// New image function to extract palette.
+WFIELD\imglib.cpp:53:// Always call pwImgFuncs in loadImageLib because the pointers in the
+WFIELD\imglib.cpp:57:// Use page 0 of TIF and DCX image file.
+WFIELD\imglib.cpp:63:// Show message if cannot load 32 bit image dll
+WFIELD\imglib.cpp:72:// Fix for RRW 2426 (paste clipboard image GPF).
+WFIELD\imglib.cpp:85:// mjs 3/29/95  This should be the only source that uses this image library header.
+WFIELD\imglib.cpp:87:#include    "imglib.h"        // modified to contain typedefs of image library function pointers.
+WFIELD\imglib.cpp:94:#include    "global.h"        // for hPrinterDriver, hImageLib
+WFIELD\imglib.cpp:119:static    HINSTANCE    hImageLibFile,
+WFIELD\imglib.cpp:120:                    hImageLibDisplay ;
+WFIELD\imglib.cpp:145:BOOL CRrDoc::loadImageLib(void)
+WFIELD\imglib.cpp:148:    // Load the image libary.  If it cannot be found, Windows will display a message box.
+WFIELD\imglib.cpp:149:    if (hImageLib == (HINSTANCE)NULL)
+WFIELD\imglib.cpp:151://          if ((hImageLib = LoadLibrary(theApp.m_elmFileManager.GetImageDriver())) == (HINSTANCE
+)NULL)
+WFIELD\imglib.cpp:157:        hImageLib = LoadLibrary("ltkrn13n.dll") ;
+WFIELD\imglib.cpp:158:        hImageLibDisplay = LoadLibrary("ltdis13n.dll") ;
+WFIELD\imglib.cpp:159:        hImageLibFile = LoadLibrary("ltfil13n.dll") ;
+WFIELD\imglib.cpp:168:        if (hImageLib == NULL ||
+WFIELD\imglib.cpp:169:            hImageLibDisplay == NULL ||
+WFIELD\imglib.cpp:170:            hImageLibFile == NULL)
+WFIELD\imglib.cpp:176:        fpFileInfo        = (FPFileInfo)GetProcAddress(hImageLibFile,"L_FileInfo") ;
+WFIELD\imglib.cpp:179:        fpInitBitmap        = (FPInitBitmap)GetProcAddress(hImageLib,"L_InitBitmap") ;
+WFIELD\imglib.cpp:182:        fpLoadFile            = (FPLoadFile)GetProcAddress(hImageLibFile,"L_LoadFile") ;
+WFIELD\imglib.cpp:185:        fpChangeToDIB = (FPChangeToDIB)GetProcAddress(hImageLib,"L_ChangeToDIB") ;
+WFIELD\imglib.cpp:188:        fpConvertToDDB        = (FPConvertToDDB)GetProcAddress(hImageLibDisplay,"L_ConvertToDDB")
+ ;
+WFIELD\imglib.cpp:191:        fpPaintDC            = (FPPaintDC)GetProcAddress(hImageLibDisplay,"L_PaintDC") ;
+WFIELD\imglib.cpp:194:        fpFreeBitmap        = (FPFreeBitmap)GetProcAddress(hImageLib,"L_FreeBitmap") ;
+WFIELD\imglib.cpp:197:        fpPrintBitmapExt    = (FPPrintBitmapExt)GetProcAddress(hImageLibDisplay,"L_PrintBitmapExt
+") ;
+WFIELD\imglib.cpp:200:        fpPrintBitmapFast    = (FPPrintBitmapFast)GetProcAddress(hImageLibDisplay,"L_PrintBitmapF
+ast") ;
+WFIELD\imglib.cpp:201:        fpCreatePalette        = (FPCreatePalette)GetProcAddress(hImageLibDisplay, "L_CreatePaint
+Palette") ;
+WFIELD\imglib.cpp:202:        fpUnlockSupport        = (FPUnlockSupport)GetProcAddress(hImageLib, "L_UnlockSupport") ;
+WFIELD\imglib.cpp:203:        fpCopyBitmap        = (FPCopyBitmap)GetProcAddress(hImageLib, "L_CopyBitmap") ;
+WFIELD\imglib.cpp:204:        fpCopyBitmapRect    = (FPCopyBitmapRect)GetProcAddress(hImageLib, "L_CopyBitmapRect") ;
+WFIELD\imglib.cpp:205:        fpSaveBitmap        = (FPSaveBitmap)GetProcAddress(hImageLibFile, "L_SaveBitmap") ;
+WFIELD\imglib.cpp:206:        fpAllocateBitmap    = (FPAllocateBitmap)GetProcAddress(hImageLib, "L_AllocateBitmap") ;
+WFIELD\imglib.cpp:207:        fpCopyBitmapPalette    = (FPCopyBitmapPalette)GetProcAddress(hImageLib, "L_CopyBitmapPale
+tte") ;
+WFIELD\imglib.cpp:208:        fpResizeBitmap        = (FPResizeBitmap)GetProcAddress(hImageLib, "L_ResizeBitmap") ;
+WFIELD\imglib.cpp:209:        fpSizeBitmap        = (FPSizeBitmap)GetProcAddress(hImageLib, "L_SizeBitmap") ;
+WFIELD\imglib.cpp:218://        if ((lpfnImgLoad             = (LPFNIMGLOAD            )GetProcAddress(hImageLibFile,"L
+_LoadFile"            )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:219://        if ((lpfnImgLoad             = (LPFNIMGLOAD            )GetProcAddress(hImageLib,SZ_IMG
+LOAD            )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:220://        if ((lpfnImgLoadFd           = (LPFNIMGLOADFD          )GetProcAddress(hImageLib,SZ_IMG
+LOADFD          )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:221://        if ((lpfnImgSave             = (LPFNIMGSAVE            )GetProcAddress(hImageLib,SZ_IMG
+SAVE            )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:222://        if ((lpfnImgDisplay          = (LPFNIMGDISPLAY         )GetProcAddress(hImageLib,SZ_IMG
+DISPLAY         )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:223://        if ((lpfnImgPalette          = (LPFNIMGPALETTE         )GetProcAddress(hImageLib,SZ_IMG
+PALETTE         )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:224://        if ((lpfnImgGetBitmapPalette = (LPFNIMGGETBITMAPPALETTE)GetProcAddress(hImageLib,SZ_IMG
+GETBITMAPPALETTE)) == NULL) return FALSE ;
+WFIELD\imglib.cpp:225://        if ((lpfnImgSetCrop          = (LPFNIMGSETCROP         )GetProcAddress(hImageLib,SZ_IMG
+SETCROP         )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:226://        if ((lpfnImgInfo             = (LPFNIMGINFO            )GetProcAddress(hImageLib,SZ_IMG
+INFO            )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:227://        if ((lpfnImgDelete           = (LPFNIMGDELETE          )GetProcAddress(hImageLib,SZ_IMG
+DELETE          )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:228://        if ((lpfnImgDibToDdb         = (LPFNIMGDIBTODDB        )GetProcAddress(hImageLib,SZ_IMG
+DIBTODDB        )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:229://        if ((lpfnImgDisplayDdb       = (LPFNIMGDISPLAYDDB      )GetProcAddress(hImageLib,SZ_IMG
+DISPLAYDDB      )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:230://        if ((lpfnImgMediancut        = (LPFNIMGMEDIANCUT       )GetProcAddress(hImageLib,SZ_IMG
+MEDIANCUT       )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:231://        if ((lpfnImgDiffusion        = (LPFNIMGDIFFUSION       )GetProcAddress(hImageLib,SZ_IMG
+DIFFUSION       )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:232://        if ((lpfnImgCreate           = (LPFNIMGCREATE          )GetProcAddress(hImageLib,SZ_IMG
+CREATE          )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:233://        if ((lpfnImgCreateDdb        = (LPFNIMGCREATEDDB       )GetProcAddress(hImageLib,SZ_IMG
+CREATEDDB       )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:234://        if ((lpfnImgPrint            = (LPFNIMGPRINT           )GetProcAddress(hImageLib,SZ_IMG
+PRINT           )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:235://        if ((lpfnImgPrintFast        = (LPFNIMGPRINTFAST       )GetProcAddress(hImageLib,SZ_IMG
+PRINTFAST       )) == NULL) return FALSE ;
+WFIELD\imglib.cpp:237:        // It is used to save JPG images on a 16 high color 4 bits / pixel display.
+WFIELD\imglib.cpp:238://        lpfnImgPromote24        = (LPFNIMGPROMOTE24       )GetProcAddress(hImageLib,SZ_IMGPROMO
+TE24       ) ;
+WFIELD\imglib.cpp:246:        // the images properly.
+WFIELD\imglib.cpp:249:        // before the export and then reloaded after.  When reloaded, its image function
+WFIELD\imglib.cpp:279:// Wrapper functions; all interface to the image libary is in this module.
+WFIELD\imglib.cpp:289:    // Load image library on demand.
+WFIELD\imglib.cpp:290:    // No other image library functions should be called before an image is loaded.
+WFIELD\imglib.cpp:292:    if (!loadImageLib())
+WFIELD\imglib.cpp:297:        (*Defs.ImageDir != 0))
+WFIELD\imglib.cpp:299:        strcpy(FileName, Defs.ImageDir) ;
+WFIELD\imglib.cpp:380:    if (!loadImageLib())
+WFIELD\imglib.cpp:389:    if (!loadImageLib())
+WFIELD\imglib.cpp:495:    // Effect is that colors could be wrong if user runs another image app.
+WFIELD\imglib.cpp:559:    // 05/17/97 PAR.  If image library does not load, then do not GPF.
+WFIELD\imglib.cpp:560:    if (hImageLib == (HINSTANCE)NULL)
+SPEC\specfld.cpp:171:    int image_field = 0, line_field = 0, box_field = 0, chart_field = 0; // number of respective f
+ields
+SPEC\specfld.cpp:174:    LPRRIMAGE *iflist = NULL;        // image, box, line info
+SPEC\specfld.cpp:180:    if (pDoc->Images &&
+SPEC\specfld.cpp:181:            !(iflist = (LPRRIMAGE *)pDoc->globalAlloc(GHND,pDoc->Images * sizeof(LPRRIMAGE))))
+SPEC\specfld.cpp:186:        if (pDoc->Images)  pDoc->globalFree((LPSTR)iflist);
+SPEC\specfld.cpp:192:        if (pDoc->Images)  pDoc->globalFree((LPSTR)iflist);
+SPEC\specfld.cpp:199:        if (pDoc->Images)
+SPEC\specfld.cpp:247:                {    // routine also fills in all font, line, box, image info
+SPEC\specfld.cpp:248:                    PrFld( fh, fontlist, &flistnum, lflist, &line_field, bflist, &box_field, iflis
+t, &image_field, cflist, &chart_field, listOleObjects );
+SPEC\specfld.cpp:252:                        if (pDoc->Images)
+SPEC\specfld.cpp:267:    // output font key, output line, box, image info
+SPEC\specfld.cpp:269:    PrLBIFields( lflist, line_field, bflist, box_field, iflist, image_field, cflist, chart_field,
+listOleObjects);
+SPEC\specfld.cpp:341:    if (pDoc->Images)
+SPEC\specopt.cpp:33:// New HTML options to specify file format and to copy all images.
+SPEC\specopt.cpp:36:// Functions to generate an image from an object.  Mostly directory parsing.
+SPEC\specopt.cpp:489:            CString csSpecBackgroundImage ;
+SPEC\specopt.cpp:490:            VERIFY( csSpecBackgroundImage.LoadString(IDS_HTML_SPEC_BACKGROUND_IMAGE) );
+SPEC\specopt.cpp:491:            PrWrap( csSpecBackgroundImage.GetBuffer(0), objHtml.csBackgroundImagePathname.GetBuffe
+r(0), TAB4, FALSE, TAB5, TRUE );
+SPEC\specopt.cpp:500:            // "Image Directory is same as output directory"
+SPEC\specopt.cpp:507:            HTML_EXPORT::DirectoryDifference(objHtml.csExportDirectory, objHtml.csImageDirectory,
+csRelativeLocation ) ;
+SPEC\specopt.cpp:508:            // "Image Directory relative to output: xxx.htm"
+SPEC\specopt.cpp:514:        if ( objHtml.bCopyAllImagesToDirectory )
+SPEC\specopt.cpp:519:            // "All images will be copied to the image directory"
+SPEC\specopt.cpp:524:        CString csSpecImageFormat ;
+SPEC\specopt.cpp:525:        VERIFY( csSpecImageFormat.LoadString(IDS_HTML_SPEC_IMAGE_FORMAT) );  // "Image File Format
+: %s"
+SPEC\specopt.cpp:528:        zpprintf(csSpecImageFormat.GetBuffer(0), objHtml.csHtmlImageFileFormat  );
+SPEC\specfld1.cpp:260:// Output field identifier for image (file name), line or box (Line1, Box2)
+SPEC\specfld1.cpp:265: LPRRIMAGE *iflist, int *image_field,
+SPEC\specfld1.cpp:275:    // I have an image to maintain
+SPEC\specfld1.cpp:306:    else if (fh->hflags & IMAGEFLD)
+SPEC\specfld1.cpp:310:        iflist[(*image_field)++] = (LPRRIMAGE)fh;
+SPEC\specfld1.cpp:312:        if ((namelen = strlen(pDoc->getDisplayName(((LPRRIMAGE)fh)->filename))) <= 20)
+SPEC\specfld1.cpp:565: *             lists of line, box, and image info
+SPEC\specfld1.cpp:572: LPRRIMAGE *iflist,  int *image_field,  // image info
+SPEC\specfld1.cpp:605:      Pr2DFldName( fh, lflist, line_field, bflist, box_field, iflist, image_field, cflist, chart_
+field, listOleObjects );
+SPEC\specfld1.cpp:712:// print image, line, box info
+SPEC\specfld1.cpp:716: LPRRIMAGE *iflist, int image_field,
+SPEC\specfld1.cpp:803:    if (image_field)
+SPEC\specfld1.cpp:816:    for (i=0; i < image_field; i++)
+WDISPLAY\splashwn.cpp:115:#define IMAGE_WIDTH        520
+WDISPLAY\splashwn.cpp:116:#define IMAGE_HEIGHT    315
+WDISPLAY\splashwn.cpp:135:#define WARNING_CENTER    IMAGE_WIDTH/2    // center of bitmap
+WDISPLAY\splashwn.cpp:167:        // get image width, height, and bits/pixel
+WDISPLAY\splashwn.cpp:169:        // scale image to full height or width of client rectangle
+WDISPLAY\splashwn.cpp:256:    CDC imageDC;
+WDISPLAY\splashwn.cpp:257:    CRect rectImage;
+WDISPLAY\splashwn.cpp:259:    CBitmap splashImage;
+WDISPLAY\splashwn.cpp:268:    int imageIndex, xsize, ysize, pixels ;
+WDISPLAY\splashwn.cpp:270:    if (!imageDC.CreateCompatibleDC(&dc))
+WDISPLAY\splashwn.cpp:283:        if ((imageIndex = m_pDoc->img_load(szCustomTitleScreenName)) < 0)
+WDISPLAY\splashwn.cpp:285:        m_pDoc->img_info(imageIndex, &xsize, &ysize, &pixels) ;
+WDISPLAY\splashwn.cpp:295:        GetDesktopWindow()->GetClientRect(&rectImage);
+WDISPLAY\splashwn.cpp:296:        rectImage.left = (rectImage.right / 2) - (ptSize.x / 2);
+WDISPLAY\splashwn.cpp:297:        rectImage.top = (rectImage.bottom / 2) - (ptSize.y / 2);
+WDISPLAY\splashwn.cpp:298:        rectImage.right = rectImage.left + ptSize.x;
+WDISPLAY\splashwn.cpp:299:        rectImage.bottom = rectImage.top + ptSize.y;
+WDISPLAY\splashwn.cpp:301:        MoveWindow(rectImage.left, rectImage.top, ptSize.x, ptSize.y, 0);
+WDISPLAY\splashwn.cpp:302:        m_pDoc->img_display(imageIndex, dc.m_hDC, 0, 0, xsize, ysize);
+WDISPLAY\splashwn.cpp:303:        m_pDoc->img_delete(imageIndex);
+WDISPLAY\splashwn.cpp:309:    if (!splashImage.LoadBitmap("titleImg"))
+WDISPLAY\splashwn.cpp:313:    splashImage.GetObject(sizeof(BITMAP), &bitmap);
+WDISPLAY\splashwn.cpp:314:    pSavedBitmap = imageDC.SelectObject(&splashImage);
+WDISPLAY\splashwn.cpp:316:    imageDC.SetMapMode(dc.GetMapMode());
+WDISPLAY\splashwn.cpp:325:    GetDesktopWindow()->GetClientRect(&rectImage);
+WDISPLAY\splashwn.cpp:326:    rectImage.left = (rectImage.right / 2) - (ptSize.x / 2);
+WDISPLAY\splashwn.cpp:327:    rectImage.top = (rectImage.bottom / 2) - (ptSize.y / 2);
+WDISPLAY\splashwn.cpp:328:    rectImage.right = rectImage.left + ptSize.x;
+WDISPLAY\splashwn.cpp:329:    rectImage.bottom = rectImage.top + ptSize.y;
+WDISPLAY\splashwn.cpp:331:    MoveWindow(rectImage.left, rectImage.top, ptSize.x, ptSize.y, 0);
+WDISPLAY\splashwn.cpp:333:    dc.BitBlt(0, 0, ptSize.x, ptSize.y, &imageDC, ptOrg.x, ptOrg.y, SRCCOPY);
+WDISPLAY\splashwn.cpp:420:    imageDC.SelectObject(pSavedBitmap);    // restore original bitmpa, so we can delete ours
+WDISPLAY\splashwn.cpp:421:    splashImage.DeleteObject();    // clean up bitmap
+WDISPLAY\splashwn.cpp:427:void CMainFrame::displaySplashImage(BOOL bShow)
+WDISPLAY\wscroll.cpp:22:// Charts should do same as images.
+WDISPLAY\wscroll.cpp:46:// Fixed RRW #2060 by not scrolling boxes and images in vertInWindow().
+WDISPLAY\wscroll.cpp:186:        m_pDoc->setImageLoc ( -1 ) ;
+WDISPLAY\wscroll.cpp:253:        m_pDoc->setImageLoc ( -1 ) ;
+WDISPLAY\wscroll.cpp:275:    if (f && TWOD_FLD(f))  // leave boxes and images alone
+WDISPLAY\wdsp.cpp:111:// scrolled when resizing objects, images, boxes or fields.
+WDISPLAY\wdsp.cpp:171:// Cleaned up some box/image code.
+WDISPLAY\wdsp.cpp:727:    else  // Boxes and images
+WDISPLAY\wdsp.cpp:737:        // and the middles (but not on zoomed image)..
+WDISPLAY\wdsp.cpp:738:        if ( IMAGE_FLD(f) )
+WDISPLAY\wdsp.cpp:740:            LPRRIMAGE lpImage = (LPRRIMAGE) f ;
+WDISPLAY\wdsp.cpp:741:            if ( lpImage->scaling == PARTSCALE)
+WDISPLAY\wdsp.cpp:769:void CRrView::drawImageOutline(void)
+WDISPLAY\wdsp.cpp:771:    // Draw/erase outline of current image.
+WDISPLAY\wdsp.cpp:1037:void CRrView::dispImages(CDC *pDC, CRect &rectClip)
+WDISPLAY\wdsp.cpp:1047:    // don't show other 2Ds if stretching image and scrolling screen
+WDISPLAY\wdsp.cpp:1048:    // Draw outline after drawing image. 02/10/96.
+WDISPLAY\wdsp.cpp:1049:    //if (m_pFrame->ActiveState & IMAGE_MOVE)
+WDISPLAY\wdsp.cpp:1050:    //    drawImageOutline();           // show rectangle
+WDISPLAY\wdsp.cpp:1059:            if (!IMAGE_FLD(f))
+WDISPLAY\wdsp.cpp:1062:            // Is this image within the update region?
+WDISPLAY\wdsp.cpp:1069:                i = m_pDoc->findImage(f);
+WDISPLAY\wdsp.cpp:1079:    // Draw outline after drawing image.
+WDISPLAY\wdsp.cpp:1080:    if (m_pFrame->ActiveState & IMAGE_MOVE)
+WDISPLAY\wdsp.cpp:1081:        drawImageOutline();           // show rectangle
+WDISPLAY\wdsp.cpp:1244:        // So, save the DC, restore it after drawing boxes and images, then
+WDISPLAY\wdsp.cpp:1256:        // Draw the OLE items from the list. Draw after images but before rest.
+WDISPLAY\wdsp.cpp:1285:        if (m_pDoc->Images)  // Images on top of boxes; fields on top of images.
+WDISPLAY\wdsp.cpp:1286:            dispImages(pDC, rectClip);
+WDISPLAY\wdsp.cpp:1292:        if (MarkedBoxes || MarkedLns || MarkedImages)
+WDISPLAY\statbar.cpp:73:// Hide image extension in status bar.
+WDISPLAY\statbar.cpp:712:                { // it's an image or line/box field.
+WDISPLAY\statbar.cpp:714:                    if (IMAGE_FLD(f))
+WDISPLAY\statbar.cpp:716:                        xsize = ((LPRRIMAGE)(f))->thdr.xinch;    // saved user values.
+WDISPLAY\statbar.cpp:717:                        ysize = ((LPRRIMAGE)(f))->thdr.yinch;
+WDISPLAY\statbar.cpp:753:                    if (IMAGE_FLD(f))
+WDISPLAY\statbar.cpp:755:                        wsprintf ( fp, "%s: %s  (%s, %s)",  getString(IDS_0176,0), m_pDoc->fil
+eFromPath( m_pDoc->getDisplayName(((LPRRIMAGE)f)->filename)), (const char*)csSummary, b ) ;
+PRINT\prec.cpp:25:// Bug printing image (from field) in footer
+PRINT\prec.cpp:28:// Printing of data image items
+PRINT\prec.cpp:145:// Remove code that treated charts as images for PDI export.
+PRINT\prec.cpp:160:// Save chart as an image for PDI.
+PRINT\prec.cpp:266:// Functions to generate an image from an object.  Mostly directory parsing.
+PRINT\prec.cpp:339:// SteveC: Write image names to INI for PDI export and Live
+PRINT\prec.cpp:426:// RRW #1907.  Re-use hDIBs of duplicate images, so pwint.c can cache them.
+PRINT\prec.cpp:432:// Check images as well as lines/boxes for outline() call test
+PRINT\prec.cpp:475:// 3.0: images on any line
+PRINT\prec.cpp:561:// image/line/box macros
+PRINT\prec.cpp:562:#define I_FLD(f)    (((f->hflags & IMAGEFLD ) != 0) && !(f->hflags & (DEL_FLD|CLIP_FLD)))
+PRINT\prec.cpp:634:int CRrDoc::getFirstDib(LPRRIMAGE lpimg)
+PRINT\prec.cpp:636:    // Performance improvement for RRW #1907 - find duplicate images.
+PRINT\prec.cpp:643:    for (i = 0; i < Images; i++)
+PRINT\prec.cpp:1881:// store an image for later processing
+PRINT\prec.cpp:1882:void CRrDoc::imbedImage(LPRRIMAGE lpimg, int endY)
+PRINT\prec.cpp:1884:    //TRACE( "CRrDoc::imbedImage\n" );
+PRINT\prec.cpp:1890:#ifdef SQUEEZE_IMAGE // the old fashioned way...
+PRINT\prec.cpp:1896:    LPFNPWRECORDIMAGE lpfnRecordImage = (LPFNPWRECORDIMAGE)GetProcAddress(hPrinterDriver, MAKEINTRE
+SOURCE(PWRECORDIMAGE));
+PRINT\prec.cpp:1901:    if (lpfnRecordImage)
+PRINT\prec.cpp:1903:#ifndef SQUEEZE_IMAGE
+PRINT\prec.cpp:1940:            // image filename
+PRINT\prec.cpp:1960:            if ( Export && ( m_pExport->ExportType == PDIEXP ) && m_pExport->szImageIniPath[0] )
+PRINT\prec.cpp:1961:            { // PDI export - record image path in temp file for Alive
+PRINT\prec.cpp:1963:                if ( m_pExport->nImagesExported )
+PRINT\prec.cpp:1967:                    for ( int ii = 0; ii < m_pExport->nImagesExported; ii++ )
+PRINT\prec.cpp:1970:                        GetPrivateProfileString( "Images", szCount, "", szPath, sizeof( szPath ), m
+_pExport->szImageIniPath );
+PRINT\prec.cpp:1981:                    wsprintf( szTemp, "%d", ++m_pExport->nImagesExported );
+PRINT\prec.cpp:1983:                    VERIFY( WritePrivateProfileString( "Images", "FileCount", szTemp, m_pExport->sz
+ImageIniPath ));
+PRINT\prec.cpp:1984:                    wsprintf( szTemp, "File%d", m_pExport->nImagesExported );
+PRINT\prec.cpp:1985:                    // write image path
+PRINT\prec.cpp:1986:                    VERIFY( WritePrivateProfileString( "Images", szTemp, lpimg->filename, m_pExport
+->szImageIniPath ));
+PRINT\prec.cpp:1990:            //TRACE( "  Recording image at (%d,%d) with dimensions (%d,%d)\n", prtImg.x, prtImg.y,
+prtImg.wid, prtImg.hite );
+PRINT\prec.cpp:1991:            if (!(*lpfnRecordImage)(PrtStruct,(LPPRT_IMG)&prtImg))
+PRINT\prec.cpp:2002:// store an image for later processing
+PRINT\prec.cpp:2148://    ASSERT( sizeof(PRT_IMG) == 16 );  // printImage (PRT_IMG) structure should be a power of 2.
+PRINT\prec.cpp:2254:void CRrDoc::checkPendingImages(int when, int bandline, WORD y)
+PRINT\prec.cpp:2256:    //TRACE( "CRrDoc::checkPendingImages\n" );
+PRINT\prec.cpp:2265:        { // an image begging to be printed...
+PRINT\prec.cpp:2266:            if (((LPRRIMAGE)f)->fid != NOID)
+PRINT\prec.cpp:2267:                newBitmapImageField(when, (LPRRIMAGE)f) ;
+PRINT\prec.cpp:2268:            imbedImage((LPRRIMAGE)f, y);        // give 'im his wish
+PRINT\prec.cpp:2270:            if ( PageImages )
+PRINT\prec.cpp:2271:                PageImages-- ;
+PRINT\prec.cpp:2289:        { // an image begging to be printed...
+PRINT\prec.cpp:2677:                //04/21/97 PAR.  Make sure images and objects are included in HTML export.
+PRINT\prec.cpp:2685:                    if (IMAGE_FLD(f))
+PRINT\prec.cpp:2687:                        PageImages++;        // bump the local
+PRINT\prec.cpp:2688:#ifndef SQUEEZE_IMAGE
+PRINT\prec.cpp:2693:                        // for the HTML parser to pickup and locate an object or an image.
+PRINT\prec.cpp:2698:                            CString csImagePDIEntry ( "<img src=image>" ) ;
+PRINT\prec.cpp:2700:                            fldLen = csImagePDIEntry.GetLength() ;
+PRINT\prec.cpp:2701:                            lmemmove ( (LPSTR)fbuf, (LPSTR)csImagePDIEntry.GetBuffer(0), fldLen + 1
+) ;
+PRINT\prec.cpp:2715:                        // for the HTML parser to pickup and locate an object or an image.
+PRINT\prec.cpp:2737:                        // for the HTML parser to pickup and locate an object or an image.
+PRINT\prec.cpp:2742:                            // Make sure the image directory exists.  If not, then create.
+PRINT\prec.cpp:2744:                            objHtml.CreateImageDirectory() ;
+PRINT\prec.cpp:2755:                            csItemName += objHtml.csHtmlImageFileFormat ;
+PRINT\prec.cpp:2766:                            CString csImageRelativePath ;
+PRINT\prec.cpp:2767:                            HTML_EXPORT::PathnameDifference ( objHtml.csExportPathname, csChartPict
+urePathname, csImageRelativePath ) ;
+PRINT\prec.cpp:2770:                            csChartPDIEntry.Format ( "<IMG SRC=\"%s\">", csImageRelativePath ) ;
+PRINT\prec.cpp:2794:#ifdef SQUEEZE_IMAGE
+PRINT\prec.cpp:2795:                    if (IMAGE_FLD(f) || OBJECT_FLD(f))
+PRINT\prec.cpp:2797:                    if (FREELINE(f->hrow) && (IMAGE_FLD(f) || OBJECT_FLD(f)))
+PRINT\prec.cpp:3033:        //  This change fixes WO 131994 - the "disappearing" chart (or image) problem,
+PRINT\prec.cpp:3035:        //  If there's an image, a chart, or an OLE object, do stuff like we do for
+PRINT\prec.cpp:3037:        if ( PageImages || PageCharts || nPageOleObjects )
+PRINT\prec.cpp:3090:    PageImages = 0;
+PRINT\prec.cpp:3234:                if (PrOpt[CMPBL] || swaphf || (gotdata != LINE_NULL) || !WRAP(when) || (lhite && (P
+ageBoxes || PageImages || nPageOleObjects || PageCharts)))
+PRINT\prec.cpp:3253:                    // check images...
+PRINT\prec.cpp:3254:                    if (PageImages && ((when != INBODY) || !PrOpt[RECUP]) && lpfnVertLoc)
+PRINT\prec.cpp:3255:                        checkPendingImages(when, when_row, (*lpfnVertLoc)(PrtStruct));
+PRINT\rpsort.cpp:25:// Change for data images
+PRINT\rpsort.cpp:282:    for (i = 0 ; i < Images ; i++)
+PRINT\rprint.cpp:22:// Change for data image items
+PRINT\pline.cpp:311:                if (PageImages)
+PRINT\pline.cpp:312:                    checkPendingImages(INBODY, topbody + i, (*lpfnVertLoc)(PrtStruct));
+PRINT\rpexport.cpp:557:        forget PageImages init to zero - won't call anyone who needs it
+PRINT\rpexport.cpp:1301:        forget PageImages init to zero - won't call anyone who needs it
+allfiles.cpp:1369:06/26/2006  10:19 AM    <DIR>          images
+allfiles.cpp:1594: Directory of K:\RR\External\Odbc3.5\DDHelp\images
+allfiles.cpp:1747:06/26/2006  10:19 AM    <DIR>          images
+allfiles.cpp:1753: Directory of K:\RR\External\Odbc3.5\DDHelp\wwhelp\images
+allfiles.cpp:1778:06/26/2006  10:19 AM    <DIR>          images
+allfiles.cpp:1804: Directory of K:\RR\External\Odbc3.5\DDHelp\wwhelp\wwhimpl\common\images
+allfiles.cpp:1873:06/26/2006  10:19 AM    <DIR>          images
+allfiles.cpp:1890: Directory of K:\RR\External\Odbc3.5\DDHelp\wwhelp\wwhimpl\js\images
+allfiles.cpp:2209:06/26/2006  10:19 AM    <DIR>          Images
+allfiles.cpp:2233: Directory of K:\RR\External\Samples\Images
+allfiles.cpp:4155:09/02/2006  02:56 PM           383,488 Images for Relation Tabbed Dialog.doc
+allfiles.cpp:4210:09/02/2006  02:36 PM               326 rrwimage.cur
+allfiles.cpp:6525:05/07/2010  04:49 PM    <DIR>          Images
+allfiles.cpp:6574: Directory of K:\RR\RR\rrw32\WinDebug\Sample\Images
+allfiles.cpp:7814:05/07/2010  04:48 PM    <DIR>          Images
+allfiles.cpp:7844: Directory of K:\RR\RR\rrw32\WinRel\Sample\Images
+
+
+PS K:\rr>

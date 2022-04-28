@@ -1,0 +1,7 @@
+H\product.h:#define FLMAX 254		// maximum length of an alpha field
+H\product.h:#define NUMFLMAX 20		// numeric field
+H\product.h:#define	FLWDS	((FLMAX+1)/2)	/* max field length in words */
+H\product.h:#define MXFPBUF		(FLMAX*2)
+H\script.h:#if (FLMAX > MAXDNAME)
+H\script.h:#define MAX_SCRIPT_FLD_NAME	FLMAX
+H\_filter.h:#define FLMAXQ		(50+3)		/* max length of a quoted field value */

@@ -1,0 +1,1 @@
+RESOURCE\rrw.str:	IDS_2640,	"Formula: "

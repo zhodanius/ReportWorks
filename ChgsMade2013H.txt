@@ -1,0 +1,7 @@
+EXPORTMG\DLG\resource.h:#define IDS_DETAIL			12013
+H\dfdata.h:// Rev 1.00    17 Oct 2013 14:53:10   CAS
+H\dparams.h:	//bool		ItemChange ;		//  experiment by CAS 9/19/2013 to move to public
+H\rrcompos.h:   and the new ADS way of doing stuff for RRW  [CAS 2/6/2013]
+H\rrcompos.h:   int      gettchain( CADSFile& fdCFile, long tagblock, int tlen ); //removed & by CAS 1/29/2013
+H\rrcompos.h:   //  CFile MFAFile;  commented out as recommended by ADS (CAS 2/5/2013)
+H\rrdoc.h:	//  CAS 7/18/2013 changed color from WORD to DWORD as an experiment

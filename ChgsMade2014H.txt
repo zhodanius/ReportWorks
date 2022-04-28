@@ -1,0 +1,15 @@
+H\export.h:// Rev 1.01    17 Nov 2014 14:09:12   CAS
+H\global.h:// Rev 1.51    09 Dec 2014 10:23:19   CAS
+H\global.h:// Rev 1.50    18 Nov 2014 10:40:22   CAS
+H\index.h://between the ADS file type and the standard one CAS 8/22/2014
+H\mainfrm.h:// OnEditChangeFont() was added by CAS on 2/20/2014
+H\mfdata.h://test made by CAS 8/22/2014 to determine if we need to address ADS file differently here
+H\product.h:/* added by CAS 11/14/2014  */
+H\resource.h:// Rev 1.80    12 Dec 2014 15:15:03   CAS
+H\rr.h:   //temporary change to test if changing the TYPE of zread has an impact on compilation CAS 8/22/2014
+H\rr.h:   //  *******  Also, moved the CADSFile into the NOT RSW block CAS 8/22/2014
+H\rr.h:	// as well as this into the RSW block CAS 8/22/2014
+H\rrcompos.h:   //  also added the pre-compile directive to test for RSW (CAS 8/19/2014)
+H\rrcompos.h://  with ADS consistency and definitions by CAS 8/22/2014
+H\wmain.h:// New values created by CAS on 2/20/2014 to handle messaging for
+RRATL\RRWATL.h:/* at Thu Aug 21 10:57:43 2014
