@@ -1,0 +1,41 @@
+#ifdef _WIN32_WCE
+#define MYTEXT TEXT
+#else
+#define MYTEXT(x) x
+#endif
+
+#define L_KEY_DOCUMENT           MYTEXT("")
+#define L_KEY_GIFLZW             MYTEXT("")
+#define L_KEY_TIFLZW             MYTEXT("")
+#define L_KEY_FPXEXTENSIONS      MYTEXT("")
+#define L_KEY_OCR                MYTEXT("")
+#define L_KEY_MULTIMEDIA         MYTEXT("")
+#define L_KEY_MEDICAL            MYTEXT("")
+#define L_KEY_MEDICAL_NET        MYTEXT("")
+#define L_KEY_VECTOR             MYTEXT("")
+#define L_KEY_BARCODES_1D        MYTEXT("")
+#define L_KEY_BARCODES_2D_READ   MYTEXT("")
+#define L_KEY_BARCODES_2D_WRITE  MYTEXT("")
+#define L_KEY_BARCODES_PDF_READ  MYTEXT("")
+#define L_KEY_BARCODES_PDF_WRITE MYTEXT("")
+#define L_KEY_INTERNET           MYTEXT("")
+#define L_KEY_VECTOR_DWG         MYTEXT("")
+#define L_KEY_VECTOR_DXF         MYTEXT("")
+#define L_KEY_VECTOR_MISC        MYTEXT("")
+#define L_KEY_VECTOR_ALL         MYTEXT("")
+#define L_KEY_VECTOR_DWF         MYTEXT("")
+#define L_KEY_MRC                MYTEXT("")
+#define L_KEY_PDF                MYTEXT("")
+#define L_KEY_VECTOR_VIEW        MYTEXT("")
+#define L_KEY_DIGITALPAINT       MYTEXT("")
+#define L_KEY_J2K                MYTEXT("")
+#define L_KEY_CMW                MYTEXT("")
+#define L_KEY_DICOM              MYTEXT("")
+#define L_KEY_EXTGRAY            MYTEXT("")
+#define L_KEY_BITONAL            MYTEXT("")
+#define L_KEY_MEDICAL_SECURITY   MYTEXT("")
+#define L_KEY_PDF_SAVE           MYTEXT("")
+#define L_KEY_OCR_PDF_OUTPUT     MYTEXT("")
+#define L_KEY_BARCODES_DATAMATRIX_READ   MYTEXT("")
+#define L_KEY_BARCODES_DATAMATRIX_WRITE  MYTEXT("")
+
