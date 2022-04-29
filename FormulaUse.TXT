@@ -1,2 +1,0 @@
-SPEC\specmain.cpp:									getString(IDS_2640,0),
-SPEC\specfld2.cpp:	lstrcpy(formula, getString(IDS_2640,0)) ;
