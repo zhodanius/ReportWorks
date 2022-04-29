@@ -1,2 +1,0 @@
-SPEC\specfld2.cpp:void CRrView::PrCalc( LPMFFIELD fld )
-SPEC\specfld2.cpp:		PrCalc(fld);
