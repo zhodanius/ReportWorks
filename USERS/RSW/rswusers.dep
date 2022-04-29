@@ -1,7 +1,0 @@
-# Microsoft Developer Studio Generated Dependency File, included by rswusers.mak
-
-..\rrusers.RC : \
-	"..\..\H\_users.h"\
-	"..\..\h\users.h"\
-	"..\rrusers.ico"\
-	
