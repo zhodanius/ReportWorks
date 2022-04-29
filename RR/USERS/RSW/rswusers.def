@@ -1,0 +1,11 @@
+;-------------------------------------
+; rswusers.def module definition file
+;-------------------------------------
+
+NAME           RSWUSERS
+DESCRIPTION    'R&R User Management Program'
+HEAPSIZE       1024
+STACKSIZE      8192
+
+EXPORTS        MainDlgProc		@1
+

@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[rswusers.dsp]
+SCC_Aux_Path = "E:\SourceSafe\Liveware"
+SCC_Project_Name = "$/RR/USERS/RSW", JJEBAAAA
+
+[rswusers.mak]
+SCC_Aux_Path = "E:\SourceSafe\Liveware"
+SCC_Project_Name = "$/RR/USERS/RSW", JJEBAAAA
