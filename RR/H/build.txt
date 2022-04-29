@@ -1,0 +1,26 @@
+Build instructions prepared for ICI for Live 1.0 localization.
+
+================================
+RRPRVIEW.CAB
+--------------------------------
+
+The file that needs translation is RRLITE\RRPRVIEW.RC.  Notice that all languages
+go into the one RC in different string tables.  The control uses the LanguageID
+attribute that is passed to it in the Object tag to determine which language table
+to use.
+
+What you need to build is rrprview.ocx using rrlite\rrprview.mak.
+
+	Compiler:	MSVC 4.2
+	SDKs:		Microsoft ActiveX Development Kit, 11/96 release (\inetsdk)
+			Microsoft Win32 SDK (\mstools)
+	Includes:	\inetsdk\include, \inetsdk\samples\basectl\include, 
+			\mstools\include, \msdev\include, \build\include
+	Libs:		\inetsdk\lib, \mstools\lib, \msdev\lib, \build\framewrk\libs
+
+Then, to turn it into a CAB, copy rrprview.ocx to Cabinet, and run CAB.BAT.
+This will put RRPRVIEW.CAB into the Disk1 subdir.
+
+Before release, the CAB will need to be code-signed.
+
+For Concentric: Populate rrlite w/ vdir=alive\rrlite, vproj=rrmfc, -v"AL1 RC1 Build739"
