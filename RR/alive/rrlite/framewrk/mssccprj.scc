@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[ctlfw32.mak]
+SCC_Aux_Path = "E:\SourceSafe\Liveware"
+SCC_Project_Name = "$/RR/alive/rrlite/framewrk", QHQAAAAA
