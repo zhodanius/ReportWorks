@@ -1,0 +1,186 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: rrprview - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "midl.exe /nologo /I "\rr\alive\rrlite\framewrk\include" /D "NDEBUG" /tlb ".\Release/rrprview.tlb" /mktyplib203 /win32 "K:\RR\alive\rrlite\rrprview.odl""
+Creating command line "rc.exe /l 0x409 /fo".\Release/rrprview.res" /i ".\Release" /d "NDEBUG" "K:\RR\alive\rrlite\rrprview.rc"" 
+Creating temporary file "C:\Users\CASTRA~1.000\AppData\Local\Temp\RSP1CC3.tmp" with contents
+[
+/nologo /Zp1 /MT /W3 /GX /O1 /I "\rr\alive\rrlite\framewrk\include" /I "\rr\h" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fr".\Release/" /Fo".\Release/" /Fd".\Release/" /FD /c 
+"K:\RR\alive\rrlite\accusoft.cpp"
+"K:\RR\alive\rrlite\Cathelp.cpp"
+"K:\RR\alive\rrlite\CONTAIN.CPP"
+"K:\RR\alive\rrlite\DISPPROP.CPP"
+"K:\RR\alive\rrlite\drawctrl.cpp"
+"K:\RR\alive\rrlite\fileread.cpp"
+"K:\RR\alive\rrlite\Guids.cpp"
+"K:\RR\alive\rrlite\IMGPATH.CPP"
+"K:\RR\alive\rrlite\pagetip.cpp"
+"K:\RR\alive\rrlite\printrep.cpp"
+"K:\RR\alive\rrlite\READCHRT.CPP"
+"K:\RR\alive\rrlite\readimg.cpp"
+"K:\RR\alive\rrlite\READOBJ.CPP"
+"K:\RR\alive\rrlite\Readv2.cpp"
+"K:\RR\alive\rrlite\reppage.cpp"
+"K:\RR\alive\rrlite\repurl.cpp"
+"K:\RR\alive\rrlite\Rrprfile.cpp"
+"K:\RR\alive\rrlite\rrprview.cpp"
+"K:\RR\alive\rrlite\rrutil.cpp"
+"K:\RR\alive\rrlite\rrvwctrl.cpp"
+"K:\RR\alive\rrlite\viewbox.cpp"
+"K:\RR\alive\rrlite\VIEWCHRT.CPP"
+"K:\RR\alive\rrlite\viewimg.cpp"
+"K:\RR\alive\rrlite\viewlbox.cpp"
+"K:\RR\alive\rrlite\viewline.cpp"
+"K:\RR\alive\rrlite\VIEWOBJ.CPP"
+"K:\RR\alive\rrlite\viewrep.cpp"
+"K:\RR\alive\rrlite\viewtext.cpp"
+]
+Creating command line "cl.exe @C:\Users\CASTRA~1.000\AppData\Local\Temp\RSP1CC3.tmp" 
+Creating temporary file "C:\Users\CASTRA~1.000\AppData\Local\Temp\RSP1CC4.tmp" with contents
+[
+CtlFwR32.Lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib urlmon.lib wininet.lib comctl32.lib /nologo /subsystem:windows /dll /incremental:no /pdb:".\Release/rrprview.pdb" /machine:I386 /nodefaultlib:"libc.lib" /nodefaultlib:"msvcrt.lib" /nodefaultlib:"libcd.lib" /nodefaultlib:"libcmtd.lib" /nodefaultlib:"msvcrtd.lib" /def:".\rrprview.def" /out:".\Release\rrprview.ocx" /implib:".\Release/rrprview.lib" 
+.\Release\accusoft.obj
+.\Release\Cathelp.obj
+.\Release\CONTAIN.OBJ
+.\Release\DISPPROP.OBJ
+.\Release\drawctrl.obj
+.\Release\fileread.obj
+.\Release\Guids.obj
+.\Release\IMGPATH.OBJ
+.\Release\pagetip.obj
+.\Release\printrep.obj
+.\Release\READCHRT.OBJ
+.\Release\readimg.obj
+.\Release\READOBJ.OBJ
+.\Release\Readv2.obj
+.\Release\reppage.obj
+.\Release\repurl.obj
+.\Release\Rrprfile.obj
+.\Release\rrprview.obj
+.\Release\rrutil.obj
+.\Release\rrvwctrl.obj
+.\Release\viewbox.obj
+.\Release\VIEWCHRT.OBJ
+.\Release\viewimg.obj
+.\Release\viewlbox.obj
+.\Release\viewline.obj
+.\Release\VIEWOBJ.OBJ
+.\Release\viewrep.obj
+.\Release\viewtext.obj
+.\Release\rrprview.res
+]
+Creating command line "link.exe @C:\Users\CASTRA~1.000\AppData\Local\Temp\RSP1CC4.tmp"
+<h3>Output Window</h3>
+Creating Type Library...
+Processing K:\RR\alive\rrlite\rrprview.odl
+rrprview.odl
+Processing C:\Program Files (x86)\Microsoft Visual Studio\VC98\INCLUDE\oaidl.idl
+oaidl.idl
+Processing C:\Program Files (x86)\Microsoft Visual Studio\VC98\INCLUDE\objidl.idl
+objidl.idl
+Processing C:\Program Files (x86)\Microsoft Visual Studio\VC98\INCLUDE\unknwn.idl
+unknwn.idl
+Processing C:\Program Files (x86)\Microsoft Visual Studio\VC98\INCLUDE\wtypes.idl
+wtypes.idl
+Compiling resources...
+Compiling...
+accusoft.cpp
+Cathelp.cpp
+CONTAIN.CPP
+DISPPROP.CPP
+drawctrl.cpp
+fileread.cpp
+Guids.cpp
+IMGPATH.CPP
+pagetip.cpp
+printrep.cpp
+READCHRT.CPP
+readimg.cpp
+READOBJ.CPP
+Readv2.cpp
+reppage.cpp
+repurl.cpp
+Rrprfile.cpp
+rrprview.cpp
+rrutil.cpp
+rrvwctrl.cpp
+Generating Code...
+Compiling...
+viewbox.cpp
+VIEWCHRT.CPP
+viewimg.cpp
+viewlbox.cpp
+viewline.cpp
+VIEWOBJ.CPP
+viewrep.cpp
+viewtext.cpp
+Generating Code...
+Linking...
+   Creating library .\Release/rrprview.lib and object .\Release/rrprview.exp
+Creating temporary file "C:\Users\CASTRA~1.000\AppData\Local\Temp\RSP51B9.tmp" with contents
+[
+/nologo /o".\Release/rrprview.bsc" 
+.\Release\accusoft.sbr
+.\Release\Cathelp.sbr
+.\Release\CONTAIN.SBR
+.\Release\DISPPROP.SBR
+.\Release\drawctrl.sbr
+.\Release\fileread.sbr
+.\Release\Guids.sbr
+.\Release\IMGPATH.SBR
+.\Release\pagetip.sbr
+.\Release\printrep.sbr
+.\Release\READCHRT.SBR
+.\Release\readimg.sbr
+.\Release\READOBJ.SBR
+.\Release\Readv2.sbr
+.\Release\reppage.sbr
+.\Release\repurl.sbr
+.\Release\Rrprfile.sbr
+.\Release\rrprview.sbr
+.\Release\rrutil.sbr
+.\Release\rrvwctrl.sbr
+.\Release\viewbox.sbr
+.\Release\VIEWCHRT.SBR
+.\Release\viewimg.sbr
+.\Release\viewlbox.sbr
+.\Release\viewline.sbr
+.\Release\VIEWOBJ.SBR
+.\Release\viewrep.sbr
+.\Release\viewtext.sbr]
+Creating command line "bscmake.exe @C:\Users\CASTRA~1.000\AppData\Local\Temp\RSP51B9.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+Creating temporary file "C:\Users\CASTRA~1.000\AppData\Local\Temp\RSP73EA.bat" with contents
+[
+@echo off
+buildcab.bat
+]
+Creating command line "C:\Users\CASTRA~1.000\AppData\Local\Temp\RSP73EA.bat"
+Make a cabinet file
+Cabinet Maker - Lossless Data Compression Tool
+
+Parsing directivesParsing directives (rrprview.ddf: 1 lines)452,454 bytes in 3 files                  
+Executing directives  0.00% - rrprview.inf (1 of 3)  0.00% - rrprview.ocx (2 of 3)  7.24% - rrprview.ocx (2 of 3) 14.48% - rrprview.ocx (2 of 3) 21.73% - rrprview.ocx (2 of 3) 21.73% - snbd6w9s.dll (3 of 3) 28.97% - snbd6w9s.dll (3 of 3) 36.21% - snbd6w9s.dll (3 of 3) 43.45% - snbd6w9s.dll (3 of 3) 50.70% - snbd6w9s.dll (3 of 3) 57.94% - snbd6w9s.dll (3 of 3) 65.18% - snbd6w9s.dll (3 of 3) 72.42% - snbd6w9s.dll (3 of 3) 79.67% - snbd6w9s.dll (3 of 3) 86.91% - snbd6w9s.dll (3 of 3) 94.15% - snbd6w9s.dll (3 of 3)100.00% - snbd6w9s.dll (3 of 3)  0.00% [flushing current folder]  7.46% [flushing current folder] 15.60% [flushing current folder] 21.10% [flushing current folder] 26.22% [flushing current folder] 33.62% [flushing current folder] 41.23% [flushing current folder] 48.13% [flushing current folder] 55.57% [flushing current folder] 62.13% [flushing current folder] 68.51% [flushing current folder] 75.98% [flushing current folder] 83.10% [flushing current folder] 90.55% [flushing current folder] 97.15% [flushing current folder]  0.04% [flushing current folder] 15.08% [flushing current folder] 30.11% [flushing current folder] 45.15% [flushing current folder] 60.19% [flushing current folder] 75.23% [flushing current folder] 90.26% [flushing current folder]100.00% [flushing current folder]Total files:              3      
+Bytes before:       452,454
+Bytes after:        217,711
+After/Before:            48.12% compression
+Time:                     0.51 seconds ( 0 hr  0 min  0.51 sec)
+Throughput:             869.78 Kb/second
+'signcode' is not recognized as an internal or external command,
+operable program or batch file.
+'chktrust' is not recognized as an internal or external command,
+operable program or batch file.
+
+
+
+<h3>Results</h3>
+rrprview.ocx - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,90 @@
+//=--------------------------------------------------------------------------=
+// RRPRVIEW.ODL
+//=--------------------------------------------------------------------------=
+//
+// ODL file for the control(s) and automation object(s) in this inproc server
+//
+#include <olectl.h>
+#include <internet.h>
+#include "dispids.h"
+
+// can't include oaidl.h, so this will have to do
+//
+#define DISPID_NEWENUM -4
+
+//=--------------------------------------------------------------------------=
+// the libid for this type libray
+//
+[
+    uuid(66960E20-DE25-11CF-876F-444553540000),
+    helpstring("Report Viewer Control Library"),
+    lcid(0x0000),
+    version(1.0)
+]
+library RepViewObjects {
+
+    // standard imports
+    //
+    importlib("STDOLE32.TLB");
+    importlib(STDTYPE_TLB);
+
+    // primary dispatch interface for Report Viewer control
+    //
+    [
+        uuid(66960E21-DE25-11CF-876F-444553540000),
+                helpstring("Report Viewer Control"),
+        hidden,
+		dual,
+		odl
+    ]
+    interface IRepView : IDispatch {
+
+		// properties
+		//
+
+        [id(DISPID_REPORTURL), propget]
+            HRESULT ReportURL([out, retval] BSTR * path);
+        [id(DISPID_REPORTURL), propput]
+            HRESULT ReportURL([in] BSTR path);
+
+        [id(DISPID_IMAGEPATH), propget]
+            HRESULT ImagePath([out, retval] BSTR * path);
+        [id(DISPID_IMAGEPATH), propput]
+            HRESULT ImagePath([in] BSTR path);
+
+	  [id(DISPID_LANGID), propget]
+            HRESULT LanguageID([out, retval] BSTR * path);
+        [id(DISPID_LANGID), propput]
+            HRESULT LanguageID([in] BSTR path);
+
+        // methods
+		//
+   
+    };
+
+    // event interface for Report Viewer controls ...
+    //
+    [
+        uuid(66960E22-DE25-11CF-876F-444553540000),
+                helpstring("Event interface for Report Viewer control"),
+		hidden
+    ]
+    dispinterface DRepViewEvents {
+        
+		properties:
+		
+		methods:
+	    
+    };
+
+    // coclass for Report Viewer controls
+    //
+    [
+        uuid(66960E23-DE25-11CF-876F-444553540000),
+                helpstring("Report Viewer control")
+    ]
+    coclass RepView {
+        [default]         interface IRepView;
+                [default, source] dispinterface DRepViewEvents;
+    };
+};
