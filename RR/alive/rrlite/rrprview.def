@@ -1,0 +1,9 @@
+LIBRARY         RRPrView
+
+DESCRIPTION	'Cyberprise Report Viewer Control'
+
+EXPORTS     DllRegisterServer	@1 PRIVATE
+EXPORTS		DllUnregisterServer	@2 PRIVATE
+EXPORTS		DllCanUnloadNow	@3 PRIVATE
+EXPORTS		DllGetClassObject	@4 PRIVATE
+

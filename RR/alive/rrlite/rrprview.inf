@@ -1,0 +1,20 @@
+; Download INF for RRPRVIEW.OCX
+
+[version]
+signature="$CHICAGO$"
+AdvancedINF=2.0
+
+[Add.Code]
+rrprview.ocx=rrprview.ocx
+snbd6w9s.dll=snbd6w9s.dll
+
+[rrprview.ocx]
+file-win32-x86=thiscab
+Clsid={66960E20-DE25-11CF-876F-444553540000}
+FileVersion=8,1,25,0
+RegisterServer=yes
+
+[snbd6w9s.dll]
+file-win32-x86=thiscab
+FileVersion=6,12,0
+DestDir=11

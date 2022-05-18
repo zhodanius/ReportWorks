@@ -1,0 +1,20 @@
+; DIAMOND directive file for RRPRVIEW.OCX
+
+.OPTION EXPLICIT  ;Generate errors on variable typos
+
+.Set CabinetNameTemplate=RRPRVIEW.CAB
+.Set Cabinet=on
+.Set Compress=on
+
+; Make room for signiture
+.Set ReservePerCabinetSize=6144
+
+; The files below are stored, compressed, in this cabinet file
+
+;rrprview.inf
+;Release\rrprview.ocx
+;h:\nonvcs7\snbd6w9s.dll
+
+k:\rr\alive\rrlite\rrprview.inf
+k:\rr\alive\rrlite\Release\rrprview.ocx
+k:\rr\external\winsys\snbd6w9s.dll
