@@ -1,0 +1,3 @@
+The alive folder contains much of the necessary to build the R&R ATL project to stream WYSIWYG report data back to a browser
+The current build connects back to an ActiveX object embedded within IE.  But some other method of communicating to a more
+modern browser may be possible.
