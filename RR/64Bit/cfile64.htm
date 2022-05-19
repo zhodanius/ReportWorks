@@ -1,0 +1,1197 @@
+<html>
+
+<head>
+<title>CFile64 v1.0</title>
+</head>
+
+<body>
+
+<p align="left"><font face="Verdana"><a name="overview"></a><font color="#000000" size="6"><strong>CFile64
+v1.0</strong></font></font></p>
+
+<p><font color="#000000" size="3" face="Verdana">Welcome to CFile64 v1.0, A freeware MFC
+class to provide access to the 64 bit file system API provided by the Win32 SDK. </font></p>
+
+<p class="t"><font face="Verdana"><img src="cfile64.gif" width="166" height="46"></font></p>
+
+<p>&nbsp;</p>
+
+<table border="0">
+<TBODY>
+  <tr>
+    <td><font size="5" face="Verdana"><strong>Contents</strong></font></td>
+  </tr>
+  <tr>
+    <td><font face="Verdana"><a href="#Features">Features</a></font></td>
+  </tr>
+  <tr>
+    <td><font face="Verdana"><a href="#History">History</a></font></td>
+  </tr>
+  <tr>
+    <td><font face="Verdana"><a class="normal" href="#members">CFile64 class members</a></font></td>
+  </tr>
+  <tr>
+    <td><font face="Verdana"><a href="#Contact">Contacting the Author</a></font></td>
+  </tr>
+</TBODY>
+</table>
+
+<p>&nbsp;</p>
+
+<p><font face="Verdana"><big><a name="Features"><span class="fr"></span></a></big><font
+color="#000000" size="5"><strong>Features</strong></font><big> </big></font>
+
+<ul>
+  <li><font face="Verdana">Provides access to the native 64 bit file system API available on
+    NTFS volumes.</font></li>
+  <li><font face="Verdana">Provides access to all the parameters in the SDK CreateFile API.
+    This can prove helpful when you want total control over the way a file is opened or
+    created.</font></li>
+  <li><font face="Verdana">Interface has been kept as close to CFile as possible</font></li>
+  <li><font face="Verdana">Uses the built in 64 bit integer type <em>&quot;__in64&quot;</em>
+    available in Visual C++ 4.0 or later. This makes use and understanding of the 64 bit API
+    much easier when compared with using the raw Win32 SDK calls.</font></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><font face="Verdana"><big><a name="History"></a></big><font color="#000000" size="5"><strong>History</strong></font></font></p>
+
+<p><font color="#000000" size="4" face="Verdana">V1.0 (11</font><font face="Verdana"><font
+color="#000000" size="4"> February 1998)</font><big> </big></font>
+
+<ul>
+  <li><font face="Verdana"><font color="#000000" size="3">Intial Public Release.</font><big> </big></font></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2 class="rh1"><font face="Verdana"><a name="members"></a>CFile64 Class Members</font></h2>
+
+<table border="0" cellPadding="7" cols="2" width="600">
+<COLGROUP>
+<COL vAlign="top" width="78">
+<COL vAlign="top" width="270">
+</COLGROUP>
+<TBODY>
+  <tr>
+    <td colSpan="2" vAlign="top" width="584"><p class="th"><font face="Verdana"><strong>Data
+    Members</strong></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2" vAlign="top" width="584"></td>
+  </tr>
+  <tr>
+    <td vAlign="top" width="182"><p class="tt"><a href="#handle"><font face="Verdana">operator
+    HANDLE()</font></a></td>
+    <td vAlign="top" width="386"><p class="tt"><font face="Verdana">Returns the
+    operating-system file handle this instance represents.</font></td>
+  </tr>
+</TBODY>
+</table>
+
+<p class="spacing"><font face="Verdana"><br>
+</font></p>
+
+<table border="0" cellPadding="7" cols="2" width="600">
+<COLGROUP>
+<COL vAlign="top" width="77">
+<COL vAlign="top" width="272">
+</COLGROUP>
+<TBODY>
+  <tr>
+    <td colSpan="2" vAlign="top"><p class="th"><font face="Verdana"><strong>Construction</strong></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2" vAlign="top"></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#cfile64">CFile64</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Constructs a <span class="op">CFile64</span>
+    object optionally from file handle.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><a class="normal" href="#attach"><font face="Verdana">Attach</font></a></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Attaches to and already open file
+    handle.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#abort">Abort</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Closes a file ignoring all warnings
+    and errors.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#duplicate">Duplicate</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Constructs a duplicate object based on
+    this file.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#open">Open</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Safely opens a file with an
+    error-testing option.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#close">Close</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Closes a file and deletes the object.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#close">Detach</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">CDetaches the CFile64 file the
+    attached file handle.</font></td>
+  </tr>
+</TBODY>
+</table>
+
+<p class="spacing"><font face="Verdana"><br>
+</font></p>
+
+<table border="0" cellPadding="7" cols="2" width="600">
+<COLGROUP>
+<COL vAlign="top" width="78">
+<COL vAlign="top" width="270">
+</COLGROUP>
+<TBODY>
+  <tr>
+    <td colSpan="2" vAlign="top"><p class="th"><font face="Verdana"><strong>Input/Output</strong></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2" vAlign="top"></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#read">Read</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Reads (unbuffered) data from a file at
+    the current file position.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#write">Write</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Writes (unbuffered) data in a file to
+    the current file position.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#flush">Flush</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Flushes any data yet to be written.</font></td>
+  </tr>
+</TBODY>
+</table>
+
+<p class="spacing"><font face="Verdana"><br>
+</font></p>
+
+<table border="0" cellPadding="7" cols="2" width="600">
+<COLGROUP>
+<COL vAlign="top" width="78">
+<COL vAlign="top" width="270">
+</COLGROUP>
+<TBODY>
+  <tr>
+    <td colSpan="2" vAlign="top"><p class="th"><font face="Verdana"><strong>Position</strong></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2" vAlign="top"></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#seek">Seek</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Positions the current file pointer.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#seektobegin">SeekToBegin</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Positions the current file pointer at
+    the beginning of the file.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#seektoend">SeekToEnd</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Positions the current file pointer at
+    the end of the file.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#getlength">GetLength</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Retrieves the length of the file.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#setlength">SetLength</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Changes the length of the file.</font></td>
+  </tr>
+</TBODY>
+</table>
+
+<p class="spacing"><font face="Verdana"><br>
+</font></p>
+
+<table border="0" cellPadding="7" cols="2" width="600">
+<COLGROUP>
+<COL vAlign="top" width="78">
+<COL vAlign="top" width="270">
+</COLGROUP>
+<TBODY>
+  <tr>
+    <td colSpan="2" vAlign="top"><p class="th"><font face="Verdana"><strong>Locking</strong></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2" vAlign="top"></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#lockrange">LockRange</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Locks a range of bytes in a file.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#unlockrange">UnlockRange</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Unlocks a range of bytes in a file.</font></td>
+  </tr>
+</TBODY>
+</table>
+
+<p class="spacing"><font face="Verdana"><br>
+</font></p>
+
+<table border="0" cellPadding="7" cols="2" width="600">
+<COLGROUP>
+<COL vAlign="top" width="78">
+<COL vAlign="top" width="270">
+</COLGROUP>
+<TBODY>
+  <tr>
+    <td colSpan="2" vAlign="top"><p class="th"><font face="Verdana"><strong>Status</strong></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2" vAlign="top"></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#getposition">GetPosition</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Retrieves the current file pointer.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><font face="Verdana"><a class="normal" href="#getfilename">GetFileName</a></font></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Retrieves the filename of the selected
+    file.</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><font face="Verdana"><a href="#isopen">IsOpen</a></font></td>
+    <td vAlign="top"><font face="Verdana">Returns TRUE if the file is currently open</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><font face="Verdana"><a href="#isclosed">IsClosed</a></font></td>
+    <td vAlign="top"><font face="Verdana">Returns TRUE if the file is currently closed</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="tt"><a class="normal" href="#setfilename"><font face="Verdana">SetFileName</font></a></td>
+    <td vAlign="top"><p class="tt"><font face="Verdana">Sets the filename of the selected
+    file.</font></td>
+  </tr>
+</TBODY>
+</table>
+
+<p class="spacing"><font face="Verdana"><br>
+</font></p>
+
+<p class="crt"><font face="Verdana"><span class="crh">See Also</span> <a class="normal"
+href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class Members</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="abort"></a>CFile64::Abort </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">void</span> <span class="op">Abort(</span>
+<span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Closes the file associated with this object and makes
+the file unavailable for reading or writing. If you have not closed the file before
+destroying the object, the destructor closes it for you.</font></p>
+
+<p class="t"><font face="Verdana">When handling exceptions, <span class="op">CFile64::Abort</span>
+differs from <span class="op">CFile64::Close</span> in two important ways. First, the <span
+class="op">Abort</span> function will not throw an exception on failures because failures
+are ignored by <span class="op">Abort</span>. Second, <span class="op">Abort</span> will
+not <span class="op">ASSERT</span> if the file has not been opened or was closed
+previously.</font></p>
+
+<p class="t"><font face="Verdana">If you used <span class="op">new</span> to allocate the <span
+class="op">CFile64</span> object on the heap, then you must delete it after closing the
+file. <span class="op">Abort</span> sets <span class="op">m_hFile</span> to <span
+class="op">INVALID_HANDLE_VALUE</span>.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::Abort
+CFile64 fileTest;
+char* pFileName = &quot;test.dat&quot;;
+TRY
+{
+    // do stuff that may throw exceptions
+    fileTest.Open( pFileName, CFile64::modeWrite );
+}
+CATCH_ALL( e )
+{
+    fileTest.Abort();    // close file safely and quietly
+    THROW_LAST();
+}
+END_CATCH_ALL</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="/F11/F12/F13/D15/S1E59B.HTM">CFile64 Overview</a> <a class="normal"
+href="#members">Class Members</a> <a class="normal" href="#close">CFile64::Close</a>, <a
+class="normal" href="#open">CFile64::Open</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="attach"></a>CFile64::Attach </font></h3>
+
+<p class="syn"><font face="Verdana"><strong>void Attach(HANDLE hFile, BOOL bAutoClose);<br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font></p>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">hFile</span></em> The handle of a
+file that is already open.</font></p>
+
+<p class="dt1"><span class="p"><font face="Verdana"><em>bAutoClose</em> Should <a
+href="#close">Close</a> be called by the destructor or Detach</font></span></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Creates a <span class="op">CFile64</span> object that
+corresponds to an existing operating-system file identified by <span class="p">hFile</span>.
+No check is made on the access mode or file type. When the <span class="op">CFile64</span>
+object is destroyed, the operating-system file will be closed if you set bAutoClose to
+TRUE.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#detach">CFile64::Detach</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="cfile64"></a>CFile64::CFile64 </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">CFile64(</span> <span
+class="op">);</span></strong></font></p>
+
+<p class="syn"><font face="Verdana"><strong>CFile64(HANDLE hFile, BOOL bAutoClose = TRUE);<br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font></p>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">hFile</span></em> The handle of a
+file that is already open.</font></p>
+
+<p class="dt1"><span class="p"><font face="Verdana"><em>bAutoClose</em> Should <a
+href="#close">Close</a> be called by the destructor</font></span></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">The default constructor does not open a file but rather
+sets <span class="op">m_hFile</span> to <span class="op">INVALID_HANDLE_VALUE</span>.
+Because this constructor does not throw an exception, it does not make sense to use <span
+class="op">TRY</span>/<span class="op">CATCH</span> logic. Use the <a href="#open"><span
+class="op">Open</span></a> member function, then test directly for exception conditions.
+For a discussion of exception-processing strategy, see the article <font
+class="MissingLink" meta="_PFC_Exceptions">Exceptions</font> in <span class="crbt">Programming
+with MFC</span>. </font></p>
+
+<p class="t"><font face="Verdana">The constructor with two arguments creates a <span
+class="op">CFile64</span> by calling the <a href="#attach">Attach</a> method.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#open">CFile64::Open</a> <a class="normal"
+href="#attach">CFile64::Attach</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="close"></a>CFile64::Close </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">void</span> <span class="op">Close(</span>
+<span class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Closes the file associated with this object and makes
+the file unavailable for reading or writing. If you have not closed the file before
+destroying the object, the destructor closes it for you. </font></p>
+
+<p class="t"><font face="Verdana">If you used <span class="op">new</span> to allocate the <span
+class="op">CFile64</span> object on the heap, then you must delete it after closing the
+file. <span class="op">Close</span> sets <span class="op">m_hFile</span> to <span
+class="op">INVALID_HANDLE_VALUE</span>.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#open">CFile64::Open</a></font></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="detach"></a>CFile64::Detach </font></h3>
+
+<p class="syn"><strong><font face="Verdana">void Detach();<br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></font></strong></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Call this function to detach m_hFile from the CFile64
+object and set m_hFile to INVALID_HANDLE_VALUE. The file will be closed if told to do so
+using <a href="#attach">Attach</a></font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#attach">CFile64::Attach</a></font></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="duplicate"></a>CFile64::Duplicate </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">CFile64*</span> <span
+class="op">Duplicate(</span> <span class="op">)</span> <span class="op">const;</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">A pointer to a duplicate <span class="op">CFile64</span>
+object.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Constructs a duplicate <span class="op">CFile64</span>
+object for a given file.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="flush"></a>CFile64::Flush </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">void</span> <span class="op">Flush(</span>
+<span class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Forces any data remaining in the file buffer to be
+written to the file. </font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="getfilename"></a>CFile64::GetFileName</font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">CString GetFileName( ) const;</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">The name of the file.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Call this member function to retrieve the filename of a
+specified file. For example, when you call <span class="op">GetFileName</span> to generate
+a message to the user about the file <span class="cem">c:\windows\write\myfile.wri</span>,
+the filename, <span class="cem">c:\windows\write\myfile.wri</span>, is returned.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#setfilename">CFile64::SetFileName</a></font></p>
+
+<p>&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="getlength"></a>CFile64::GetLength </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">UINT64</span> <span
+class="op">GetLength(</span> <span class="op">)</span> <span class="op">const;</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">The length of the file.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Obtains the current logical length of the file in bytes,
+not the amount.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#setlength">CFile64::SetLength</a></font></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="getposition"></a>CFile64::GetPosition </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">UINT64</span> <span
+class="op">GetPosition(</span> <span class="op">)</span> <span class="op">const;</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">The file pointer as a 64-bit unsigned integer.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Obtains the current value of the file pointer, which can
+be used in subsequent calls to <span class="op">Seek</span>.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::GetPosition
+extern CFile64 CFile64;
+UINT64 lPosition = CFile64.GetPosition();</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="isclosed"></a>CFile64::IsClosed </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">BOOL</span> <span class="op">IsClosed(</span>
+<span class="op">)</span> <span class="op">const;</span><br>
+</strong></font></p>
+
+<p class="syn"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">TRUE if the file is currently closed otherwise FALSE.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="isopen"></a>CFile64::IsOpen </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">BOOL</span> <span class="op">IsOpen(</span>
+<span class="op">)</span> <span class="op">const;</span><br>
+</strong></font></p>
+
+<p class="syn"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">TRUE if the file is currently open otherwise FALSE.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="lockrange"></a>CFile64::LockRange </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">void</span> <span class="op">LockRange(</span>
+<span class="op">const UINT64</span>&amp; <span class="p">lPos</span><span class="op">,</span>
+<span class="op">const UINT64</span>&amp; <span class="p">lCount</span> <span class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font></p>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">lPos</span></em> The byte offset
+of the start of the byte range to lock.</font></p>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">lCount</span></em> The number of
+bytes in the range to lock.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Locks a range of bytes in an open file, throwing an
+exception if the file is already locked. Locking bytes in a file prevents access to those
+bytes by other processes. You can lock more than one region of a file, but no overlapping
+regions are allowed.</font></p>
+
+<p class="t"><font face="Verdana">When you unlock the region, using the <span class="op">UnlockRange</span>
+member function, the byte range must correspond exactly to the region that was previously
+locked. The <span class="op">LockRange</span> function does not merge adjacent regions; if
+two locked regions are adjacent, you must unlock each region separately.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::LockRange
+extern UINT64 lPos;
+extern UINT64 lCount;
+extern CFile64 file;
+file.LockRange( lPos, lCount );</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#unlockrange">CFile64::UnlockRange</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="open"></a>CFile64::Open </font></h3>
+
+<p class="syn"><font face="Verdana"><strong>BOOL Open( LPCTSTR lpFileName, DWORD
+dwDesiredAccess, DWORD dwShareMode, DWORD dwCreationDistribution, <span class="op">CFileException*</span>
+<span class="p">pError</span> <span class="op">=</span> <span class="op">NULL</span>,
+LPSECURITY_ATTRIBUTES lpSecurityAttributes = NULL, DWORD dwFlagsAndAttributes = 0, HANDLE
+hTemplateFile = NULL );</strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">Nonzero if the open was successful; otherwise 0. The <span
+class="p">pError</span> parameter is meaningful only if FALSE is returned.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font> 
+
+<dl>
+  <dt><font face="Verdana"><i>lpFileName</i> </font></dt>
+  <dd><font face="Verdana">Points to a null-terminated string that specifies the name of the
+    object (file, pipe, mailslot, communications resource, disk device, console, or directory)
+    to create or open. See the SDK function CreateFile for further details.</font><br>
+    <br>
+    <font face="Verdana"><br>
+    </font></dd>
+  <dt><font face="Verdana"><i>dwDesiredAccess</i> </font></dt>
+  <dd><font face="Verdana">Specifies the type of access to the object. An application can
+    obtain read access, write access, read-write access, or device query access. See the SDK
+    function CreateFile for further details.</font></dd>
+  <dd><br>
+    <font face="Verdana"><br>
+    </font></dd>
+  <dt><font face="Verdana"><i>dwShareMode</i> </font></dt>
+  <dd><font face="Verdana">Set of bit flags that specifies how the object can be shared. If <i>dwShareMode</i>
+    is 0, the object cannot be shared. Subsequent open operations on the object will fail,
+    until the handle is closed. See the SDK function CreateFile for further details.</font></dd>
+  <dd><font face="Verdana"><br>
+    <br>
+    </font></dd>
+  <dt><font face="Verdana"><i>lpSecurityAttributes</i> </font></dt>
+  <dd><font face="Verdana">Pointer to a <b>SECURITY_ATTRIBUTES</b> structure that determines
+    whether the returned handle can be inherited by child processes. If <i>lpSecurityAttributes</i>
+    is NULL, the handle cannot be inherited. </font></dd>
+  <dd><font face="Verdana"><br>
+    <br>
+    </font></dd>
+  <dt><font face="Verdana"><i>dwCreationDisposition</i> </font></dt>
+  <dd><font face="Verdana">Specifies which action to take on files that exist, and which
+    action to take when files do not exist. For more information about this parameter, see the
+    Remarks section. See the SDK function CreateFile for further details. </font></dd>
+  <dd><br>
+    <font face="Verdana"><br>
+    </font></dd>
+  <dt><font face="Verdana"><i>dwFlagsAndAttributes</i> </font></dt>
+  <dd><font face="Verdana">Specifies the file attributes and flags for the file. See the SDK
+    function CreateFile for further details.</font></dd>
+  <dd><font face="Verdana"><br>
+    <br>
+    </font></dd>
+  <dt><font face="Verdana"><i>hTemplateFile</i> </font></dt>
+  <dd><font face="Verdana">Specifies a handle with GENERIC_READ access to a template file. The
+    template file supplies file attributes and extended attributes for the file being created.
+    See the SDK function CreateFile for further details.</font></dd>
+</dl>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">pError</span></em> </font>
+
+<dl>
+  <dd><p class="dt1"><font face="Verdana">A pointer to an existing file-exception object that
+    will receive the status of a failed operation.</font></p>
+  </dd>
+</dl>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana"><span class="op">Open</span> is designed for use with
+the default <span class="op">CFile64</span> constructor. The two functions form a
+&quot;safe&quot; method for opening a file where a failure is a normal, expected
+condition. </font></p>
+
+<p class="t"><font face="Verdana">If you don't supply the <span class="p">pError</span>
+parameter, or if you pass <span class="op">NULL</span> for <span class="p">pError</span>, <span
+class="op">Open</span> will return <span class="op">FALSE</span> and not throw a <span
+class="op">CFileException</span>. If you pass a pointer to an existing <span class="op">CFileException</span>,
+and <span class="op">Open</span> encounters an error, the function will fill it with
+information describing that error. In neither case will <span class="op">Open</span> throw
+an exception.</font></p>
+
+<p class="t"><font face="Verdana">The following table describes the possible results of <span
+class="op">Open</span>.</font></p>
+
+<table border="0" cellPadding="7" cols="4">
+<COLGROUP>
+<COL vAlign="top" width="79">
+<COL vAlign="top" width="100">
+<COL vAlign="top" width="89">
+<COL vAlign="top" width="100">
+</COLGROUP>
+<TBODY>
+  <tr>
+    <td vAlign="top"><p class="th"><font face="Verdana"><span class="p">pError</span></font></td>
+    <td vAlign="top"><p class="th"><font face="Verdana">Error encountered?</font></td>
+    <td vAlign="top"><p class="th"><font face="Verdana">Return value</font></td>
+    <td vAlign="top"><p class="th"><font face="Verdana">CFileException content</font></td>
+  </tr>
+  <tr>
+    <td colSpan="4" vAlign="top"></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="t"><font face="Verdana"><span class="op">NULL</span></font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana">No</font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana"><span class="op">TRUE</span></font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana">n/a</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="t"><font face="Verdana">ptr to <span class="op">CFileException</span></font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana">No</font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana"><span class="op">TRUE</span></font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana">unchanged</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="t"><font face="Verdana"><span class="op">NULL</span></font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana">Yes</font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana"><span class="op">FALSE</span></font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana">n/a</font></td>
+  </tr>
+  <tr>
+    <td vAlign="top"><p class="t"><font face="Verdana">ptr to <span class="op">CFileException</span></font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana">Yes</font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana"><span class="op">FALSE</span></font></td>
+    <td vAlign="top"><p class="t"><font face="Verdana">initialized to describe error</font></td>
+  </tr>
+</TBODY>
+</table>
+
+<p class="spacing"><font face="Verdana"><br>
+</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::Open
+CFile64 f;
+CFileException e;
+char* pFileName = &quot;test.dat&quot;;
+if( !f.Open( pFileName, </font>GENERIC_READ<font
+face="Verdana">, 0, </font>OPEN_EXISTING<font face="Verdana">, &amp;e ) )
+    {
+#ifdef _DEBUG
+    afxDump &lt;&lt; &quot;File could not be opened &quot; &lt;&lt; e.m_cause &lt;&lt; &quot;\n&quot;;
+#endif
+    }</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#cfile64">CFile64::CFile64</a>, <a class="normal"
+href="#close">CFile64::Close</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="read"></a>CFile64::Read </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">DWORD</span> <span class="op">Read(</span>
+<span class="op">void*</span> <span class="p">lpBuf</span><span class="op">,</span> <span
+class="op">DWORD</span> <span class="p">dwCount</span> <span class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">The number of bytes transferred to the buffer. Note that
+for all <span class="op">CFile64</span> classes, the return value may be less than <span
+class="p">nCount</span> if the end of file was reached. </font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font></p>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">lpBuf</span></em> Pointer to the
+user-supplied buffer that is to receive the data read from the file.</font></p>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">dwCount</span></em> The maximum
+number of bytes to be read from the file.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Reads data into a buffer from the file associated with
+the <span class="op">CFile64</span> object. </font></p>
+
+<p class="t"><font face="Verdana">Currently this function only allows reading of up to
+ULONG_MAX (4294967295) bytes as Win32 has <em>only</em> a 4 GB address space (1 - 2 GB's
+of which is unavailable to user mode applications). This will only be remedied with the
+arrival of the Win64 API &lt;g&gt;.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::Read
+extern CFile64 CFile64;
+char pbuf[100];
+DWORD dwBytesRead = CFile64.Read( pbuf, 100 );</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="seek"></a>CFile64::Seek </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">LONG</span> <span class="op">Seek(</span>
+const UINT64&amp; lDistanceToMove, SeekPosition MoveMethod, BOOL bForward <span class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">If the requested position is legal, <span class="op">Seek</span>
+returns the new byte offset from the beginning of the file. Otherwise, the return value is
+undefined and a <span class="op">CFileException</span> object is thrown.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font></p>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">lDistanceToMove</span></em> Number
+of bytes to move the pointer.</font></p>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">nMoveMethod</span></em> Pointer
+movement mode. Must be one of the following values:</font> 
+
+<dl>
+  <dd><p class="dt2"><font face="Verdana"><span class="op">CFile64::begin</span> Move the file
+    pointer <span class="p">lOff</span> bytes forward from the beginning of the file.</font></p>
+  </dd>
+  <dd><p class="dt2"><font face="Verdana"><span class="op">CFile64::current</span> Move the
+    file pointer <span class="p">lOff</span> bytes from the current position in the file.</font></p>
+  </dd>
+  <dd><p class="dt2"><font face="Verdana"><span class="op">CFile64::end</span> Move the file
+    pointer <span class="p">lOff</span> bytes from the end of the file.</font></p>
+  </dd>
+</dl>
+
+<p class="dt2"><font face="Verdana"><em>bForward</em> TRUE if the seek is forward with
+FALSE meaning a backward seek.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Repositions the pointer in a previously opened file. The
+<span class="op">Seek</span> function permits random access to a file's contents by moving
+the pointer a specified amount, absolutely or relatively. No data is actually read during
+the seek. </font></p>
+
+<p class="t"><font face="Verdana">When a file is opened, the file pointer is positioned at
+offset 0, the beginning of the file.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::Seek
+extern CFile64 file;
+LONG lOffset = 1000, lActual;
+lActual = file.Seek( lOffset, CFile64::begin );</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="seektobegin"></a>CFile64::SeekToBegin </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">void</span> <span class="op">SeekToBegin(</span>
+<span class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Sets the value of the file pointer to the beginning of
+the file. <span class="cte">SeekToBegin()</span> is equivalent to <span class="cte">Seek(
+0L, CFile64::begin )</span>.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::SeekToBegin
+extern CFile64 file;
+file.SeekToBegin();</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="seektoend"></a>CFile64::SeekToEnd </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">UINT64</span> <span
+class="op">SeekToEnd(</span> <span class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">The length of the file in bytes.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Sets the value of the file pointer to the logical end of
+the file. <span class="cte">SeekToEnd()</span> is equivalent to <span class="cte">CFile64::Seek(
+0L, CFile64::end )</span>.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::SeekToEnd
+extern CFile64 file;
+UINT64 lActual = file.SeekToEnd();</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#getlength">CFile64::GetLength</a>, <a class="normal"
+href="#seek">CFile64::Seek</a>, <a class="normal" href="#seektobegin">CFile64::SeekToBegin</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="setfilename"></a>CFile64::SetFileName</font></h3>
+
+<p class="syn"><font face="Verdana"><b>void SetFilePath( LPCTSTR </b><span class="p">lpszNewName</span><b>
+);</b></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font></p>
+
+<p class="dt1"><font face="Verdana"><em><span class="p">lpszNewName</span></em> Pointer to
+a string specifying the new filename.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Call this function to specify the path of the file; for
+example, if the path of a file is not available when a <a class="normal" href="#overview">CFile64</a>
+object is constructed, call <span class="op">SetFileName</span> to provide it.</font></p>
+
+<p class="nt"><font face="Verdana"><span class="nh">Note</span> <span class="op">SetFileName</span>
+does not open the file or create the file; it simply associates the <span class="op">CFile64</span>
+object with a path name, which can then be used.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#cfile64">CFile64::CFile64</a> <a class="normal"
+href="#getfilename">CFile64::GetFileName</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="setlength"></a>CFile64::SetLength </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">void</span> <span class="op">SetLength(</span>
+<span class="op">const UINT</span>64&amp; <span class="p">lNewLen</span> <span class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font></p>
+
+<p class="dt1"><font face="Verdana"><span class="p">lNewLen</span> Desired length of the
+file in bytes. This value can be larger or smaller than the current length of the file.
+The file will be extended or truncated as appropriate.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Call this function to change the length of the file.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::SetLength
+extern CFile64 file;
+UINT64 lNewLength = 10000;
+file.SetLength( lNewLength );</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="unlockrange"></a>CFile64::UnlockRange </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">void</span> <span class="op">UnlockRange(</span>
+<span class="op">const UINT64</span>&amp; <span class="p">lPos</span><span class="op">,</span>
+<span class="op">const UINT64</span>&amp; <span class="p">lCount</span> <span class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font></p>
+
+<p class="dt1"><font face="Verdana"><span class="p">dwPos</span> The byte offset of the
+start of the byte range to unlock.</font></p>
+
+<p class="dt1"><font face="Verdana"><span class="p">dwCount</span> The number of bytes in
+the range to unlock.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Unlocks a range of bytes in an open file. See the
+description of the <a class="normal" href="#lockrange">LockRange</a> member function for
+details.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::UnlockRange
+extern INT64 lPos;
+extern INT64 lCount;
+extern CFile64 file;
+file.UnlockRange( lPos, lCount );</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#lockrange">CFile64::LockRange</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="write"></a>CFile64::Write </font></h3>
+
+<p class="syn"><font face="Verdana"><strong><span class="op">void</span> <span class="op">Write(</span>
+<span class="op">const</span> <span class="op">void*</span> <span class="p">lpBuf</span><span
+class="op">,</span> <span class="op">DWORD</span> <span class="p">dwCount</span> <span
+class="op">);</span><br>
+<span class="op">throw(</span> <span class="op">CFileException</span> <span class="op">);</span></strong></font></p>
+
+<p class="rl"><font face="Verdana"><strong>Parameters</strong></font></p>
+
+<p class="dt1"><font face="Verdana"><span class="p">lpBuf</span> A pointer to the
+user-supplied buffer that contains the data to be written to the file.</font></p>
+
+<p class="dt1"><font face="Verdana"><span class="p">dwCount</span> The number of bytes to
+be transferred from the buffer.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Writes data from a buffer to the file associated with
+the <span class="op">CFile64</span> object. </font></p>
+
+<p class="t"><font face="Verdana"><span class="op">Write</span> throws an exception in
+response to several conditions, including the disk-full condition. </font></p>
+
+<p class="t"><font face="Verdana">Currently this function only allows reading of up to
+ULONG_MAX (4294967295) bytes as Win32 has <em>only</em> a 4 GB address space (1 - 2 GB's
+of which is unavailable to user mode applications). This will only be remedied with the
+arrival of the Win64 API &lt;g&gt;.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Example</strong></font></p>
+
+<pre><font face="Verdana">//example for CFile64::Write
+extern CFile64 CFile64;
+char pbuf[100];
+CFile64.Write( pbuf, 100 );</font></pre>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> <a class="normal" href="#read">CFile64::Read</a></font></p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<p class="crt">&nbsp;</p>
+
+<h3 class="rh2"><font face="Verdana"><a name="handle"></a>CFile64::operator HANDLE(); </font></h3>
+
+<p class="rl"><font face="Verdana"><strong>Return Value</strong></font></p>
+
+<p class="t"><font face="Verdana">The operating-system file handle for an open file.</font></p>
+
+<p class="rl"><font face="Verdana"><strong>Remarks</strong></font></p>
+
+<p class="t"><font face="Verdana">Use of <span class="op">operator HANDLE()</span> is not
+recommended, instead you should use the member functions exposed through the CFile64
+interface.</font></p>
+
+<p class="crt"><font face="Verdana"><strong><span class="crh">See Also</span></strong> <a
+class="normal" href="#overview">CFile64 Overview</a> <a class="normal" href="#members">Class
+Members</a> </font></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><big><big><font face="Verdana"><a name="Contact"></a></font></big></big><font
+color="#000000" face="Verdana" size="5"><strong>Contacting the Author</strong></font></p>
+
+<p><font color="#000000" face="Verdana" size="3">PJ Naughter<br>
+Email: <a href="mailto:pjn@indigo..ie">pjn@indigo..ie</a><br>
+Web: <a href="http://indigo.ie/~pjn">http://indigo.ie/~pjn</a><br>
+11th February 1998<br>
+</font></p>
+</body>
+</html>

@@ -1,0 +1,2 @@
+this is the contents of a text file
+which has been opened by CFile64
